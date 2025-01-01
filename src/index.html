@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corewood LLC - DevOps Consultancy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --deep-brown: #2C1810;
+            --medium-brown: #594036;
+            --forest-green: #1B4332;
+            --sage-green: #2D6A4F;
+            --accent: #D4A373;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            color: var(--deep-brown);
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(44, 24, 16, 0.95);
+            padding: 1rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: 40px;
+            margin-left: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(44, 24, 16, 0.95);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .content-wrapper {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: var(--deep-brown);
+            min-height: 70vh;
+        }
+
+        h1,
+        h2 {
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        #services {
+            background-color: var(--sage-green);
+        }
+
+        #story {
+            background-color: var(--medium-brown);
+        }
+
+        #help {
+            background-color: var(--forest-green);
+        }
+
+        #contact {
+            background-color: var(--deep-brown);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input,
+        textarea {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        button {
+            background-color: var(--accent);
+            color: var(--deep-brown);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c19363;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="img/logo_accent.png" alt="Corewood Logo" class="nav-logo">
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#help">How We Help</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <section id="services">
+        <div class="content-wrapper">
+            <img src="img/logo_forest.png" alt="Corewood Logo" class="logo">
+            <h1>Services</h1>
+            <p>Corewood can help you build, deploy, operate, and observe your software.</p>
+            
+        </div>
+    </section>
+
+    <section id="story">
+        <div class="content-wrapper">
+            <h2>Our Story</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+        </div>
+    </section>
+
+    <section id="help">
+        <div class="content-wrapper">
+            <h2>How We Can Help</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content-wrapper">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="5" placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
