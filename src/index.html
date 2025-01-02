@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corewood LLC - DevOps Consultancy</title>
+    <link rel="icon" href="img/corewood_symbol_avatar_green.png">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --deep-brown: #2C1810;
-            --medium-brown: #594036;
-            --forest-green: #1B4332;
-            --sage-green: #2D6A4F;
-            --accent: #D4A373;
+            --light-green: #A7C957;
+            --medium-brown: #F2EACF;
+            --forest-green: #386641;
+            --sage-green: #6A994E;
+            --accent: #BC4749;
         }
 
         html {
@@ -29,46 +30,53 @@
         body {
             font-family: 'Merriweather', serif;
             line-height: 1.6;
-            color: var(--deep-brown);
         }
 
         nav {
             position: fixed;
             width: 100%;
-            background: rgba(44, 24, 16, 0.95);
+            background: rgba(242, 232, 207, 0.95);
             padding: 1rem;
             z-index: 1000;
             display: flex;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        }
+
+        .nav-content {
+            display: flex;
+            width: 90%;
+            max-width: 1000px;
             justify-content: space-between;
             align-items: center;
+            margin: 0 auto;
         }
 
         .nav-logo {
-            width: 40px;
-            height: 40px;
+            width: 20%;
             margin-left: 1rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.4rem;
             list-style: none;
+            margin: auto 0;
         }
 
         .hamburger {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--sage-green);
             cursor: pointer;
             padding: 0.5rem;
             margin-right: 1rem;
         }
 
         nav a {
-            color: white;
+            color: var(--sage-green);
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.6rem;
             transition: color 0.3s ease;
         }
 
@@ -77,17 +85,21 @@
         }
 
         @media (max-width: 768px) {
+            .nav-logo {
+                width: 50%;
+            }
+
             .nav-links {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(44, 24, 16, 0.95);
+                background: rgba(242, 232, 207, 0.95);
                 padding: 1rem;
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
+                gap: 1.3rem;
             }
 
             .nav-links.active {
@@ -100,8 +112,7 @@
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
+            height: 60px;
             margin: 0 auto;
             display: block;
         }
@@ -120,12 +131,22 @@
             width: 90%;
             max-width: 900px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 1.8rem;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: var(--deep-brown);
+            color: var(--forest-green);
             min-height: 70vh;
+        }
+
+        ul {
+            margin: 0 auto;
+            list-style: none;
+            font-size: 1.2rem;
+        }
+
+        li {
+            margin-bottom: .4rem;
         }
 
         h1,
@@ -152,8 +173,31 @@
             background-color: var(--sage-green);
         }
 
+        .service-item {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.3rem;
+        }
+
+        .service-item svg {
+            margin-right: 0.5rem;
+        }
+
         #story {
             background-color: var(--medium-brown);
+        }
+
+        blockquote {
+            display: flex;
+            margin: 1rem auto;
+            width: 80%;
+            background-color: var(--sage-green);
+            color: var(--medium-brown);
+            border-radius: 4px;
+            padding: 1rem;
+            font-size: 1.2rem;
         }
 
         #help {
@@ -161,7 +205,7 @@
         }
 
         #contact {
-            background-color: var(--deep-brown);
+            background-color: var(--light-green);
         }
 
         .contact-form {
@@ -181,7 +225,7 @@
 
         button {
             background-color: var(--accent);
-            color: var(--deep-brown);
+            color: var(--medium-brown);
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 4px;
@@ -194,12 +238,40 @@
         button:hover {
             background-color: #c19363;
         }
+
+        footer {
+            width: 100%;
+            position: fixed;
+            display: flex;
+            bottom: 0;
+            background-color: var(--forest-green);
+            padding: 1rem;
+            text-align: center;
+            color: var(--medium-brown);
+            justify-content: space-between;
+            box-shadow: 4px 0 0 2px rgba(0,0,0,.2);
+        }
+
+        .social-links a {
+            color: var(--medium-brown);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .bsky {
+            background-image: url('img/Bluesky_Logo.svg');
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        <img src="img/logo_accent.png" alt="Corewood Logo" class="nav-logo">
+        <div class="nav-content">
+        <img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo" class="nav-logo">
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#story">Story</a></li>
@@ -209,13 +281,54 @@
         <button class="hamburger" aria-label="Toggle menu">
             <i data-lucide="menu"></i>
         </button>
+    </div>
     </nav>
 
     <section id="services">
         <div class="content-wrapper">
-            <img src="img/logo_forest.png" alt="Corewood Logo" class="logo">
-            <h1>Services</h1>
-            <p>Corewood can help you build, deploy, operate, and observe your software.</p>
+            <img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo" class="logo">
+            <h1>DevOps, Platform, and Identity Services</h1>
+
+            <p>What if you could ship software faster, more cost-efficiently? How can you reduce technical friction to enable interoperability across teams? How can you be sure that your systems are secure? </p>
+            <p>
+                We have the experience and communication skills you need to enable your organization to deliver software. We've wored with large enterprises, automating Docker and Kubernetes deployments. We've worked with startups, setting up initial cloud (AWS, GCP) networks and CI/CD pipelines. We've worked with energy, fintech/finops, and large cross-vertical enterprises.
+            </p>
+            <p>
+                We have been entrusted to securely manage, monitor, and scale critical systems.
+            </p>
+            <p>
+                By combining software engineering and architecture practices and DevOps, we reduce technical friction and deliver value to your organization.
+            </p>
+            <p>Our services include:</p>
+            <ul>
+                <li>
+                    <div class="service-item">
+                        <i data-lucide="lock"></i>
+                        Identity -- IAM / Authenitication / Authorization
+                    </div>
+                </li>
+                <li>
+                    <div class="service-item">
+                        <i data-lucide="library-big"></i> 
+                        Platform -- Microservices / API Governance / Automation
+                    </div> 
+                </li>
+                <li>
+                    <div class="service-item">
+                        <i data-lucide="plug"></i> Integrations -- SaaS / Cloud / APIs
+                    </div> 
+                </li>
+                <li>
+                    <div class="service-item">
+                        <i data-lucide="shield"></i> Security -- Compliance / Monitoring
+                    </div>
+                </li>
+                <li>
+                    <div class="service-item">
+                        <i data-lucide="server"></i> Observability -- Telemetry / Logging / Monitoring & Alerting
+                    </div>
+                </li>
+            </ul>
             
         </div>
     </section>
@@ -223,24 +336,28 @@
     <section id="story">
         <div class="content-wrapper">
             <h2>Our Story</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
+            <blockquote>
+                What if software projects could run more effectively? How do we know we are solving the right problems? What business value are we delivering? These questions drive our approach to software engineering.
+            </blockquote>
+            <p>
+                Everything about Corewood is "unconventional." We were founded on the idea that software projects can be done better. We hop-scotch across technologies, looking to solve underlying problems as effectively as possible. Documentation and strategic delivery drives our approach, ensuring that we are solving the right problems at the right time. 
+            </p>
+            <p>
+                Our founder, Kyle "Mickey" Mickey <a href="https://www.linkedin.com/in/kylemickey/"><i data-lucide="linkedin"></i></a>, draws from a diverse educational and professional background. A proven "systems thinker," Mickey has worked on business-critical enterprise platform projects. He has also worked on small, fast-moving startup products. He has worked in the energy sector, the financial sector, and the public sector. Mickey's background in software gets a solid boost from a background in technical writing and English communications.
+            </p>
+            <p>
+                Technical outcomes must be driven by strong communication. By writing and clearly communicating expectations, providing timeline and budget transparency, and making implicit assumptions explicit, Corewood delivers predictable value to clients.
+            </p>
+            <p>
+                Mickey's passion for the environment and sustainability drives Corewood's reforestation policy: We donate 10% of our revenue to rain forest reforestation and regenerative agricultural efforts. We also offer a steep discount to companies working in ecotech.
+            </p>
         </div>
     </section>
 
     <section id="help">
         <div class="content-wrapper">
             <h2>How We Can Help</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
+            <p>We are here to listen and understand</p>
         </div>
     </section>
 
@@ -256,6 +373,16 @@
         </div>
     </section>
 
+    <footer>
+        <div class="nav-content">
+            <p>&copy; 2025 Corewood LLC</p>
+            <div class="social-links">
+                <a href="mailto:hello@corewood.info"><i data-lucide="mail"></i></a>
+                <a href="https://www.linkedin.com/company/corewood-llc/"><i data-lucide="linkedin"></i></a>
+                <a href="https://bsky.app/profile/corewood.cloud"><i class="bsky"></i></a>
+            </div>
+        </div>
+    </footer>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
