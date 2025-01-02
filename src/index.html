@@ -7,281 +7,24 @@
     <title>Corewood LLC - DevOps Consultancy</title>
     <link rel="icon" href="img/corewood_symbol_avatar_green.png">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root {
-            --light-green: #A7C957;
-            --medium-brown: #F2EACF;
-            --forest-green: #386641;
-            --sage-green: #6A994E;
-            --accent: #BC4749;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Merriweather', serif;
-            line-height: 1.6;
-        }
-
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(242, 232, 207, 0.95);
-            padding: 1rem;
-            z-index: 1000;
-            display: flex;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-        }
-
-        .nav-content {
-            display: flex;
-            width: 90%;
-            max-width: 1000px;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0 auto;
-        }
-
-        .nav-logo {
-            width: 20%;
-            margin-left: 1rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.4rem;
-            list-style: none;
-            margin: auto 0;
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--sage-green);
-            cursor: pointer;
-            padding: 0.5rem;
-            margin-right: 1rem;
-        }
-
-        nav a {
-            color: var(--sage-green);
-            text-decoration: none;
-            font-size: 1.6rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        @media (max-width: 768px) {
-            .nav-logo {
-                width: 50%;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(242, 232, 207, 0.95);
-                padding: 1rem;
-                flex-direction: column;
-                align-items: center;
-                gap: 1.3rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
-
-        .logo {
-            height: 60px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 3rem 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-attachment: fixed;
-            position: relative;
-        }
-
-        .content-wrapper {
-            width: 90%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 1.8rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: var(--forest-green);
-            min-height: 70vh;
-        }
-
-        ul {
-            margin: 0 auto;
-            list-style: none;
-            font-size: 1.2rem;
-        }
-
-        li {
-            margin-bottom: .4rem;
-        }
-
-        h1,
-        h2 {
-            color: var(--forest-green);
-            margin-bottom: 1.5rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 2rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        #services {
-            background-color: var(--sage-green);
-        }
-
-        .service-item {
-            display: flex;
-            align-items: center;
-            width: 80%;
-            margin: 0 auto;
-            font-size: 1.3rem;
-        }
-
-        .service-item svg {
-            margin-right: 0.5rem;
-        }
-
-        #story {
-            background-color: var(--medium-brown);
-        }
-
-        blockquote {
-            display: flex;
-            margin: 1rem auto;
-            width: 80%;
-            background-color: var(--sage-green);
-            color: var(--medium-brown);
-            border-radius: 4px;
-            padding: 1rem;
-            font-size: 1.2rem;
-        }
-
-        #help {
-            background-color: var(--forest-green);
-        }
-
-        #contact {
-            background-color: var(--light-green);
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        input,
-        textarea {
-            padding: 0.5rem;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        button {
-            background-color: var(--accent);
-            color: var(--medium-brown);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #c19363;
-        }
-
-        footer {
-            width: 100%;
-            position: fixed;
-            display: flex;
-            bottom: 0;
-            background-color: var(--forest-green);
-            padding: 1rem;
-            text-align: center;
-            color: var(--medium-brown);
-            justify-content: space-between;
-            box-shadow: 4px 0 0 2px rgba(0,0,0,.2);
-        }
-
-        .social-links a {
-            color: var(--medium-brown);
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .bsky {
-            background-image: url('img/Bluesky_Logo.svg');
-            background-size: contain;
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-        }
-    </style>
 </head>
 
 <body>
     <nav>
         <div class="nav-content">
-        <img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo" class="nav-logo">
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#story">Story</a></li>
-            <li><a href="#help">How We Help</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="hamburger" aria-label="Toggle menu">
-            <i data-lucide="menu"></i>
-        </button>
-    </div>
+            <a href="/index.html" class="logo-link"><img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo" class="nav-logo"></a>
+            <ul class="nav-links">
+                <li><a href="#services" class="menu-link">Services</a></li>
+                <li><a href="#story" class="menu-link">Story</a></li>
+                <li><a href="#approach" class="menu-link">Our Approach</a></li>
+                <li><a href="#contact" class="menu-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
     </nav>
 
     <section id="services">
@@ -290,13 +33,18 @@
             <h1>DevOps, Platform, and Identity Services</h1>
 
             <p>
-                What if you could ship software faster, more cost-efficiently? How can you reduce technical friction to enable interoperability across teams? How can you be sure that your systems are secure? 
+                What if you could ship software faster, more cost-efficiently? How can you reduce technical friction to
+                enable interoperability across teams? How can you be sure that your systems are secure?
             </p>
             <p>
-                We have the experience and communication skills you need to enable your organization to deliver software. We've wored with large enterprises, automating Docker and Kubernetes deployments. We've worked with startups, setting up initial cloud (AWS, GCP) networks and CI/CD pipelines. We've worked with energy, fintech/finops, and large cross-vertical enterprises.
+                We have the experience and communication skills you need to enable your organization to deliver
+                software. We've wored with large enterprises, automating Docker and Kubernetes deployments. We've worked
+                with startups, setting up initial cloud (AWS, GCP) networks and CI/CD pipelines. We've worked with
+                energy, fintech/finops, and large cross-vertical enterprises.
             </p>
             <p>
-                By combining software engineering and architecture practices and DevOps, we reduce technical friction and deliver value to your organization.
+                By combining software engineering and architecture practices and DevOps, we reduce technical friction
+                and deliver value to your organization.
             </p>
             <p>Our services include:</p>
             <ul>
@@ -308,14 +56,14 @@
                 </li>
                 <li>
                     <div class="service-item">
-                        <i data-lucide="library-big"></i> 
+                        <i data-lucide="library-big"></i>
                         Platform -- Microservices / API Governance / Automation
-                    </div> 
+                    </div>
                 </li>
                 <li>
                     <div class="service-item">
                         <i data-lucide="plug"></i> Integrations -- SaaS / Cloud / APIs
-                    </div> 
+                    </div>
                 </li>
                 <li>
                     <div class="service-item">
@@ -328,7 +76,7 @@
                     </div>
                 </li>
             </ul>
-            
+
         </div>
     </section>
 
@@ -336,42 +84,71 @@
         <div class="content-wrapper">
             <h2>Our Story</h2>
             <blockquote>
-                What if software projects could run more effectively? How do we know we are solving the right problems? What business value are we delivering? These questions drive our approach to software engineering.
+                What if software projects could run more effectively? How do we know we are solving the right problems?
+                What business value are we delivering? These questions drive our approach to software engineering.
             </blockquote>
             <p>
-                Everything about Corewood is "unconventional." We were founded on the idea that software projects can be done better. We hop-scotch across technologies, looking to solve underlying problems as effectively as possible. Documentation and strategic delivery drive our approach, ensuring that we are solving the right problems at the right time. We focus on the "engineering" in software engineering. We engineer strong communication and feedback loops. Rather than deliver mere functionality, we drive outcomes with proven practices.
+                Everything about Corewood is "unconventional." We were founded on the idea that software projects can be
+                done better. We hop-scotch across technologies, looking to solve underlying problems as effectively as
+                possible. Documentation and strategic delivery drive our approach, ensuring that we are solving the
+                right problems at the right time. We focus on the "engineering" in software engineering. We engineer
+                strong communication and feedback loops. Rather than deliver mere functionality, we drive outcomes with
+                proven practices.
             </p>
             <p>
-                Our founder, Kyle "Mickey" Mickey <a href="https://www.linkedin.com/in/kylemickey/"><i data-lucide="linkedin"></i></a>, draws from a diverse educational and professional background. A proven "systems thinker," Mickey has worked on business-critical enterprise platform projects. He has also worked on small, fast-moving startup products. He has worked in the energy sector, the financial sector, and the public sector. Mickey's background in software gets a solid boost from a background in technical writing and English communications.
+                Our founder, Kyle "Mickey" Mickey <a href="https://www.linkedin.com/in/kylemickey/"><i
+                        data-lucide="linkedin"></i></a>, draws from a diverse educational and professional background. A
+                proven "systems thinker," Mickey has worked on business-critical enterprise platform projects. He has
+                also worked on small, fast-moving startup products. He has worked in the energy sector, the financial
+                sector, and the public sector. Mickey's background in software gets a solid boost from a background in
+                technical writing and English communications.
             </p>
             <p>
-                Technical outcomes must be driven by strong communication. By writing and clearly communicating expectations, providing timeline and budget transparency, and making implicit assumptions explicit, Corewood delivers predictable value to clients.
+                Technical outcomes must be driven by strong communication. By writing and clearly communicating
+                expectations, providing timeline and budget transparency, and making implicit assumptions explicit,
+                Corewood delivers predictable value to clients.
             </p>
             <p>
-                We think big picture. Our work is a small component in a much larger system. We seek to make our contributions to the system enabling to stakeholders. Our outcomes must be practical and deliver value to our customers.
+                We think big picture. Our work is a small component in a much larger system. We seek to make our
+                contributions to the system enabling to stakeholders. Our outcomes must be practical and deliver value
+                to our customers.
             </p>
             <p>
-                Mickey's passion for the environment and sustainability drives Corewood's reforestation policy: We donate 10% of our revenue to rain forest reforestation and regenerative agricultural efforts. We also offer a steep discount to companies working in ecotech.
+                Mickey's passion for the environment and sustainability drives Corewood's reforestation policy: We
+                donate 10% of our revenue to rain forest reforestation and regenerative agricultural efforts. We also
+                offer a steep discount to companies working in ecotech.
             </p>
         </div>
     </section>
 
-    <section id="help">
+    <section id="approach">
         <div class="content-wrapper">
-            <h2>How We Can Help</h2>
+            <h2>Our Approach</h2>
             <p>
-                We are here to listen and understand your software system needs. Often, when looking for DevOps help, organizations face incredible delivery pressure. Systems may have gotten complex or confusing. We are not here to tell anyone to "do things this way." We don't have prescriptive, one-size fits all solutions. We want to understand how we can facilitate your organization to deliver the mission-critical business value. We are software enablers.
+                We are here to listen and understand your software system needs. Often, when looking for DevOps help,
+                organizations face incredible delivery pressure. Systems may have gotten complex or confusing. We are
+                not here to tell anyone to "do things this way." We don't have prescriptive, one-size fits all
+                solutions. We want to understand how we can facilitate your organization to deliver the mission-critical
+                business value. We are software enablers.
             </p>
-            
+
             <blockquote>
-                Software exists to solve real-world problems. If we cannot understand the real-world problems our solutions must solve, how can we design effective solutions?
+                Software exists to solve real-world problems. If we cannot understand the real-world problems our
+                solutions must solve, how can we design effective solutions?
             </blockquote>
 
             <p>
-                Secure, consistent, and reliable systems emerge from well-designed, simple concepts (models). Our best work has seemed obvious in its simplicity. We seek to isolate complexity and optimize for future changes. We cannot know the future or what requirements it may bring, but we can build a system which is extensible and maintainable.
+                Secure, consistent, and reliable systems emerge from well-designed, simple concepts (models). Our best
+                work has seemed obvious in its simplicity. We seek to isolate complexity and optimize for future
+                changes. We cannot know the future or what requirements it may bring, but we can build a system which is
+                extensible and maintainable.
             </p>
             <p>
-                Much of the complexity we have seen in software emerges because different contributors hold different assumptions. We seek to make these assumptions explicit and to drive outcomes with clear communication. We plan our work and ensure the right stakeholders stay informed every step of the way. We implement project management techniques such as critical path analysis and requirements engineering to stay focused on delivering outcomes.
+                Much of the complexity we have seen in software emerges because different contributors hold different
+                assumptions. We seek to make these assumptions explicit and to drive outcomes with clear communication.
+                We plan our work and ensure the right stakeholders stay informed every step of the way. We implement
+                project management techniques such as critical path analysis and requirements engineering to stay
+                focused on delivering outcomes.
             </p>
         </div>
     </section>
@@ -379,13 +156,19 @@
     <section id="contact">
         <div class="content-wrapper">
             <h2>Contact Us</h2>
+            <p>
+                We want to hear from you. Send us a message here, or use one of the social media buttons in the footer
+                of the site.
+            </p>
             <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="43cfc6b0-2f77-4dc8-8b37-0c81dcc9974f" />
+                <input type="hidden" name="redirect" value="https://corewood.info/thanks.html" />
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <textarea name="message" rows="5" placeholder="Message" required></textarea>
 
-                <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1"
+                    autocomplete="off">
                 <button type="submit">Send</button>
             </form>
         </div>

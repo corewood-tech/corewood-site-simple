@@ -1,0 +1,259 @@
+:root {
+    --light-green: #A7C957;
+    --medium-brown: #F2EACF;
+    --forest-green: #386641;
+    --sage-green: #6A994E;
+    --accent: #BC4749;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    line-height: 1.6;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(242, 232, 207, 0.95);
+    padding: 1rem;
+    z-index: 1000;
+    display: flex;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.nav-content {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo-link {
+    width: 25%;
+}
+
+.nav-logo {
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.4rem;
+    list-style: none;
+    margin: auto 0;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--sage-green);
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+a.menu-link {
+    color: var(--sage-green);
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .nav-logo {
+        width: 50%;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(242, 232, 207, 0.95);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.3rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.logo {
+    height: 60px;
+    margin: 0 auto;
+    display: block;
+}
+
+section {
+    min-height: 100vh;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.content-wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.8rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--forest-green);
+    min-height: 70vh;
+}
+
+ul {
+    margin: 0 auto;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+li {
+    margin-bottom: .4rem;
+}
+
+h1,
+h2 {
+    color: var(--forest-green);
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+#services {
+    background-color: var(--sage-green);
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+}
+
+.service-item svg {
+    margin-right: 0.5rem;
+}
+
+#story {
+    background-color: var(--medium-brown);
+}
+
+blockquote {
+    display: flex;
+    margin: 1rem auto;
+    width: 80%;
+    background-color: var(--sage-green);
+    color: var(--medium-brown);
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+#approach {
+    background-color: var(--forest-green);
+}
+
+#contact {
+    background-color: var(--light-green);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input,
+textarea {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+button {
+    background-color: var(--accent);
+    color: var(--medium-brown);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c19363;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    background-color: var(--forest-green);
+    padding: 1rem;
+    text-align: center;
+    color: var(--medium-brown);
+    justify-content: space-between;
+    box-shadow: 4px 0 0 2px rgba(0,0,0,.2);
+}
+
+.social-links a {
+    color: var(--medium-brown);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.bsky {
+    background-image: url('../img/Bluesky_Logo.svg');
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
