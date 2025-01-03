@@ -14,7 +14,8 @@
 <body>
     <nav>
         <div class="nav-content">
-            <a href="/index.html" class="logo-link"><img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo" class="nav-logo"></a>
+            <a href="/index.html" class="logo-link"><img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo"
+                    class="nav-logo"></a>
             <ul class="nav-links">
                 <li><a href="/#services" class="menu-link">Services</a></li>
                 <li><a href="/#story" class="menu-link">Story</a></li>
@@ -27,20 +28,21 @@
         </div>
     </nav>
 
-    <section id="services">
+    <section id="services" style="padding-top: 6rem;">
         <div class="content-wrapper">
             <img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo" class="logo">
             <h1>DevOps, Platform, and Identity Services</h1>
 
-            <p>
+            <blockquote>
                 What if you could ship software faster, more cost-efficiently? How can you reduce technical friction to
                 enable interoperability across teams? How can you be sure that your systems are secure?
-            </p>
+            </blockquote>
             <p>
                 We have the experience and communication skills you need to enable your organization to deliver
-                software. We've worked with large enterprises, automating Docker and Kubernetes deployments. We've worked
+                software. We've worked with large enterprises, automating Docker and Kubernetes deployments. We've
+                worked
                 with startups, setting up initial cloud (AWS, GCP) networks and CI/CD pipelines. We've worked with
-                energy, fintech/finops, and large cross-vertical enterprises.
+                energy, FinTech/FinOps, and large cross-vertical enterprises.
             </p>
             <p>
                 By combining software engineering and architecture practices and DevOps, we reduce technical friction
@@ -91,17 +93,17 @@
                 Everything about Corewood is "unconventional." We were founded on the idea that software projects can be
                 done better. We hop-scotch across technologies, looking to solve underlying problems as effectively as
                 possible. Documentation and strategic delivery drive our approach, ensuring that we are solving the
-                right problems at the right time. We focus on the "engineering" in software engineering. We engineer
+                right problems at the right time. We focus on the "engineering" in software engineering.</p>
+            <p>We engineer
                 strong communication and feedback loops. Rather than deliver mere functionality, we drive outcomes with
                 proven practices.
             </p>
             <p>
-                Our founder, Kyle "Mickey" Mickey <a href="https://www.linkedin.com/in/kylemickey/"><i
-                        data-lucide="linkedin"></i></a>, draws from a diverse educational and professional background. A
+                Our founder, <a href="resume.html">Kyle "Mickey" Mickey</a>, draws from a diverse educational and
+                professional background. A
                 proven "systems thinker," Mickey has worked on business-critical enterprise platform projects. He has
                 also worked on small, fast-moving startup products. He has worked in the energy sector, the financial
-                sector, and the public sector. Mickey's background in software gets a solid boost from a background in
-                technical writing and English communications.
+                sector, and the public sector.
             </p>
             <p>
                 Technical outcomes must be driven by strong communication. By writing and clearly communicating
@@ -126,9 +128,11 @@
             <h2>Our Approach</h2>
             <p>
                 We are here to listen and understand your software system needs. Often, when looking for DevOps help,
-                organizations face incredible delivery pressure. Systems may have gotten complex or confusing. We are
+                organizations face incredible delivery pressure. Systems may have gotten complex or confusing.</p>
+            <p>We are
                 not here to tell anyone to "do things this way." We don't have prescriptive, one-size fits all
-                solutions. We want to understand how we can facilitate your organization to deliver the mission-critical
+                solutions.</p>
+            <p> We want to understand how we can facilitate your organization to deliver the mission-critical
                 business value. We are software enablers.
             </p>
 
@@ -140,12 +144,15 @@
             <p>
                 Secure, consistent, and reliable systems emerge from well-designed, simple concepts (models). Our best
                 work has seemed obvious in its simplicity. We seek to isolate complexity and optimize for future
-                changes. We cannot know the future or what requirements it may bring, but we can build a system which is
+                changes.</p>
+            <p> We cannot know the future or what requirements it may bring, but we can build a system which is
                 extensible and maintainable.
             </p>
             <p>
                 Much of the complexity we have seen in software emerges because different contributors hold different
                 assumptions. We seek to make these assumptions explicit and to drive outcomes with clear communication.
+            </p>
+            <p>
                 We plan our work and ensure the right stakeholders stay informed every step of the way. We implement
                 project management techniques such as critical path analysis and requirements engineering to stay
                 focused on delivering outcomes.
@@ -184,25 +191,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Hamburger menu functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

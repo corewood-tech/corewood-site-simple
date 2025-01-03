@@ -33,8 +33,8 @@ nav {
 
 .nav-content {
     display: flex;
-    width: 90%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 1300px;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
@@ -76,33 +76,6 @@ nav a:hover {
     color: var(--accent);
 }
 
-@media (max-width: 768px) {
-    .nav-logo {
-        width: 50%;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(242, 232, 207, 0.95);
-        padding: 1rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.3rem;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
 .logo {
     height: 60px;
     margin: 0 auto;
@@ -120,8 +93,8 @@ section {
 }
 
 .content-wrapper {
-    width: 90%;
-    max-width: 900px;
+    width: 98%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1.8rem;
     background: rgba(255, 255, 255, 0.95);
@@ -175,6 +148,8 @@ p {
 
 .service-item svg {
     margin-right: 0.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
 }
 
 #story {
@@ -250,10 +225,52 @@ footer {
     margin-right: 1rem;
 }
 
+.social-links a:hover {
+    color: var(--accent);
+}
+
 .bsky {
-    background-image: url('../img/Bluesky_Logo.svg');
+    background-image: url('../img/Bluesky_Logo_ON-DARK.svg');
     background-size: contain;
     width: 20px;
     height: 20px;
     display: inline-block;
+}
+
+.bsky:hover {
+    background-image: url('../img/Bluesky_Logo_ACCENT.svg');
+}
+
+/** remember that the last appied style will overide, so putting this at the bottom **/
+@media (max-width: 768px) {
+    .logo-link {
+        width: 50%;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(242, 232, 207, 0.95);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.3rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .service-item svg {
+        margin-right: 0.5rem;
+        width: 4rem;
+        height: 4rem;
+    }
 }
