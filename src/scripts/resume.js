@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         slides[currentSlide].classList.add('active');
     }
 
-    currentSlide = 0;
+    currentSlide = 1;
     // Auto advance every 5 seconds
     let timer = setInterval(() => {
         showSlide(currentSlide + 1);
