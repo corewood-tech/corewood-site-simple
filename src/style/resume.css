@@ -169,19 +169,13 @@
     width: 100%;
     margin: 0;
     text-align: center;
+    padding: 1rem;
 }
 
 .recommendation p {
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 1rem;
-}
-
-.recommendation footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
 }
 
 .recommendation strong {
