@@ -1,3 +1,5 @@
-# Corewood Vanilla
+# Corewood Site Simple
 
-This version of the site uses AI-generated code for a very simple, functional website.
+This version of our site uses very simple, inline, hand-crafted assets. 
+
+Deployment gets handled automatically using CloudFlare pages. Any content in the `src` folder will get deployed on pushes to `main`.
