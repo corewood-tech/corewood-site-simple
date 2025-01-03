@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const slides = carousel.querySelectorAll('.carousel-slide');
 
     function maxLengthSlideIdx() {
-        const maxLen = Math.max(...Array.from(slides).map(slide => slide.textContent.length));
-        return Array.from(slides).findIndex(slide => slide.textContent.length === maxLen);
+        const maxLen = Math.max(...Array.from(slides).map(slide => slide.innerText.length));
+        return Array.from(slides).findIndex(slide => slide.innerText === maxLen);
     }
 
     function showSlide(index) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load the longest rec first & set the height so we don't bounce
     let currentSlide = maxLengthSlideIdx();
     showSlide(currentSlide);
-    carousel.style.height = slides[currentSlide].clientHeight + 'px';
+    carousel.style.height =(slides[currentSlide].clientHeight + 15) + 'px';
 
 
     // Auto advance every 5 seconds
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(timer);
         timer = setInterval(() => {
             showSlide(currentSlide + 1);
-        }, 5000);
+        }, 5500);
     };
 
     carousel.querySelector('.prev').addEventListener('click', () => {
