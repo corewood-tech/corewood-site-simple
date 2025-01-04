@@ -29,6 +29,7 @@ nav {
     z-index: 1000;
     display: flex;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    max-height: 9vh;
 }
 
 .nav-content {
@@ -209,6 +210,7 @@ button:hover {
 footer {
     width: 100%;
     position: fixed;
+    max-height: 6vh;
     display: flex;
     bottom: 0;
     background-color: var(--forest-green);
@@ -217,6 +219,15 @@ footer {
     color: var(--medium-brown);
     justify-content: space-between;
     box-shadow: 4px 0 0 2px rgba(0,0,0,.2);
+}
+
+.footer-content {
+    display: flex;
+    width: 95%;
+    max-width: 1300px;
+    justify-content: space-between;
+    align-items: bottom;
+    margin: 0 auto;
 }
 
 .social-links a {

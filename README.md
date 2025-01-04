@@ -1,5 +1,9 @@
 # Corewood Site Simple
 
-This version of our site uses very simple, inline, hand-crafted assets. 
+This repo began as output from https://claude.ai
 
-Deployment gets handled automatically using CloudFlare pages. Any content in the `src` folder will get deployed on pushes to `main`.
+This has been iterated on significantly, to the point that shared templating was required. There was no need to introduce a generator / framework just yet, as we don't need full theming and full content management. 
+
+To keep things as simple as possible, and to support multiple domains and faciliate authoring more content, we added a simple `main.go` for packaging & dev-previewing the site.
+
+All utility functions are captured in the [`Makefile`](./Makefile).
