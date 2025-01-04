@@ -4,11 +4,12 @@ package main
 
 import (
 	"fmt"
-	cp "github.com/otiai10/copy"
+	"html/template"
 	"os"
 	"path/filepath"
 	"strings"
-	"text/template"
+
+	cp "github.com/otiai10/copy"
 )
 
 // URLs to generate sites for
@@ -100,15 +101,22 @@ func generatePage(outputPath string, targetName string, page Page) error {
 }
 
 func copyAssets(outputPath string) error {
-	dirs, e := os.ReadDir(assetsDir)
+	items, e := os.ReadDir(assetsDir)
 	if e != nil {
 		panic(e)
 	}
 
-	for _, dir := range dirs {
-		if err := cp.Copy(filepath.Join(assetsDir, dir.Name()), filepath.Join(outputPath, dir.Name())); err != nil {
-			return fmt.Errorf("copying assets: %w", err)
+	for _, item := range items {
+		if item.IsDir() {
+			if err := cp.Copy(filepath.Join(assetsDir, item.Name()), filepath.Join(outputPath, item.Name())); err != nil {
+				return fmt.Errorf("copying assets: %w", err)
+			}
+		} else {
+			if err := cp.Copy(assetsDir, outputPath); err != nil {
+				return fmt.Errorf("copying assets: %w", err)
+			}
 		}
 	}
+
 	return nil
 }
