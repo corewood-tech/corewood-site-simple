@@ -122,6 +122,11 @@
     font-size: 0.9rem;
 }
 
+.skill-highlight {
+    background: var(--medium-brown);
+    color: var(--accent);
+}
+
 .carousel {
     position: relative;
     display: flex;
