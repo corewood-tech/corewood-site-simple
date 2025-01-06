@@ -40,7 +40,7 @@
 }
 
 .profile-contact a {
-    color: var(--light-brown);
+    color: var(--light-brown) !important;
 }
 
 .profile-contact a:hover {
