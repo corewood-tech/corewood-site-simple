@@ -280,7 +280,7 @@ footer {
     background-image: url('../img/Bluesky_Logo_ACCENT.svg');
 }
 
-/** remember that the last appied style will overide, so putting this at the bottom **/
+/** remember that the last applied style will override, so putting this at the bottom **/
 @media (max-width: 768px) {
     .logo-link {
         width: 50%;
