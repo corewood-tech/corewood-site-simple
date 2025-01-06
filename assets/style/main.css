@@ -188,7 +188,7 @@ blockquote {
 }
 
 blockquote a, blockquote a:visited {
-    color: var(--light-brown);
+    color: var(--light-brown) !important;
     white-space: pre;
 }
 
