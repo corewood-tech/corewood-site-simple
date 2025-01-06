@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://corewood.io/">
+    <meta property="og:title" content="Corewood LLC - DevOps Consulting & Cloud Solutions">
+    <meta property="og:description" content="Expert DevOps consulting services by chief consultant / systems architect Kyle Mickey. Identity, AWS DevOps, cloud systems, and platform engineering solutions for your business. Technical writer and software engineer.">
+
+    <meta name="keywords" content="DevOps consulting, AWS DevOps, Kyle Mickey, Corewood LLC, cloud DevOps, systems engineering, DevOps contractor, platform engineering, cloud solutions">
+
+    <meta property="og:image" content="img/corewood_full_ON-LIGHT.png">
+
+    <title>Corewood LLC - DevOps Consultancy</title>
+    <link rel="icon" href="img/corewood_symbol_avatar_green.png">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/resume.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/index.html" class="logo-link"><img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo"
+                    class="nav-logo"></a>
+            <ul class="nav-links">
+                <li><a href="/#services" class="menu-link">Services</a></li>
+                <li><a href="/#story" class="menu-link">Story</a></li>
+                <li><a href="/#approach" class="menu-link">Our Approach</a></li>
+                <li><a href="/#contact" class="menu-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+<section id="projects" style="background-color: var(--forest-green); padding-top: 6rem;">
+    <div class="content-wrapper">
+        <img src="img/corewood_full_ON-LIGHT.png" alt="Corewood Logo" class="logo">
+        <h1>Projects</h1>
+
+        <p>Our projects include:</p>
+        <ul>
+            <li>
+                <div class="service-item">
+                    <a href="/#api-gov"><i data-lucide="globe"></i> API Governance -- An API Platform for Microservices</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="api-gov" style="background-color: var(--light-brown);">
+    <div class="content-wrapper">
+        <h2><i data-lucide="globe"></i>API Governance</h2>
+        <p>
+            Microservices enable teams to build and deploy software independently. This includes many benefits, like:
+        </p>
+        <ul>
+            <li class="service-item"><i data-lucide="unlink"></i>Greater autonomy between teams</li>
+            <li class="service-item"><i data-lucide="cable"></i>Fewer obvious dependencies</li>
+            <li class="service-item"><i data-lucide="arrow-up-down"></i>Ability to scale specific services up / down based on demand</li>
+        </ul>
+        <p>
+            But.. as microservices develop independently, so too does the idea of "what the software does." I'll share an example: OAuth2 has the concept of "scopes." Applications can choose how to use scopes. They do not tend to scale well because each application develops its own use of scopes, and scopes <em>mean different things to different microservices!</em> This can cause problems downstream, but the bigger points is that services' idea of "how to use scopes" changes. These sorts of little inconsistencies make systems difficult to change all at once.
+        </p>
+        <p>
+            Legacy software. Legacy software got built for reasons that the org may or may not worry about today. But the clients use the legacy systems, and some critical bits of business logic are rattling around in there. But the legacy systems... they do not reflect where things are going.
+        </p>
+        <p>
+            When dealing with microservices and legacy systems... How do you create a consistent external-facing look-and-feel? Does pagination work the same way? Do I get consistent error message formats between endpoints? Do the endpoints have consistent documentation?
+        </p>
+        <blockquote>
+            We built a system that handled all of the API-things, enabling development teams to do the rest.
+        </blockquote>
+        <p>The API things include:</p>
+        <ul>
+            <li class="service-item"><i data-lucide="fingerprint"></i>Identity</li>
+            <li class="service-item"><i data-lucide="file-lock"></i>Access Controls</li>
+            <li class="service-item"><i data-lucide="search-check"></i>Observability & Health Monitoring</li>
+            <li class="service-item"><i data-lucide="globe"></i>Routing</li>
+            <li class="service-item"><i data-lucide="circle-x"></i>Error Handling & Management</li>
+            <li class="service-item"><i data-lucide="fast-forward"></i>Caching / Rate Limiting / Performance</li>
+            <li class="service-item"><i data-lucide="bot"></i>Bot Control</li>
+            <li class="service-item"><i data-lucide="swords"></i>Security Monitoring</li>
+        </ul>
+        <p>The level-of-effort of getting all the microservices to adopt the standards and practices set by the org cannot scale!</p>
+        <p>What if one system handled <em>all of those things?</em></p>
+        <p>But how do you on-board microservices?</p>
+        <h3>Thinking Big Picture</h3>
+        <ul>
+            <li class="service-item"><i data-lucide="shield"></i>Secure</li>
+            <li class="service-item"><i data-lucide="orbit"></i>Consistent</li>
+            <li class="service-item"><i data-lucide="activity"></i>Reliable</li>
+        </ul>
+        <p>We stepped back and looked at the system from a conceptual point-of-view.</p>
+        <blockquote>
+            By thinking about the "bigger picture" and business impact of an "API Product," we realized that we could reduce complexity and increase the speed of development.
+        </blockquote>
+        <p>What makes operating an API product hard?</p>
+        <ul>
+            <li class="service-item"><i data-lucide="chart-spline"></i>Change over time</li>
+            <li class="service-item"><i data-lucide="user-cog"></i>User Access & Management</li>
+            <li class="service-item"><i data-lucide="waypoints"></i>Endpoint Configuration</li>
+            <li class="service-item"><i data-lucide="git-merge"></i>Underlying service issues</li>
+        </ul>
+        <p>To address these issues, we broke the system into two components. Taking inspiration from Kubernetes and networking equipment, we defined a "control plane" and a "data plane."</p>
+        <p>The control plane handles specific events, and when a set of predefined conditions gets met, the control plane triggers changes in the <em>data plane.</em></p>
+        <p>The data plane handles the internet -> API routing. It includes firewalls, bot detection, caching, monitoring and alerting, authentication / authorization, and proxying to the correct underlying host.</p>
+        <h3>Code-as-Infrastructure</h3>
+        <p>Most of the time, data-plane concerns get handled using infrastructure-as-code. This is where a an engineer updates code files and triggers infrastructure changes. This is great, and is the solution that works for most use cases.</p>
+        <p>However, when engineers have to handle configuration changes based on business events, it can take a long time for the changes to get done. To expedite this, we decided to handle infrastructure change events as code.</p>
+        <p>As a result of these decisions, we ended up with a system which was:</p>
+        <ul>
+            <li class="service-item"><i data-lucide="cog"></i>Automated -- The control-plane enabled us to trigger asynchronous updates, such as endpoint deprecation.</li>
+            <li class="service-item"><i data-lucide="spline"></i>Flexible -- The control-plane validated changes and could be updated / tested without impacting client-facing traffic.</li>
+            <li class="service-item"><i data-lucide="blocks"></i>Extensible -- New handling could be added to the system.</li>
+            <li class="service-item"><i data-lucide="lock-keyhole"></i>Secure -- Separate internal and external security protocols.</li>
+        </ul>
+        <h3>Results</h3>
+        <p>Legacy and nascent services were able to consistently and reliably expose API endpoints. Using async events, other stakeholders were able to review API documentation prior to release.</p>
+    </div>
+</section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Corewood LLC</p>
+            <div class="social-links">
+                <a href="mailto:hello@corewood.info"><i data-lucide="mail"></i></a>
+                <a href="https://www.linkedin.com/company/corewood-llc/"><i data-lucide="linkedin"></i></a>
+                <a href="https://bsky.app/profile/corewood.cloud"><i class="bsky"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/resume.js"></script>
+    <div display="none">
+        <a href="https://corewood.info"></a>
+        <a href="https://corewood.io"></a>
+        <a href="https://corewood.cloud"></a>
+        <a href="https://corewood.tech"></a>
+    </div>
+</body>
+</html>

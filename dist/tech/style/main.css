@@ -19,6 +19,7 @@ html {
 body {
     font-family: 'Merriweather', serif;
     line-height: 1.6;
+    font-size: 1.3rem;
 }
 
 nav {
@@ -93,6 +94,11 @@ section {
     position: relative;
 }
 
+section:last-of-type {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+}
+
 .content-wrapper {
     width: 98%;
     max-width: 1200px;
@@ -137,6 +143,10 @@ p {
 
 #services {
     background-color: var(--sage-green);
+}
+
+ul {
+    padding-bottom: 1rem;
 }
 
 .service-item {
