@@ -92,6 +92,7 @@ section {
     justify-content: center;
     background-attachment: fixed;
     position: relative;
+    padding-top: 9vh;
 }
 
 section:last-of-type {
@@ -155,6 +156,14 @@ ul {
     width: 80%;
     margin: 0 auto;
     font-size: 1.3rem;
+}
+
+.service-item a, .service-item a:visited {
+    color: var(--light-green);
+}
+
+.service-item a:hover {
+    color: var(--accent);
 }
 
 .service-item svg {

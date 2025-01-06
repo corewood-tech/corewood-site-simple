@@ -1,0 +1,13 @@
+ul .projects-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-heading {
+    margin-left: 5rem;
+}
+
+.heading-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
