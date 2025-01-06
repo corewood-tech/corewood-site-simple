@@ -48,11 +48,12 @@
 
         <ul class="projects-list">
             <li class="service-item">
-                <a href="/#api-gov"><i data-lucide="globe"></i> API Governance -- An API Platform for Microservices</a>
+                <a href="#api-gov"><i data-lucide="globe"></i> API Governance -- An API Platform for Microservices</a>
             </li>
             <li class="service-item">
-                <a href="/#otel-collector"><i data-lucide="telescope"></i> OpenTelemetry Collector -- Internal Monitoring Infrastructure</a>
+                <a href="#otel-collector"><i data-lucide="telescope"></i> OpenTelemetry Collector -- Internal Monitoring Infrastructure</a>
             </li>
+            <li class="service-item"><a href="#invitation-service"><i data-lucide="mails"></i> Invitation Service -- Asynchronous Email Integration with Webhooks</a></li>
         </ul>
     </div>
 </section>
@@ -163,6 +164,11 @@
 
         <p>Using OpenTelemetry requires a "collector." The collector receives data from the application. We were asked to provide a low-config, universal configuration for applications to submit telemetry data.</p>
 
+        <p>Referencing <a href="https://opentelemetry.io/docs/collector/deployment/gateway/">OpenTelemetry Documentation,</a> this pattern is called a "Gateway Deployment."</p>
+
+        <img class="project-diagram" src="img/projects/otel-gateway-sdk.svg" alt="OpenTelemetry Gateway Deployment" />
+        <p>Image credit: OpenTelemetry</p>
+
         <h2><i data-lucide="cloud"></i> Hybrid-Cloud Solutions</h2>
 
         <p>We deployed an internally-available Kubernetes service and configured a private domain name specific to the collector. The domain resolved across AWS and GCP cloud networks.</p>
@@ -182,7 +188,24 @@
         <p>We provided teams with comprehensive documentation on submitted data via OpenTelemetry, and we provided example dashboards of the resulting telemetry.</p>
     </div>
 </section>
+<section id="invitation-service" style="background-color: var(--forest-green)">
+    <div class="content-wrapper">
+        <h1><i data-lucide="mails"></i> Invitation Service</h1>
 
+        <p>Despite the best efforts of countless professionals, <em>sometimes things slip through the cracks.</em> While replacing a legacy identity service, a dependent service discovered that they used an "add user by email" function. This was a problem, because the new system was "sign-up-and-enroll." We needed users to <em>enroll</em> themselves rather than "get-added" so that the user consented to join the system.</p>
+        
+        <p>But the dependent service had a valid use-case: they had business logic which needed to execute prior to the user's login.</p>
+        
+        <h2><i data-lucide="mailbox"></i> By Invitation Only</h2>
+        <img class="project-diagram" src="img/projects/invitation_flow.png" alt="The invitation service manages asynchronous events with webhooks"/>
+        <ul>
+            <li class="service-item"><i data-lucide="clock-arrow-up"></i> Asynchronous Event Handling</li>
+            <li class="service-item"><i data-lucide="toy-brick"></i> Decoupled, Cross-Component Integration</li>
+            <li class="service-item"><i data-lucide="trending-up-down"></i> Autoscaling, On-Demand Compute</li>
+        </ul>
+        <p>By capturing these business requirements in a single, isolated system, we minimize the integration changes needed by ecosystem services. At Corewood, we always focus on how our choices impact not just the current system but options for future development as well.</p>
+    </div>
+</section>
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Corewood LLC</p>

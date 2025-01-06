@@ -158,10 +158,6 @@ ul {
     font-size: 1.3rem;
 }
 
-.service-item a, .service-item a:visited {
-    color: var(--light-green);
-}
-
 .service-item a:hover {
     color: var(--accent);
 }
@@ -176,6 +172,10 @@ ul {
     background-color: var(--medium-brown);
 }
 
+.content-wrapper a, .content-wrapper a:visited {
+    color: var(--forest-green);
+}
+
 blockquote {
     display: flex;
     margin: 1rem auto;
@@ -185,6 +185,15 @@ blockquote {
     border-radius: 4px;
     padding: 1rem;
     font-size: 1.2rem;
+}
+
+blockquote a, blockquote a:visited {
+    color: var(--light-brown);
+    white-space: pre;
+}
+
+blockquote a:hover {
+    color: var(--accent);
 }
 
 #approach {
