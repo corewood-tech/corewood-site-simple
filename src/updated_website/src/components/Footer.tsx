@@ -14,7 +14,7 @@ const Footer = () => {
               className="h-8"
             />
             <p className="text-sm text-muted-foreground mt-2">
-              Small feedback loops help grow your idea.
+              {/* "Small feedback loops help grow your idea." text removed */}
             </p>
           </div>
           
