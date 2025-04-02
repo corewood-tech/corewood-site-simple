@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +6,8 @@ import { Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/components/ui/use-toast";
+import SEO from "@/components/SEO";
+import JsonLd from "@/components/JsonLd";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -24,15 +25,15 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Construct email link with form data
     const subject = encodeURIComponent(`Contact Request from ${formData.name}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage: ${formData.message}`
     );
-    
+
     window.location.href = `mailto:hello@corewood.info?subject=${subject}&body=${body}`;
-    
+
     toast({
       title: "Message sent!",
       description: "Your message has been sent successfully.",
@@ -41,6 +42,44 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with the Corewood team. Schedule a free consultation or learn more about how our AI solutions can transform your business."
+        keywords="contact corewood, ai consultation, machine learning help, get in touch, free ai consultation"
+      />
+      <JsonLd
+        type="Organization"
+        data={{
+          name: "Corewood AI",
+          url: "/",
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "",
+            email: "hello@corewood.info",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          },
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "US"
+          }
+        }}
+      />
+      <JsonLd
+        type="BreadcrumbList"
+        data={{
+          items: [
+            {
+              name: "Home",
+              url: "/"
+            },
+            {
+              name: "Contact",
+              url: "/contact"
+            }
+          ]
+        }}
+      />
       <Header />
       <main className="pt-32 pb-24">
         <div className="container px-4 mx-auto">
@@ -56,7 +95,7 @@ const Contact = () => {
                 Fill out the form below to schedule a demo or learn more about how we can help transform your ML operations.
               </p>
             </div>
-            
+
             <div className="glass-card rounded-xl border border-primary/10 p-8 md:p-10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
@@ -73,7 +112,7 @@ const Contact = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
                       Email
@@ -89,7 +128,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="company" className="text-sm font-medium">
                     Company
@@ -103,7 +142,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
                     Message
@@ -118,7 +157,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <Button type="submit" size="lg" className="w-full">
                   Send Message
                 </Button>

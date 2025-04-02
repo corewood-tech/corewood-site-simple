@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +6,8 @@ import { Mail, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/components/ui/use-toast";
+import SEO from "@/components/SEO";
+import JsonLd from "@/components/JsonLd";
 
 const Pricing = () => {
   const { toast } = useToast();
@@ -24,15 +25,15 @@ const Pricing = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Construct email link with form data
     const subject = encodeURIComponent(`Pricing Request from ${formData.name}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage: ${formData.message}`
     );
-    
+
     window.location.href = `mailto:hello@corewood.info?subject=${subject}&body=${body}`;
-    
+
     toast({
       title: "Message sent!",
       description: "Your pricing request has been sent successfully.",
@@ -41,6 +42,33 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Pricing"
+        description="Transparent pricing for Corewood's AI solutions. Own your ML infrastructure with a perpetual license—no subscriptions, no usage meters running in the background."
+        keywords="ai pricing, machine learning pricing, ml infrastructure cost, perpetual license, ai ownership, on-premises ai pricing"
+      />
+      <JsonLd
+        type="Product"
+        data={{
+          name: "Corewood AI Solutions",
+          description: "High-efficiency AI software that runs in your environment with perpetual licensing",
+          brand: {
+            "@type": "Brand",
+            name: "Corewood AI"
+          },
+          offers: {
+            "@type": "Offer",
+            price: "Contact for pricing",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            priceValidUntil: "2024-12-31",
+            seller: {
+              "@type": "Organization",
+              name: "Corewood AI"
+            }
+          }
+        }}
+      />
       <Header />
       <main className="pt-32 pb-24">
         <div className="container px-4 mx-auto">
@@ -49,7 +77,7 @@ const Pricing = () => {
               <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6">
                 Pricing
               </h1>
-              
+
               <div className="bg-[#386641]/5 rounded-lg p-8 mb-12 text-left">
                 <h2 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4">
                   Own Your ML Infrastructure
@@ -57,7 +85,7 @@ const Pricing = () => {
                 <p className="text-muted-foreground mb-6">
                   At Corewood, we believe in straightforward ownership without ongoing fees. Our product is delivered and installed directly in your cloud environment with a perpetual license—no subscriptions, no usage meters running in the background.
                 </p>
-                
+
                 <h3 className="text-xl font-bold mb-3">What You Get</h3>
                 <ul className="space-y-2 mb-6">
                   {pricingFeatures.map((feature, index) => (
@@ -70,19 +98,19 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                
+
                 <h3 className="text-xl font-bold mb-3">Transparent Pricing Structure</h3>
                 <p className="text-muted-foreground mb-6">
                   We've eliminated the complex pricing tiers and usage-based models that make budgeting impossible. No database usage fees, no API call limits, no surprises on your monthly bill. Just powerful ML infrastructure that belongs to you.
                 </p>
-                
+
                 <h3 className="text-xl font-bold mb-3">Ready to Take Control of Your ML Infrastructure?</h3>
                 <p className="text-muted-foreground">
                   Contact our team for a customized quote based on your specific implementation needs.
                 </p>
               </div>
             </div>
-            
+
             <div className="glass-card rounded-xl border border-primary/10 p-8 md:p-10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
@@ -99,7 +127,7 @@ const Pricing = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
                       Email
@@ -115,7 +143,7 @@ const Pricing = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="company" className="text-sm font-medium">
                     Company
@@ -129,7 +157,7 @@ const Pricing = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
                     Message
@@ -144,7 +172,7 @@ const Pricing = () => {
                     required
                   />
                 </div>
-                
+
                 <Button type="submit" size="lg" className="w-full bg-[#386641] hover:bg-[#386641]/90">
                   Request Pricing Information
                 </Button>
