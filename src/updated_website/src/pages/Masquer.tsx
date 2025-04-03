@@ -80,113 +80,135 @@ const Masquer = () => {
                         </p>
                     </div>
 
-                    {/* Key Features Section */}
-                    <div className="max-w-4xl mx-auto mb-24">
+                    {/* Screenshots Section */}
+                    <div className="max-w-5xl mx-auto mb-20">
+                        {/* Database Admin Interface - Full Width */}
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-4 text-center text-[#386641]">Database Administration Interface</h3>
+                            <div className="bg-white/80 p-4 rounded-lg shadow-md">
+                                <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="/masquer_db_admin.png"
+                                        alt="Masquer database administration interface"
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                                <p className="mt-4 text-sm text-muted-foreground text-center">
+                                    Intuitive admin interface for managing and monitoring PII detection across your database
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* PII Detection with Info - Two Columns */}
                         <div className="grid md:grid-cols-2 gap-8">
-                            <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <Zap className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Real-Time PII Redaction via ML Inference</h3>
-                                        <ul className="space-y-2 text-muted-foreground">
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>98.48% PII detection accuracy using our proprietary ML model</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Lightning-fast processing - up to 17x faster than Python implementations</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Ultra-efficient memory usage - 19MB vs 2GB in competitive solutions</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>270+ requests/second throughput with 100% reliability under load</span>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div className="bg-white/80 p-4 rounded-lg shadow-md">
+                                <h3 className="text-xl font-semibold mb-4 text-center text-[#386641]">PII Detection & Redaction</h3>
+                                <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                                    <img
+                                        src="/masquer_pii_redact.png"
+                                        alt="Masquer PII detection and redaction"
+                                        className="w-full h-auto"
+                                    />
                                 </div>
                             </div>
-
-                            <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <Settings className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Intelligent Configuration via Simple API</h3>
-                                        <ul className="space-y-2 text-muted-foreground">
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Point-and-click sensitive data management through intuitive admin UI</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Secure credential storage for enterprise-grade security compliance</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Consistent masking policies across your entire data ecosystem</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Zero changes to your applications or SQL code required</span>
-                                            </li>
-                                        </ul>
+                            <div className="space-y-4">
+                                <div className="bg-white/50 rounded-lg p-4 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
+                                    <div className="flex items-start gap-4">
+                                        <Zap className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
+                                        <div>
+                                            <h3 className="text-xl font-semibold mb-2">Real-Time PII Redaction via ML Inference</h3>
+                                            <ul className="space-y-2 text-muted-foreground">
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>98.48% PII detection accuracy using our proprietary ML model</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Lightning-fast processing - over 17x faster than Python implementations</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Ultra-efficient memory usage - 19MB vs 2GB in competitive solutions</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <Sparkles className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Auto-Detection for Hidden Sensitive Data</h3>
-                                        <ul className="space-y-2 text-muted-foreground">
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>ML-powered column analysis finds PII you didn't know existed</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Confidence scoring helps prioritize protection efforts</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Schema-aware detection understands your data relationships</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Eliminates human error in privacy configuration</span>
-                                            </li>
-                                        </ul>
+                                <div className="bg-white/50 rounded-lg p-4 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
+                                    <div className="flex items-start gap-4">
+                                        <Settings className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
+                                        <div>
+                                            <h3 className="text-xl font-semibold mb-2">Intelligent Configuration via Simple API</h3>
+                                            <ul className="space-y-2 text-muted-foreground">
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Point-and-click sensitive data management through intuitive admin UI</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Secure credential storage for enterprise-grade security compliance</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Zero changes to your applications or SQL code required</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <Database className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Seamless DB Proxy for Zero-Friction Privacy</h3>
-                                        <ul className="space-y-2 text-muted-foreground">
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Transparent PostgreSQL proxy sits between apps and databases</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Real-time query interception and analysis</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Intelligent masking preserves data format and referential integrity</span>
-                                            </li>
-                                            <li className="flex items-start gap-2">
-                                                <span className="text-[#386641] font-bold">•</span>
-                                                <span>Deterministic replacement for consistent test data</span>
-                                            </li>
-                                        </ul>
+                                <div className="bg-white/50 rounded-lg p-4 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
+                                    <div className="flex items-start gap-4">
+                                        <Sparkles className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
+                                        <div>
+                                            <h3 className="text-xl font-semibold mb-2">Auto-Detection for Hidden Sensitive Data</h3>
+                                            <ul className="space-y-2 text-muted-foreground">
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>ML-powered column analysis finds PII you didn't know existed</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Confidence scoring helps prioritize protection efforts</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Schema-aware detection understands your data relationships</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Eliminates human error in privacy configuration</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white/50 rounded-lg p-4 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
+                                    <div className="flex items-start gap-4">
+                                        <Database className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
+                                        <div>
+                                            <h3 className="text-xl font-semibold mb-2">Seamless DB Proxy for Zero-Friction Privacy</h3>
+                                            <ul className="space-y-2 text-muted-foreground">
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Transparent PostgreSQL proxy sits between apps and databases</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Real-time query interception and analysis</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Intelligent masking preserves data format and referential integrity</span>
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="text-[#386641] font-bold">•</span>
+                                                    <span>Deterministic replacement for consistent test data</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -225,7 +247,7 @@ const Masquer = () => {
                                 <div className="flex justify-center mb-3">
                                     <BadgeCheck className="h-12 w-12 text-[#386641]" />
                                 </div>
-                                <p className="font-medium">Technology</p>
+                                <p className="font-medium">Insurance</p>
                             </div>
                         </div>
                     </div>
