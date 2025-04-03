@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Shield, Lock, Database, Zap, Layers, Filter, Settings, FileText } from "lucide-react";
+import { Shield, Lock, Database, Zap, Layers, Filter, Settings, FileText, Sparkles, Gauge, Server, Cpu, BadgeCheck, BarChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -10,15 +10,15 @@ const Masquer = () => {
     return (
         <div className="min-h-screen bg-background">
             <SEO
-                title="Masquer - Configurable PII Masking System"
-                description="Masquer is a highly configurable PII masking system that sits between your data and external stakeholders, with 99% accurate PII identification using advanced models and traditional database column flagging."
-                keywords="masquer, pii masking, data privacy, pii detection, data protection, pii redaction, gdpr compliance, data security"
+                title="Masquer - Revolution in Data Privacy That Just Works"
+                description="Masquer delivers uncompromising data privacy through a groundbreaking transparent database proxy system with military-grade PII detection powered by cutting-edge ML technology."
+                keywords="masquer, pii masking, data privacy, pii detection, data protection, pii redaction, gdpr compliance, data security, transparent database proxy"
             />
             <JsonLd
                 type="Product"
                 data={{
                     name: "Masquer PII Masking System",
-                    description: "Advanced PII masking system with 99% accuracy for protecting sensitive data",
+                    description: "Advanced PII masking system with 98.48% accuracy for protecting sensitive data",
                     brand: {
                         "@type": "Brand",
                         name: "Corewood AI"
@@ -40,14 +40,20 @@ const Masquer = () => {
                     {/* Hero Section */}
                     <div className="max-w-5xl mx-auto text-center mb-20">
                         <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-6 text-[#386641]">
-                            Masquer
+                            MASQUER
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                            A configurable PII masking system that sits between your data and external stakeholders
+                        <p className="text-2xl md:text-3xl text-muted-foreground mb-8 max-w-3xl mx-auto font-medium">
+                            Revolution in Data Privacy That Just Works
                         </p>
-                        <div className="bg-[#386641]/10 p-4 md:p-6 rounded-lg inline-block mb-8">
-                            <p className="text-lg font-medium text-[#386641]">
-                                99% accurate PII identification with advanced AI models
+                        <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto">
+                            Imagine a world where your sensitive data is protected without sacrificing developer productivity. That world is here.
+                        </p>
+                        <div className="bg-[#386641]/10 p-6 md:p-8 rounded-lg mb-10">
+                            <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#386641]">
+                                The Privacy Problem We Solve
+                            </h2>
+                            <p className="text-lg">
+                                Engineers need access to production data, but the privacy implications are MASSIVE. Traditional solutions are clunky, break workflows, and kill productivity. Until now.
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -64,33 +70,42 @@ const Masquer = () => {
                         </div>
                     </div>
 
-                    {/* How It Works Section */}
-                    <div className="max-w-4xl mx-auto mb-24">
-                        <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
-                            How Masquer Works
+                    {/* Introduction Section */}
+                    <div className="max-w-4xl mx-auto mb-20 text-center">
+                        <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+                            Privacy at the Speed of Innovation
                         </h2>
+                        <p className="text-lg md:text-xl mb-8">
+                            Masquer delivers uncompromising data privacy through a groundbreaking transparent database proxy system with military-grade PII detection powered by cutting-edge ML technology.
+                        </p>
+                    </div>
 
+                    {/* Key Features Section */}
+                    <div className="max-w-4xl mx-auto mb-24">
                         <div className="grid md:grid-cols-2 gap-8">
-                            <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <Database className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Database Column Flagging</h3>
-                                        <p className="text-muted-foreground">
-                                            Traditionally identify sensitive columns in your database schema that contain PII, giving you complete control over what should be masked.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
                                 <div className="flex items-start gap-4 mb-4">
                                     <Zap className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-2">AI-Powered Detection</h3>
-                                        <p className="text-muted-foreground">
-                                            Our advanced AI model can identify PII in unstructured data with 99% accuracy, catching sensitive information that might be missed by rule-based systems.
-                                        </p>
+                                        <h3 className="text-xl font-semibold mb-2">Real-Time PII Redaction via ML Inference</h3>
+                                        <ul className="space-y-2 text-muted-foreground">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>98.48% PII detection accuracy using our proprietary ML model</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Lightning-fast processing - up to 17x faster than Python implementations</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Ultra-efficient memory usage - 19MB vs 2GB in competitive solutions</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>270+ requests/second throughput with 100% reliability under load</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -99,142 +114,159 @@ const Masquer = () => {
                                 <div className="flex items-start gap-4 mb-4">
                                     <Settings className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-2">Highly Configurable</h3>
-                                        <p className="text-muted-foreground">
-                                            Customize masking rules based on data type, recipient, purpose, and compliance requirements. Different stakeholders can see different levels of masked data.
-                                        </p>
+                                        <h3 className="text-xl font-semibold mb-2">Intelligent Configuration via Simple API</h3>
+                                        <ul className="space-y-2 text-muted-foreground">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Point-and-click sensitive data management through intuitive admin UI</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Secure credential storage for enterprise-grade security compliance</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Consistent masking policies across your entire data ecosystem</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Zero changes to your applications or SQL code required</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
                                 <div className="flex items-start gap-4 mb-4">
-                                    <Layers className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
+                                    <Sparkles className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-2">Middleware Integration</h3>
-                                        <p className="text-muted-foreground">
-                                            Masquer sits between your data and external stakeholders as a secure middleware layer, ensuring sensitive information never leaves your control.
-                                        </p>
+                                        <h3 className="text-xl font-semibold mb-2">Auto-Detection for Hidden Sensitive Data</h3>
+                                        <ul className="space-y-2 text-muted-foreground">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>ML-powered column analysis finds PII you didn't know existed</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Confidence scoring helps prioritize protection efforts</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Schema-aware detection understands your data relationships</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Eliminates human error in privacy configuration</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="bg-white/50 rounded-lg p-8 border border-[#386641]/20 shadow-sm hover:shadow-md transition-all">
+                                <div className="flex items-start gap-4 mb-4">
+                                    <Database className="h-8 w-8 text-[#386641] mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h3 className="text-xl font-semibold mb-2">Seamless DB Proxy for Zero-Friction Privacy</h3>
+                                        <ul className="space-y-2 text-muted-foreground">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Transparent PostgreSQL proxy sits between apps and databases</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Real-time query interception and analysis</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Intelligent masking preserves data format and referential integrity</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-[#386641] font-bold">•</span>
+                                                <span>Deterministic replacement for consistent test data</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Benefits Section */}
+                    {/* Industries Section */}
                     <div className="max-w-4xl mx-auto mb-24 bg-[#386641]/5 rounded-xl p-8 md:p-12">
-                        <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
-                            Key Benefits
+                        <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8">
+                            Built for Critical Industries
                         </h2>
+                        <p className="text-lg text-center mb-8">
+                            Perfect for organizations in Healthcare, Finance, Insurance, Government, Legal, Education, and Technology where data privacy is non-negotiable but developer agility is essential.
+                        </p>
 
-                        <div className="space-y-8">
-                            <div className="flex items-start gap-4">
-                                <Shield className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-2">Enhanced Data Privacy</h3>
-                                    <p>
-                                        Protect sensitive personal information from unauthorized access while still enabling data sharing with third parties, partners, and vendors.
-                                    </p>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                            <div className="p-4">
+                                <div className="flex justify-center mb-3">
+                                    <BadgeCheck className="h-12 w-12 text-[#386641]" />
                                 </div>
+                                <p className="font-medium">Healthcare</p>
                             </div>
-
-                            <div className="flex items-start gap-4">
-                                <FileText className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-2">Regulatory Compliance</h3>
-                                    <p>
-                                        Meet GDPR, CCPA, HIPAA, and other data protection regulations with configurable masking policies that adapt to different compliance requirements.
-                                    </p>
+                            <div className="p-4">
+                                <div className="flex justify-center mb-3">
+                                    <BadgeCheck className="h-12 w-12 text-[#386641]" />
                                 </div>
+                                <p className="font-medium">Finance</p>
                             </div>
-
-                            <div className="flex items-start gap-4">
-                                <Filter className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-2">Granular Control</h3>
-                                    <p>
-                                        Implement different masking levels for different users, roles, and contexts. Some users may see partial information while others see fully masked data.
-                                    </p>
+                            <div className="p-4">
+                                <div className="flex justify-center mb-3">
+                                    <BadgeCheck className="h-12 w-12 text-[#386641]" />
                                 </div>
+                                <p className="font-medium">Government</p>
                             </div>
-
-                            <div className="flex items-start gap-4">
-                                <Lock className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-2">On-Premises Security</h3>
-                                    <p>
-                                        Masquer runs entirely within your environment, ensuring that your data never leaves your control and sensitive information is never exposed to third parties.
-                                    </p>
+                            <div className="p-4">
+                                <div className="flex justify-center mb-3">
+                                    <BadgeCheck className="h-12 w-12 text-[#386641]" />
                                 </div>
+                                <p className="font-medium">Technology</p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Technical Details Section */}
+                    {/* Technical Excellence Section */}
                     <div className="max-w-4xl mx-auto mb-24">
                         <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
-                            Technical Specifications
+                            Technical Excellence That Matters
                         </h2>
 
-                        <div className="grid md:grid-cols-2 gap-8 mb-12">
-                            <div className="bg-white/50 rounded-lg p-6 border border-[#386641]/20">
-                                <h3 className="text-xl font-semibold mb-4">PII Detection Methods</h3>
-                                <ul className="space-y-2">
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Schema-based PII identification</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>ML-based content analysis</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Pattern matching and regular expressions</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Natural language processing for unstructured text</span>
-                                    </li>
-                                </ul>
+                        <p className="text-lg text-center mb-8">
+                            Our advanced architecture delivers exceptional performance characteristics that outclass the competition:
+                        </p>
+
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="bg-white/50 rounded-lg p-6 border border-[#386641]/20 flex items-start gap-4">
+                                <Server className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
+                                <div>
+                                    <p className="font-medium">Advanced memory management with tensor pooling and zero-copy operations</p>
+                                </div>
                             </div>
 
-                            <div className="bg-white/50 rounded-lg p-6 border border-[#386641]/20">
-                                <h3 className="text-xl font-semibold mb-4">Masking Techniques</h3>
-                                <ul className="space-y-2">
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Complete redaction (replacement with asterisks)</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Partial masking (show only last 4 digits)</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Tokenization (consistent replacement values)</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Format-preserving encryption</span>
-                                    </li>
-                                </ul>
+                            <div className="bg-white/50 rounded-lg p-6 border border-[#386641]/20 flex items-start gap-4">
+                                <Gauge className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
+                                <div>
+                                    <p className="font-medium">Adaptive concurrency that dynamically scales with system load</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="text-center">
-                            <h3 className="text-xl font-semibold mb-4">Integration Options</h3>
-                            <div className="inline-block text-left">
-                                <ul className="space-y-2">
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>REST API for real-time data masking</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-[#386641] font-bold">•</span>
-                                        <span>Database proxy for transparent integration</span>
-                                    </li>
-                                </ul>
+                            <div className="bg-white/50 rounded-lg p-6 border border-[#386641]/20 flex items-start gap-4">
+                                <BarChart className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
+                                <div>
+                                    <p className="font-medium">Consistent entity handling across requests</p>
+                                </div>
+                            </div>
+
+                            <div className="bg-white/50 rounded-lg p-6 border border-[#386641]/20 flex items-start gap-4">
+                                <Cpu className="h-6 w-6 text-[#386641] mt-1 flex-shrink-0" />
+                                <div>
+                                    <p className="font-medium">Energy efficient processing - 17x less energy consumption than traditional implementations</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -242,10 +274,13 @@ const Masquer = () => {
                     {/* CTA Section */}
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-                            Ready to Protect Your Sensitive Data?
+                            The Privacy Solution That Finally Makes Sense
                         </h2>
-                        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                            Contact us today to schedule a demo of Masquer and see how our configurable PII masking system can help protect your data while enabling secure sharing with external stakeholders.
+                        <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+                            Masquer is the first privacy solution that truly understands both the technical and business challenges of protecting sensitive data. We don't just mask data - we enable innovation while eliminating privacy risk.
+                        </p>
+                        <p className="text-xl font-semibold text-[#386641] mb-8">
+                            Don't compromise between privacy and productivity. Choose Masquer.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="https://calendly.com/corewoodteam/30min" target="_blank" rel="noopener noreferrer">
