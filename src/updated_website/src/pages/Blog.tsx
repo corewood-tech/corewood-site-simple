@@ -12,7 +12,7 @@ interface BlogEntry {
 export const blogEntries: BlogEntry[] = [
     {
         title: "ROI Beyond the Demo: Making AI Work for Your Business",
-        date: "2024-03-15",
+        date: "2025-04-10",
         readingTime: "6 min read",
         slug: "roi-beyond-the-demo"
     },
