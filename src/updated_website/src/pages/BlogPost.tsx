@@ -3,6 +3,15 @@ import { useParams, Navigate } from 'react-router-dom';
 import { blogEntries } from './Blog';
 import Header from '../components/Header';
 
+// Import blog entries directly
+import RoiBeyondDemo from './blog/entries/roi-beyond-the-demo';
+
+// Map of slugs to their corresponding components
+const blogComponents: Record<string, React.FC> = {
+    'roi-beyond-the-demo': RoiBeyondDemo,
+    // Add more blog entries here as they are created
+};
+
 const BlogPost: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const [content, setContent] = useState<React.ReactNode | null>(null);
@@ -11,7 +20,7 @@ const BlogPost: React.FC = () => {
     const [blogEntry, setBlogEntry] = useState<typeof blogEntries[0] | null>(null);
 
     useEffect(() => {
-        const loadBlogPost = async () => {
+        const loadBlogPost = () => {
             if (!slug) {
                 setError(true);
                 setLoading(false);
@@ -29,9 +38,15 @@ const BlogPost: React.FC = () => {
 
                 setBlogEntry(entry);
 
-                // Dynamically import the blog post content
-                const module = await import(`./blog/entries/${slug}`);
-                setContent(module.default);
+                // Get the component directly from our map
+                const BlogComponent = blogComponents[slug];
+                if (BlogComponent) {
+                    setContent(<BlogComponent />);
+                } else {
+                    console.error(`Blog component not found for slug: ${slug}`);
+                    setError(true);
+                }
+
                 setLoading(false);
             } catch (err) {
                 console.error('Error loading blog post:', err);
