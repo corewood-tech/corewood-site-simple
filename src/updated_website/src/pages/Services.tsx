@@ -252,9 +252,9 @@ const Services = () => {
                                         Start Your Free Consultation
                                     </Button>
                                 </a>
-                                <Link to="/pricing">
-                                    <Button size="lg" variant="outline">
-                                        View Pricing Options
+                                <Link to="/contact">
+                                    <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90">
+                                        Schedule a Demo
                                     </Button>
                                 </Link>
                             </div>

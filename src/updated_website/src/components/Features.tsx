@@ -1,4 +1,3 @@
-
 import { Cpu, ShieldCheck, Zap, Database, Code, TrendingUp, Leaf } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
@@ -12,17 +11,17 @@ const Features = () => {
             WHY CHOOSE COREWOOD
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-6">
-            We Focus on Operations So You Don't Have To
+            We Focus on Operations
           </h2>
-          <p className="text-muted-foreground mb-8">
-            At Corewood, we deliver more than just Masquer—we provide custom-tailored solutions for all your inference models. Our team handles the operational complexity behind your ML deployments, optimizing performance, reducing costs, and ensuring security while you focus exclusively on your core business challenges. Whether you need enhanced PII detection or custom inference acceleration, our expertise transforms complex ML operations into streamlined, efficient solutions that scale with your business.
+          <p className="text-muted-foreground mb-8 text-justify">
+            Our team handles the operational complexity behind your AI, optimizing performance, reducing costs, and driving security. Our expertise transforms complex ML operations into streamlined, efficient solutions that scale with your business.
           </p>
         </div>
 
         {/* Core Features Section */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20">
           {coreFeatures.map((feature, index) => (
-            <Card 
+            <Card
               key={feature.title}
               className="overflow-hidden border-border/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 group animate-fade-in p-6"
               style={{ animationDelay: `${(index + 1) * 0.15}s` }}
@@ -43,10 +42,18 @@ const Features = () => {
               TECHNOLOGY OWNERSHIP DONE RIGHT
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-6">
-              Your AI, Your Infrastructure, Your Control
+              Your AI, Your Infrastructure (if you want)
             </h2>
-            <p className="text-muted-foreground mb-8">
-              We believe in straightforward ownership without the subscription trap. Corewood's core API integrates directly into your existing infrastructure, becoming a permanent part of your technology stack—not a recurring expense. Unlike SaaS models that charge you endlessly for your own success, our pricing is transparent and upfront: you buy it once, you own it forever. No hidden costs, no usage limits, no subscription creep. Your data stays on your systems, your AI runs on your terms, and your business maintains complete control of its technological future.
+            <p className="text-muted-foreground mb-8 text-justify">
+              We believe in straightforward software systems.
+
+              We integrate directly into your existing infrastructure, becoming a reliable partner in tech.
+
+              No hidden costs, no arbitrary limits, no subscription creep.
+
+              Your data stays on your systems, your AI runs on your terms, and your business maintains control.
+
+              Or we build and host it for you. We want to help.
             </p>
             <div className="mt-10 p-8 bg-white/90 backdrop-blur-sm rounded-xl border border-border/50 shadow-xl shadow-primary/5">
               <div className="flex items-start gap-4">
@@ -55,7 +62,7 @@ const Features = () => {
                 </div>
                 <div className="text-left">
                   <h3 className="text-xl font-semibold mb-3">Custom Solutions</h3>
-                  <p className="text-muted-foreground">Tailored ML optimization for your specific business needs, ensuring scalability as your requirements grow.</p>
+                  <p className="text-muted-foreground text-justify">Tailored ML optimization for your specific business needs, ensuring scalability as your requirements grow.</p>
                 </div>
               </div>
             </div>
@@ -71,17 +78,17 @@ const coreFeatures = [
   {
     icon: Zap,
     title: "Performance Optimization",
-    description: "Optimize your ML models for lightning-fast inference times while maintaining superior accuracy on standard hardware."
+    description: "Optimize your AI."
   },
   {
     icon: Leaf,
     title: "Cost Efficiency",
-    description: "Reduce cloud computing costs and environmental impact with our edge-based processing solutions that minimize data transfer needs."
+    description: "Reduce cloud computing costs and environmental impact."
   },
   {
     icon: ShieldCheck,
     title: "Security & Compliance",
-    description: "Enterprise-grade protection across multiple languages and data types with specialized models for exceptional PII detection."
+    description: "Enterprise-grade protection across multiple languages and data types with specialized AI business applications."
   }
 ];
 

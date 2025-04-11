@@ -310,11 +310,6 @@ const Masquer = () => {
                                     Schedule a Demo
                                 </Button>
                             </a>
-                            <Link to="/pricing">
-                                <Button size="lg" variant="outline">
-                                    View Pricing
-                                </Button>
-                            </Link>
                         </div>
                     </div>
                 </div>

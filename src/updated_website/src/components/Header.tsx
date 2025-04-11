@@ -49,10 +49,10 @@ const Header = () => {
           <Link to="/services" className="inline-flex">
             <Button variant="ghost" className="text-sm">Services</Button>
           </Link>
-          <Link to="/pricing" className="inline-flex">
-            <Button variant="ghost" className="text-sm">Pricing</Button>
+          <Link to="/blog" className="inline-flex">
+            <Button variant="ghost" className="text-sm">Blog</Button>
           </Link>
-          <Link to="/contact">
+          <Link to="/contact" className="inline-flex">
             <Button className="text-sm shadow-lg shadow-[#386641]/20 bg-[#386641] hover:bg-[#386641]/90 transition-all duration-300">
               Get Started
             </Button>
@@ -85,13 +85,11 @@ const Header = () => {
           <Link to="/services" onClick={() => setMobileMenuOpen(false)}>
             <Button variant="ghost" className="w-full justify-start text-left">Services</Button>
           </Link>
-          <Link to="/pricing" onClick={() => setMobileMenuOpen(false)}>
-            <Button variant="ghost" className="w-full justify-start text-left">Pricing</Button>
+          <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>
+            <Button variant="ghost" className="w-full justify-start text-left">Blog</Button>
           </Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-            <Button className="w-full justify-start bg-[#386641] hover:bg-[#386641]/90">
-              Get Started
-            </Button>
+            <Button className="w-full justify-start text-[#F2E8CF] bg-[#386641] hover:bg-[#386641]/90">Get Started</Button>
           </Link>
         </div>
       </div>

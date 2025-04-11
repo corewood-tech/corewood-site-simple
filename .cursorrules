@@ -1,0 +1,21 @@
+# Overview
+
+This is a business website for Corewood. 
+
+We are a boutique, high-performance inference shop.
+
+We build machine learning inference directly into APIs using compiled, memory-safe languages and fewer components than current industry standards. 
+
+Pages: 
+- Home > Landing page; overview of value proposition
+- Masquer > Our first product that uses PII detection to mask personally identifiable information and a configurable database proxy that masks specific columns --> uses inference to see if a column is PII
+- Services > Talks about what we do
+- Blog > Blog posts
+
+# Design
+
+Clean, simple, a little airy
+
+# Content and Tone
+
+Engineering but approachable, knowledgeable but not trying to brag.

@@ -16,10 +16,10 @@ const CTA = () => {
           
           <div className="text-center max-w-3xl mx-auto stagger-animate">
             <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-6">
-              READY TO TRANSFORM YOUR ML OPERATIONS?
+              MAKE YOUR BUSINESS AN AI BUSINESS
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Join us for a new age of digital innovation where companies of any size can harness the power of cutting-edge AI without breaking the bank.
+              Companies of any size can harness the power of cutting-edge AI without breaking the bank.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link to="/contact">
