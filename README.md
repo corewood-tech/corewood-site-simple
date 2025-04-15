@@ -1,5 +1,9 @@
 # Corewood Site Simple
 
+> [!IMPORTANT]
+> Run ./build.sh before pushing to main if you want to see the site change.
+> The more you know.
+
 This repo began as output from https://claude.ai
 
 This has been iterated on significantly, to the point that shared templating was required. There was no need to introduce a generator / framework just yet, as we don't need full theming and full content management. 
