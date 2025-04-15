@@ -252,7 +252,7 @@ const Services = () => {
                                         Start Your Free Consultation
                                     </Button>
                                 </Link>
-                                <Link to="/contact">
+                                <Link to="/schedule-meeting">
                                     <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90">
                                         Schedule a Demo
                                     </Button>
