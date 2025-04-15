@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import { getBlogEntries } from '../data/blog-posts';
 
 interface BlogEntry {
     title: string;
@@ -9,15 +10,8 @@ interface BlogEntry {
     slug: string;
 }
 
-export const blogEntries: BlogEntry[] = [
-    {
-        title: "ROI Beyond the Demo: Making AI Work for Your Business",
-        date: "2025-04-10",
-        readingTime: "6 min read",
-        slug: "roi-beyond-the-demo"
-    },
-    // Add more blog entries here as they are created
-];
+// Use the centralized blog entries
+export const blogEntries: BlogEntry[] = getBlogEntries();
 
 const Blog: React.FC = () => {
     return (

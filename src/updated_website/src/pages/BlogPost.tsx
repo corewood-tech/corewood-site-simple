@@ -2,15 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { blogEntries } from './Blog';
 import Header from '../components/Header';
-
-// Import blog entries directly
-import RoiBeyondDemo from './blog/entries/roi-beyond-the-demo';
-
-// Map of slugs to their corresponding components
-const blogComponents: Record<string, React.FC> = {
-    'roi-beyond-the-demo': RoiBeyondDemo,
-    // Add more blog entries here as they are created
-};
+import { getBlogComponent } from '../data/blog-posts';
 
 const BlogPost: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -38,8 +30,8 @@ const BlogPost: React.FC = () => {
 
                 setBlogEntry(entry);
 
-                // Get the component directly from our map
-                const BlogComponent = blogComponents[slug];
+                // Get the component using the centralized helper
+                const BlogComponent = getBlogComponent(slug);
                 if (BlogComponent) {
                     setContent(<BlogComponent />);
                 } else {

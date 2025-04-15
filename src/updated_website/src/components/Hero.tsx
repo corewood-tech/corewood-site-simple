@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center mb-16 stagger-animate">
           {/* First bold emphasis */}
           <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            <span className="gradient-text">Cut Complexity</span>
+            <span className="gradient-text">The Demo Ends. The Real Work Begins. If It Can’t Scale, It Can’t Deliver.</span>
           </h1>
 
           {/* Second emphasis */}
