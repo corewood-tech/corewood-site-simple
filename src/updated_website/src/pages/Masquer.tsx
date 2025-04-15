@@ -57,11 +57,11 @@ const Masquer = () => {
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/corewoodteam/30min" target="_blank" rel="noopener noreferrer">
+                            <Link to="/schedule-meeting">
                                 <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90 shadow-lg">
                                     Schedule a Demo
                                 </Button>
-                            </a>
+                            </Link>
                             <Link to="/contact">
                                 <Button size="lg" variant="outline">
                                     Learn More
@@ -305,11 +305,11 @@ const Masquer = () => {
                             Don't compromise between privacy and productivity. Choose Masquer.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="https://calendly.com/corewoodteam/30min" target="_blank" rel="noopener noreferrer">
+                            <Link to="/schedule-meeting">
                                 <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90">
                                     Schedule a Demo
                                 </Button>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

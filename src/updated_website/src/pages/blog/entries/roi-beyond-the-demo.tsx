@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BlogPost: React.FC = () => {
     return (
@@ -168,14 +169,12 @@ const BlogPost: React.FC = () => {
                 Ready to move beyond demos to production-grade AI? Let's talk about how we can help you build AI systems that deliver actual ROI.
             </p>
             <div className="mt-12 pt-8 border-t border-gray-200">
-                <a
-                    href="https://calendly.com/corewoodteam/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <Link
+                    to="/schedule-meeting"
                     className="inline-block px-6 py-3 bg-[#386641] text-white font-medium rounded-md hover:bg-[#386641]/90 transition-colors"
                 >
                     Schedule a call with our team
-                </a>
+                </Link>
             </div>
         </article>
     );

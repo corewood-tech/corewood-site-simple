@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
@@ -29,6 +30,18 @@ const Footer = () => {
               </a>
             ))}
           </div>
+        </div>
+
+        {/* Meeting CTA Section */}
+        <div className="mt-10 p-6 bg-[#386641]/5 rounded-lg flex flex-col items-center text-center">
+          <h3 className="text-lg font-medium mb-2">Ready to discuss your project?</h3>
+          <p className="text-sm text-muted-foreground mb-4">Schedule a no-pressure conversation with our team.</p>
+          <Button asChild className="bg-[#386641] hover:bg-[#386641]/90">
+            <a href="/schedule-meeting" className="flex items-center">
+              <Calendar className="w-4 h-4 mr-2" />
+              Schedule a Meeting
+            </a>
+          </Button>
         </div>
 
         <div className="mt-16 pt-8 border-t border-[#A7C957]/30 flex flex-col md:flex-row justify-between items-center">

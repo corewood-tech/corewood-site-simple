@@ -96,11 +96,11 @@ const Services = () => {
                                         ))}
                                     </div>
                                     <div className="mt-6">
-                                        <a href="https://calendly.com/corewoodteam/30min" target="_blank" rel="noopener noreferrer">
+                                        <Link to="/schedule-meeting">
                                             <Button className="bg-[#386641] hover:bg-[#386641]/90">
                                                 Book Consultation
                                             </Button>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -247,11 +247,11 @@ const Services = () => {
                                 Our team of experts is ready to help you implement powerful, efficient AI solutions in your environment.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="https://calendly.com/corewoodteam/30min" target="_blank" rel="noopener noreferrer">
+                                <Link to="/schedule-meeting">
                                     <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90">
                                         Start Your Free Consultation
                                     </Button>
-                                </a>
+                                </Link>
                                 <Link to="/contact">
                                     <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90">
                                         Schedule a Demo

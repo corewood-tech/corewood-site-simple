@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BlogPost: React.FC = () => {
     return (
@@ -80,14 +81,12 @@ const BlogPost: React.FC = () => {
                 <p className="mb-6 text-lg font-medium italic">
                     Corewood: Machine Learning Beyond the Asymptote
                 </p>
-                <a
-                    href="https://calendly.com/corewoodteam/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <Link
+                    to="/schedule-meeting"
                     className="inline-block px-6 py-3 bg-[#386641] text-white font-medium rounded-md hover:bg-[#386641]/90 transition-colors"
                 >
                     Contact us today
-                </a>
+                </Link>
             </div>
         </article>
     );
