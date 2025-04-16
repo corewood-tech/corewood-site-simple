@@ -13,7 +13,7 @@ interface BlogPost {
 export const blogPosts: BlogPost[] = [
     {
         title: "On-Premises AI: The Smarter Way Forward in Corporate Computing",
-        date: "2025-04-20",
+        date: "2025-0416",
         readingTime: "4 min read",
         slug: "ai-on-prem",
         component: OnPremisesAi
