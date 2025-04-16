@@ -1,5 +1,6 @@
 import RoiBeyondDemo from '../pages/blog/entries/roi-beyond-the-demo';
 import BeyondAiHype from '../pages/blog/entries/ai-hype-failing';
+import OnPremisesAi from '../pages/blog/entries/ai-on-prem';
 
 interface BlogPost {
     title: string;
@@ -10,6 +11,13 @@ interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "On-Premises AI: The Smarter Way Forward in Corporate Computing",
+        date: "2025-04-20",
+        readingTime: "4 min read",
+        slug: "ai-on-prem",
+        component: OnPremisesAi
+    },
     {
         title: "AI Hype: Why Current ML Approaches Are Failing Businesses",
         date: "2025-04-14",
