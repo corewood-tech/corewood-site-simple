@@ -1,6 +1,7 @@
 import RoiBeyondDemo from '../pages/blog/entries/roi-beyond-the-demo';
 import BeyondAiHype from '../pages/blog/entries/ai-hype-failing';
 import OnPremisesAi from '../pages/blog/entries/ai-on-prem';
+import BeyondTheModel from '../pages/blog/entries/beyond-the-model';
 
 interface BlogPost {
     title: string;
@@ -12,8 +13,15 @@ interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Beyond the Model: Why Your AI Architecture Is Holding You Back",
+        date: "2025-04-22",
+        readingTime: "5 min read",
+        slug: "beyond-the-model",
+        component: BeyondTheModel
+    },
+    {
         title: "On-Premises AI: The Smarter Way Forward in Corporate Computing",
-        date: "2025-04-16",
+        date: "2025-04-20",
         readingTime: "4 min read",
         slug: "ai-on-prem",
         component: OnPremisesAi
