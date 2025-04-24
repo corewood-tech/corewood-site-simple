@@ -64,7 +64,7 @@ const BlogPost: React.FC = () => {
             </div>
             
             <p className="text-sm text-gray-600 mb-6">
-                Source: Ed Zitron's "Where's The Money?" - Data compiled from reporting by The Information, New York Times, and CNBC.
+                Source: <a href="https://www.wheresyoured.at/wheres-the-money/" className="text-[#386641] hover:underline" target="_blank" rel="noopener noreferrer">Ed Zitron's "Where's The Money?"</a> - Data compiled from reporting by The Information, New York Times, and CNBC.
             </p>
 
             <h3 className="text-3xl font-bold mt-10 mb-4 text-gray-900">The Fundamental Question</h3>
