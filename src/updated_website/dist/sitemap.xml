@@ -1,27 +1,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://corewood.io/</loc>
+    <loc>http://localhost:3000/</loc>
     <lastmod>2023-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://corewood.io/masquer</loc>
+    <loc>http://localhost:3000/masquer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://corewood.io/services</loc>
+    <loc>http://localhost:3000/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://corewood.io/blog</loc>
+    <loc>http://localhost:3000/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corewood.io/contact</loc>
+    <loc>http://localhost:3000/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

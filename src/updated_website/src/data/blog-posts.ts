@@ -2,6 +2,7 @@ import RoiBeyondDemo from '../pages/blog/entries/roi-beyond-the-demo';
 import BeyondAiHype from '../pages/blog/entries/ai-hype-failing';
 import OnPremisesAi from '../pages/blog/entries/ai-on-prem';
 import BeyondTheModel from '../pages/blog/entries/beyond-the-model';
+import UnsustainableEconomicsAi from '../pages/blog/entries/unsustainable-economics-ai';
 
 interface BlogPost {
     title: string;
@@ -12,6 +13,13 @@ interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "The Unsustainable Economics of Generative AI: Finding a Path Forward",
+        date: "2025-04-24",
+        readingTime: "7 min read",
+        slug: "unsustainable-economics-ai",
+        component: UnsustainableEconomicsAi
+    },
     {
         title: "Beyond the Model: Why Your AI Architecture Is Holding You Back",
         date: "2025-04-22",
