@@ -3,6 +3,7 @@ import BeyondAiHype from '../pages/blog/entries/ai-hype-failing';
 import OnPremisesAi from '../pages/blog/entries/ai-on-prem';
 import BeyondTheModel from '../pages/blog/entries/beyond-the-model';
 import UnsustainableEconomicsAi from '../pages/blog/entries/unsustainable-economics-ai';
+import SoYouWantToBuild from '../pages/blog/entries/so-you-want-to-build';
 
 interface BlogPost {
     title: string;
@@ -13,6 +14,13 @@ interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "So you want to build an AI system...",
+        date: "2024-04-29",
+        readingTime: "4 min read",
+        slug: "so-you-want-to-build",
+        component: SoYouWantToBuild
+    },
     {
         title: "The Unsustainable Economics of Generative AI: Finding a Path Forward",
         date: "2025-04-24",

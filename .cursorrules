@@ -19,3 +19,17 @@ Clean, simple, a little airy
 # Content and Tone
 
 Engineering but approachable, knowledgeable but not trying to brag.
+
+# Publishing Blog Posts
+
+To publish a new blog post:
+
+1. Create a new .tsx file in src/updated_website/src/pages/blog/entries/ with the post slug as the filename
+2. Structure the blog post following the existing template format (React component with article markup)
+3. Include post metadata at the top of the content
+4. Register the post in src/updated_website/src/data/blog-posts.ts by:
+   - Importing the component at the top of the file
+   - Adding a new entry to the blogPosts array with title, date, readingTime, slug, and component
+   - Place the new entry at the top of the array for newest posts
+5. The date format should be YYYY-MM-DD
+6. Restart the development server to see changes

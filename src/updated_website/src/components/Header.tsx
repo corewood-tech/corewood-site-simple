@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -42,34 +42,44 @@ const Header = () => {
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center space-x-4">
-          <Link to="/masquer" className="inline-flex">
-            <Button variant="ghost" className="text-sm">Masquer</Button>
-          </Link>
-          <Link to="/services" className="inline-flex">
-            <Button variant="ghost" className="text-sm">Services</Button>
-          </Link>
-          <Link to="/blog" className="inline-flex">
-            <Button variant="ghost" className="text-sm">Blog</Button>
-          </Link>
-          <Link to="/contact" className="inline-flex">
-            <Button className="text-sm shadow-lg shadow-[#386641]/20 bg-[#386641] hover:bg-[#386641]/90 transition-all duration-300">
-              Get Started
+        <div className="flex items-center gap-2">
+          <Link to="/schedule-meeting" className="inline-flex">
+            <Button variant="outline" className="text-sm border-[#386641] text-[#386641] hover:bg-[#386641]/10">
+              <Calendar className="mr-2 h-4 w-4" />
+              <span className="hidden sm:inline">Schedule Meeting</span>
+              <span className="sm:hidden">Meet</span>
             </Button>
           </Link>
-        </div>
 
-        <button
-          className="md:hidden flex items-center p-2 text-muted-foreground hover:text-foreground focus:outline-none"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+          <div className="hidden md:flex items-center space-x-4">
+            <Link to="/masquer" className="inline-flex">
+              <Button variant="ghost" className="text-sm">Masquer</Button>
+            </Link>
+            <Link to="/services" className="inline-flex">
+              <Button variant="ghost" className="text-sm">Services</Button>
+            </Link>
+            <Link to="/blog" className="inline-flex">
+              <Button variant="ghost" className="text-sm">Blog</Button>
+            </Link>
+            <Link to="/contact" className="inline-flex">
+              <Button className="text-sm shadow-lg shadow-[#386641]/20 bg-[#386641] hover:bg-[#386641]/90 transition-all duration-300">
+                Get Started
+              </Button>
+            </Link>
+          </div>
+
+          <button
+            className="md:hidden flex items-center p-2 text-muted-foreground hover:text-foreground focus:outline-none"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       <div

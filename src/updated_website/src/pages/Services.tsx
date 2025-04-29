@@ -11,8 +11,8 @@ const Services = () => {
         <div className="min-h-screen bg-background">
             <SEO
                 title="Our Services"
-                description="Explore Corewood's range of AI services: from free consultations to fully hosted AI solutions. All our services ensure your data stays in your environment with maximum efficiency."
-                keywords="ai services, machine learning services, requirements assessment, ai apis, kubernetes clusters, hosted ai, data privacy, ml infrastructure"
+                description="Explore Corewood's range of AI services: from ML Architecture & Systems Design to API Integration and Security. All our services ensure your data stays in your environment with maximum efficiency."
+                keywords="ml architecture, model development, api engineering, security, data engineering, ml infrastructure, enterprise ml"
             />
             <JsonLd
                 type="Service"
@@ -22,7 +22,7 @@ const Services = () => {
                     description: "Corewood delivers high-efficiency AI software solutions that run in your environment.",
                     offers: {
                         "@type": "Offer",
-                        price: "0",
+                        price: "15000",
                         priceCurrency: "USD",
                         availability: "https://schema.org/InStock",
                         validFrom: "2023-01-01",
@@ -39,15 +39,15 @@ const Services = () => {
                     questions: [
                         {
                             question: "What makes Corewood's AI services different?",
-                            answer: "Our solutions run in your environment, ensuring complete data privacy with no data leaving your network. We focus on high-efficiency implementations with perpetual licensing models instead of ongoing fees."
-                        },
-                        {
-                            question: "Do you offer free consultations?",
-                            answer: "Yes, we offer free initial consultations where we listen to your needs and explain our capabilities, keeping discussions at a pre-NDA level."
+                            answer: "Our solutions run in your environment, ensuring complete data privacy with no data leaving your network. We focus on high-efficiency implementations with transparent project pricing."
                         },
                         {
                             question: "What types of AI services do you offer?",
-                            answer: "We offer requirements assessments, AI APIs, AI Kubernetes clusters, hosted AI solutions, and complete product development services."
+                            answer: "We offer ML Architecture & Systems Design, Model Development Services, API & Integration Engineering, Security & Compliance, and Data & Telemetry services."
+                        },
+                        {
+                            question: "How is your pricing structured?",
+                            answer: "We offer project-based pricing for specific deliverables and retainer options for ongoing support and advisory services."
                         }
                     ]
                 }}
@@ -65,29 +65,19 @@ const Services = () => {
                             </p>
                         </div>
 
-                        {/* Consultation & Assessment */}
+                        {/* Core Services */}
                         <div className="mb-16">
                             <h2 className="text-3xl font-display font-bold tracking-tight mb-6 text-[#386641] text-center">
-                                Consultation & Assessment
+                                Core Services
                             </h2>
-                            <p className="text-lg text-center mb-8">
-                                Start your journey with a clear understanding of your needs and our capabilities.
-                            </p>
 
                             <div className="space-y-8">
-                                {/* Free Initial Consultation */}
+                                {/* ML Architecture & Systems Design */}
                                 <div className="bg-[#386641]/5 rounded-lg p-8 transition-all hover:shadow-lg border border-[#386641]/10">
                                     <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4 text-[#386641]">
-                                        Initial Consultation <em>(Free)</em>
+                                        ML Architecture & Systems Design
                                     </h3>
-                                    <div className="prose prose-green max-w-none mb-6">
-                                        <p>
-                                            We start by listening. We'll discuss your needs, explain our capabilities, and answer your questions.
-                                            This no-obligation consultation helps us understand if we're the right fit for your project while respecting
-                                            your confidentiality needs.
-                                        </p>
-                                    </div>
-                                    <div className="space-y-3">
+                                    <div className="space-y-3 mt-6">
                                         {services[0].features.map((feature, i) => (
                                             <div key={i} className="flex gap-3">
                                                 <CheckCircle className="h-6 w-6 text-[#386641] flex-shrink-0" />
@@ -95,28 +85,14 @@ const Services = () => {
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="mt-6">
-                                        <Link to="/schedule-meeting">
-                                            <Button className="bg-[#386641] hover:bg-[#386641]/90">
-                                                Book Consultation
-                                            </Button>
-                                        </Link>
-                                    </div>
                                 </div>
 
-                                {/* Requirements Assessment */}
+                                {/* Model Development Services */}
                                 <div className="bg-[#386641]/5 rounded-lg p-8 transition-all hover:shadow-lg border border-[#386641]/10">
                                     <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4 text-[#386641]">
-                                        Requirements Assessment
+                                        Model Development Services
                                     </h3>
-                                    <div className="prose prose-green max-w-none mb-6">
-                                        <p>
-                                            After signing NDAs, we dive deep into your use case and ideal customer profile. We'll create
-                                            an API design specifically tailored to your requirements. You can then choose to have your team build it or hire us
-                                            for implementation.
-                                        </p>
-                                    </div>
-                                    <div className="space-y-3">
+                                    <div className="space-y-3 mt-6">
                                         {services[1].features.map((feature, i) => (
                                             <div key={i} className="flex gap-3">
                                                 <CheckCircle className="h-6 w-6 text-[#386641] flex-shrink-0" />
@@ -125,32 +101,13 @@ const Services = () => {
                                         ))}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        {/* Implementation Options - Self Hosted */}
-                        <div className="mb-16">
-                            <h2 className="text-3xl font-display font-bold tracking-tight mb-6 text-[#386641] text-center">
-                                Implementation Options - Self Hosted
-                            </h2>
-                            <p className="text-lg text-center mb-8">
-                                Run AI solutions in your own environment with complete control over data and infrastructure.
-                            </p>
-
-                            <div className="space-y-8">
-                                {/* AI APIs */}
+                                {/* API & Integration Engineering */}
                                 <div className="bg-[#386641]/5 rounded-lg p-8 transition-all hover:shadow-lg border border-[#386641]/10">
                                     <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4 text-[#386641]">
-                                        AI APIs
+                                        API & Integration Engineering
                                     </h3>
-                                    <div className="prose prose-green max-w-none mb-6">
-                                        <p>
-                                            We build high-performance systems to your exact requirements, with careful attention to non-functional
-                                            requirements and design depth. Our deliverables are designed to integrate seamlessly with your existing
-                                            infrastructure.
-                                        </p>
-                                    </div>
-                                    <div className="space-y-3">
+                                    <div className="space-y-3 mt-6">
                                         {services[2].features.map((feature, i) => (
                                             <div key={i} className="flex gap-3">
                                                 <CheckCircle className="h-6 w-6 text-[#386641] flex-shrink-0" />
@@ -160,19 +117,28 @@ const Services = () => {
                                     </div>
                                 </div>
 
-                                {/* AI Kubernetes Clusters */}
+                                {/* Security & Compliance */}
                                 <div className="bg-[#386641]/5 rounded-lg p-8 transition-all hover:shadow-lg border border-[#386641]/10">
                                     <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4 text-[#386641]">
-                                        AI Kubernetes Clusters
+                                        Security & Compliance
                                     </h3>
-                                    <div className="prose prose-green max-w-none mb-6">
-                                        <p>
-                                            For enhanced operations support, we partner with industry-leading Kubernetes and API governance specialists.
-                                            Our ML APIs are built with your operations team in mind, featuring the most robust technical foundations available.
-                                        </p>
-                                    </div>
-                                    <div className="space-y-3">
+                                    <div className="space-y-3 mt-6">
                                         {services[3].features.map((feature, i) => (
+                                            <div key={i} className="flex gap-3">
+                                                <CheckCircle className="h-6 w-6 text-[#386641] flex-shrink-0" />
+                                                <p>{feature}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Data & Telemetry */}
+                                <div className="bg-[#386641]/5 rounded-lg p-8 transition-all hover:shadow-lg border border-[#386641]/10">
+                                    <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4 text-[#386641]">
+                                        Data & Telemetry
+                                    </h3>
+                                    <div className="space-y-3 mt-6">
+                                        {services[4].features.map((feature, i) => (
                                             <div key={i} className="flex gap-3">
                                                 <CheckCircle className="h-6 w-6 text-[#386641] flex-shrink-0" />
                                                 <p>{feature}</p>
@@ -183,59 +149,40 @@ const Services = () => {
                             </div>
                         </div>
 
-                        {/* Implementation Options - Managed */}
+                        {/* Pricing */}
                         <div className="mb-16">
                             <h2 className="text-3xl font-display font-bold tracking-tight mb-6 text-[#386641] text-center">
-                                Implementation Options - Managed
+                                Project-Based Pricing
                             </h2>
                             <p className="text-lg text-center mb-8">
-                                Let us handle the infrastructure while you focus on leveraging AI for your business.
+                                Clear, transparent pricing for your ML initiatives.
                             </p>
 
-                            <div className="space-y-8">
-                                {/* Hosted AI */}
-                                <div className="bg-[#386641]/5 rounded-lg p-8 transition-all hover:shadow-lg border border-[#386641]/10">
-                                    <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4 text-[#386641]">
-                                        Hosted AI
-                                    </h3>
-                                    <div className="prose prose-green max-w-none mb-6">
-                                        <p>
-                                            If you prefer not to use your own operations team, we can host your ML infrastructure in AWS. This is our only
-                                            offering with recurring fees, as we maintain the infrastructure on your behalf. We maintain the strictest data
-                                            privacy standards with all processing happening on-system and in-network.
-                                        </p>
+                            <div className="space-y-6">
+                                {pricing.map((item, index) => (
+                                    <div key={index} className="flex justify-between items-center p-4 bg-[#386641]/5 rounded-lg border border-[#386641]/10">
+                                        <h3 className="font-semibold text-lg">{item.service}</h3>
+                                        <p className="font-medium text-[#386641]">{item.price}</p>
                                     </div>
-                                    <div className="space-y-3">
-                                        {services[4].features.map((feature, i) => (
-                                            <div key={i} className="flex gap-3">
-                                                <CheckCircle className="h-6 w-6 text-[#386641] flex-shrink-0" />
-                                                <p>{feature}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                ))}
+                            </div>
+                        </div>
 
-                                {/* Hosted AI + Product */}
-                                <div className="bg-[#386641]/5 rounded-lg p-8 transition-all hover:shadow-lg border border-[#386641]/10">
-                                    <h3 className="text-2xl md:text-3xl font-display font-bold tracking-tight mb-4 text-[#386641]">
-                                        Hosted AI + Product
-                                    </h3>
-                                    <div className="prose prose-green max-w-none mb-6">
-                                        <p>
-                                            For the most comprehensive solution, partner with us to build your complete AI product.
-                                            With decades of software industry experience, we implement best-of-industry standards for your product.
-                                            While this option includes ongoing costs, the benefits far outweigh the investment.
-                                        </p>
+                        <div className="mb-16">
+                            <h2 className="text-3xl font-display font-bold tracking-tight mb-6 text-[#386641] text-center">
+                                Retainer Options
+                            </h2>
+                            <p className="text-lg text-center mb-8">
+                                Ongoing support for your ML infrastructure and needs.
+                            </p>
+
+                            <div className="space-y-6">
+                                {retainers.map((item, index) => (
+                                    <div key={index} className="flex justify-between items-center p-4 bg-[#386641]/5 rounded-lg border border-[#386641]/10">
+                                        <h3 className="font-semibold text-lg">{item.service}</h3>
+                                        <p className="font-medium text-[#386641]">{item.price}</p>
                                     </div>
-                                    <div className="space-y-3">
-                                        {services[5].features.map((feature, i) => (
-                                            <div key={i} className="flex gap-3">
-                                                <CheckCircle className="h-6 w-6 text-[#386641] flex-shrink-0" />
-                                                <p>{feature}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
 
@@ -249,12 +196,12 @@ const Services = () => {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link to="/schedule-meeting">
                                     <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90">
-                                        Start Your Free Consultation
+                                        Schedule a Meeting
                                     </Button>
                                 </Link>
-                                <Link to="/schedule-meeting">
+                                <Link to="/contact">
                                     <Button size="lg" className="bg-[#386641] hover:bg-[#386641]/90">
-                                        Schedule a Demo
+                                        Contact Us
                                     </Button>
                                 </Link>
                             </div>
@@ -270,105 +217,82 @@ const Services = () => {
 // Service definitions
 const services = [
     {
-        title: "FREE Initial Consultation",
-        description: (
-            <p>
-                We start by listening. We'll discuss your needs, explain our capabilities, and answer your questions.
-                This no-obligation consultation helps us understand if we're the right fit for your project while respecting
-                your confidentiality needs.
-            </p>
-        ),
+        title: "ML Architecture & Systems Design",
         features: [
-            "No-obligation discussion about your AI needs",
-            "We listen first and explain our approach",
-            "Pre-NDA level insights and expertise",
-            "Helps determine if we're the right fit for your project"
+            "Enterprise ML Infrastructure Design",
+            "ML System Architecture Planning",
+            "Scalability & Performance Planning"
         ]
     },
     {
-        title: "Requirements Assessment",
-        description: (
-            <p>
-                After signing NDAs, we dive deep into your use case and ideal customer profile. We'll create
-                an API design specifically tailored to your requirements. You can then choose to have your team build it or hire us
-                for implementation.
-            </p>
-        ),
+        title: "Model Development Services",
         features: [
-            "Professional NDAs and introductions",
-            "In-depth analysis of your use case and customer needs",
-            "Custom API design tailored to your specific requirements",
-            "Assessment cost deducted if you proceed with our implementation"
+            "Model Selection & Validation",
+            "Custom Model Development",
+            "Model Optimization & Tuning",
+            "Quantization & Efficiency Engineering"
         ]
     },
     {
-        title: "AI APIs",
-        description: (
-            <p>
-                We build high-performance systems to your exact requirements, with careful attention to non-functional
-                requirements and design depth. Our deliverables are designed to integrate seamlessly with your existing
-                infrastructure.
-            </p>
-        ),
+        title: "API & Integration Engineering",
         features: [
-            "On-premises program that your team can run",
-            "Terraform/infrastructure as code for your environment",
-            "Detailed cost by scale estimation",
-            "Infrastructure and scaling recommendations",
-            "Free requirements assessment if skipping the separate assessment step"
+            "ML API Development",
+            "Inference Endpoint Design",
+            "Third-party System Integration"
         ]
     },
     {
-        title: "AI Kubernetes Clusters",
-        description: (
-            <p>
-                For enhanced operations support, we partner with industry-leading Kubernetes and API governance specialists.
-                Our ML APIs are built with your operations team in mind, featuring the most robust technical foundations available.
-            </p>
-        ),
+        title: "Security & Compliance",
         features: [
-            "Access to leading Kubernetes specialists",
-            "Expert API governance capabilities",
-            "Autoscale-friendly ML APIs",
-            "Built-in OpenTelemetry integration",
-            "Comprehensive security features",
-            "Health/ready checks for reliable operations"
+            "ML Security Architecture",
+            "Identity & Authorization Systems",
+            "Data Compliance Framework",
+            "Privacy-Preserving ML Design"
         ]
     },
     {
-        title: "Hosted AI",
-        description: (
-            <p>
-                If you prefer not to use your own operations team, we can host your ML infrastructure in AWS. This is our only
-                offering with recurring fees, as we maintain the infrastructure on your behalf. We maintain the strictest data
-                privacy standards with all processing happening on-system and in-network.
-            </p>
-        ),
+        title: "Data & Telemetry",
         features: [
-            "Managed ML infrastructure in AWS",
-            "No need for your own operations team",
-            "Strict data privacy standards—everything stays in your network",
-            "No shipping data to 3rd party providers",
-            "No using LLMs under-the-hood",
-            "Transparent recurring maintenance fees"
+            "Data Pipeline Engineering",
+            "Telemetry Integration",
+            "Data Integrity Systems"
         ]
+    }
+];
+
+// Pricing definitions
+const pricing = [
+    {
+        service: "ML System Assessment & Roadmap",
+        price: "Starting at $15,000"
     },
     {
-        title: "Hosted AI + Product",
-        description: (
-            <p>
-                For the most comprehensive solution, partner with us to build your complete AI product.
-                With decades of software industry experience, we implement best-of-industry standards for your product.
-                While this option includes ongoing costs, the benefits far outweigh the investment.
-            </p>
-        ),
-        features: [
-            "Complete end-to-end product development",
-            "Industry best practices implementation",
-            "Ongoing product support and enhancement",
-            "Full product ownership with clear licensing terms",
-            "Integration with your existing systems"
-        ]
+        service: "Proof-of-Concept Development",
+        price: "Starting at $25,000"
+    },
+    {
+        service: "Enterprise ML Platform Development",
+        price: "Starting at $100,000"
+    },
+    {
+        service: "Model Optimization Projects",
+        price: "Starting at $30,000"
+    }
+];
+
+// Retainer definitions
+const retainers = [
+    {
+        service: "Advisory Services",
+        price: "Starting at $5,000/month"
+    },
+    {
+        service: "Technical Leadership",
+        price: "Starting at $10,000/month"
+    },
+    {
+        service: "Ongoing Development Support",
+        price: "Starting at $15,000/month"
     }
 ];
 
