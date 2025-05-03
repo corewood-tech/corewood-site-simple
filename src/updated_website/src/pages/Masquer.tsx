@@ -12,7 +12,10 @@ const Masquer = () => {
             <SEO
                 title="Masquer - Zero-Copy Privacy That Makes Sense"
                 description="Masquer delivers zero-copy privacy that processes sensitive data in-place without creating duplicates, deployed entirely within your infrastructure with fixed, predictable pricing."
-                keywords="masquer, pii masking, data privacy, pii detection, data protection, pii redaction, gdpr compliance, data security, zero-copy privacy"
+                keywords="masquer, pii masking, data privacy, pii detection, data protection, pii redaction, gdpr compliance, data security, zero-copy privacy, healthcare, healthcare tech, pii management, personal data, personal data masking, medical, medical AI, phi protection, hipaa compliance, healthcare data security, protected health information, sensitive data handling, ehr data protection, patient data privacy, medical records security, healthcare compliance, health information protection, healthcare database security"
+                ogType="product"
+                ogImage="/corewood_symbol_avatar_white.png"
+                canonical="/masquer"
             />
             <JsonLd
                 type="Product"
