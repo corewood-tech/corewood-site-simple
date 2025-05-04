@@ -4,6 +4,7 @@ import OnPremisesAi from '../pages/blog/entries/ai-on-prem';
 import BeyondTheModel from '../pages/blog/entries/beyond-the-model';
 import UnsustainableEconomicsAi from '../pages/blog/entries/unsustainable-economics-ai';
 import SoYouWantToBuild from '../pages/blog/entries/so-you-want-to-build';
+import DataComplianceReality from '../pages/blog/entries/data-compliance-reality';
 
 interface BlogPost {
     title: string;
@@ -15,8 +16,15 @@ interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "The Reality of Data Compliance: A Technical Evolution",
+        date: "2025-05-03",
+        readingTime: "6 min read",
+        slug: "data-compliance-reality",
+        component: DataComplianceReality
+    },
+    {
         title: "So you want to build an AI system...",
-        date: "2024-04-29",
+        date: "2025-04-29",
         readingTime: "4 min read",
         slug: "so-you-want-to-build",
         component: SoYouWantToBuild
@@ -73,4 +81,4 @@ export const getBlogEntries = () => {
 export const getBlogComponent = (slug: string) => {
     const post = blogPosts.find(post => post.slug === slug);
     return post ? post.component : null;
-}; 
+};
