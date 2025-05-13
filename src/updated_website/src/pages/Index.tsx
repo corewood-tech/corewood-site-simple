@@ -10,9 +10,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="High-Efficiency AI Solutions for Your Environment"
-        description="Corewood delivers AI software solutions that run in your environment, giving you complete control and ownership without ongoing fees or data leaving your network."
-        keywords="ai software, machine learning infrastructure, on-premises ai, ai apis, kubernetes clusters, hosted ai, data privacy"
+        title="High-Efficiency Private AI Solutions for Your Environment"
+        description="Corewood delivers secure, self-hosted AI solutions that run in your environment, ensuring complete data privacy and control without ongoing fees or sensitive data ever leaving your network."
+        keywords="ai software, machine learning infrastructure, on-premises ai, private ai, self-hosted ai, data privacy, ai infrastructure, secure ai, data sovereignty, data protection, confidential ai, local ai deployment, ai security, enterprise ai"
       />
       <JsonLd
         type="Organization"

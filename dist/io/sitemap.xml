@@ -1,27 +1,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://corewood.io/</loc>
-    <lastmod>2023-04-02</lastmod>
+    <lastmod>2024-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://corewood.io/masquer</loc>
+    <lastmod>2024-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://corewood.io/services</loc>
+    <lastmod>2024-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://corewood.io/blog</loc>
+    <lastmod>2024-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://corewood.io/blog/data-compliance-reality</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corewood.io/blog/ai-hype-failing</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corewood.io/blog/ai-on-prem</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corewood.io/blog/beyond-the-model</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corewood.io/blog/unsustainable-economics-ai</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corewood.io/blog/so-you-want-to-build</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corewood.io/blog/roi-beyond-the-demo</loc>
+    <lastmod>2024-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corewood.io/blog/healthcare-privacy-paradox</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://corewood.io/contact</loc>
+    <lastmod>2024-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

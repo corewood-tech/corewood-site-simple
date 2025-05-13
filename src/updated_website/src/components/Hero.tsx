@@ -14,23 +14,31 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center mb-16 stagger-animate">
           {/* First bold emphasis */}
           <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            <span className="gradient-text">The Demo Ends. The Real Work Begins. If It Can’t Scale, It Can’t Deliver.</span>
+            <span className="gradient-text">Private AI Infrastructure That Keeps Your Data Secure</span>
           </h1>
 
           {/* Second emphasis */}
-          <div className="inline-block px-3 py-1 rounded-full bg-[#386641]/10 text-[#386641] font-medium text-sm mb-6">
-            On-Premises AI Solutions
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            <div className="inline-block px-3 py-1 rounded-full bg-[#386641]/10 text-[#386641] font-medium text-sm">
+              Self-Hosted AI Solutions
+            </div>
+            <div className="inline-block px-3 py-1 rounded-full bg-[#386641]/10 text-[#386641] font-medium text-sm">
+              Complete Data Privacy
+            </div>
+            <div className="inline-block px-3 py-1 rounded-full bg-[#386641]/10 text-[#386641] font-medium text-sm">
+              On-Premises Deployment
+            </div>
           </div>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            At Corewood, we're making AI accessible to everyone, enabling companies of any size to compete with industry giants.
+            Corewood delivers high-performance AI that runs in your own environment, ensuring your sensitive data never leaves your network while giving you complete control over your AI infrastructure.
           </p>
 
           {/* Masquer block */}
           <div className="bg-[#386641]/5 rounded-lg p-6 mb-8">
             <a href="/masquer"><h2 className="text-xl md:text-2xl font-semibold mb-2">Introducing Masquer</h2></a>
             <p className="text-md md:text-lg">
-              Masquer delivers enterprise-grade Personally Identifiable Information (PII) detection, affordably in your own infrastructure.
+              Masquer delivers enterprise-grade Personally Identifiable Information (PII) detection, securely deployed within your infrastructure for maximum data protection and compliance.
             </p>
           </div>
 

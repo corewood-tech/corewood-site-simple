@@ -5,6 +5,7 @@ import BeyondTheModel from '../pages/blog/entries/beyond-the-model';
 import UnsustainableEconomicsAi from '../pages/blog/entries/unsustainable-economics-ai';
 import SoYouWantToBuild from '../pages/blog/entries/so-you-want-to-build';
 import DataComplianceReality from '../pages/blog/entries/data-compliance-reality';
+import HealthcarePrivacyParadox from '../pages/blog/entries/healthcare-privacy-paradox';
 
 interface BlogPost {
     title: string;
@@ -15,6 +16,13 @@ interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "Healthcare Software's Privacy Paradox: Breaking Free from Legacy Thinking",
+        date: "2025-05-13",
+        readingTime: "7 min read",
+        slug: "healthcare-privacy-paradox",
+        component: HealthcarePrivacyParadox
+    },
     {
         title: "The Reality of Data Compliance: A Technical Evolution",
         date: "2025-05-03",
