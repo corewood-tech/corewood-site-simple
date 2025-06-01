@@ -6,6 +6,7 @@ import UnsustainableEconomicsAi from '../pages/blog/entries/unsustainable-econom
 import SoYouWantToBuild from '../pages/blog/entries/so-you-want-to-build';
 import DataComplianceReality from '../pages/blog/entries/data-compliance-reality';
 import HealthcarePrivacyParadox from '../pages/blog/entries/healthcare-privacy-paradox';
+import GreatDataPrivacyDivide from '../pages/blog/entries/great-data-privacy-divide';
 
 interface BlogPost {
     title: string;
@@ -16,6 +17,13 @@ interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "The Great Data Privacy Divide: Why Engineering Speed Meets Compliance Reality",
+        date: "2025-06-01",
+        readingTime: "6 min read",
+        slug: "great-data-privacy-divide",
+        component: GreatDataPrivacyDivide
+    },
     {
         title: "Healthcare Software's Privacy Paradox: Breaking Free from Legacy Thinking",
         date: "2025-05-13",
