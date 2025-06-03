@@ -7,6 +7,7 @@ import SoYouWantToBuild from '../pages/blog/entries/so-you-want-to-build';
 import DataComplianceReality from '../pages/blog/entries/data-compliance-reality';
 import HealthcarePrivacyParadox from '../pages/blog/entries/healthcare-privacy-paradox';
 import GreatDataPrivacyDivide from '../pages/blog/entries/great-data-privacy-divide';
+import JsonToBinaryDebertaTokenizer from '../pages/blog/entries/json-to-binary-deberta-tokenizer';
 
 interface BlogPost {
     title: string;
@@ -17,6 +18,13 @@ interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster",
+        date: "2025-06-03",
+        readingTime: "5 min read",
+        slug: "json-to-binary-deberta-tokenizer",
+        component: JsonToBinaryDebertaTokenizer
+    },
     {
         title: "The Great Data Privacy Divide: Why Engineering Speed Meets Compliance Reality",
         date: "2025-06-01",
