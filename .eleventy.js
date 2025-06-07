@@ -1,7 +1,6 @@
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -49,14 +48,6 @@ module.exports = function(eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "after",
-      class: "direct-link",
-      symbol: "#"
-    }),
-    level: [1, 2, 3, 4],
-    slugify: eleventyConfig.getFilter("slug")
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 

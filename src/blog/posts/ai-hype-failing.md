@@ -68,4 +68,4 @@ Don't let your business become another casualty of the AI hype cycle.
 
 *Corewood: Machine Learning Beyond the Asymptote*
 
-<a href="/schedule-meeting/" class="inline-block px-6 py-3 bg-[#386641] text-white font-medium rounded-md hover:bg-[#386641]/90 transition-colors">Contact us today</a> 
+[Contact us today]({{ '/schedule-meeting/' | url }}) 

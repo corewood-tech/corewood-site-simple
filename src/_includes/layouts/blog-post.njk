@@ -15,23 +15,21 @@ layout: layouts/base.njk
         </div>
       </header>
       
-      <div class="prose mx-auto">
+      <div class="prose prose-lg prose-full-width">
         {{ content | safe }}
       </div>
       
       <footer class="mt-16 pt-8 border-t border-border">
         <div class="flex justify-between items-center">
           <a href="{{ '/blog/' | url }}" class="text-[#386641] hover:underline">← Back to Blog</a>
+          {% if site.url.includes('corewood.io') %}
           <div class="flex gap-4">
-            <a href="https://twitter.com/intent/tweet?url={{ page.url | url | absoluteUrl(site.url) | urlencode }}&text={{ title | urlencode }}" 
-               class="text-[#386641] hover:underline" target="_blank" rel="noopener">
-              Share on Twitter
-            </a>
             <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | absoluteUrl(site.url) | urlencode }}" 
                class="text-[#386641] hover:underline" target="_blank" rel="noopener">
               Share on LinkedIn
             </a>
           </div>
+          {% endif %}
         </div>
       </footer>
     </article>
