@@ -2,7 +2,7 @@ module.exports = {
   title: "Corewood AI",
   description: "AI Solutions built for modern GRC needs. Enterprise AI with integrated governance, risk management, and compliance for HIPAA, GDPR, SOC 2. Secure, auditable, and privacy-first machine learning infrastructure.",
   author: "Corewood AI",
-  url: process.env.ELEVENTY_BASE_URL || "https://corewood.info",
+  url: process.env.ELEVENTY_BASE_URL || "https://corewood.io",
   
   // Domain configuration for multi-domain builds
   domains: {

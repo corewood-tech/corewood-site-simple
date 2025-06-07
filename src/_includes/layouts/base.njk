@@ -17,21 +17,34 @@
   <meta name="robots" content="index, follow">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="{{ (page.url) | url | absoluteUrl(site.url) }}">
+  <link rel="canonical" href="{{ (page.url) | url | absoluteUrl('https://corewood.io') }}">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="{{ ogType or 'website' }}">
-  <meta property="og:url" content="{{ (page.url) | url | absoluteUrl(site.url) }}">
+  <meta property="og:url" content="{{ (page.url) | url | absoluteUrl('https://corewood.io') }}">
   <meta property="og:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{{ description or site.description }}">
-  <meta property="og:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl(site.url) }}">
+  <meta property="og:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
+  
+  <!-- Article-specific Open Graph tags -->
+  {% if ogType == 'article' %}
+  <meta property="article:author" content="{{ site.author }}">
+  <meta property="article:published_time" content="{{ date | date('%Y-%m-%d') }}">
+  <meta property="article:section" content="Technology">
+  {% if keywords %}
+  {% set keywordList = keywords.split(',') %}
+  {% for keyword in keywordList %}
+  <meta property="article:tag" content="{{ keyword.trim() }}">
+  {% endfor %}
+  {% endif %}
+  {% endif %}
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="{{ (page.url) | url | absoluteUrl(site.url) }}">
+  <meta property="twitter:url" content="{{ (page.url) | url | absoluteUrl('https://corewood.io') }}">
   <meta property="twitter:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="twitter:description" content="{{ description or site.description }}">
-  <meta property="twitter:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl(site.url) }}">
+  <meta property="twitter:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
   
   <!-- Keywords -->
   {% if keywords %}

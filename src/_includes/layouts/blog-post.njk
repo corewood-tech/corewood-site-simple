@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+ogType: article
 ---
 
 {% include "components/header.njk" %}
@@ -24,7 +25,7 @@ layout: layouts/base.njk
           <a href="{{ '/blog/' | url }}" class="text-[#386641] hover:underline">← Back to Blog</a>
           {% if site.url.includes('corewood.io') %}
           <div class="flex gap-4">
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | absoluteUrl(site.url) | urlencode }}" 
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | absoluteUrl('https://corewood.io') | urlencode }}" 
                class="text-[#386641] hover:underline" target="_blank" rel="noopener">
               Share on LinkedIn
             </a>
