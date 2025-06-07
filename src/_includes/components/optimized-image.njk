@@ -1,0 +1,9 @@
+{% comment %}
+Optimized image component with WebP support
+Usage: {% include "components/optimized-image.njk", src: "path/to/image.jpg", alt: "Alt text", sizes: "(min-width: 768px) 50vw, 100vw", className: "custom-class" %}
+{% endcomment %}
+
+{% set imageSizes = sizes or "100vw" %}
+{% set imageClass = className or "w-full h-auto" %}
+
+{% image src, alt, imageSizes, imageClass %} 

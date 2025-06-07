@@ -1,0 +1,52 @@
+---
+layout: layouts/page.njk
+title: "Blog"
+description: "Insights on AI, machine learning, data privacy, and building efficient AI infrastructure from the Corewood team."
+keywords: "AI blog, machine learning insights, data privacy, AI infrastructure, on-premises AI, private AI"
+permalink: /blog/
+---
+
+<section class="pt-32 pb-24">
+  <div class="container px-4 mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Blog</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Insights on AI, machine learning, data privacy, and building efficient AI infrastructure from the Corewood team.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for post in collections.blog %}
+      <a href="{{ post.url | url }}" class="block group">
+        <article class="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-200 group-hover:border-[#386641]/20 h-full">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+              <time datetime="{{ post.date | date('%Y-%m-%d') }}">{{ post.date | dateDisplay }}</time>
+              <span>•</span>
+              <span>{{ post.data.readingTime or (post.templateContent | readingTime) }}</span>
+            </div>
+            
+            <h2 class="text-xl font-semibold mb-3 line-clamp-2 group-hover:text-[#386641] transition-colors">
+              {{ post.data.title }}
+            </h2>
+            
+            <p class="text-muted-foreground mb-4 line-clamp-3 flex-grow">
+              {{ post.data.description }}
+            </p>
+            
+            <div class="text-[#386641] group-hover:underline font-medium">
+              Read more →
+            </div>
+          </div>
+        </article>
+      </a>
+      {% endfor %}
+    </div>
+
+    {% if collections.blog.length == 0 %}
+    <div class="text-center py-16">
+      <p class="text-muted-foreground">No blog posts found.</p>
+    </div>
+    {% endif %}
+  </div>
+</section> 

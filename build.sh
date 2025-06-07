@@ -22,12 +22,20 @@ build_for_domain() {
     mkdir -p "$output_dir"
     
     # Build with the specific base URL
-    cd src/updated_website
-    VITE_BASE_URL="https://$domain" npm run build
+    ELEVENTY_BASE_URL="https://$domain" NODE_ENV=production npm run build:production
     
     # Move the built files to the target directory
-    cp -r dist/* "../../$output_dir/"
-    cd ../..
+    cp -r _site/* "$output_dir/"
+    
+    # Update sitemap and robots.txt for this domain
+    if [ -f "$output_dir/sitemap.xml" ]; then
+        sed -i.bak "s|<loc>/|<loc>https://$domain/|g" "$output_dir/sitemap.xml"
+        rm "$output_dir/sitemap.xml.bak" 2>/dev/null || true
+    fi
+    
+    if [ -f "$output_dir/robots.txt" ]; then
+        echo "Sitemap: https://$domain/sitemap.xml" >> "$output_dir/robots.txt"
+    fi
 }
 
 # Main build process

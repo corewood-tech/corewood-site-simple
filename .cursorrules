@@ -1,35 +1,130 @@
-# Overview
+# Corewood Site - 11ty Static Site Generator
 
-This is a business website for Corewood. 
+## Project Overview
+- **Company**: Corewood AI - GRC (Governance, Risk, Compliance) and AI company
+- **Tech Stack**: 11ty, Nunjucks, Tailwind CSS, Alpine.js, PostCSS
+- **Positioning**: "AI Solutions Built for Modern GRC Needs"
+- **Key Product**: Masquer - PII detection and data masking
+- **Tagline**: "Mask Data, Not Innovation"
 
-We are a boutique, high-performance inference shop.
+## Critical Technical Rules
 
-We build machine learning inference directly into APIs using compiled, memory-safe languages and fewer components than current industry standards. 
+### 🖼️ IMAGE HANDLING - ALWAYS USE OPTIMIZED SHORTCODE
+**NEVER use regular `<img>` tags or direct image paths!**
+```njk
+<!-- ❌ WRONG -->
+<img src="/assets/img/file.png" alt="description">
+<img src="/static/file.png" alt="description">
 
-Pages: 
-- Home > Landing page; overview of value proposition
-- Masquer > Our first product that uses PII detection to mask personally identifiable information and a configurable database proxy that masks specific columns --> uses inference to see if a column is PII
-- Services > Talks about what we do
-- Blog > Blog posts
+<!-- ✅ CORRECT -->
+{% image "assets/img/file.png", "description", "(min-width: 768px) 50vw, 100vw", "css-classes" %}
+{% image "src/static/file.png", "description", "(min-width: 768px) 50vw, 100vw", "css-classes" %}
+```
 
-# Design
+### 📁 Directory Structure
+```
+src/
+├── _data/site.js          # Site configuration
+├── _includes/
+│   ├── layouts/           # Base layouts
+│   └── components/        # Reusable components
+├── assets/
+│   ├── css/main.css       # Main stylesheet
+│   └── js/main.js         # JavaScript
+├── blog/
+│   ├── blog.njk           # Blog listing page
+│   └── posts/             # Blog posts (Markdown)
+├── static/                # Static files (copied to root)
+└── *.njk                  # Page templates
 
-Clean, simple, a little airy
+assets/img/                # Original images (outside src/)
+```
 
-# Content and Tone
+### 🎨 Brand Guidelines
+- **Colors**: 
+  - Primary: `#386641` (Corewood Green)
+  - Secondary: `#6A994E`, `#A7C957`
+  - Background: `#F2E8CF`
+- **Fonts**: System fonts with `font-display` class for headings
+- **Tone**: Engineering but approachable, knowledgeable but not bragging
 
-Engineering but approachable, knowledgeable but not trying to brag.
+### 🏢 Company Positioning
+- **NOT**: "Private AI" or "Self-hosted AI" 
+- **YES**: "AI Solutions Built for Modern GRC Needs"
+- **Compliance**: HIPAA, GDPR, SOC 2 (NOT SOX)
+- **Focus**: Governance, Risk, Compliance integrated from day one
 
-# Publishing Blog Posts
+### 🛠️ Development Commands
+```bash
+npm run dev     # Start development server (11ty --serve --watch)
+npm run build   # Production build
+./build.sh      # Multi-domain builds (info, cloud, tech, io)
+```
 
-To publish a new blog post:
+### 📝 Content Rules
+- **Blog Posts**: Markdown files in `src/blog/posts/` with frontmatter
+- **SEO**: Every page needs title, description, keywords, JSON-LD
+- **Images**: Always use optimized shortcode with WebP conversion
+- **Interactive**: Use Alpine.js for client-side interactions
 
-1. Create a new .tsx file in src/updated_website/src/pages/blog/entries/ with the post slug as the filename
-2. Structure the blog post following the existing template format (React component with article markup)
-3. Include post metadata at the top of the content
-4. Register the post in src/updated_website/src/data/blog-posts.ts by:
-   - Importing the component at the top of the file
-   - Adding a new entry to the blogPosts array with title, date, readingTime, slug, and component
-   - Place the new entry at the top of the array for newest posts
-5. The date format should be YYYY-MM-DD
-6. Restart the development server to see changes
+### 🔧 Common Patterns
+
+#### Page Template Structure:
+```njk
+---
+layout: layouts/page.njk
+title: "Page Title"
+description: "SEO description"
+keywords: "keyword1, keyword2, keyword3"
+permalink: /page-url/
+---
+
+<section class="pt-32 pb-24">
+  <div class="container px-4 mx-auto">
+    <!-- Content -->
+  </div>
+</section>
+```
+
+#### Alpine.js Data:
+```njk
+<div x-data="{ activeStep: 1, modalImage: null }">
+  <!-- Interactive content -->
+</div>
+```
+
+#### Optimized Images with Modal:
+```njk
+<div class="cursor-pointer" @click="modalImage = '/assets/img/file.png'; modalAlt = 'Description'">
+  {% image "assets/img/file.png", "Description", "(min-width: 768px) 50vw, 100vw", "w-full hover:opacity-90 transition-opacity" %}
+  <p class="text-xs text-center mt-2 text-gray-600">Click to view full size</p>
+</div>
+```
+
+### 🚫 Common Mistakes to Avoid
+1. **Using `<img>` tags instead of `{% image %}` shortcode**
+2. **Saying "GRC-Compliant" (redundant - GRC = Governance Risk Compliance)**
+3. **Using SOX instead of SOC 2 for data compliance**
+4. **Forgetting Alpine.js data attributes for interactivity**
+5. **Not including proper SEO frontmatter**
+6. **Using wrong image paths (remember assets/img/ vs src/static/)**
+
+### 📦 Key Dependencies
+- `@11ty/eleventy` - Static site generator
+- `@11ty/eleventy-img` - Image optimization with WebP
+- `tailwindcss` - CSS framework
+- `alpinejs` - Lightweight JavaScript framework
+- `postcss` - CSS processing
+
+### 🌐 Multi-Domain Setup
+- Builds to 4 domains: corewood.info, .cloud, .tech, .io
+- Uses `ELEVENTY_BASE_URL` environment variable
+- Separate dist folders: `dist/info/`, `dist/cloud/`, etc.
+
+### 📊 Masquer Product Details
+- **Performance**: ~2GB RAM, 500-700 tokens/sec
+- **Workflow**: API Detection → Table Scanning → Proxy Setup → Admin Audit → Usage Logs → Results
+- **Images**: Located in `assets/img/masquer/` folder
+- **Features**: Human-in-the-loop design, zero-copy architecture, audit trails
+
+Remember: This is a production website for a GRC and AI company. Quality, compliance, and technical accuracy are paramount.
