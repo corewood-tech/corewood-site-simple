@@ -1,0 +1,95 @@
+---
+layout: layouts/page.njk
+title: "LandScope — Case Study"
+description: "How Corewood built a production GIS platform from MVP in 10 weeks."
+permalink: /profile/landscope/
+---
+
+<section class="pt-40 pb-24">
+  <div class="max-w-3xl mx-auto px-6">
+    <a href="{{ '/profile/' | url }}" class="text-morpho-400 hover:text-morpho-300 text-sm transition-colors">← Case Studies</a>
+
+    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mt-6 mb-4">LandScope</h1>
+
+    <div class="flex flex-wrap gap-4 text-sm text-cream-600 mb-8">
+      <span>Client: LandScope</span>
+      <span class="text-forest-500">•</span>
+      <span>Role: CTO, Platform Architect</span>
+      <span class="text-forest-500">•</span>
+      <span>Timeline: 10 weeks</span>
+    </div>
+
+    <div class="plate-wrap mb-12">
+      <div class="plate chamfer-full px-6 py-4 relative">
+        <div class="rivet absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="https://landscope.earth" class="btn-primary text-sm px-5 py-2">Homepage</a>
+          <a href="https://app.landscope.earth" class="btn-primary text-sm px-5 py-2">Launch App</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-cream-200 text-lg leading-relaxed space-y-8">
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">The Problem</h2>
+        <p>Mitch Rawlyk had built LandScope as a proof of concept running on Google Earth Pro. Customers wanted it in a browser. The MVP worked but wasn't scalable.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">The Approach</h2>
+        <p>Instead of thinking "frontend," "backend," "data," "DevOps" as separate concerns, I thought about The System. What does this thing need to do, end to end, and how do we make it fast and reliable from day one?</p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Architecture</h2>
+        <ul class="space-y-2 text-cream-300">
+          <li>Frontend: React + Tailwind + TypeScript + CesiumJS (3D globe)</li>
+          <li>Admin Panel: Svelte, gRPC/connect-rpc</li>
+          <li>Backend: GoLang + gRPC, no frameworks</li>
+          <li>Auth: OpenPolicyAgent, Zitadel v3</li>
+          <li>Observability: OpenTelemetry</li>
+          <li>Data: Postgres (not PostGIS — business logic on app server)</li>
+          <li>Storage: S3-compatible object store</li>
+          <li>Processing: All binary, no Python. Direct cgo and pipe integration with open source geospatial tools.</li>
+          <li>Full deployment automation and observability out-of-the-box.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Key Decisions</h2>
+        <ul class="space-y-2 text-cream-300">
+          <li>Binary processing pipeline instead of Python: speed and operational simplicity</li>
+          <li>Postgres without PostGIS: keep GIS logic in application layer for flexibility</li>
+          <li>OpenTelemetry from day one: production observability isn't optional</li>
+          <li>No frameworks: Google-style simplicity, direct control</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Results</h2>
+        <ul class="space-y-2 text-cream-300">
+          <li>Under 20 minutes to process 2,000 acres (most layers in under 3 minutes)</li>
+          <li>Production-grade from launch</li>
+          <li>Platform handles real customers, real payments, real data</li>
+          <li>Architecture scales from 1 to infinity</li>
+        </ul>
+      </div>
+
+      <blockquote class="plate chamfer-full p-6 border-l-4 border-morpho-500 italic text-cream-200">
+        "Mickey took my vision and transformed it into something built on a foundation of scalability, security, and agility."
+        <footer class="mt-2 text-cream-600 text-sm not-italic">— Mitch Rawlyk, CEO & Founder, LandScope</footer>
+      </blockquote>
+
+      <div class="flex flex-wrap gap-2 pt-4">
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">GoLang</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">React</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">CesiumJS</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">gRPC</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">OpenTelemetry</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">Postgres</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">Zitadel</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">OPA</span>
+      </div>
+    </div>
+  </div>
+</section>

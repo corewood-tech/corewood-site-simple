@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon.png' | url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/favicon.png' | url }}">
-  <link rel="shortcut icon" href="{{ '/favicon.ico' | url }}">
-  
+
+  <!-- Font preload -->
+  <link rel="preload" href="{{ '/fonts/roca-two-bold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/fonts/hk-grotesk-pro-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+
   <!-- SEO Meta Tags -->
-  <title>{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
+  <title>{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
   <meta name="author" content="{{ site.author }}">
   <meta name="robots" content="index, follow">
-  
+
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ (page.url) | url | absoluteUrl('https://corewood.io') }}">
-  
-  <!-- Open Graph / Facebook -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta property="og:url" content="{{ (page.url) | url | absoluteUrl('https://corewood.io') }}">
   <meta property="og:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
-  
-  <!-- Article-specific Open Graph tags -->
+
   {% if ogType == 'article' %}
   <meta property="article:author" content="{{ site.author }}">
   <meta property="article:published_time" content="{{ date | date('%Y-%m-%d') }}">
@@ -38,38 +40,30 @@
   {% endfor %}
   {% endif %}
   {% endif %}
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="{{ (page.url) | url | absoluteUrl('https://corewood.io') }}">
   <meta property="twitter:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="twitter:description" content="{{ description or site.description }}">
   <meta property="twitter:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
-  
-  <!-- Keywords -->
+
   {% if keywords %}
   <meta name="keywords" content="{{ keywords }}">
   {% endif %}
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
-  
-  <!-- JSON-LD Structured Data -->
+
+  <!-- JSON-LD -->
   {% if jsonLd %}
   <script type="application/ld+json">{{ jsonLd | safe }}</script>
   {% endif %}
 </head>
-<body class="min-h-screen bg-background font-sans">
+<body class="min-h-screen text-cream-100 font-body">
   {{ content | safe }}
-  
-  <!-- Scripts -->
+
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="{{ '/assets/js/main.js' | url }}" defer></script>
-  
-  <!-- Hidden SEO links -->
-  <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; visibility: hidden;">
-    <a href="https://www.landscope.earth/" rel="nofollow">Environmental Data Platform</a>
-    <a href="https://www.landscope.earth/" rel="nofollow">Landscape Analytics</a>
-  </div>
 </body>
-</html> 
+</html>

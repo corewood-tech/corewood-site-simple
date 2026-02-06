@@ -6,6 +6,7 @@ keywords: "AI hype, machine learning, ML limitations, AI efficiency, computation
 date: 2025-04-14
 readingTime: "3 min read"
 slug: "ai-hype-failing"
+permalink: /blog/ai-hype-failing/
 ogType: "article"
 ogImage: "/corewood_symbol_avatar_white.png"
 ---

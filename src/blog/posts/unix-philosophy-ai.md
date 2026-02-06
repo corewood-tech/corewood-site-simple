@@ -5,6 +5,7 @@ description: "Exploring how the foundational principles of Unix continue to guid
 date: 2025-06-17
 tags: ["AI", "Engineering", "Unix", "Software Design", "Best Practices"]
 author: "Corewood Engineering Team"
+permalink: /blog/unix-philosophy-ai/
 ---
 
 # The Unix Philosophy in the Age of AI: Timeless Principles for Modern Engineering

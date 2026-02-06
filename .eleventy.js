@@ -23,7 +23,7 @@ module.exports = function(eleventyConfig) {
       const postcss = require("postcss");
       const tailwindcss = require("tailwindcss");
       const autoprefixer = require("autoprefixer");
-      
+
       let plugins = [tailwindcss, autoprefixer];
       if (process.env.NODE_ENV === "production") {
         const cssnano = require("cssnano");
@@ -73,6 +73,13 @@ module.exports = function(eleventyConfig) {
     const words = content.split(/\s+/).length;
     const minutes = Math.ceil(words / wordsPerMinute);
     return `${minutes} min read`;
+  });
+
+  // Head filter for blog sidebar
+  eleventyConfig.addFilter("head", function(array, n) {
+    if (!Array.isArray(array) || array.length === 0) return [];
+    if (n < 0) return array.slice(n);
+    return array.slice(0, n);
   });
 
   // Image shortcode with WebP optimization
@@ -185,4 +192,4 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"
   };
-}; 
+};

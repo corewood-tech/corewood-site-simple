@@ -1,0 +1,75 @@
+---
+layout: layouts/page.njk
+title: "Self-Hosted LLM APIs — Case Study"
+description: "Custom LLM inference engine with GPU kernels. GoLang, Metal, CUDA."
+permalink: /profile/llm-apis/
+---
+
+<section class="pt-40 pb-24">
+  <div class="max-w-3xl mx-auto px-6">
+    <a href="{{ '/profile/' | url }}" class="text-morpho-400 hover:text-morpho-300 text-sm transition-colors">← Case Studies</a>
+
+    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mt-6 mb-4">Self-Hosted LLM APIs</h1>
+
+    <div class="flex flex-wrap gap-4 text-sm text-cream-600 mb-12">
+      <span>Project: Custom LLM Inference Engine</span>
+      <span class="text-forest-500">•</span>
+      <span>Type: R&D / Internal Product</span>
+      <span class="text-forest-500">•</span>
+      <span>Status: In development</span>
+    </div>
+
+    <div class="text-cream-200 text-lg leading-relaxed space-y-8">
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">The Problem</h2>
+        <p>Companies using OpenAI/Anthropic APIs face three concerns:</p>
+        <ol class="list-decimal list-inside space-y-2 text-cream-300 mt-4">
+          <li>Cost volatility — providers can raise prices anytime</li>
+          <li>Data privacy — your prompts and data flow through third-party systems</li>
+          <li>Control — operational consistency depends on someone else's infrastructure</li>
+        </ol>
+        <p class="mt-4">The standard self-hosted alternatives (vLLM, llama.cpp server) are Python-based or bring their own operational complexity.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">The Approach</h2>
+        <p>ML should be an engineering concern like databases or caching. No Python. Binary deployment. Custom GPU kernels.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">What We're Building</h2>
+        <ul class="space-y-2 text-cream-300">
+          <li>GoLang API server with CGo bindings to llama.cpp</li>
+          <li>Custom binary tokenizer (written from scratch)</li>
+          <li>Custom GPU kernels (Metal first, portable to CUDA):
+            <ul class="ml-6 mt-1 space-y-1 text-cream-400">
+              <li>Concurrent Q/K/V dispatch</li>
+              <li>Fused QKV projection</li>
+              <li>Quantized KV cache (Q8)</li>
+              <li>Function constant specialization</li>
+            </ul>
+          </li>
+          <li>Dynamic KV cache management (vs static preallocation in vLLM/llama.cpp)</li>
+          <li>Batched attention with continuous batching</li>
+          <li>Single binary deployment</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Why Custom Kernels</h2>
+        <p>The existing frameworks make tradeoffs we don't want. We're optimizing for dynamic memory management and operational simplicity.</p>
+      </div>
+
+      <div class="plate chamfer-full p-6">
+        <p class="text-cream-400 text-sm">R&D. Not yet deployed to production. Available for early adopter engagements.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2 pt-4">
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">GoLang</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">CGo</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">Metal</span>
+        <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">CUDA</span>
+      </div>
+    </div>
+  </div>
+</section>

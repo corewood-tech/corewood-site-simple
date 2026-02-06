@@ -7,6 +7,7 @@ tags: ["AI", "LLM", "Machine Learning", "Technical Writing", "Prompt Engineering
 author: "Corewood Engineering Team"
 readingTime: "8 min read"
 slug: "llm-context-synthesis"
+permalink: /blog/llm-context-synthesis/
 ogType: "article"
 ogImage: "/corewood_symbol_avatar_white.png"
 keywords: "LLM, Large Language Models, AI prompting, context synthesis, prompt engineering, artificial intelligence, machine learning"

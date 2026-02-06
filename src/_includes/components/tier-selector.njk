@@ -1,0 +1,149 @@
+{# Tier selector — "Which best describes you?" tiles that open modals #}
+<section class="section-wash py-section" x-data="{ openTier: null }">
+  <div class="max-w-4xl mx-auto px-4 md:px-6">
+    <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 text-center mb-10">Which best describes you?</h2>
+
+    <!-- Tile row -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+      <button @click="openTier = 'founder'" class="plate-wrap group cursor-pointer">
+        <div class="plate chamfer-full p-6 md:p-8 text-center transition-all duration-300 group-hover:bg-forest-700">
+          <div class="rivet absolute top-5 left-5 z-10"></div>
+          <div class="rivet absolute top-5 right-5 z-10"></div>
+          <div class="rivet absolute bottom-5 left-5 z-10"></div>
+          <div class="rivet absolute bottom-5 right-5 z-10"></div>
+          <h3 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-2">Founder</h3>
+          <p class="text-cream-500 text-sm">Pre-launch to first customers</p>
+        </div>
+      </button>
+
+      <button @click="openTier = 'scaling'" class="plate-wrap group cursor-pointer">
+        <div class="plate chamfer-full p-6 md:p-8 text-center transition-all duration-300 group-hover:bg-forest-700">
+          <div class="rivet absolute top-5 left-5 z-10"></div>
+          <div class="rivet absolute top-5 right-5 z-10"></div>
+          <div class="rivet absolute bottom-5 left-5 z-10"></div>
+          <div class="rivet absolute bottom-5 right-5 z-10"></div>
+          <h3 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-2">Scaling</h3>
+          <p class="text-cream-500 text-sm">Product works, growing fast</p>
+        </div>
+      </button>
+
+      <button @click="openTier = 'enterprise'" class="plate-wrap group cursor-pointer">
+        <div class="plate chamfer-full p-6 md:p-8 text-center transition-all duration-300 group-hover:bg-forest-700">
+          <div class="rivet absolute top-5 left-5 z-10"></div>
+          <div class="rivet absolute top-5 right-5 z-10"></div>
+          <div class="rivet absolute bottom-5 left-5 z-10"></div>
+          <div class="rivet absolute bottom-5 right-5 z-10"></div>
+          <h3 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-2">Enterprise</h3>
+          <p class="text-cream-500 text-sm">Optimizing complex systems</p>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal backdrop -->
+  <div
+    x-show="openTier"
+    x-cloak
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    @click.self="openTier = null"
+    @keydown.escape.window="openTier = null"
+    class="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-8"
+    style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px);"
+  >
+    <!-- Modal plate -->
+    <div
+      x-show="openTier"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 scale-95"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-95"
+      class="w-full max-w-4xl"
+    >
+      <div class="plate-wrap">
+        <div class="plate chamfer-full-lg relative">
+          <div class="rivet absolute top-7 left-7 z-10"></div>
+          <div class="rivet absolute top-7 right-7 z-10"></div>
+          <div class="rivet absolute bottom-7 left-7 z-10"></div>
+          <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+          <!-- Close button -->
+          <button @click="openTier = null" class="absolute top-4 right-4 md:top-6 md:right-6 z-20 text-cream-500 hover:text-cream-100 transition-colors">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="m18 6-12 12"/><path d="m6 6 12 12"/>
+            </svg>
+          </button>
+
+          <div class="max-h-[85vh] overflow-y-auto p-8 md:p-12 modal-scroll">
+
+          {# ── Founder ── #}
+          <div x-show="openTier === 'founder'" x-cloak>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-8">Founder.</h2>
+            <div class="text-cream-200 text-lg leading-relaxed space-y-4">
+              <p>You are the "pioneer tree" of the business ecosystem. Quick and light, you fall on barren soil and either perish or take root and thrive.</p>
+              <p>Pioneer trees grow where other trees cannot. After catastrophes like a landslide or a hurricane. Disruption becomes opportunity.</p>
+              <p>Their seeds catch in the wind, and they condition the land to grow more durable, impactful vegetation. Small plants take hold and thrive in the shade provided by the fast growing tree. But pioneer trees face risk, too. Eager to grow, they can be weak-rooted and easily blown down.</p>
+              <p>Corewood focuses on the forest of tomorrow by helping founders contextualize, define, and create the software systems you need to ground your business; your stabilizing roots. Forward looking to concerns like integrated monitoring dashboards. Integration tests and deployment automation. Fast moving enough to enable you to grow instead of perish.</p>
+              <p>By introducing holistic infrastructure early, we provide the deep roots to withstand the forces of nature.</p>
+            </div>
+            <blockquote class="mt-10 bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
+              <div class="text-cream-300 italic leading-relaxed text-base">
+                <p>"Mickey is a rare kind of visionary because he has an extraordinary ability to understand and realize your vision, and enmesh it within his own. This gift comes from genuine empathy and a deep understanding of what founders and creators are really trying to build.</p>
+                <p class="mt-4">When I first met Mickey, I was doing everything myself: cobbling together a front-end, figuring out back-end architecture, handling marketing, creating content, and trying to sell—all at once. I had the bare bones of an MVP and enough determination to probably get it off the ground. It would have worked for a while, but it wouldn't have been scalable. It probably wouldn't have been secure either, because I know next to nothing about it.</p>
+                <p class="mt-4">Not only did Mickey take what I had and cleaned it up, but he took my vision and transformed it into something built on a foundation of scalability, security, and agility. He understood not just what I was trying to build, but why it needed to be built. The product that emerged is sustainable and positioned for real growth.</p>
+                <p class="mt-4">If you're looking for someone who can take an idea and turn it into a reality that's built to last, I can't recommend Mickey highly enough. He's the partner every founder wishes they had, and comes with an infectiously high level of energy."</p>
+              </div>
+              <footer class="mt-4 text-cream-600 text-sm font-medium">— Mitch Rawlyk, CEO & Founder, LandScope</footer>
+            </blockquote>
+          </div>
+
+          {# ── Scaling ── #}
+          <div x-show="openTier === 'scaling'" x-cloak>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-8">Scaling.</h2>
+            <div class="text-cream-200 text-lg leading-relaxed space-y-4">
+              <p>Have you seen a young forest growing? It isn't orderly.</p>
+              <p>Plants compete for sunlight, water, nutrients. Vines tangle, branches collide, and the understory is chaos — which is fine, because chaos means life is finding space to grow.</p>
+              <p>We help you break out of the brush and into the canopy by identifying your friction points, accelerating new standards with minimal current-system rework, and providing the organizational support your team needs.</p>
+            </div>
+            <blockquote class="mt-10 bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
+              <div class="text-cream-300 italic leading-relaxed text-base">
+                <p>"What makes Mickey invaluable as a technology leader is his ability and desire to see the big picture. When designing a system he prioritizes understanding the problem from a functional and non-functional perspective and building a conceptual model for the solution; all of this before diving into the technical details.</p>
+                <p class="mt-4">In my experience, Mickey's approach to system design has yielded: early delivery, under budget; shared understanding across the team; leveling-up junior team members; detailed documentation that speaks to technical and non-technical audiences; a system that effectively models and encapsulates hairy, real world complexity; a system that is designed to scale with the number of users, stakeholders and even engineers.</p>
+                <p class="mt-4">Mickey is a force of nature; his approach to leadership and technical rigor has not only resulted in strong and reliable software but has also elevated the skills and confidence of those on his team. His contributions have set a benchmark for what strong technical leadership looks like."</p>
+              </div>
+              <footer class="mt-4 text-cream-600 text-sm font-medium">— Ranjan Subbiah, Engineering Manager, Uplight Inc</footer>
+            </blockquote>
+          </div>
+
+          {# ── Enterprise ── #}
+          <div x-show="openTier === 'enterprise'" x-cloak>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-8">Enterprise.</h2>
+            <div class="text-cream-200 text-lg leading-relaxed space-y-4">
+              <p>Massive ecosystems sometimes struggle to change quickly enough. Complex feedback loops can lead to entrenched patterns. Entrenched patterns undermine agility.</p>
+              <p>To combat this, Corewood employs a multi-stakeholder business context assessment. From this, we employ requirement engineering techniques to identify the product use cases.</p>
+              <p>This is where Corewood differs: Product use cases inform an architectural discovery process. The architectural requirements determine the infrastructure.</p>
+              <p>The effect? Features "fall into place." We can help you adapt structurally because we think-and-act structurally.</p>
+            </div>
+            <blockquote class="mt-10 bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
+              <div class="text-cream-300 italic leading-relaxed text-base">
+                <p>"This is my pleasure to recommend Mickey for both his high-level technical acumen and lighting-fast laser focus! Starting this Summer 2025, I was fortunate to observe Mickey's abilities in-action.</p>
+                <p class="mt-4">More specifically, Micky was the first instrument in taking a novel software and streamlining it into a more perfected state. This software he improved, called LandScope, was the life's work of its originator. The software was in soft launch when Mickey took it on with his full energy and commitment.</p>
+                <p class="mt-4">In RECORD TIME, he both produced and oversaw the completion of its next iteration. From integrated functionality inside a common Internet browser, to ensuring FAST-running data sets into visuals, demonstrations of the improved LandScope have literally impressed everyone who sees it.</p>
+                <p class="mt-4">The next phase of the LandScope software is currently being produced by Mickey and I am so excited and cannot wait to see what he does next for our team."</p>
+              </div>
+              <footer class="mt-4 text-cream-600 text-sm font-medium">— Alisha "Bee", Founder, Wind, Bees & Earth</footer>
+            </blockquote>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

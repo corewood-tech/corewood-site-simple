@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
-title: "AI Solutions Built for Modern GRC & Data Governance"
-description: "Corewood delivers AI solutions built for modern GRC needs. Governance, risk management, and compliance for HIPAA, GDPR, SOC 2 integrated into every machine learning deployment. Secure, auditable, privacy-first AI."
-keywords: "GRC AI solutions, compliance AI, governance risk compliance, HIPAA compliant AI, GDPR AI compliance, SOC 2 compliance AI, data governance, AI risk management, regulatory compliance AI, privacy-first AI, auditable AI, enterprise AI governance, AI compliance framework, data privacy AI, secure AI deployment, AI audit trails, compliance automation, risk assessment AI, data protection AI, AI security governance, PII detection, data masking, zero-trust AI"
+title: "Hard Problems. Simple Solutions."
+description: "Software consulting for founders, scaling teams, and enterprises. Architecture, engineering, and technical leadership."
+keywords: "software consulting, software architecture, systems design, climate tech, full stack engineering, technical leadership, fractional CTO"
 ogType: "website"
 jsonLd: |
   {
@@ -10,98 +10,27 @@ jsonLd: |
     "@graph": [
       {
         "@type": "Organization",
-        "name": "Corewood AI",
-        "url": "/",
-        "logo": "/corewood_symbol_avatar_white.png",
-        "description": "GRC-focused AI company delivering compliance-first machine learning solutions with built-in governance, risk management, and regulatory compliance for enterprise environments.",
+        "name": "Corewood",
+        "url": "https://corewood.io",
+        "logo": "https://corewood.io/corewood_symbol_avatar_white.png",
+        "description": "Software consulting for founders, scaling teams, and enterprises. Architecture, engineering, and technical leadership.",
         "foundingDate": "2024",
-        "industry": "Artificial Intelligence & Compliance Technology",
-        "knowsAbout": [
-          "GRC-Compliant AI Solutions",
-          "AI Governance & Risk Management",
-          "Data Privacy & Compliance Automation",
-          "Regulatory AI Frameworks", 
-          "Secure AI Infrastructure",
-          "Healthcare & Financial AI Compliance",
-          "AI Audit & Monitoring",
-          "Privacy-Preserving Machine Learning",
-          "HIPAA Compliance",
-          "GDPR Compliance",
-          "SOC 2 Compliance",
-          "Data Governance",
-          "AI Risk Assessment",
-          "Compliance Automation"
-        ],
         "areaServed": "Worldwide",
-        "serviceType": [
-          "GRC AI Consulting",
-          "AI Compliance Framework Development",
-          "Data Governance Solutions",
-          "AI Risk Management",
-          "Regulatory Compliance AI",
-          "Privacy-Preserving AI Development"
-        ],
         "sameAs": [
-          "https://linkedin.com/company/corewood-ai",
-          "https://twitter.com/corewood_ai"
+          "https://www.linkedin.com/in/kylemickey/",
+          "https://github.com/orgs/corewood-tech"
         ]
       },
       {
         "@type": "WebSite",
-        "name": "Corewood AI - AI Solutions for Modern GRC",
-        "url": "/",
-        "description": "Enterprise AI solutions with built-in governance, risk management, and regulatory compliance",
-        "keywords": "GRC AI, compliance AI, governance risk compliance, HIPAA AI, GDPR AI, data governance",
+        "name": "Corewood",
+        "url": "https://corewood.io",
+        "description": "Hard problems. Simple solutions. Software consulting.",
         "inLanguage": "en-US",
-        "copyrightYear": "2024",
+        "copyrightYear": "2026",
         "publisher": {
           "@type": "Organization",
-          "name": "Corewood AI"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "AI Solutions for Modern GRC",
-        "provider": {
-          "@type": "Organization", 
-          "name": "Corewood AI"
-        },
-        "description": "AI solutions with built-in governance, risk management, and regulatory compliance for enterprise environments",
-        "serviceType": "Artificial Intelligence Compliance Consulting",
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "GRC AI Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "HIPAA-Compliant AI Development"
-              }
-            },
-            {
-              "@type": "Offer", 
-              "itemOffered": {
-                "@type": "Service",
-                                 "name": "GDPR AI Compliance Framework"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service", 
-                "name": "AI Governance & Risk Management"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Data Privacy & PII Protection"
-              }
-            }
-          ]
+          "name": "Corewood"
         }
       }
     ]
@@ -109,5 +38,17 @@ jsonLd: |
 ---
 
 {% include "components/hero.njk" %}
-{% include "components/features.njk" %}
-{% include "components/cta.njk" %} 
+
+{% include "components/tickers.njk" %}
+
+{# ── Between-section CTA ── #}
+{% set ctaQuote = "Research before you build." %}
+{% include "components/section-cta.njk" %}
+
+{% include "components/tier-selector.njk" %}
+
+{# ── Between-section CTA ── #}
+{% set ctaQuote = "Building software is the most expensive way to discover your requirements." %}
+{% include "components/section-cta.njk" %}
+
+{% include "components/closing-cta.njk" %}

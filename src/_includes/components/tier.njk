@@ -1,0 +1,31 @@
+{#
+  Tier component — reusable for Founder, Scaling, Enterprise sections
+  Params: tierName, tierCopy, testimonialQuote, testimonialAuthor, ctaText, ctaLink
+#}
+<section class="section-wash py-section">
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Shadow wrapper (clip-path clips shadows, so shadow goes here) -->
+    <div class="plate-wrap">
+      <!-- Chamfered plate surface -->
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <!-- Rivet accents at corners -->
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-8">{{ tierName }}</h2>
+
+        <div class="text-cream-200 text-lg leading-relaxed space-y-4 whitespace-pre-line">{{ tierCopy }}</div>
+
+        {% if testimonialQuote %}
+        <blockquote class="mt-10 bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
+          <div class="text-cream-300 italic leading-relaxed whitespace-pre-line text-base">{{ testimonialQuote }}</div>
+          <footer class="mt-4 text-cream-600 text-sm font-medium">— {{ testimonialAuthor }}</footer>
+        </blockquote>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>

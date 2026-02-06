@@ -6,6 +6,7 @@ keywords: "software engineering, requirements gathering, product development, en
 date: 2025-06-18
 readingTime: "12 min read"
 slug: "product-engineering"
+permalink: /blog/product-engineering/
 ogType: "article"
 ogImage: "/corewood_symbol_avatar_white.png"
 ---

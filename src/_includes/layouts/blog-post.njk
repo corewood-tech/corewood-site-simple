@@ -4,36 +4,51 @@ ogType: article
 ---
 
 {% include "components/header.njk" %}
-<main class="pt-32 pb-24">
-  <div class="container px-4 mx-auto max-w-4xl">
-    <article class="font-sans text-gray-800 leading-relaxed">
-      <header class="mb-12 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ title }}</h1>
-        <div class="flex flex-wrap justify-center items-center gap-4 text-sm text-muted-foreground">
-          <time datetime="{{ date | date('%Y-%m-%d') }}">{{ date | dateDisplay }}</time>
-          <span>•</span>
-          <span>{{ content | readingTime }}</span>
+{% include "components/breadcrumbs.njk" %}
+<main class="pt-40 pb-24">
+  <div class="container px-4 mx-auto max-w-6xl">
+    <div class="flex gap-12">
+      <!-- Main content -->
+      <article class="flex-1 max-w-3xl">
+        <header class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-cream-100 mb-6">{{ title }}</h1>
+          <div class="flex flex-wrap items-center gap-4 text-sm text-cream-600">
+            <time datetime="{{ date | date('%Y-%m-%d') }}">{{ date | dateDisplay }}</time>
+            <span class="text-forest-500">•</span>
+            <span>{{ content | readingTime }}</span>
+          </div>
+        </header>
+
+        <div class="prose prose-lg">
+          {{ content | safe }}
         </div>
-      </header>
-      
-      <div class="prose prose-lg prose-full-width">
-        {{ content | safe }}
-      </div>
-      
-      <footer class="mt-16 pt-8 border-t border-border">
-        <div class="flex justify-between items-center">
-          <a href="{{ '/blog/' | url }}" class="text-[#386641] hover:underline">← Back to Blog</a>
-          {% if site.url.includes('corewood.io') %}
-          <div class="flex gap-4">
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | absoluteUrl('https://corewood.io') | urlencode }}" 
-               class="text-[#386641] hover:underline" target="_blank" rel="noopener">
+
+        <footer class="mt-16 pt-8 border-t border-forest-700">
+          <div class="flex justify-between items-center">
+            <a href="{{ '/blog/' | url }}" class="text-morpho-400 hover:text-morpho-300 transition-colors">← Back to Blog</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | absoluteUrl('https://corewood.io') | urlencode }}"
+               class="text-morpho-400 hover:text-morpho-300 transition-colors" target="_blank" rel="noopener">
               Share on LinkedIn
             </a>
           </div>
-          {% endif %}
+        </footer>
+      </article>
+
+      <!-- Sidebar — desktop only -->
+      <aside class="hidden lg:block w-64 flex-shrink-0">
+        <div class="sticky top-32">
+          <h3 class="text-sm font-medium text-cream-600 uppercase tracking-wider mb-4">Recent Posts</h3>
+          <nav class="space-y-3">
+            {% for post in collections.blog | head(8) %}
+            <a href="{{ post.url | url }}"
+               class="block text-sm {% if post.url == page.url %}text-morpho-400{% else %}text-cream-400 hover:text-cream-100{% endif %} transition-colors">
+              {{ post.data.title }}
+            </a>
+            {% endfor %}
+          </nav>
         </div>
-      </footer>
-    </article>
+      </aside>
+    </div>
   </div>
 </main>
-{% include "components/footer.njk" %} 
+{% include "components/footer.njk" %}

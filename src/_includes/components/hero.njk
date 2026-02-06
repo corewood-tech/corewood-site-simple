@@ -1,33 +1,44 @@
-<section class="relative pt-32 pb-24 overflow-hidden">
-  <!-- Background elements -->
-  <div class="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-[#A7C957]/30 to-transparent pointer-events-none"></div>
-  <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#386641]/10 rounded-full filter blur-3xl opacity-50 animate-pulse-subtle"></div>
-  <div class="absolute top-60 -left-40 w-80 h-80 bg-[#6A994E]/10 rounded-full filter blur-3xl opacity-50 animate-pulse-subtle animation-delay-1000"></div>
+<section id="hero" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+  <!-- Background logo mark — fills hero -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <img
+      src="{{ '/corewood_symbol_transparent_ON-DARK.png' | url }}"
+      alt=""
+      class="h-[90vh] w-[90vh] object-contain opacity-[0.04]"
+      aria-hidden="true"
+    />
+  </div>
 
-  <div class="container px-4 mx-auto relative z-10">
-    <div class="max-w-4xl mx-auto text-center mb-16 stagger-animate">
-      <!-- Main headline -->
-      <h1 class="text-5xl md:text-7xl font-display font-bold tracking-tight mb-8">
-        <span class="gradient-text">Coming Soon: opsibility.io</span>
-      </h1>
+  <!-- Content — vertically centered -->
+  <div class="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto">
+    <!-- Primer line -->
+    <p class="text-cream-600 text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.35em] font-body font-medium mb-3 md:mb-4">
+      Software Consulting for Founders, Scaling Teams, and Enterprises
+    </p>
 
-      <p class="text-2xl md:text-3xl text-foreground font-semibold max-w-3xl mx-auto mb-12 leading-relaxed">
-        $1000 start - ~$100 / mo - 10% converted leads...
-        <span class="block mt-4 text-[#386641]">Pay from your profits, not your pockets.</span>
-      </p>
+    <!-- Company name -->
+    <h1 id="hero-title" class="font-display font-bold text-[2.5rem] sm:text-6xl md:text-8xl lg:text-9xl tracking-[0.08em] sm:tracking-[0.12em] md:tracking-[0.15em] uppercase text-cream-100 leading-none opacity-0 transition-opacity duration-1000 ease-out">
+      Corewood
+    </h1>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="{{ '/contact/' | url }}">
-          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 bg-[#386641] hover:bg-[#386641]/90 text-[#F2E8CF]">
-            Schedule Demo
-          </button>
-        </a>
-        <a href="{{ '/services/' | url }}">
-          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8 border-[#386641] text-[#386641] hover:bg-[#386641]/10">
-            View Services
-          </button>
-        </a>
-      </div>
+    <!-- Tagline -->
+    <p class="mt-2 md:mt-5 font-display font-light text-base sm:text-xl md:text-2xl lg:text-3xl tracking-wide text-cream-300">
+      <span id="hero-left" class="inline-block transition-all duration-700 ease-out translate-x-[-30vw] opacity-0">Hard Problems.</span>
+      <span id="hero-dot" class="inline-block mx-1 md:mx-4 text-cream-600 opacity-0 transition-opacity duration-500 ease-out">&middot;</span>
+      <span id="hero-right" class="inline-block transition-all duration-700 ease-out translate-x-[30vw] opacity-0">Simple Solutions.</span>
+    </p>
+
+    <!-- Dual CTA -->
+    <div class="mt-8 md:mt-14 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+      <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">Schedule a Consultation</span>
+        <span class="block text-xs text-cream-300/80 font-normal mt-0.5">Simplify today</span>
+      </a>
+      <a href="{{ '/contact/' | url }}" class="btn-secondary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">Contact Us</span>
+        <span class="block text-xs text-cream-400/70 font-normal mt-0.5">Start the conversation</span>
+      </a>
     </div>
   </div>
-</section> 
+
+</section>

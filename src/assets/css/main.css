@@ -2,125 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Variables (from original index.css) */
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
+/* Font faces */
+@font-face {
+  font-family: 'Roca Two';
+  src: url('/fonts/roca-two-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
+@font-face {
+  font-family: 'Roca Two';
+  src: url('/fonts/roca-two-thin.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HK Grotesk Pro';
+  src: url('/fonts/hk-grotesk-pro-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HK Grotesk Pro';
+  src: url('/fonts/hk-grotesk-pro-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HK Grotesk Pro';
+  src: url('/fonts/hk-grotesk-pro-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Custom Properties */
+:root {
+  --chamfer-sm: 10px;
+  --chamfer-md: 24px;
+  --chamfer-lg: 40px;
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply text-cream-100 font-body;
+    background-color: #161210;
+    background-image:
+      radial-gradient(ellipse at 0% 0%, #1A120C 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 100%, #0B2B1A 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 0%, rgba(20, 16, 12, 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse at 0% 100%, rgba(10, 30, 20, 0.4) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 }
 
-/* Custom animations and utilities */
+/* ─── Chamfer utilities ─── */
 @layer utilities {
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out;
-  }
-  
-  .animate-fade-in-fast {
-    animation: fade-in 0.3s ease-out;
-  }
-  
-  .animate-scale-in {
-    animation: scale-in 0.4s ease-out;
-  }
-  
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .animate-gradient-shift {
-    animation: gradient-shift 15s ease infinite;
-  }
-  
-  .animate-pulse-subtle {
-    animation: pulse-subtle 4s ease-in-out infinite;
+  .chamfer-full {
+    --chamfer: var(--chamfer-md);
+    clip-path: polygon(
+      var(--chamfer) 0,
+      calc(100% - var(--chamfer)) 0,
+      100% var(--chamfer),
+      100% calc(100% - var(--chamfer)),
+      calc(100% - var(--chamfer)) 100%,
+      var(--chamfer) 100%,
+      0 calc(100% - var(--chamfer)),
+      0 var(--chamfer)
+    );
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-[#386641] via-[#6A994E] to-[#A7C957] bg-clip-text text-transparent;
+  .chamfer-full-lg {
+    --chamfer: var(--chamfer-lg);
+    clip-path: polygon(
+      var(--chamfer) 0,
+      calc(100% - var(--chamfer)) 0,
+      100% var(--chamfer),
+      100% calc(100% - var(--chamfer)),
+      calc(100% - var(--chamfer)) 100%,
+      var(--chamfer) 100%,
+      0 calc(100% - var(--chamfer)),
+      0 var(--chamfer)
+    );
   }
 
-  .stagger-animate > * {
-    animation: fade-in 0.6s ease-out;
+  .chamfer-diagonal {
+    --chamfer: var(--chamfer-md);
+    clip-path: polygon(
+      var(--chamfer) 0,
+      100% 0,
+      100% calc(100% - var(--chamfer)),
+      calc(100% - var(--chamfer)) 100%,
+      0 100%,
+      0 var(--chamfer)
+    );
   }
 
-  .stagger-animate > *:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-
-  .stagger-animate > *:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-
-  .stagger-animate > *:nth-child(4) {
-    animation-delay: 0.3s;
-  }
-
-  .animation-delay-1000 {
-    animation-delay: 1s;
-  }
-
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-sm;
+  .chamfer-sm {
+    --chamfer: var(--chamfer-sm);
   }
 
   .line-clamp-2 {
@@ -138,32 +125,219 @@
   }
 }
 
-/* Alpine.js cloak handling */
+/* ─── Plate component — the floating panel effect ─── */
+/* clip-path clips shadows, so we use a wrapper approach:
+   .plate-wrap provides the shadow/glow,
+   .plate provides the chamfered surface inside it */
+
+.plate-wrap {
+  position: relative;
+  filter:
+    drop-shadow(0 0 0.5px rgba(245, 240, 230, 0.18))
+    drop-shadow(0 0 0.5px rgba(245, 240, 230, 0.18))
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+}
+
+.plate {
+  background: #0B2B1A;
+  position: relative;
+}
+
+/* Standalone plate (no wrapper) — for places where chamfer isn't used */
+.plate-flat {
+  background: #0B2B1A;
+  border: 1px solid rgba(245, 240, 230, 0.12);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.5),
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 48px rgba(27, 126, 176, 0.04);
+}
+
+/* ─── Rivet accents ─── */
+.rivet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(245, 240, 230, 0.25), #0B2B1A 70%);
+  border: 1px solid rgba(245, 240, 230, 0.35);
+  box-shadow:
+    inset 0 1px 1px rgba(245, 240, 230, 0.15),
+    0 0 3px rgba(245, 240, 230, 0.06);
+}
+
+/* ─── Section backgrounds — alternating depth ─── */
+
+/* Section wash — now just a positioning context, gradient is on body */
+.section-wash {
+  position: relative;
+}
+
+/* Divider between sections — standalone gradient line */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(250, 247, 240, 0.06) 30%,
+    rgba(250, 247, 240, 0.06) 70%,
+    transparent 100%
+  );
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+/* ─── Interactive morpho states ─── */
+.interactive {
+  @apply bg-morpho-500 transition-colors duration-300;
+}
+.interactive:hover {
+  @apply bg-morpho-400;
+}
+.interactive:focus {
+  @apply bg-morpho-300;
+  box-shadow: 0 0 0 3px rgba(42, 149, 200, 0.25);
+}
+
+/* CTA buttons with glow */
+.btn-primary {
+  @apply inline-block chamfer-diagonal bg-morpho-500 text-cream-100 font-medium px-8 py-3 transition-all duration-300;
+}
+.btn-primary:hover {
+  @apply bg-morpho-400;
+  box-shadow: 0 4px 20px rgba(42, 149, 200, 0.25);
+}
+
+.btn-secondary {
+  @apply inline-block chamfer-diagonal bg-forest-700 text-cream-100 font-medium px-8 py-3 transition-all duration-300;
+  border: 1px solid rgba(250, 247, 240, 0.08);
+}
+.btn-secondary:hover {
+  @apply bg-forest-600;
+  border-color: rgba(250, 247, 240, 0.12);
+}
+
+/* ─── Ticker animation ─── */
+.ticker-column {
+  will-change: transform;
+}
+
+.ticker-column:hover {
+  animation-play-state: paused;
+}
+
+/* Fade overlay for ticker edges — matches plate bg */
+.ticker-fade {
+  background:
+    linear-gradient(to bottom, #0B2B1A 0%, transparent 20%),
+    linear-gradient(to top, #0B2B1A 0%, transparent 20%);
+}
+
+/* ─── Hero color pulse ─── */
+@keyframes pulse-dart {
+  0%, 100% { color: #EBE4D4; }
+  50% { color: #E85A48; }
+}
+@keyframes pulse-morpho {
+  0%, 100% { color: #EBE4D4; }
+  50% { color: #2A95C8; }
+}
+
+#hero-left { animation: pulse-dart 4s ease-in-out infinite; }
+#hero-right { animation: pulse-morpho 4s ease-in-out infinite; }
+
+/* ─── Ticker color pulse — staggered per item ─── */
+.ticker-problem {
+  animation: pulse-dart 6s ease-in-out infinite;
+}
+.ticker-solution {
+  animation: pulse-morpho 6s ease-in-out infinite;
+}
+/* Stagger each item so they ripple rather than flash in unison */
+.ticker-problem:nth-child(2), .ticker-solution:nth-child(2) { animation-delay: 0.5s; }
+.ticker-problem:nth-child(3), .ticker-solution:nth-child(3) { animation-delay: 1.0s; }
+.ticker-problem:nth-child(4), .ticker-solution:nth-child(4) { animation-delay: 1.5s; }
+.ticker-problem:nth-child(5), .ticker-solution:nth-child(5) { animation-delay: 2.0s; }
+.ticker-problem:nth-child(6), .ticker-solution:nth-child(6) { animation-delay: 2.5s; }
+.ticker-problem:nth-child(7), .ticker-solution:nth-child(7) { animation-delay: 3.0s; }
+.ticker-problem:nth-child(8), .ticker-solution:nth-child(8) { animation-delay: 3.5s; }
+.ticker-problem:nth-child(9), .ticker-solution:nth-child(9) { animation-delay: 4.0s; }
+.ticker-problem:nth-child(10), .ticker-solution:nth-child(10) { animation-delay: 4.5s; }
+.ticker-problem:nth-child(11), .ticker-solution:nth-child(11) { animation-delay: 5.0s; }
+.ticker-problem:nth-child(12), .ticker-solution:nth-child(12) { animation-delay: 5.5s; }
+.ticker-problem:nth-child(13), .ticker-solution:nth-child(13) { animation-delay: 0.25s; }
+
+/* ─── Custom scrollbar ─── */
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(42, 149, 200, 0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(42, 149, 200, 0.8);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(42, 149, 200, 0.5) transparent;
+}
+
+/* Hide scrollbar until hover/scroll — Webkit */
+body {
+  overflow-y: overlay;
+}
+html::-webkit-scrollbar-thumb {
+  background: transparent;
+  transition: background 0.3s;
+}
+html:hover::-webkit-scrollbar-thumb {
+  background: rgba(42, 149, 200, 0.5);
+}
+html:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(42, 149, 200, 0.8);
+}
+
+/* ─── Modal scrollbar — inset to clear chamfer ─── */
+.modal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(42, 149, 200, 0.5);
+  border-radius: 2px;
+}
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(42, 149, 200, 0.8);
+}
+
+/* ─── Alpine.js cloak ─── */
 [x-cloak] {
   display: none !important;
 }
 
-/* Direct link styles for blog posts */
-.direct-link {
-  @apply text-gray-400 hover:text-gray-600 ml-2 no-underline;
-}
-
-/* Prose styling for blog content */
+/* ─── Prose styling for blog content — dark theme ─── */
 .prose {
   max-width: 65ch;
-  color: #374151;
-  line-height: 1.75;
-}
-
-/* Full-width prose for blog posts */
-.prose-full-width {
-  max-width: none !important;
-  color: #374151;
+  color: #F5F0E6;
   line-height: 1.75;
 }
 
 .prose h1 {
-  color: #111827;
+  color: #F5F0E6;
   font-weight: 800;
   font-size: 2.25rem;
   margin-top: 0;
@@ -172,7 +346,7 @@
 }
 
 .prose h2 {
-  color: #111827;
+  color: #F5F0E6;
   font-weight: 700;
   font-size: 1.875rem;
   margin-top: 3rem;
@@ -181,7 +355,7 @@
 }
 
 .prose h3 {
-  color: #111827;
+  color: #F5F0E6;
   font-weight: 600;
   font-size: 1.5rem;
   margin-top: 2.5rem;
@@ -196,7 +370,7 @@
 }
 
 .prose strong {
-  color: #111827;
+  color: #F5F0E6;
   font-weight: 600;
 }
 
@@ -219,7 +393,7 @@
 .prose ul > li::before {
   content: "";
   position: absolute;
-  background-color: #d1d5db;
+  background-color: #A69E86;
   border-radius: 50%;
   width: 0.375rem;
   height: 0.375rem;
@@ -231,16 +405,16 @@
   content: counter(list-item, decimal) ".";
   position: absolute;
   font-weight: 400;
-  color: #6b7280;
+  color: #A69E86;
   left: -1.625rem;
 }
 
 .prose blockquote {
   font-weight: 500;
   font-style: italic;
-  color: #111827;
+  color: #EBE4D4;
   border-left-width: 0.25rem;
-  border-left-color: #e5e7eb;
+  border-left-color: #2D7A4A;
   quotes: "\201C""\201D""\2018""\2019";
   margin-top: 1.6rem;
   margin-bottom: 1.6rem;
@@ -248,18 +422,49 @@
 }
 
 .prose a {
-  color: #386641;
+  color: #2A95C8;
   text-decoration: underline;
   font-weight: 500;
 }
 
 .prose a:hover {
-  color: #2d5233;
+  color: #4AADDA;
 }
 
 .prose hr {
-  border-color: #e5e7eb;
+  border-color: #0F3B24;
   border-top-width: 1px;
   margin-top: 3rem;
   margin-bottom: 3rem;
-} 
+}
+
+.prose code {
+  @apply bg-forest-800 text-cream-200 px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-forest-800 text-cream-200 p-4 rounded-lg overflow-x-auto;
+  border: 1px solid rgba(250, 247, 240, 0.04);
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose img {
+  @apply rounded-lg;
+}
+
+/* ─── Reduce motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-column,
+  .animate-fade-in,
+  .ticker-problem,
+  .ticker-solution,
+  #hero-left,
+  #hero-right,
+  [class*="transition"] {
+    animation: none !important;
+    transition: none !important;
+  }
+}

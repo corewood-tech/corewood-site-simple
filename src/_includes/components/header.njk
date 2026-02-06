@@ -1,107 +1,103 @@
-<header 
-  x-data="{ 
-    scrolled: false, 
-    mobileMenuOpen: false,
-    init() {
-      this.$nextTick(() => {
-        window.addEventListener('scroll', () => {
-          this.scrolled = window.scrollY > 10;
-        });
-      });
-    }
-  }"
-  :class="{
-    'bg-background/80 backdrop-blur-lg shadow-sm': scrolled,
-    'bg-transparent': !scrolled && !mobileMenuOpen,
-    'bg-background': mobileMenuOpen
-  }"
-  class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300"
+<header
+  x-data="{ mobileMenuOpen: false }"
+  class="fixed top-0 left-0 right-0 pt-4 md:pt-6 px-4 md:px-6 z-50 pointer-events-none"
 >
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
-    <a href="{{ '/' | url }}" class="flex items-center gap-3">
-      <img
-        src="{{ '/lovable-uploads/4e0869d0-5dec-43e1-83e6-d434fdf50bcd.png' | url }}"
-        alt="Corewood Logo"
-        class="h-10"
-      />
-      <div class="hidden md:block">
-        <span class="text-xs text-muted-foreground">Introducing</span>
-        <h2 class="font-semibold text-[#386641]">Masquer</h2>
-      </div>
-    </a>
+  <div class="max-w-6xl mx-auto">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full md:chamfer-full-lg px-4 md:px-6 py-3 md:py-4 pointer-events-auto relative">
+        <!-- Rivets — one on each side, vertically centered -->
+        <div class="rivet absolute top-1/2 left-7 -translate-y-1/2 z-20"></div>
+        <div class="rivet absolute top-1/2 right-7 -translate-y-1/2 z-20"></div>
 
-    <div class="flex items-center gap-2">
-      <a href="{{ '/schedule-meeting/' | url }}" class="inline-flex">
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-[#386641] text-[#386641] hover:bg-[#386641]/10">
-          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-            <line x1="16" x2="16" y1="2" y2="6"/>
-            <line x1="8" x2="8" y1="2" y2="6"/>
-            <line x1="3" x2="21" y1="10" y2="10"/>
-          </svg>
-          <span class="hidden sm:inline">Schedule Meeting</span>
-          <span class="sm:hidden">Meet</span>
-        </button>
-      </a>
+        <!-- Desktop layout -->
+        <div class="hidden md:flex items-center">
+          <!-- Left nav — right-aligned so links sit near center -->
+          <div class="flex-1 flex items-center justify-end gap-8 pr-8">
+            <a href="{{ '/profile/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">Work</a>
+            <a href="{{ '/about/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">About</a>
+          </div>
 
-      <div class="hidden md:flex items-center space-x-4">
-        <a href="{{ '/masquer/' | url }}" class="inline-flex">
-          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">Masquer</button>
-        </a>
-        <a href="{{ '/services/' | url }}" class="inline-flex">
-          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">Services</button>
-        </a>
-        <a href="{{ '/blog/' | url }}" class="inline-flex">
-          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">Blog</button>
-        </a>
-        <a href="{{ '/contact/' | url }}" class="inline-flex">
-          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 shadow-lg shadow-[#386641]/20 bg-[#386641] hover:bg-[#386641]/90 transition-all duration-300">
-            Get Started
+          <!-- Center logo -->
+          <a href="{{ '/' | url }}" class="flex-shrink-0">
+            <img
+              src="{{ '/corewood_symbol_transparent_ON-DARK.png' | url }}"
+              alt="Corewood"
+              class="h-14"
+            />
+          </a>
+
+          <!-- Right nav + CTA — left-aligned so links sit near center, CTA aligns with chamfer -->
+          <div class="flex-1 flex items-center justify-start gap-8 pl-8 pr-[40px]">
+            <a href="{{ '/blog/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">Blog</a>
+            <a href="{{ '/contact/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">Contact</a>
+            <span class="flex-1"></span>
+            <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Schedule a Meeting</a>
+          </div>
+        </div>
+
+        <!-- Mobile layout -->
+        <div class="flex md:hidden items-center justify-center relative">
+          <!-- Hamburger — positioned between logo and left edge -->
+          <button
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            class="absolute left-[25%] -translate-x-1/2 p-2 text-cream-200 hover:text-morpho-400 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <line x1="4" x2="20" y1="6" y2="6"/>
+              <line x1="4" x2="20" y1="12" y2="12"/>
+              <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+            <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="m18 6-12 12"/>
+              <path d="m6 6 12 12"/>
+            </svg>
           </button>
-        </a>
-      </div>
 
-      <button
-        @click="mobileMenuOpen = !mobileMenuOpen"
-        class="md:hidden flex items-center p-2 text-muted-foreground hover:text-foreground focus:outline-none"
-        aria-label="Toggle menu"
-      >
-        <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <line x1="4" x2="20" y1="6" y2="6"/>
-          <line x1="4" x2="20" y1="12" y2="12"/>
-          <line x1="4" x2="20" y1="18" y2="18"/>
-        </svg>
-        <svg x-show="mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="m18 6-12 12"/>
-          <path d="m6 6 12 12"/>
-        </svg>
-      </button>
+          <!-- Center logo -->
+          <a href="{{ '/' | url }}">
+            <img
+              src="{{ '/corewood_symbol_transparent_ON-DARK.png' | url }}"
+              alt="Corewood"
+              class="h-10"
+            />
+          </a>
+
+          <!-- Mobile CTA — between logo and right edge -->
+          <a href="{{ '/schedule-meeting/' | url }}" class="absolute right-[25%] translate-x-1/2 btn-primary text-[10px] px-3 py-1.5">Book</a>
+        </div>
+
+      </div>
     </div>
   </div>
 
+  <!-- Mobile menu -->
   <div
     x-show="mobileMenuOpen"
-    x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0 max-h-0"
-    x-transition:enter-end="opacity-100 max-h-64"
-    x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100 max-h-64"
-    x-transition:leave-end="opacity-0 max-h-0"
-    class="md:hidden w-full overflow-hidden mt-4"
+    x-cloak
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-150"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="md:hidden max-w-6xl mx-auto mt-4 pointer-events-auto"
   >
-    <div class="space-y-2 p-2 flex flex-col">
-      <a href="{{ '/masquer/' | url }}" @click="mobileMenuOpen = false">
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left">Masquer</button>
-      </a>
-      <a href="{{ '/services/' | url }}" @click="mobileMenuOpen = false">
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left">Services</button>
-      </a>
-      <a href="{{ '/blog/' | url }}" @click="mobileMenuOpen = false">
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start text-left">Blog</button>
-      </a>
-      <a href="{{ '/contact/' | url }}" @click="mobileMenuOpen = false">
-        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full justify-start text-[#F2E8CF] bg-[#386641] hover:bg-[#386641]/90">Get Started</button>
-      </a>
+    <div class="plate-wrap">
+      <div class="plate chamfer-full p-8">
+        <nav class="flex flex-col items-center space-y-6">
+          <a href="{{ '/profile/' | url }}" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Work</a>
+          <a href="{{ '/about/' | url }}" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">About</a>
+          <a href="{{ '/blog/' | url }}" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Blog</a>
+          <a href="{{ '/contact/' | url }}" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Contact</a>
+          <a href="{{ '/schedule-meeting/' | url }}" @click="mobileMenuOpen = false"
+             class="btn-primary text-center mt-2">Schedule a Meeting</a>
+        </nav>
+      </div>
     </div>
   </div>
-</header> 
+</header>
