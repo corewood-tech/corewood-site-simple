@@ -4,6 +4,36 @@ title: "About"
 description: "Corewood — Hard problems. Simple solutions. Software consulting founded by Mickey."
 keywords: "about corewood, software consulting, Mickey, technical leadership"
 permalink: /about/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Mickey",
+        "url": "https://corewood.io/about/",
+        "jobTitle": "Founder",
+        "worksFor": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "sameAs": ["https://www.linkedin.com/in/kylemickey/"]
+      },
+      {
+        "@type": "Organization",
+        "name": "Corewood",
+        "url": "https://corewood.io",
+        "logo": "https://corewood.io/corewood_symbol_avatar_white.png",
+        "founder": { "@type": "Person", "name": "Mickey" },
+        "foundingDate": "2024",
+        "description": "Hard problems. Simple solutions. Software consulting."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "About" }
+        ]
+      }
+    ]
+  }
 ---
 
 <section class="section-wash pt-40 pb-8">

@@ -3,10 +3,7 @@ layout: layouts/blog-post.njk
 title: "LLMs as Context Synthesizers: Why Direct Instructions Don't Work"
 description: "Understanding how to effectively work with Large Language Models by treating them as context synthesizers rather than instruction followers. Learn why traditional command-based approaches fail and how to shape AI outputs through information flow."
 date: 2025-08-04
-tags: ["AI", "LLM", "Machine Learning", "Technical Writing", "Prompt Engineering"]
-author: "Corewood Engineering Team"
 readingTime: "8 min read"
-slug: "llm-context-synthesis"
 permalink: /blog/llm-context-synthesis/
 ogType: "article"
 ogImage: "/corewood_symbol_avatar_white.png"

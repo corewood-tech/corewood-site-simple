@@ -5,6 +5,8 @@ description: "For forty years, engineering teams optimized for speed. Then came 
 keywords: "data privacy, GDPR, CCPA, HIPAA, compliance, engineering, software development, privacy by design, data protection, Corewood"
 date: 2025-06-01
 readingTime: "6 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/great-data-privacy-divide/
 ---
 

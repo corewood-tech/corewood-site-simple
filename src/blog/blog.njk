@@ -4,6 +4,27 @@ title: "Blog"
 description: "Insights on software architecture, AI engineering, data privacy, and building efficient systems."
 keywords: "software blog, architecture, AI engineering, data privacy, systems design"
 permalink: /blog/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "Corewood Blog",
+        "url": "https://corewood.io/blog/",
+        "description": "Insights on software architecture, AI engineering, data privacy, and building efficient systems.",
+        "publisher": { "@type": "Organization", "name": "Corewood" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog" }
+        ]
+      }
+    ]
+  }
 ---
 
 <section class="section-wash pt-40 pb-24">

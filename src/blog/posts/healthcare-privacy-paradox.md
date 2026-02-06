@@ -5,6 +5,8 @@ description: "Healthcare software innovation is stifled by legacy privacy approa
 keywords: "healthcare software, privacy, HIPAA, compliance, healthcare innovation, dynamic privacy, de-identification, AI in healthcare, healthcare UX, Corewood"
 date: 2025-05-13
 readingTime: "7 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/healthcare-privacy-paradox/
 ---
 

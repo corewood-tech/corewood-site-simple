@@ -2,7 +2,29 @@
 layout: layouts/page.njk
 title: "Masquer — Case Study"
 description: "Real-time data privacy infrastructure. PII detection and masking at read-time, on-premise."
+keywords: "data privacy, PII detection, data masking, HIPAA, on-premise, DeBERTa, GoLang, case study"
 permalink: /profile/masquer/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Masquer — Data Privacy Infrastructure",
+        "description": "Real-time data privacy infrastructure. PII detection and masking at read-time, on-premise.",
+        "provider": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "url": "https://corewood.io/profile/masquer/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://corewood.io/profile/" },
+          { "@type": "ListItem", "position": 3, "name": "Masquer" }
+        ]
+      }
+    ]
+  }
 ---
 
 <section class="pt-40 pb-24">

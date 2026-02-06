@@ -51,4 +51,39 @@ ogType: article
     </div>
   </div>
 </main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "{{ title | jsonEscape }}",
+      "description": "{{ description | jsonEscape }}",
+      "url": "{{ page.url | url | absoluteUrl('https://corewood.io') }}",
+      "datePublished": "{{ date | date('%Y-%m-%d') }}",
+      "dateModified": "{{ date | date('%Y-%m-%d') }}",
+      "author": { "@type": "Person", "name": "Mickey", "url": "https://corewood.io/about/" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Corewood",
+        "logo": { "@type": "ImageObject", "url": "https://corewood.io/corewood_symbol_avatar_white.png" }
+      },
+      "image": "{{ (ogImage or '/corewood_symbol_avatar_white.png') | url | absoluteUrl('https://corewood.io') }}",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | url | absoluteUrl('https://corewood.io') }}" },
+      "inLanguage": "en-US",
+      "wordCount": "{{ content | striptags | wordcount }}",
+      "articleSection": "Technology"{% if keywords %},
+      "keywords": "{{ keywords | jsonEscape }}"{% endif %}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://corewood.io/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "{{ title | jsonEscape }}" }
+      ]
+    }
+  ]
+}
+</script>
 {% include "components/footer.njk" %}

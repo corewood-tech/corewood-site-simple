@@ -5,6 +5,8 @@ description: "Discover how we eliminated JSON parsing overhead and achieved 10-1
 keywords: "DeBERTa, tokenizer, optimization, binary format, JSON parsing, ML inference, performance, Go, Python, NLP, machine learning"
 date: 2025-06-03
 readingTime: "5 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/json-to-binary-deberta-tokenizer/
 ---
 

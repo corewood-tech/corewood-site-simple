@@ -2,7 +2,29 @@
 layout: layouts/page.njk
 title: "LandScope — Case Study"
 description: "How Corewood built a production GIS platform from MVP in 10 weeks."
+keywords: "GIS platform, geospatial, CesiumJS, GoLang, React, gRPC, MVP development, case study"
 permalink: /profile/landscope/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "LandScope — GIS Platform",
+        "description": "Production GIS/geospatial platform built from MVP in 10 weeks.",
+        "provider": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "url": "https://corewood.io/profile/landscope/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://corewood.io/profile/" },
+          { "@type": "ListItem", "position": 3, "name": "LandScope" }
+        ]
+      }
+    ]
+  }
 ---
 
 <section class="pt-40 pb-24">

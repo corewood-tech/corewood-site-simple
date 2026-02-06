@@ -75,6 +75,18 @@ module.exports = function(eleventyConfig) {
     return `${minutes} min read`;
   });
 
+  // Word count filter for JSON-LD
+  eleventyConfig.addFilter("wordcount", function(content) {
+    if (!content) return 0;
+    return content.split(/\s+/).filter(Boolean).length;
+  });
+
+  // JSON escape filter for safe embedding in JSON-LD
+  eleventyConfig.addFilter("jsonEscape", function(str) {
+    if (!str) return "";
+    return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
+  });
+
   // Head filter for blog sidebar
   eleventyConfig.addFilter("head", function(array, n) {
     if (!Array.isArray(array) || array.length === 0) return [];

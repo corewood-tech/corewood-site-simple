@@ -1,7 +1,33 @@
-# Allow all crawlers
+# Standard crawlers
 User-agent: *
 Allow: /
+Disallow: /schedule-meeting/
 
-# Sitemap location
-Sitemap: /sitemap.xml 
+# Sitemap
+Sitemap: https://corewood.io/sitemap.xml
+
+# AI Crawlers — allow indexing for AI answer engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Allow: /
 Sitemap: https://corewood.info/sitemap.xml

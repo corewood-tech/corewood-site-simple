@@ -5,6 +5,8 @@ description: "Your model is only as effective as the infrastructure it runs on. 
 keywords: "AI architecture, system architecture, model deployment, AI efficiency, AI infrastructure, machine learning operations, MLOps"
 date: 2025-04-22
 readingTime: "5 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/beyond-the-model/
 ---
 

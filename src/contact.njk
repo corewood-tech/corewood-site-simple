@@ -4,6 +4,30 @@ title: "Contact"
 description: "Get in touch with Corewood. Tell us about your project and we'll get back to you."
 keywords: "contact corewood, software consulting contact, get unstuck"
 permalink: /contact/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Corewood",
+        "url": "https://corewood.io",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hello@corewood.io",
+          "contactType": "sales",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Contact" }
+        ]
+      }
+    ]
+  }
 ---
 
 <section class="section-wash pt-40 pb-24">

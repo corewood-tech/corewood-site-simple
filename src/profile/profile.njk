@@ -2,7 +2,29 @@
 layout: layouts/page.njk
 title: "Case Studies"
 description: "Selected projects from Corewood. GIS platforms, data privacy infrastructure, and custom LLM engines."
+keywords: "case studies, portfolio, GIS platform, data privacy, LLM inference, software consulting projects"
 permalink: /profile/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "Corewood Case Studies",
+        "url": "https://corewood.io/profile/",
+        "description": "Selected projects from Corewood. GIS platforms, data privacy infrastructure, and custom LLM engines.",
+        "publisher": { "@type": "Organization", "name": "Corewood" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Case Studies" }
+        ]
+      }
+    ]
+  }
 ---
 
 <section class="section-wash pt-40 pb-24">

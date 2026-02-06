@@ -5,6 +5,8 @@ description: "On-premises AI deployment offers better control, data privacy, and
 keywords: "on-premises AI, on-prem AI, enterprise AI, AI implementation, AI infrastructure, data privacy, cost efficiency"
 date: 2025-04-20
 readingTime: "4 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/ai-on-prem/
 ---
 

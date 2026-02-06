@@ -5,6 +5,8 @@ description: "Many companies are demoing AI capabilities they fundamentally cann
 keywords: "generative AI, AI economics, sustainable AI, OpenAI, Anthropic, AI costs, small language model, AI infrastructure"
 date: 2025-04-24
 readingTime: "7 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/unsustainable-economics-ai/
 ---
 

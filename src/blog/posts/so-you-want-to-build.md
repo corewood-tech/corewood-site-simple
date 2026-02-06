@@ -5,6 +5,8 @@ description: "Building AI systems that deliver real business value requires navi
 keywords: "AI implementation, business value, AI success, AI infrastructure, AI security, AI scalability, data governance"
 date: 2025-04-29
 readingTime: "4 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/so-you-want-to-build/
 ---
 
