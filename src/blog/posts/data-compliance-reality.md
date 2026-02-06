@@ -5,6 +5,8 @@ description: "When trying to do the right thing drives the wrong results. Explor
 keywords: "data compliance, HIPAA compliance, healthcare data, data security, data masking, zero-copy architecture, data redaction"
 date: 2025-05-03
 readingTime: "6 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/data-compliance-reality/
 ---
 

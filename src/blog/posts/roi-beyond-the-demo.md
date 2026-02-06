@@ -5,6 +5,8 @@ description: "Moving beyond impressive AI demos to real business value requires 
 keywords: "AI ROI, business value, AI implementation, AI infrastructure, AI talent, machine learning operations, production AI"
 date: 2025-04-10
 readingTime: "6 min read"
+ogType: "article"
+ogImage: "/corewood_symbol_avatar_white.png"
 permalink: /blog/roi-beyond-the-demo/
 ---
 
