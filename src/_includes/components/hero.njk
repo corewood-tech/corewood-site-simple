@@ -1,12 +1,7 @@
 <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
   <!-- Background logo mark — fills hero -->
   <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <img
-      src="{{ '/corewood_symbol_transparent_ON-DARK.png' | url }}"
-      alt=""
-      class="h-[90vh] w-[90vh] object-contain opacity-[0.04]"
-      aria-hidden="true"
-    />
+    {% image "./src/static/corewood_symbol_transparent_ON-DARK.png", "", "90vh", "h-[90vh] w-[90vh] object-contain opacity-[0.04]", "600,900,1200", "eager" %}
   </div>
 
   <!-- Content — vertically centered -->

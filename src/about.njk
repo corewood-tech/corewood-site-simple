@@ -82,9 +82,9 @@ jsonLd: |
 
         <!-- Founder headshot — hexagon frame -->
         <div class="mb-8 flex justify-center">
-          <img src="/mickey-headshot.jpg" alt="Mickey, founder of Corewood"
-               class="w-64 h-64 object-cover object-top"
-               style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+          <div class="w-64 h-64" style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+            {% image "./src/static/mickey-headshot.jpg", "Mickey, founder of Corewood", "256px", "w-64 h-64 object-cover object-top", "256,512" %}
+          </div>
         </div>
 
         <div class="text-cream-200 text-lg leading-relaxed space-y-4">

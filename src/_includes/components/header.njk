@@ -19,11 +19,7 @@
 
           <!-- Center logo -->
           <a href="{{ '/' | url }}" class="flex-shrink-0">
-            <img
-              src="{{ '/corewood_symbol_transparent_ON-DARK.png' | url }}"
-              alt="Corewood"
-              class="h-14"
-            />
+            {% image "./src/static/corewood_symbol_transparent_ON-DARK.png", "Corewood", "56px", "h-14", "56", "eager" %}
           </a>
 
           <!-- Right nav + CTA — left-aligned so links sit near center, CTA aligns with chamfer -->
@@ -56,11 +52,7 @@
 
           <!-- Center logo -->
           <a href="{{ '/' | url }}">
-            <img
-              src="{{ '/corewood_symbol_transparent_ON-DARK.png' | url }}"
-              alt="Corewood"
-              class="h-10"
-            />
+            {% image "./src/static/corewood_symbol_transparent_ON-DARK.png", "Corewood", "40px", "h-10", "40", "eager" %}
           </a>
 
           <!-- Mobile CTA — between logo and right edge -->

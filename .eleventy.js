@@ -95,14 +95,17 @@ module.exports = function(eleventyConfig) {
   });
 
   // Image shortcode with WebP optimization
-  eleventyConfig.addAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {
+  eleventyConfig.addAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "", widths = "300,600,900,1200,1600", loading = "lazy") {
     if(alt === undefined) {
       throw new Error(`Missing \`alt\` on image from: ${src}`);
     }
 
+    const isPng = src.toLowerCase().endsWith('.png');
+    const parsedWidths = widths.split(',').map(w => w.trim() === 'null' ? null : parseInt(w.trim(), 10));
+
     let metadata = await Image(src, {
-      widths: [300, 600, 900, 1200, 1600],
-      formats: ["webp", "jpeg"],
+      widths: parsedWidths,
+      formats: isPng ? ["webp", "png"] : ["webp", "jpeg"],
       outputDir: "_site/assets/images/",
       urlPath: "/assets/images/",
       sharpWebpOptions: {
@@ -112,13 +115,16 @@ module.exports = function(eleventyConfig) {
       sharpJpegOptions: {
         quality: 85,
         progressive: true
+      },
+      sharpPngOptions: {
+        quality: 80
       }
     });
 
     let imageAttributes = {
       alt,
       sizes,
-      loading: "lazy",
+      loading,
       decoding: "async",
       class: className || "w-full h-auto"
     };
@@ -128,9 +134,10 @@ module.exports = function(eleventyConfig) {
 
   // Image URL filter for getting optimized image URLs
   eleventyConfig.addAsyncFilter("imageUrl", async function(src, width = 1600) {
+    const isPng = src.toLowerCase().endsWith('.png');
     let metadata = await Image(src, {
       widths: [300, 600, 900, 1200, 1600],
-      formats: ["webp", "jpeg"],
+      formats: isPng ? ["webp", "png"] : ["webp", "jpeg"],
       outputDir: "_site/assets/images/",
       urlPath: "/assets/images/",
       sharpWebpOptions: {
@@ -140,19 +147,23 @@ module.exports = function(eleventyConfig) {
       sharpJpegOptions: {
         quality: 85,
         progressive: true
+      },
+      sharpPngOptions: {
+        quality: 80
       }
     });
 
-    // Return the WebP version at the requested width, fallback to JPEG
+    // Return the WebP version at the requested width, fallback to source format
     if (metadata.webp && metadata.webp.find(img => img.width === width)) {
       return metadata.webp.find(img => img.width === width).url;
-    } else if (metadata.jpeg && metadata.jpeg.find(img => img.width === width)) {
-      return metadata.jpeg.find(img => img.width === width).url;
-    } else {
-      // Fallback to the largest available image
-      const allImages = [...(metadata.webp || []), ...(metadata.jpeg || [])];
-      return allImages.sort((a, b) => b.width - a.width)[0]?.url || src;
     }
+    const fallback = metadata.jpeg || metadata.png || [];
+    if (fallback.find(img => img.width === width)) {
+      return fallback.find(img => img.width === width).url;
+    }
+    // Fallback to the largest available image
+    const allImages = [...(metadata.webp || []), ...fallback];
+    return allImages.sort((a, b) => b.width - a.width)[0]?.url || src;
   });
 
   // Collections
