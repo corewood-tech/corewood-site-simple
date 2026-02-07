@@ -90,4 +90,52 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // ── PostHog custom event tracking ──
+  function ph(event, props) {
+    if (window.posthog) posthog.capture(event, props);
+  }
+
+  // CTA clicks — schedule meeting buttons
+  document.querySelectorAll('a[href*="/schedule-meeting"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      ph('cta_click', { cta: 'schedule_meeting', location: el.closest('section')?.id || el.closest('header') ? 'header' : 'page' });
+    });
+  });
+
+  // CTA clicks — contact links (mailto + page)
+  document.querySelectorAll('a[href*="mailto:"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      ph('cta_click', { cta: 'email', email: el.href.replace('mailto:', '') });
+    });
+  });
+  document.querySelectorAll('a[href*="/contact"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      ph('cta_click', { cta: 'contact_page', location: el.closest('section')?.id || 'page' });
+    });
+  });
+
+  // Blog — share clicks
+  document.querySelectorAll('a[href*="linkedin.com/sharing"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      ph('blog_share', { platform: 'linkedin', post: window.location.pathname });
+    });
+  });
+
+  // Case study clicks from profile index
+  document.querySelectorAll('a[href*="/profile/"]').forEach(function(el) {
+    if (el.href !== window.location.href && !el.closest('header') && !el.closest('nav')) {
+      el.addEventListener('click', function() {
+        var slug = el.getAttribute('href').replace(/.*\/profile\//, '').replace(/\/$/, '');
+        if (slug) ph('case_study_click', { study: slug });
+      });
+    }
+  });
+
+  // Outbound link tracking
+  document.querySelectorAll('a[target="_blank"], a[rel*="noopener"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      ph('outbound_click', { url: el.href, text: el.textContent.trim().substring(0, 50) });
+    });
+  });
 });

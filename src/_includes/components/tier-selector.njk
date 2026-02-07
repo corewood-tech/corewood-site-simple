@@ -5,7 +5,7 @@
 
     <!-- Tile row -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-      <button @click="openTier = 'founder'" class="plate-wrap group cursor-pointer">
+      <button @click="openTier = 'founder'; if(window.posthog) posthog.capture('tier_open', {tier:'founder'})" class="plate-wrap group cursor-pointer">
         <div class="plate chamfer-full p-6 md:p-8 text-center transition-all duration-300 group-hover:bg-forest-700">
           <div class="rivet absolute top-5 left-5 z-10"></div>
           <div class="rivet absolute top-5 right-5 z-10"></div>
@@ -16,7 +16,7 @@
         </div>
       </button>
 
-      <button @click="openTier = 'scaling'" class="plate-wrap group cursor-pointer">
+      <button @click="openTier = 'scaling'; if(window.posthog) posthog.capture('tier_open', {tier:'scaling'})" class="plate-wrap group cursor-pointer">
         <div class="plate chamfer-full p-6 md:p-8 text-center transition-all duration-300 group-hover:bg-forest-700">
           <div class="rivet absolute top-5 left-5 z-10"></div>
           <div class="rivet absolute top-5 right-5 z-10"></div>
@@ -27,7 +27,7 @@
         </div>
       </button>
 
-      <button @click="openTier = 'enterprise'" class="plate-wrap group cursor-pointer">
+      <button @click="openTier = 'enterprise'; if(window.posthog) posthog.capture('tier_open', {tier:'enterprise'})" class="plate-wrap group cursor-pointer">
         <div class="plate chamfer-full p-6 md:p-8 text-center transition-all duration-300 group-hover:bg-forest-700">
           <div class="rivet absolute top-5 left-5 z-10"></div>
           <div class="rivet absolute top-5 right-5 z-10"></div>

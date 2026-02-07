@@ -1,0 +1,9 @@
+name = "corewood-posthog"
+main = "index.js"
+compatibility_date = "2024-04-03"
+
+account_id = "45b8672528efdb7afa6621e3719e7606"
+
+[[routes]]
+pattern = "helper.corewood.io"
+custom_domain = true
