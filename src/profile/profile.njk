@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 title: "Case Studies"
 description: "Selected projects from Corewood. GIS platforms, data privacy infrastructure, and custom LLM engines."
-keywords: "case studies, portfolio, GIS platform, data privacy, LLM inference, software consulting projects"
+keywords: "case studies, portfolio, GIS platform, data privacy, LLM inference, software consulting projects, Colorado Security Podcast, secure by design"
 permalink: /profile/
 jsonLd: |
   {
@@ -17,6 +17,25 @@ jsonLd: |
         "inLanguage": "en-US"
       },
       {
+        "@type": "PodcastEpisode",
+        "name": "Kyle Mickey — Founding Machine Philosopher at Corewood",
+        "url": "https://www.colorado-security.com/podcastnotes/2025/6/4/275-69-kyle-mickey-founding-machine-philosopher-at-corewood",
+        "description": "Founder Mickey discusses secure-by-design needs for the age of LLMs.",
+        "datePublished": "2025-06-04",
+        "partOfSeries": {
+          "@type": "PodcastSeries",
+          "name": "Colorado Security Podcast",
+          "url": "https://www.colorado-security.com"
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "Mickey",
+          "url": "https://corewood.io/about/",
+          "jobTitle": "Founder",
+          "worksFor": { "@type": "Organization", "name": "Corewood" }
+        }
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
@@ -28,73 +47,95 @@ jsonLd: |
 ---
 
 <section class="section-wash pt-40 pb-24">
-  <div class="max-w-4xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
     <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-12">Case Studies</h1>
 
-    <div class="space-y-10">
-      <!-- LandScope -->
-      <a href="{{ '/profile/landscope/' | url }}" class="block group">
-        <div class="plate-wrap">
-          <div class="plate chamfer-full p-8 transition-all duration-300">
-            <div class="rivet absolute top-5 left-5 z-10"></div>
-            <div class="rivet absolute top-5 right-5 z-10"></div>
-            <div class="rivet absolute bottom-5 left-5 z-10"></div>
-            <div class="rivet absolute bottom-5 right-5 z-10"></div>
-            <h2 class="font-display font-bold text-2xl text-cream-100 mb-2 group-hover:text-morpho-400 transition-colors">LandScope</h2>
-            <p class="text-cream-400 mb-4">GIS/geospatial platform — MVP to production in 10 weeks.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">GoLang</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">React</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">CesiumJS</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">gRPC</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">OpenTelemetry</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">Postgres</span>
+    <div class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 lg:gap-12 items-start">
+      <!-- Case Studies column -->
+      <div class="space-y-10">
+        <!-- LandScope -->
+        <a href="{{ '/profile/landscope/' | url }}" class="block group">
+          <div class="plate-wrap">
+            <div class="plate chamfer-full p-8 transition-all duration-300">
+              <div class="rivet absolute top-5 left-5 z-10"></div>
+              <div class="rivet absolute top-5 right-5 z-10"></div>
+              <div class="rivet absolute bottom-5 left-5 z-10"></div>
+              <div class="rivet absolute bottom-5 right-5 z-10"></div>
+              <h2 class="font-display font-bold text-2xl text-cream-100 mb-2 group-hover:text-morpho-400 transition-colors">LandScope</h2>
+              <p class="text-cream-400 mb-4">GIS/geospatial platform — MVP to production in 10 weeks.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">GoLang</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">React</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">CesiumJS</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">gRPC</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">OpenTelemetry</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">Postgres</span>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
 
-      <!-- Masquer -->
-      <a href="{{ '/profile/masquer/' | url }}" class="block group">
-        <div class="plate-wrap">
-          <div class="plate chamfer-full p-8 transition-all duration-300">
-            <div class="rivet absolute top-5 left-5 z-10"></div>
-            <div class="rivet absolute top-5 right-5 z-10"></div>
-            <div class="rivet absolute bottom-5 left-5 z-10"></div>
-            <div class="rivet absolute bottom-5 right-5 z-10"></div>
-            <h2 class="font-display font-bold text-2xl text-cream-100 mb-2 group-hover:text-morpho-400 transition-colors">Masquer</h2>
-            <p class="text-cream-400 mb-4">Real-time data privacy infrastructure. PII detection and masking at read-time.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">GoLang</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">ONNX</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">PostgreSQL</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">DeBERTa</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">gRPC</span>
+        <!-- Masquer -->
+        <a href="{{ '/profile/masquer/' | url }}" class="block group">
+          <div class="plate-wrap">
+            <div class="plate chamfer-full p-8 transition-all duration-300">
+              <div class="rivet absolute top-5 left-5 z-10"></div>
+              <div class="rivet absolute top-5 right-5 z-10"></div>
+              <div class="rivet absolute bottom-5 left-5 z-10"></div>
+              <div class="rivet absolute bottom-5 right-5 z-10"></div>
+              <h2 class="font-display font-bold text-2xl text-cream-100 mb-2 group-hover:text-morpho-400 transition-colors">Masquer</h2>
+              <p class="text-cream-400 mb-4">Real-time data privacy infrastructure. PII detection and masking at read-time.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">GoLang</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">ONNX</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">PostgreSQL</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">DeBERTa</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">gRPC</span>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
 
-      <!-- Self-Hosted LLM APIs -->
-      <a href="{{ '/profile/llm-apis/' | url }}" class="block group">
-        <div class="plate-wrap">
-          <div class="plate chamfer-full p-8 transition-all duration-300">
-            <div class="rivet absolute top-5 left-5 z-10"></div>
-            <div class="rivet absolute top-5 right-5 z-10"></div>
-            <div class="rivet absolute bottom-5 left-5 z-10"></div>
-            <div class="rivet absolute bottom-5 right-5 z-10"></div>
-            <h2 class="font-display font-bold text-2xl text-cream-100 mb-2 group-hover:text-morpho-400 transition-colors">Self-Hosted LLM APIs</h2>
-            <p class="text-cream-400 mb-4">Custom LLM inference engine with GPU kernels. R&D / in development.</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">GoLang</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">CGo</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">Metal</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">CUDA</span>
-              <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">Custom GPU Kernels</span>
+        <!-- Self-Hosted LLM APIs -->
+        <a href="{{ '/profile/llm-apis/' | url }}" class="block group">
+          <div class="plate-wrap">
+            <div class="plate chamfer-full p-8 transition-all duration-300">
+              <div class="rivet absolute top-5 left-5 z-10"></div>
+              <div class="rivet absolute top-5 right-5 z-10"></div>
+              <div class="rivet absolute bottom-5 left-5 z-10"></div>
+              <div class="rivet absolute bottom-5 right-5 z-10"></div>
+              <h2 class="font-display font-bold text-2xl text-cream-100 mb-2 group-hover:text-morpho-400 transition-colors">Self-Hosted LLM APIs</h2>
+              <p class="text-cream-400 mb-4">Custom LLM inference engine with GPU kernels. R&D / in development.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">GoLang</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">CGo</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">Metal</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">CUDA</span>
+                <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 chamfer-sm chamfer-diagonal">Custom GPU Kernels</span>
+              </div>
             </div>
           </div>
+        </a>
+      </div>
+
+      <!-- Media column -->
+      <div class="lg:sticky lg:top-32">
+        <h2 class="font-display font-bold text-2xl text-cream-100 mb-6">Media</h2>
+        <div class="space-y-6">
+          <a href="https://www.colorado-security.com/podcastnotes/2025/6/4/275-69-kyle-mickey-founding-machine-philosopher-at-corewood" target="_blank" rel="noopener" class="block group">
+            <div class="plate-wrap">
+              <div class="plate chamfer-full p-8 transition-all duration-300">
+                <div class="rivet absolute top-5 left-5 z-10"></div>
+                <div class="rivet absolute top-5 right-5 z-10"></div>
+                <div class="rivet absolute bottom-5 left-5 z-10"></div>
+                <div class="rivet absolute bottom-5 right-5 z-10"></div>
+                <h3 class="font-display font-bold text-xl text-cream-100 mb-2 group-hover:text-morpho-400 transition-colors">Colorado Security Podcast</h3>
+                <p class="text-cream-400">Founder Mickey discusses secure-by-design needs for the age of LLMs.</p>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>

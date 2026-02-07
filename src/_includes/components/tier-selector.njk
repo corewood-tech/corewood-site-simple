@@ -83,7 +83,7 @@
           <div class="max-h-[85vh] overflow-y-auto p-8 md:p-12 modal-scroll">
 
           {# ── Founder ── #}
-          <div x-show="openTier === 'founder'" x-cloak>
+          <div x-show="openTier === 'founder'" x-cloak x-data="{ slide: 0, total: 2 }">
             <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-8">Founder.</h2>
             <div class="text-cream-200 text-lg leading-relaxed space-y-4">
               <p>You are the "pioneer tree" of the business ecosystem. Quick and light, you fall on barren soil and either perish or take root and thrive.</p>
@@ -92,15 +92,63 @@
               <p>Corewood focuses on the forest of tomorrow by helping founders contextualize, define, and create the software systems you need to ground your business; your stabilizing roots. Forward looking to concerns like integrated monitoring dashboards. Integration tests and deployment automation. Fast moving enough to enable you to grow instead of perish.</p>
               <p>By introducing holistic infrastructure early, we provide the deep roots to withstand the forces of nature.</p>
             </div>
-            <blockquote class="mt-10 bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
-              <div class="text-cream-300 italic leading-relaxed text-base">
-                <p>"Mickey is a rare kind of visionary because he has an extraordinary ability to understand and realize your vision, and enmesh it within his own. This gift comes from genuine empathy and a deep understanding of what founders and creators are really trying to build.</p>
-                <p class="mt-4">When I first met Mickey, I was doing everything myself: cobbling together a front-end, figuring out back-end architecture, handling marketing, creating content, and trying to sell—all at once. I had the bare bones of an MVP and enough determination to probably get it off the ground. It would have worked for a while, but it wouldn't have been scalable. It probably wouldn't have been secure either, because I know next to nothing about it.</p>
-                <p class="mt-4">Not only did Mickey take what I had and cleaned it up, but he took my vision and transformed it into something built on a foundation of scalability, security, and agility. He understood not just what I was trying to build, but why it needed to be built. The product that emerged is sustainable and positioned for real growth.</p>
-                <p class="mt-4">If you're looking for someone who can take an idea and turn it into a reality that's built to last, I can't recommend Mickey highly enough. He's the partner every founder wishes they had, and comes with an infectiously high level of energy."</p>
+
+            {# Testimonial carousel #}
+            <div class="relative mt-10">
+              {# Slide 1 — Mitch #}
+              <blockquote x-show="slide === 0"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-x-4"
+                x-transition:enter-end="opacity-100 translate-x-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-x-0"
+                x-transition:leave-end="opacity-0 -translate-x-4"
+                class="bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
+                <div class="text-cream-300 italic leading-relaxed text-base">
+                  <p>"Mickey is a rare kind of visionary because he has an extraordinary ability to understand and realize your vision, and enmesh it within his own. This gift comes from genuine empathy and a deep understanding of what founders and creators are really trying to build.</p>
+                  <p class="mt-4">When I first met Mickey, I was doing everything myself: cobbling together a front-end, figuring out back-end architecture, handling marketing, creating content, and trying to sell—all at once. I had the bare bones of an MVP and enough determination to probably get it off the ground. It would have worked for a while, but it wouldn't have been scalable. It probably wouldn't have been secure either, because I know next to nothing about it.</p>
+                  <p class="mt-4">Not only did Mickey take what I had and cleaned it up, but he took my vision and transformed it into something built on a foundation of scalability, security, and agility. He understood not just what I was trying to build, but why it needed to be built. The product that emerged is sustainable and positioned for real growth.</p>
+                  <p class="mt-4">If you're looking for someone who can take an idea and turn it into a reality that's built to last, I can't recommend Mickey highly enough. He's the partner every founder wishes they had, and comes with an infectiously high level of energy."</p>
+                </div>
+                <footer class="mt-4 text-cream-600 text-sm font-medium">— Mitch Rawlyk, CEO & Founder, LandScope</footer>
+              </blockquote>
+
+              {# Slide 2 — Alisha #}
+              <blockquote x-show="slide === 1"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-x-4"
+                x-transition:enter-end="opacity-100 translate-x-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-x-0"
+                x-transition:leave-end="opacity-0 -translate-x-4"
+                class="bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
+                <div class="text-cream-300 italic leading-relaxed text-base">
+                  <p>"This is my pleasure to recommend Mickey for both his high-level technical acumen and lighting-fast laser focus! Starting this Summer 2025, I was fortunate to observe Mickey's abilities in-action.</p>
+                  <p class="mt-4">More specifically, Micky was the first instrument in taking a novel software and streamlining it into a more perfected state. This software he improved, called LandScope, was the life's work of its originator. The software was in soft launch when Mickey took it on with his full energy and commitment.</p>
+                  <p class="mt-4">In RECORD TIME, he both produced and oversaw the completion of its next iteration. From integrated functionality inside a common Internet browser, to ensuring FAST-running data sets into visuals, demonstrations of the improved LandScope have literally impressed everyone who sees it.</p>
+                  <p class="mt-4">The next phase of the LandScope software is currently being produced by Mickey and I am so excited and cannot wait to see what he does next for our team."</p>
+                </div>
+                <footer class="mt-4 text-cream-600 text-sm font-medium">— Alisha "Bee", Founder, Wind, Bees & Earth</footer>
+              </blockquote>
+
+              {# Carousel controls #}
+              <div class="flex items-center justify-between mt-6">
+                <button @click="slide = (slide - 1 + total) % total" class="text-cream-500 hover:text-morpho-400 transition-colors p-2">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="m15 18-6-6 6-6"/>
+                  </svg>
+                </button>
+                <div class="flex gap-2">
+                  <button @click="slide = 0" :class="slide === 0 ? 'bg-morpho-400' : 'bg-cream-700'" class="w-2 h-2 rounded-full transition-colors"></button>
+                  <button @click="slide = 1" :class="slide === 1 ? 'bg-morpho-400' : 'bg-cream-700'" class="w-2 h-2 rounded-full transition-colors"></button>
+                </div>
+                <button @click="slide = (slide + 1) % total" class="text-cream-500 hover:text-morpho-400 transition-colors p-2">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="m9 18 6-6-6-6"/>
+                  </svg>
+                </button>
               </div>
-              <footer class="mt-4 text-cream-600 text-sm font-medium">— Mitch Rawlyk, CEO & Founder, LandScope</footer>
-            </blockquote>
+            </div>
           </div>
 
           {# ── Scaling ── #}
@@ -132,12 +180,9 @@
             </div>
             <blockquote class="mt-10 bg-forest-900/60 border-l-4 border-morpho-500/60 p-6 md:p-8">
               <div class="text-cream-300 italic leading-relaxed text-base">
-                <p>"This is my pleasure to recommend Mickey for both his high-level technical acumen and lighting-fast laser focus! Starting this Summer 2025, I was fortunate to observe Mickey's abilities in-action.</p>
-                <p class="mt-4">More specifically, Micky was the first instrument in taking a novel software and streamlining it into a more perfected state. This software he improved, called LandScope, was the life's work of its originator. The software was in soft launch when Mickey took it on with his full energy and commitment.</p>
-                <p class="mt-4">In RECORD TIME, he both produced and oversaw the completion of its next iteration. From integrated functionality inside a common Internet browser, to ensuring FAST-running data sets into visuals, demonstrations of the improved LandScope have literally impressed everyone who sees it.</p>
-                <p class="mt-4">The next phase of the LandScope software is currently being produced by Mickey and I am so excited and cannot wait to see what he does next for our team."</p>
+                <p>"Mickey was amazing to work with during our time together at Uplight. His thoughtfulness and desire to include security as part of the design process of his projects led to some great security and functionality outcomes for Uplight. I only wish the time we worked together was longer."</p>
               </div>
-              <footer class="mt-4 text-cream-600 text-sm font-medium">— Alisha "Bee", Founder, Wind, Bees & Earth</footer>
+              <footer class="mt-4 text-cream-600 text-sm font-medium">— Alex Wood, CISO, Uplight Inc</footer>
             </blockquote>
           </div>
 
