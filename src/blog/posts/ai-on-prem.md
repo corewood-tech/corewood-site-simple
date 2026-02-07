@@ -1,12 +1,12 @@
 ---
 layout: layouts/blog-post.njk
 title: "On-Premises AI: The Smarter Way Forward in Corporate Computing"
-description: "On-premises AI deployment offers better control, data privacy, and long-term cost benefits compared to cloud-based alternatives. Learn how to implement it effectively."
+description: "On-premises AI offers better control, data privacy, and long-term cost benefits vs. cloud alternatives. How to implement on-prem AI effectively."
 keywords: "on-premises AI, on-prem AI, enterprise AI, AI implementation, AI infrastructure, data privacy, cost efficiency"
 date: 2025-04-20
 readingTime: "4 min read"
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 permalink: /blog/ai-on-prem/
 ---
 

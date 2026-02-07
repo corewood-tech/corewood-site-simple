@@ -1,14 +1,14 @@
 ---
 layout: layouts/blog-post.njk
 title: "Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses"
-description: "Despite billions in investment, current machine learning approaches are failing to deliver on their promises. Learn why the 'bigger is better' approach has hit its ceiling and how targeted intelligence can help."
+description: "Despite billions in investment, current ML approaches fail to deliver. Why 'bigger is better' has hit its ceiling and how targeted intelligence can help."
 keywords: "AI hype, machine learning, ML limitations, AI efficiency, computational resources, targeted AI solutions, AI ROI"
 date: 2025-04-14
 readingTime: "3 min read"
 slug: "ai-hype-failing"
 permalink: /blog/ai-hype-failing/
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 ---
 
 The AI industry has been promising the world for years now. Artificial General Intelligence. Self-driving cars. Automated healthcare. Smart cities. Yet despite billions in investment and endless hype cycles, we're still waiting for many of these promises to materialize.

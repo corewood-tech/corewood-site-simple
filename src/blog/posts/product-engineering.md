@@ -1,14 +1,14 @@
 ---
 layout: layouts/blog-post.njk
 title: "Building Software That Actually Works: An Engineer's Guide to Requirements-First Development"
-description: "Most software projects fail not because of technical complexity, but because teams build the wrong thing. Learn how engineers can take ownership of requirements and build solutions that actually solve problems."
+description: "Most software projects fail because teams build the wrong thing. How engineers can own requirements and build solutions that actually solve problems."
 keywords: "software engineering, requirements gathering, product development, engineering methodology, Volere framework, business analysis, technical leadership"
 date: 2025-06-18
 readingTime: "12 min read"
 slug: "product-engineering"
 permalink: /blog/product-engineering/
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 ---
 
 Most software projects fail not because of technical complexity, but because teams build the wrong thing. Despite advances in frameworks, methodologies, and development tools, the fundamental challenge remains unchanged: how do you ensure you're solving the right problem?

@@ -6,8 +6,31 @@ keywords: "AI implementation, business value, AI success, AI infrastructure, AI 
 date: 2025-04-29
 readingTime: "4 min read"
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 permalink: /blog/so-you-want-to-build/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it take to build a production AI system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Building AI systems that deliver real business value requires navigating security, scalability, data governance, AI model selection, systems evolution, and performance engineering. Each area has pitfalls that derail even well-funded initiatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do AI projects fail despite good engineering talent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most AI projects fail because teams optimize for the wrong things — focusing on model sophistication rather than security, scalability, and operational readiness. Building security in from day one and designing for efficient scaling prevents the most common failures."
+        }
+      }
+    ]
+  }
 ---
 
 What does that take, really? If we take a bunch of really smart people and put them together, maybe it will work? Surely the open-source tooling is the best possible thing on the market, and even if it's not, we can't afford to invest in activities that don't build our business or aren't our core competency…

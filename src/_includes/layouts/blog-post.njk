@@ -66,9 +66,9 @@ ogType: article
       "publisher": {
         "@type": "Organization",
         "name": "Corewood",
-        "logo": { "@type": "ImageObject", "url": "https://corewood.io/corewood_symbol_avatar_white.png" }
+        "logo": { "@type": "ImageObject", "url": "https://corewood.io/meta.png" }
       },
-      "image": "{{ (ogImage or '/corewood_symbol_avatar_white.png') | url | absoluteUrl('https://corewood.io') }}",
+      "image": "{{ (ogImage or '/meta.png') | url | absoluteUrl('https://corewood.io') }}",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | url | absoluteUrl('https://corewood.io') }}" },
       "inLanguage": "en-US",
       "wordCount": "{{ content | striptags | wordcount }}",

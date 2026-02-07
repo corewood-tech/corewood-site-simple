@@ -1,13 +1,44 @@
 ---
 layout: layouts/blog-post.njk
 title: "The Unsustainable Economics of Generative AI: Finding a Path Forward"
-description: "Many companies are demoing AI capabilities they fundamentally cannot afford to operate. Learn about the sobering reality of AI economics and sustainable alternatives."
+description: "Many companies demo AI capabilities they can't afford to operate. The sobering reality of AI economics and sustainable alternatives."
 keywords: "generative AI, AI economics, sustainable AI, OpenAI, Anthropic, AI costs, small language model, AI infrastructure"
 date: 2025-04-24
 readingTime: "7 min read"
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 permalink: /blog/unsustainable-economics-ai/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does it actually cost to operate LLMs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generative AI model developers lose money on every prompt. Their products don't scale like traditional software — more users means exponentially higher costs due to compute intensity. These economics are unsustainable without massive subsidies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens when generative AI vendors need to become profitable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your margins become their target. Using vendor-provided generative AI for core features means your business model is controlled by someone else's economics. Prices will inevitably rise as subsidies dry up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can forward-thinking organizations do about AI costs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start building AI systems you can afford to operate. Consider smaller, task-specific models that run on your own infrastructure. If you can't rebuild your prototype into something economically viable, you're gambling rather than validating."
+        }
+      }
+    ]
+  }
 ---
 
 Let's start with the brass tacks: many companies are demoing and raising capital on capabilities they fundamentally cannot afford to operate. Why? Because we're in the early adoption stage of LLMs, and organizations are using these models at massive discounts from what they actually cost to run.

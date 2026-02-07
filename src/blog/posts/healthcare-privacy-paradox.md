@@ -1,12 +1,12 @@
 ---
 layout: layouts/blog-post.njk
 title: "Healthcare Software's Privacy Paradox: Breaking Free from Legacy Thinking"
-description: "Healthcare software innovation is stifled by legacy privacy approaches. Learn why compliance-first thinking creates inefficiency and how dynamic privacy protection can unlock better user experiences, lower costs, and faster development."
+description: "Legacy privacy approaches stifle healthcare software innovation. How dynamic privacy protection unlocks better UX, lower costs, and faster development."
 keywords: "healthcare software, privacy, HIPAA, compliance, healthcare innovation, dynamic privacy, de-identification, AI in healthcare, healthcare UX, Corewood"
 date: 2025-05-13
 readingTime: "7 min read"
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 permalink: /blog/healthcare-privacy-paradox/
 ---
 

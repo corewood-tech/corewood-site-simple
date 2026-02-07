@@ -18,7 +18,7 @@ module.exports = {
 
   // SEO defaults
   seo: {
-    defaultImage: "/corewood_symbol_avatar_white.png",
+    defaultImage: "/meta.png",
     keywords: [
       "software consulting",
       "software architecture",

@@ -1,13 +1,36 @@
 ---
 layout: layouts/blog-post.njk
 title: "ROI Beyond the Demo: Making AI Work for Your Business"
-description: "Moving beyond impressive AI demos to real business value requires infrastructure, talent, and implementation expertise. Learn how to achieve actual ROI from your AI investments."
+description: "Moving beyond impressive AI demos to real business value requires infrastructure, talent, and expertise. How to achieve actual ROI from AI investments."
 keywords: "AI ROI, business value, AI implementation, AI infrastructure, AI talent, machine learning operations, production AI"
 date: 2025-04-10
 readingTime: "6 min read"
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 permalink: /blog/roi-beyond-the-demo/
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do AI demos fail to deliver real business value?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Companies focus on data science and impressive prototypes while neglecting critical infrastructure, cost modeling, and production engineering. There's a structural gap between a working demo and a system that delivers measurable ROI at scale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does it take to get real ROI from AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Real AI ROI requires proper infrastructure architecture, cost-aware engineering, production-grade deployment pipelines, and teams who understand both the AI and the operational requirements. The implementation expertise matters more than the model itself."
+        }
+      }
+    ]
+  }
 ---
 
 ## I. The AI Implementation Gap

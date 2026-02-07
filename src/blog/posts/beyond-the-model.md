@@ -6,7 +6,7 @@ keywords: "AI architecture, system architecture, model deployment, AI efficiency
 date: 2025-04-22
 readingTime: "5 min read"
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 permalink: /blog/beyond-the-model/
 ---
 

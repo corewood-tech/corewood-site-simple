@@ -5,7 +5,7 @@ description: "Exploring how the foundational principles of Unix continue to guid
 date: 2025-06-17
 keywords: "AI, engineering, Unix philosophy, software design, best practices, modularity, system architecture"
 ogType: "article"
-ogImage: "/corewood_symbol_avatar_white.png"
+ogImage: "/meta.png"
 permalink: /blog/unix-philosophy-ai/
 ---
 
