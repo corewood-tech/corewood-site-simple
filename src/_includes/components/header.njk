@@ -13,19 +13,19 @@
         <div class="hidden md:flex items-center">
           <!-- Left nav — right-aligned so links sit near center -->
           <div class="flex-1 flex items-center justify-end gap-8 pr-8">
-            <a href="{{ '/profile/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">Work</a>
-            <a href="{{ '/about/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">About</a>
+            <a href="{{ '/profile/' | url }}" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Work</a>
+            <a href="{{ '/about/' | url }}" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">About</a>
           </div>
 
           <!-- Center logo -->
-          <a href="{{ '/' | url }}" class="flex-shrink-0">
+          <a href="{{ '/' | url }}" class="flex-shrink-0 hover:scale-[1.18] transition-all duration-200 origin-center inline-block [&_img]:transition-all [&_img]:duration-200 [&_img]:hover:brightness-125 hover:[filter:drop-shadow(0_0_10px_#2A95C8)_drop-shadow(0_0_20px_#2A95C880)]">
             {% image "./src/static/corewood_symbol_transparent_ON-DARK.png", "Corewood", "56px", "h-14", "56", "eager" %}
           </a>
 
           <!-- Right nav + CTA — left-aligned so links sit near center, CTA aligns with chamfer -->
           <div class="flex-1 flex items-center justify-start gap-8 pl-8 pr-[40px]">
-            <a href="{{ '/blog/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">Blog</a>
-            <a href="{{ '/contact/' | url }}" class="text-cream-200 hover:text-morpho-400 transition-colors font-medium text-sm">Contact</a>
+            <a href="{{ '/blog/' | url }}" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Blog</a>
+            <a href="{{ '/contact/' | url }}" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Contact</a>
             <span class="flex-1"></span>
             <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Schedule a Meeting</a>
           </div>
