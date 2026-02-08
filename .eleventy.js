@@ -10,6 +10,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy({"src/static": "."});
   eleventyConfig.addPassthroughCopy({"src/assets/js": "assets/js"});
+  eleventyConfig.addPassthroughCopy("assets/img");
 
   // CSS processing
   eleventyConfig.addTemplateFormats("css");
