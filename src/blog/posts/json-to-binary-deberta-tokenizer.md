@@ -25,7 +25,7 @@ Every time your inference service starts up, here's what happens with traditiona
 3. **Type conversions** - Converting string representations to integers
 4. **Memory allocation overhead** - Creating temporary objects during parsing
 
-For a typical DeBERTa tokenizer with a 50,000-token vocabulary, this process can take hundreds of milliseconds. In containerized deployments where services frequently restart, this adds up to significant latency.
+For DeBERTa v3-base with its 128,000-token vocabulary, this process can take hundreds of milliseconds. In containerized deployments where services frequently restart, this adds up to significant latency.
 
 ## The Solution: Custom Binary Format
 
@@ -222,6 +222,12 @@ The binary tokenizer format isn't revolutionary technology—it's applied system
 The approach is straightforward to implement for other tokenizers and frameworks. The key insight is recognizing that **startup performance matters** and that custom binary formats can eliminate parsing overhead while maintaining all the functionality of the original tokenizer.
 
 For Go-based ML inference pipelines, this optimization can be a game-changer. The 100x speedup in tokenizer loading translates directly to better user experience and more efficient resource utilization.
+
+## Sources
+
+- He, Pengcheng et al. [DeBERTa: Decoding-enhanced BERT with Disentangled Attention](https://arxiv.org/abs/2006.03654). *ICLR*, 2021.
+- He, Pengcheng et al. [DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing](https://arxiv.org/abs/2111.09543). *ICLR*, 2023.
+- Microsoft. [microsoft/deberta-v3-base](https://huggingface.co/microsoft/deberta-v3-base). HuggingFace Model Hub.
 
 ---
 

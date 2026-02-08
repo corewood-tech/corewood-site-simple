@@ -57,7 +57,7 @@ Putting aside the hype and bluster, OpenAI — as with all generative AI model d
 | **Anthropic** | $918 million | $5.6 billion | • 60-75% of revenue came from API calls<br/>• Currently raising $2 billion at a $60 billion valuation |
 | **Perplexity** | Just over $56 million | Not profitable | • Valued at $9 billion (late 2024)<br/>• Projecting $127 million revenue in 2025 |
 
-*Source: [Ed Zitron's "Where's The Money?"](https://www.wheresyoured.at/wheres-the-money/) - Data compiled from reporting by The Information, New York Times, and CNBC.*
+*Source: [Ed Zitron's "Where's The Money?"](https://www.wheresyoured.at/wheres-the-money/) — Data compiled from reporting by The Information, New York Times, and CNBC.*
 
 ## The Fundamental Question
 
@@ -101,6 +101,12 @@ At Corewood, we've assembled a team with deep expertise across:
 - Academic and applied AI, spanning LLMs, SLMs, and purpose-built models
 
 We're not a one-trick pony but a collective of essential industry knowledge uniquely positioned to help your organization navigate through this bubble without getting caught in its inevitable burst.
+
+## Sources
+
+- Zitron, Ed. [There Is No AI Revolution ("Where's The Money?")](https://www.wheresyoured.at/wheres-the-money/). February 24, 2025.
+- CNBC. [OpenAI sees roughly $5 billion loss this year on $3.7 billion in revenue](https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-revenue.html). September 27, 2024.
+- CNBC. [Perplexity AI in final stages of raising $500 million at $9 billion valuation](https://www.cnbc.com/2024/11/05/perplexity-ai-nears-500-million-funding-round-at-9-billion-valuation.html). November 5, 2024.
 
 ---
 

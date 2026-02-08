@@ -3,12 +3,12 @@
     <p class="text-cream-400 text-base md:text-lg mb-6">{{ ctaQuote }}</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
       <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center w-full sm:w-auto">
-        <span class="block text-sm md:text-base font-medium">Schedule a Consultation</span>
-        <span class="block text-xs text-cream-300/80 font-normal mt-0.5">Simplify today</span>
+        <span class="block text-sm md:text-base font-medium">{{ ctaPrimary or "Schedule a Consultation" }}</span>
+        <span class="block text-xs text-cream-300/80 font-normal mt-0.5">{{ ctaPrimarySub or "Simplify today" }}</span>
       </a>
       <a href="{{ '/contact/' | url }}" class="btn-secondary text-center w-full sm:w-auto">
-        <span class="block text-sm md:text-base font-medium">Contact Us</span>
-        <span class="block text-xs text-cream-400/70 font-normal mt-0.5">Start the conversation</span>
+        <span class="block text-sm md:text-base font-medium">{{ ctaSecondary or "Contact Us" }}</span>
+        <span class="block text-xs text-cream-400/70 font-normal mt-0.5">{{ ctaSecondarySub or "Start the conversation" }}</span>
       </a>
     </div>
   </div>

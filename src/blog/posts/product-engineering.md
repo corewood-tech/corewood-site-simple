@@ -175,6 +175,11 @@ Perhaps most importantly, this approach makes engineering work more satisfying. 
 
 The requirements-first approach transforms how you think about software engineering. Instead of building systems that technically work, you build solutions that actually solve problems. And that makes all the difference.
 
+## Sources
+
+- Robertson, Suzanne and James Robertson. [*Mastering the Requirements Process: Getting Requirements Right*](https://www.volere.org/mastering-the-requirements-process/), 3rd ed. Addison-Wesley, 2012.
+- Atlantic Systems Guild. [Volere Requirements Specification Template](https://www.volere.org/templates/volere-requirements-specification-template/).
+
 ---
 
 *Corewood: AI Solutions Built for Modern GRC Needs*

@@ -118,6 +118,11 @@ The vision is a healthcare ecosystem where privacy enables rather than limits in
 
 This future is achievable today. The question is whether your organization will lead this transformation or try to catch up later.
 
+## Sources
+
+- Sahni NR, Carrus B, Cutler DM. [Administrative Simplification and the Potential for Saving a Quarter-Trillion Dollars in Health Care](https://jamanetwork.com/journals/jama/fullarticle/2785480). *JAMA*, 2021;326(17):1677-1678.
+- U.S. Department of Health & Human Services. [HIPAA for Professionals](https://www.hhs.gov/hipaa/for-professionals/index.html).
+
 ---
 
 *Corewood: Privacy-Enabled Innovation for Healthcare*

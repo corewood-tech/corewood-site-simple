@@ -11,6 +11,13 @@
   <url><loc>https://corewood.io/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   
   <url>
+    <loc>https://corewood.io/blog/precarious-infrastructure/</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <loc>https://corewood.io/blog/llm-context-synthesis/</loc>
     <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>

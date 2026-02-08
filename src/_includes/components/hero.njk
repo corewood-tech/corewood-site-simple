@@ -1,7 +1,7 @@
 <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
   <!-- Background logo mark — fills hero -->
   <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-    {% image "./src/static/corewood_symbol_transparent_ON-DARK.png", "", "90vh", "h-[90vh] w-[90vh] object-contain opacity-[0.04]", "600,900,1200", "eager" %}
+    {% image "./src/static/corewood_symbol_transparent_ON-DARK.png", "Corewood logo", "90vh", "h-[90vh] w-[90vh] object-contain opacity-[0.04]", "600,900,1200", "eager" %}
   </div>
 
   <!-- Content — vertically centered -->
@@ -12,16 +12,14 @@
     </p>
 
     <!-- Company name -->
-    <h1 id="hero-title" class="font-display font-bold text-[2.5rem] sm:text-6xl md:text-8xl lg:text-9xl tracking-[0.08em] sm:tracking-[0.12em] md:tracking-[0.15em] uppercase text-cream-100 leading-none opacity-0 transition-opacity duration-1000 ease-out">
-      Corewood
+    <h1 id="hero-title" class="opacity-0 transition-opacity duration-1000 ease-out">
+      <span class="block font-display font-bold text-[2.5rem] sm:text-6xl md:text-8xl lg:text-9xl tracking-[0.08em] sm:tracking-[0.12em] md:tracking-[0.15em] uppercase text-cream-100 leading-none">Corewood</span>
+      <span class="block mt-2 md:mt-5 font-display font-light text-base sm:text-xl md:text-2xl lg:text-3xl tracking-wide text-cream-300">
+        <span id="hero-left" class="inline-block transition-all duration-700 ease-out translate-x-[-30vw] opacity-0">Hard Problems.</span>
+        <span id="hero-dot" class="inline-block mx-1 md:mx-4 text-cream-600 opacity-0 transition-opacity duration-500 ease-out">&middot;</span>
+        <span id="hero-right" class="inline-block transition-all duration-700 ease-out translate-x-[30vw] opacity-0">Simple Solutions.</span>
+      </span>
     </h1>
-
-    <!-- Tagline -->
-    <p class="mt-2 md:mt-5 font-display font-light text-base sm:text-xl md:text-2xl lg:text-3xl tracking-wide text-cream-300">
-      <span id="hero-left" class="inline-block transition-all duration-700 ease-out translate-x-[-30vw] opacity-0">Hard Problems.</span>
-      <span id="hero-dot" class="inline-block mx-1 md:mx-4 text-cream-600 opacity-0 transition-opacity duration-500 ease-out">&middot;</span>
-      <span id="hero-right" class="inline-block transition-all duration-700 ease-out translate-x-[30vw] opacity-0">Simple Solutions.</span>
-    </p>
 
     <!-- Dual CTA -->
     <div class="mt-8 md:mt-14 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">

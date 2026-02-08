@@ -101,4 +101,10 @@ The UNIX philosophy endures because it addresses fundamental challenges in human
 
 These challenges haven't disappeared—they've intensified. As we build AI-native systems, the UNIX philosophy offers a proven framework for managing complexity while preserving human agency and understanding.
 
-The future belongs to engineers who can orchestrate AI capabilities with the same elegance that UNIX pioneers orchestrated simple programs: through clear interfaces, thoughtful composition, and unwavering focus on human needs. 
+The future belongs to engineers who can orchestrate AI capabilities with the same elegance that UNIX pioneers orchestrated simple programs: through clear interfaces, thoughtful composition, and unwavering focus on human needs.
+
+## Sources
+
+- Kernighan, Brian W. and Rob Pike. [*The UNIX Programming Environment*](https://en.wikipedia.org/wiki/The_Unix_Programming_Environment). Prentice Hall, 1984.
+- Raymond, Eric S. [*The Art of Unix Programming*](http://www.catb.org/esr/writings/taoup/html/). Addison-Wesley, 2003.
+- Anthropic. [Model Context Protocol](https://modelcontextprotocol.io). 2024. 

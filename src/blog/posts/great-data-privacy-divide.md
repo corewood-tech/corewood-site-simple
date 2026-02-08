@@ -18,7 +18,7 @@ Then came the lawyers.
 
 The story starts earlier than most people realize. HIPAA landed in 1996, and healthcare technology essentially stopped evolving. User interfaces that looked cutting-edge in the Clinton administration are still running critical hospital systems today. Why? Because the healthcare industry discovered that innovation and compliance don't play nicely together.
 
-Fast-forward to 2016: GDPR arrives. Two years later, CCPA follows. Suddenly, every engineering team faces the same reality that froze healthcare innovation twenty years earlier. Personal data isn't just data anymore—it's radioactive material that requires specialized handling.
+Fast-forward to 2018: GDPR becomes enforceable across the EU. That same year, California passes CCPA. Suddenly, every engineering team faces the same reality that froze healthcare innovation twenty years earlier. Personal data isn't just data anymore—it's radioactive material that requires specialized handling.
 
 ## The Band-Aid Approach
 
@@ -91,6 +91,12 @@ The companies that figure out how to make compliance invisible—to wrap all tha
 More importantly, they'll be building the infrastructure that enables smaller, more innovative teams to compete on merit rather than legal department size.
 
 The choice is clear: continue treating privacy as a tax on innovation, or recognize it as an opportunity to build better systems from the ground up.
+
+## Sources
+
+- U.S. Department of Health & Human Services. [HIPAA Privacy Rule](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html). Signed into law August 21, 1996.
+- European Union. [General Data Protection Regulation (GDPR)](https://gdpr.eu/what-is-gdpr/). Adopted April 2016, enforceable May 25, 2018.
+- California Office of the Attorney General. [California Consumer Privacy Act (CCPA)](https://oag.ca.gov/privacy/ccpa). Signed June 2018, effective January 1, 2020.
 
 ---
 
