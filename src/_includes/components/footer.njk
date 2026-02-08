@@ -23,5 +23,12 @@
         <span class="text-cream-700">&copy; 2026 Corewood LLC</span>
       </div>
     </div>
+    {% if domains.siblings.length %}
+    <div class="flex justify-center gap-3 mt-4 text-[10px] leading-none text-forest-900">
+      {%- for d in domains.siblings %}
+      <a href="{{ d.url }}{{ page.url }}" class="hover:text-forest-800 transition-colors">{{ d.label }}</a>
+      {%- endfor %}
+    </div>
+    {% endif %}
   </div>
 </footer>

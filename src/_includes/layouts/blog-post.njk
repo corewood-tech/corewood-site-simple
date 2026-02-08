@@ -26,7 +26,7 @@ ogType: article
         <footer class="mt-16 pt-8 border-t border-forest-700">
           <div class="flex justify-between items-center">
             <a href="{{ '/blog/' | url }}" class="text-morpho-400 hover:text-morpho-300 transition-colors">← Back to Blog</a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | absoluteUrl('https://corewood.io') | urlencode }}"
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | url | absoluteUrl(site.url) | urlencode }}"
                class="text-morpho-400 hover:text-morpho-300 transition-colors" target="_blank" rel="noopener">
               Share on LinkedIn
             </a>
@@ -59,17 +59,17 @@ ogType: article
       "@type": "BlogPosting",
       "headline": "{{ title | jsonEscape }}",
       "description": "{{ description | jsonEscape }}",
-      "url": "{{ page.url | url | absoluteUrl('https://corewood.io') }}",
+      "url": "{{ page.url | url | absoluteUrl(site.url) }}",
       "datePublished": "{{ date | date('%Y-%m-%d') }}",
       "dateModified": "{{ date | date('%Y-%m-%d') }}",
-      "author": { "@type": "Person", "name": "Mickey", "url": "https://corewood.io/about/" },
+      "author": { "@type": "Person", "name": "Mickey", "url": "{{ site.url }}/about/" },
       "publisher": {
         "@type": "Organization",
         "name": "Corewood",
-        "logo": { "@type": "ImageObject", "url": "https://corewood.io/meta.png" }
+        "logo": { "@type": "ImageObject", "url": "{{ site.url }}/meta.png" }
       },
-      "image": "{{ (ogImage or '/meta.png') | url | absoluteUrl('https://corewood.io') }}",
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | url | absoluteUrl('https://corewood.io') }}" },
+      "image": "{{ (ogImage or '/meta.png') | url | absoluteUrl(site.url) }}",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | url | absoluteUrl(site.url) }}" },
       "inLanguage": "en-US",
       "wordCount": "{{ content | striptags | wordcount }}",
       "articleSection": "Technology"{% if keywords %},
@@ -78,8 +78,8 @@ ogType: article
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://corewood.io/blog/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ site.url }}/blog/" },
         { "@type": "ListItem", "position": 3, "name": "{{ title | jsonEscape }}" }
       ]
     }
