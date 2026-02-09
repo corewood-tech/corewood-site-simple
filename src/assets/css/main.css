@@ -475,6 +475,37 @@ img[loading="lazy"].loaded {
   opacity: 1;
 }
 
+/* ─── Experience graph ─── */
+.graph-node polygon {
+  transition: fill-opacity 0.2s, transform 0.15s;
+}
+
+.graph-edge {
+  transition: stroke 0.2s, stroke-width 0.2s;
+}
+
+/* Detail panel — desktop: right side, mobile: bottom sheet */
+.graph-detail-panel {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 340px;
+}
+
+@media (max-width: 767px) {
+  .graph-detail-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 50vh;
+    border-left: none;
+    border-top: 1px solid rgba(245, 240, 230, 0.1);
+    border-radius: 12px 12px 0 0;
+  }
+}
+
 /* ─── Reduce motion ─── */
 @media (prefers-reduced-motion: reduce) {
   .ticker-column,
@@ -483,7 +514,9 @@ img[loading="lazy"].loaded {
   .ticker-solution,
   #hero-left,
   #hero-right,
-  [class*="transition"] {
+  [class*="transition"],
+  .graph-node polygon,
+  .graph-edge {
     animation: none !important;
     transition: none !important;
   }

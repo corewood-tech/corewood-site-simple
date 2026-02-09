@@ -1,0 +1,1730 @@
+# =============================================================================
+# Resume Graph Schema v2
+# =============================================================================
+# Changes from v1:
+#   - MHCD is ONE role (Residential Counselor, night shift, fixed computers)
+#   - Removed weak/obvious edges — every edge explains something non-obvious
+#   - Added books: Righting Software, Mastering the Requirements Process,
+#     Secure by Design, Thinking in Systems, Clean Architecture (Uncle Bob)
+#   - Added shaped_by edge type for intellectual influences
+#   - Added requirements engineering as a skill
+#   - Added volatility-based decomposition, requirements-first, space-between,
+#     security-as-design as philosophies
+#   - LinkedIn-corrected org names and dates
+#   - Added AI Accelerator Institute membership
+# =============================================================================
+
+schema:
+  version: "2.0.0"
+  subject:
+    name: "Kyle Mickey"
+    email: "mickey@corewood.io"
+    location: "Costa Rica"
+    website: "https://corewood.io"
+    career_start: 2007
+    education_summary: "Undergraduate studies in English, Psychology, and Philosophy — Colorado State University, 2003-2007"
+
+  node_types:
+    role:
+      fields: [id, title, organization, location, start, end, type, summary, highlights, tags]
+    skill:
+      fields: [id, name, category, depth, summary, tags]
+    influence:
+      fields: [id, name, type, timeframe, summary]
+    project:
+      fields: [id, name, role_id, summary, technical_detail, impact, tags]
+    philosophy:
+      fields: [id, name, statement, origin_story]
+    education:
+      fields: [id, name, institution, timeframe, type, subjects, relevance]
+
+  edge_types:
+    learned_at:
+      description: "Skill first developed or significantly leveled up here"
+    reinforced_by:
+      description: "Skill deepened or validated in a new context"
+    originated_from:
+      description: "Philosophy traces back to this experience"
+    evolved_into:
+      description: "Earlier capability/experience transformed into later one"
+    enabled:
+      description: "Made something else possible that wouldn't have been otherwise"
+    applied_at:
+      description: "Skill or philosophy exercised in this project"
+    chose_over:
+      description: "Deliberate career or technical fork"
+    shaped_by:
+      description: "Thinking fundamentally shaped by this influence"
+
+
+# =============================================================================
+# ROLES
+# =============================================================================
+
+roles:
+  - id: role_mhcd
+    title: "Residential Counselor"
+    organization: "Mental Health Center of Denver"
+    location: "Denver, CO"
+    start: "2008-02"
+    end: "2010-11"
+    type: employment
+    summary: "Night-shift counselor. Medication admin, medical records, progress documentation. Fixed the org's malware-infested computers on the side."
+    highlights:
+      - "Administered and documented medications per State procedures"
+      - "Composed progress summaries in electronic medical records"
+      - "Maintained medication inventory via Excel"
+      - "Self-taught malware removal (rootkits, adware) on org machines during night shifts"
+      - "Learned from security forums and MalwareBytes documentation"
+    tags: [mental_health, documentation, security, self_directed]
+
+  - id: role_apex
+    title: "Technical Specialist"
+    organization: "Sigma3 Integrated Reservoir Solutions"
+    location: "Centennial, CO"
+    start: "2010-11"
+    end: "2013-11"
+    type: employment
+    summary: "Technical writing and automation for geophysical operations. Mentored by Dr. Kenneth Mahrer."
+    highlights:
+      - "Automated fracking operational report generation, saving thousands of man-hours"
+      - "Brought behind-schedule reporting back on track via Excel macro automation"
+      - "Collaborated with geophysicists on fracking ops and geophysical response correlations"
+      - "Built data integration solutions syncing specialized oilfield software"
+      - "First GIS exposure: CRS, projections, rasters, vectors, NAD, survey systems"
+      - "4 years of writing mentorship from Dr. Kenneth Mahrer"
+    tags: [technical_writing, automation, geospatial, mentorship, oil_gas]
+
+  - id: role_tracegains
+    title: "Implementation Specialist"
+    organization: "TraceGains, Inc."
+    location: "Westminster, CO"
+    start: "2013-12"
+    end: "2015-07"
+    type: employment
+    summary: "Web services liaison. Client ERP integrations, COM add-ins, REST/SOAP."
+    highlights:
+      - "Integrated TraceGains with client-side ERP software"
+      - "Built COM add-ins for MS Excel"
+      - "Developed C#, Visual Studio, SOAP protocol knowledge"
+      - "Wrote product user manual"
+    tags: [integrations, automation, technical_writing, erp]
+
+  - id: role_markit
+    title: "API Developer"
+    organization: "IHS Markit"
+    location: "Boulder, CO"
+    start: "2015-07"
+    end: "2017-09"
+    type: employment
+    summary: "Full-stack financial platforms. Automation obsessive. Docker early adopter. Where the engineering identity formed."
+    highlights:
+      - "Designed API and backend queries for Fund Fact Sheet generator"
+      - "Led full-stack rewrite: ASP Classic → .NET 4.5 (Option Strategy Screener)"
+      - "Implemented early OIDC authentication (Ping Identity)"
+      - "Built Swagger spec importer — first platform-thinking attempt"
+      - "Automated API project scaffolding by 2016"
+      - "Built production-analog local dev environments with Docker"
+      - "Exceptionally low bug rates per QA metrics"
+    tags: [full_stack, financial, api_design, docker, identity, automation]
+
+  - id: role_cognizant
+    title: "Senior Software Developer"
+    organization: "Cognizant Quick Left"
+    location: "Boulder, CO"
+    start: "2017-09"
+    end: "2018-10"
+    type: employment
+    summary: "Enterprise consulting. Supply chain + ML projects. Deliberate identity dive. Neo4j training. Career fork: chose architecture."
+    highlights:
+      - "Led technical architecture: supply chain optimization (bullwhip effect) for major US retailer"
+      - "TensorFlow CNN for rooftop damage assessment (insurance)"
+      - "Containerized and automated Keycloak — first intentional identity work"
+      - "Formal Neo4j graph database training"
+      - "Chose architecture path over ML path"
+      - "One-click containerized cloud deployments"
+    tags: [architecture, ml, identity, containers, graph_databases, supply_chain]
+
+  - id: role_element3
+    title: "Software Engineer"
+    organization: "Element3 Health"
+    location: "Denver, CO"
+    start: "2018-10"
+    end: "2019-03"
+    type: employment
+    summary: "Backend rewrite: PHP → C#. Containerization. AWS migration. Social impact (elderly isolation)."
+    highlights:
+      - "Replaced unmaintainable PHP system with C# backend"
+      - "Led containerization and AWS migration strategy"
+      - "Established React frontend event handling standards"
+      - "Greenfield Docker + CloudFormation automation"
+      - "Security audit: 80% attack surface reduction after containerization"
+    tags: [backend, rewrite, containers, aws, social_impact, security]
+
+  - id: role_spire
+    title: "Senior Cloud Engineer; Tech Lead"
+    organization: "Spire Digital"
+    location: "Denver, CO"
+    start: "2019-03"
+    end: "2019-11"
+    type: employment
+    summary: "Turned around high-risk behind-schedule project. Serverless redesign."
+    highlights:
+      - "Turned behind-schedule project to on-track via Lambda + DynamoDB redesign"
+      - "Led 3-member team implementing IaC and CI/CD"
+      - "Delivered radio scheduling admin dashboard"
+      - "Architected IAM for microservices ecosystem"
+    tags: [leadership, turnaround, serverless, mentoring]
+
+  - id: role_trimble_lead
+    title: "Lead Software Engineer"
+    organization: "Trimble, Inc."
+    location: "Westminster, CO"
+    start: "2019-11"
+    end: "2021-01"
+    type: employment
+    summary: "Ops leadership. Monitoring. Distributed team. Security hardening. Served 6,000+ internationally-distributed users."
+    highlights:
+      - "99.5% uptime via Datadog + PagerDuty"
+      - "Captured legacy architecture in IaC, saving hundreds of operational hours"
+      - "Led distributed team (US + India)"
+      - "Optimized systems during 2020 pandemic surge"
+      - "Hardened AWS IAM, reduced over-scoped permissions"
+      - "Administered Atlassian suite, Artifactory, SonarQube"
+    tags: [ops, leadership, monitoring, iac, distributed_team, security]
+
+  - id: role_trimble_arch
+    title: "Systems Architect"
+    organization: "Trimble, Inc."
+    location: "Remote"
+    start: "2021-01"
+    end: "2022-02"
+    type: employment
+    summary: "Unified enterprise IoT identity. GDPR compliance. Custom CA. Fortune 1000 scale."
+    highlights:
+      - "Unified identity platform across multiple engineering divisions"
+      - "GDPR-compliant distributed architecture across continents"
+      - "IoT mTLS → API Gateway → DynamoDB → JWT for 100K+ devices"
+      - "Built custom CA ('just the signatures') in ~4-6 weeks"
+      - "Read RFC specifications and transcribed to Python for certificate verification"
+      - "Webhook-driven invitation service (Lambda, API Gateway, DynamoDB)"
+      - "hCaptcha bot protection integration"
+    tags: [identity, iot, security, gdpr, aws, architecture]
+
+  - id: role_macroscope
+    title: "Infrastructure Engineer"
+    organization: "Macroscope"
+    location: "Boulder, CO"
+    start: "2022-02"
+    end: "2023-01"
+    type: employment
+    summary: "Founding infrastructure. Multi-environment SaaS from scratch on AWS."
+    highlights:
+      - "Built foundational SaaS infrastructure with CloudFormation"
+      - "Data pipeline architecture: Dask, Prefect, Python executors"
+      - "Self-hosted job execution: Fargate, VPCs, PostgreSQL"
+      - "Self-hosted FusionAuth (OAuth2/OIDC), Retool, SuperBlocks"
+      - "Centralized secret management, CloudFront asset delivery"
+      - "Rapid prototyping: CloudFront → API Gateway → Lambda → PostgreSQL"
+    tags: [infrastructure, aws, saas, data_pipelines, startup]
+
+  - id: role_uplight
+    title: "Senior SRE / API Governance System Architect"
+    organization: "Uplight"
+    location: "Boulder, CO (Remote)"
+    start: "2023-02"
+    end: "2024-11"
+    type: employment
+    summary: "API governance platform. Observability. Multi-cloud. Internal LLM. Clean energy. Role evolved: SRE (Feb 2023) → Sr SWE + SRE (Jun 2024)."
+    highlights:
+      - "Event-based API governance: deployment 12 weeks → 2 days"
+      - "Co-led 5-month beta launch, ahead of schedule, zero downtime"
+      - "Passed penetration testing"
+      - "Unified API data plane: WAF, CloudFront, Lambda@Edge, API Gateway, OPA auth (Go), VPC-bound proxy"
+      - "Kong API Gateway: OAuth, rate limiting, caching plugins"
+      - "Presented API governance model at leadership conference (DevCon)"
+      - "Terraform across AWS/GCP/K8s; authored org best practices guide"
+      - "OpenTelemetry + CloudWatch + distributed tracing"
+      - "Built internal LLM knowledge base on GCP VMs with GPUs (hackathon)"
+      - "Backstage service catalogs, automated repo scans, DevSecOps"
+      - "Vendor management: Auth0, Datadog, AWS, GCP"
+      - "1Password + AWS Secrets Manager for credential management"
+      - "Zero bugs at production launch"
+      - "2x Uplifter Award (Nov 2023, Jul 2024)"
+      - "Facilitated book club; participated in product and security guilds"
+    tags: [api_governance, observability, identity, llm, devsecops, leadership, clean_energy]
+
+  - id: role_corewood
+    title: "Founder / Machine Philosopher"
+    organization: "Corewood LLC"
+    location: "Colorado (Remote)"
+    start: "2024-11"
+    end: "present"
+    type: founder
+    summary: "Hard problems. Simple solutions. AI infrastructure, privacy engineering, consulting."
+    highlights:
+      - "Custom tensor ops in Go: 10-17x over Python, 14.5x less memory"
+      - "Binary tokenizer: 10-100x faster startup than JSON"
+      - "ONNX inference with session pooling and 512-token overlap"
+      - "Masquer: zero-copy PII detection/masking database proxy (98.48% accuracy)"
+      - "llama.cpp CGo bindings with METAL and CUDA support"
+      - "715 tokens/sec CPU-only (280M param DeBERTa)"
+      - "RAG: DGraph + Qdrant + eigenvector-based semantic search"
+      - "6 production websites, 4 working products in 12 months"
+      - "Cloudflare Workers marketing platforms (SvelteKit + D1)"
+    tags: [ml_infrastructure, golang, privacy, rag, founder, consulting]
+
+  - id: role_landscope
+    title: "Chief Technology Officer"
+    organization: "LandScope"
+    location: "Remote"
+    start: "2025-07"
+    end: "present"
+    type: employment
+    summary: "Geospatial platform. 3D visualization. Terrain analysis accessible without GIS expertise."
+    highlights:
+      - "2,000-acre analysis in under 20 minutes"
+      - "10+ analysis layers: elevation, slope, aspect, hydrology, geomorphon, contours"
+      - "Multi-format export: GeoTIFF, GeoJSON, Shapefile, DXF, KML, PNG"
+      - "CesiumJS 3D globe, gRPC APIs, WhiteboxTools"
+      - "Admin dashboard: project/customer tracking"
+      - "Containerized on DigitalOcean, Caddy routing, Spaces CDN"
+      - "OpenTelemetry → Honeycomb.io"
+    tags: [geospatial, gis, lidar, full_stack, cesium, cto]
+
+
+
+
+# =============================================================================
+# SKILLS
+# =============================================================================
+
+skills:
+  # --- Languages ---
+  - id: skill_go
+    name: "Go"
+    category: language
+    depth: expert
+    summary: "Primary systems language. Custom tensor ops, CGo bindings, binary protocols, inference APIs."
+    tags: [systems, performance, ml]
+
+  - id: skill_typescript
+    name: "TypeScript / JavaScript"
+    category: language
+    depth: expert
+    summary: "Full-stack: React, Svelte/SvelteKit, Node.js, NestJS, Cloudflare Workers."
+    tags: [frontend, backend, full_stack]
+
+  - id: skill_python
+    name: "Python"
+    category: language
+    depth: proficient
+    summary: "Data pipelines, ML tooling, automation. Deliberately moved away from for performance work."
+    tags: [data, ml, automation]
+
+  - id: skill_csharp
+    name: "C# / .NET"
+    category: language
+    depth: proficient
+    summary: "Backend systems, ASP.NET rewrites, COM add-ins. Earlier career."
+    tags: [backend, enterprise]
+
+  - id: skill_sql
+    name: "SQL / PostgreSQL"
+    category: language
+    depth: expert
+    summary: "Schema design, query optimization, wire protocol understanding."
+    tags: [data, databases]
+
+  - id: skill_bash
+    name: "Bash / Shell"
+    category: language
+    depth: proficient
+    summary: "Environment automation, deployment scripts. Self-taught via production-analog local dev."
+    tags: [automation, systems]
+
+  # --- Infrastructure ---
+  - id: skill_docker
+    name: "Docker / Containers"
+    category: infrastructure
+    depth: expert
+    summary: "Container-native from 2016. Production-analog local dev. Multi-stage builds. Compose-to-K8s."
+    tags: [containers, devops]
+
+  - id: skill_aws
+    name: "AWS"
+    category: infrastructure
+    depth: expert
+    summary: "Lambda, API Gateway, CloudFront, WAF, VPC, ECS/Fargate, RDS, DynamoDB, CloudFormation, IAM."
+    tags: [cloud]
+
+  - id: skill_terraform
+    name: "Terraform / IaC"
+    category: infrastructure
+    depth: expert
+    summary: "Terraform, OpenTofu, CloudFormation. Authored org best practices at Uplight."
+    tags: [iac, automation]
+
+  - id: skill_k8s
+    name: "Kubernetes"
+    category: infrastructure
+    depth: proficient
+    summary: "GKE, deployment orchestration. K8s ecosystem motivated Go adoption."
+    tags: [orchestration, containers]
+
+  # --- Architecture ---
+  - id: skill_api_design
+    name: "API Design & Governance"
+    category: architecture
+    depth: expert
+    summary: "Event-based governance, API data planes, OpenAPI, rate limiting, caching, authorization."
+    tags: [api, governance]
+
+  - id: skill_identity
+    name: "Identity & Access Management"
+    category: architecture
+    depth: expert
+    summary: "OIDC, SAML, mTLS, x509, JWT, custom CA, Keycloak, Ping, Zitadel, OPA. GDPR/HIPAA."
+    tags: [security, identity, iot]
+
+  - id: skill_observability
+    name: "Observability & Telemetry"
+    category: architecture
+    depth: expert
+    summary: "OpenTelemetry, structured logging, distributed tracing. Datadog, Honeycomb, Prometheus."
+    tags: [monitoring, ops]
+
+  - id: skill_layered_arch
+    name: "Layered Architecture"
+    category: architecture
+    depth: expert
+    summary: "handlers → ops → repo. Type segregation. Single-directional dependencies. Volatility-based decomposition."
+    tags: [architecture, patterns]
+
+  # --- Domain ---
+  - id: skill_ml_infra
+    name: "ML Infrastructure"
+    category: domain
+    depth: expert
+    summary: "Custom tensor ops, ONNX, binary tokenizers, session pooling, CGo/llama.cpp, GPU awareness."
+    tags: [ml, performance, systems]
+
+  - id: skill_pii
+    name: "PII / Data Privacy Engineering"
+    category: domain
+    depth: expert
+    summary: "ML-powered PII detection, zero-copy masking proxy, HIPAA/GDPR compliance by design."
+    tags: [privacy, compliance, ml]
+
+  - id: skill_geospatial
+    name: "Geospatial / GIS"
+    category: domain
+    depth: expert
+    summary: "LiDAR, DEM analysis, CRS/projections, terrain analysis, CesiumJS, WhiteboxTools."
+    tags: [gis, data, visualization]
+
+  - id: skill_graph_db
+    name: "Graph Databases"
+    category: domain
+    depth: proficient
+    summary: "Neo4j (formal training), DGraph (production). Graph-driven auth and RAG."
+    tags: [databases, data_modeling]
+
+  - id: skill_requirements
+    name: "Requirements Engineering"
+    category: methodology
+    depth: proficient
+    summary: "Volere process. Business use cases → product use cases → implementation. Functional and non-functional requirements."
+    tags: [process, architecture, product]
+
+  # --- Soft Skills ---
+  - id: skill_technical_writing
+    name: "Technical Writing & Communication"
+    category: soft_skill
+    depth: expert
+    summary: "Mentor-trained by Dr. Mahrer. Architecture diagrams, API docs, blog posts, presentations."
+    tags: [communication, documentation]
+
+  - id: skill_tech_talks
+    name: "Technical Presentations"
+    category: soft_skill
+    depth: proficient
+    summary: "DevCon, lunch-and-learns: graph DBs, Docker for devs, single-directional data flows, API governance."
+    tags: [communication, leadership]
+
+  - id: skill_team_turnaround
+    name: "Team / Project Turnaround"
+    category: soft_skill
+    depth: proficient
+    summary: "Repeating pattern: behind-schedule → on-track. Ops-first, containerize, automate, cut scope."
+    tags: [leadership, ops]
+
+
+# =============================================================================
+# INFLUENCES
+# =============================================================================
+
+influences:
+  # --- People ---
+  - id: inf_mahrer
+    name: "Dr. Kenneth Mahrer"
+    type: mentor
+    timeframe: "2010-2013"
+    summary: "Geophysicist. Slide rules and punch cards. Technical writing professor at University of Denver. Mentored Kyle's writing for 4 years. Not code — writing and scientific thinking."
+
+  # --- Media ---
+  - id: inf_dotnetrocks
+    name: ".NET Rocks Podcast"
+    type: media
+    timeframe: "2015-onward"
+    summary: "Hours during Markit commutes. How senior engineers reason about systems, evaluate technology, think about production."
+
+  # --- Books ---
+  - id: inf_righting_software
+    name: "Righting Software (Juval Löwy)"
+    type: book
+    timeframe: "~2019-onward"
+    summary: "Volatility-based decomposition. Organize by what changes together, not by function. Designing for change."
+
+  - id: inf_mastering_reqs
+    name: "Mastering the Requirements Process (Robertson & Robertson)"
+    type: book
+    timeframe: "~2020-onward"
+    summary: "Volere requirements template. Business use cases → product use cases → implementation. Context before requirements."
+
+  - id: inf_secure_by_design
+    name: "Secure by Design (Johnsson, Deogun, Sawano)"
+    type: book
+    timeframe: "~2020-onward"
+    summary: "Security as a design constraint. Business logic enforcement at application code level. Great systems don't let you do it wrong."
+
+  - id: inf_thinking_in_systems
+    name: "Thinking in Systems (Donella Meadows)"
+    type: book
+    timeframe: "~2019-onward"
+    summary: "Stocks, flows, feedback loops. Optimize the interconnects, not just the nodes. The 'space between.'"
+
+  - id: inf_uncle_bob
+    name: "Clean Architecture (Robert C. Martin)"
+    type: book
+    timeframe: "~2017-onward"
+    summary: "Dependency rule. System shape reflects intent, not frameworks. Single-directional dependencies."
+
+  # --- Self-directed ---
+  - id: inf_malware_forums
+    name: "Security Forums (MalwareBytes)"
+    type: self_directed
+    timeframe: "2008-2010"
+    summary: "Self-taught security during MHCD night shifts. Forums, documentation, adversarial debugging."
+
+  - id: inf_ecmascript
+    name: "ECMAScript Specification"
+    type: self_directed
+    timeframe: "2015-onward"
+    summary: "Read the spec. Noticed syntax tree parallels with linguistics (generative grammar)."
+
+  # --- Academic ---
+  - id: inf_chomsky_pinker
+    name: "Chomsky, Pinker, Linguistics"
+    type: academic
+    timeframe: "2003-2007"
+    summary: "Generative grammar, syntax trees, cognitive science. Foundation for NLP understanding."
+
+  - id: inf_registry_hacking
+    name: "Windows Registry / OS Internals"
+    type: self_directed
+    timeframe: "2003-2007"
+    summary: "Custom Windows XP skins via registry mods. Early system internals curiosity."
+
+  - id: inf_ap_compsci
+    name: "AP Computer Science"
+    type: academic
+    timeframe: "~2002-2003"
+    summary: "High school. First formal programming."
+
+  - id: inf_neo4j_training
+    name: "Neo4j Training"
+    type: training
+    timeframe: "2017-2018"
+    summary: "Formal graph database training at Cognizant. Applied years later in DGraph RAG systems."
+
+
+# =============================================================================
+# PROJECTS
+# =============================================================================
+
+projects:
+  - id: proj_masquer
+    name: "Masquer"
+    role_id: role_corewood
+    summary: "Zero-copy PII detection and masking database proxy"
+    technical_detail: "ML-powered (DeBERTa/ONNX), transparent PostgreSQL wire protocol proxy, deterministic tokenization, format-preserving replacements"
+    impact: "HIPAA compliance without application code changes. 98.48% accuracy."
+    tags: [pii, privacy, ml, database_proxy, hipaa]
+
+  - id: proj_tensor_ops
+    name: "Custom Go Tensor Operations"
+    role_id: role_corewood
+    summary: "Hand-rolled tensor ops replacing PyTorch for inference"
+    technical_detail: "Arena-allocated, ONNX data types, task-specific (no autograd). 10-17x over Python, 14.5x less memory."
+    impact: "CPU-only inference at 715 tokens/sec on consumer hardware"
+    tags: [ml, performance, golang]
+
+  - id: proj_binary_tokenizer
+    name: "Binary Tokenizer"
+    role_id: role_corewood
+    summary: "Compiled tokenizer replacing JSON HuggingFace tokenizers"
+    technical_detail: "Little-endian binary, fixed 8-byte integers, length-prefixed strings. Pre-compiled at container build."
+    impact: "10-100x faster startup. Zero JSON parsing at runtime."
+    tags: [ml, performance, binary]
+
+  - id: proj_inference_api
+    name: "Go Inference API"
+    role_id: role_corewood
+    summary: "Production inference server with 2 direct dependencies"
+    technical_detail: "ONNX runtime via CGo, session pooling, 512-token slicing. llama.cpp bindings for LLMs."
+    impact: "123,363 tokens/min on CPU. 20MB vs 2GB Python equivalent."
+    tags: [ml, api, golang]
+
+  - id: proj_api_governance
+    name: "API Governance Platform"
+    role_id: role_uplight
+    summary: "Event-based API governance for enterprise developer platform"
+    technical_detail: "Event-driven config, consolidated data plane (WAF, CloudFront, API Gateway, OPA). Lambda, Step Functions, DynamoDB."
+    impact: "12 weeks → 2 days. Zero bugs at launch. Passed pen testing."
+    tags: [api, governance, aws, event_driven]
+
+  - id: proj_iot_identity
+    name: "IoT Identity Platform"
+    role_id: role_trimble_arch
+    summary: "GDPR-compliant mTLS for 100K+ construction devices"
+    technical_detail: "mTLS → API Gateway → DynamoDB → JWT. Custom CA. Cross-continental GDPR."
+    impact: "Unified fragmented enterprise identity."
+    tags: [identity, iot, mtls, gdpr]
+
+  - id: proj_custom_ca
+    name: "Purpose-Built Certificate Authority"
+    role_id: role_trimble_arch
+    summary: "Custom CA after AWS Private CA proved too expensive"
+    technical_detail: "Signature-only CA. ~4-6 weeks research to implementation."
+    impact: "Economically viable device auth at enterprise scale"
+    tags: [identity, security, pki]
+
+  - id: proj_landscope_platform
+    name: "LandScope Platform"
+    role_id: role_landscope
+    summary: "Full-stack geospatial analysis platform"
+    technical_detail: "React + CesiumJS, Go backend, PostgreSQL, WhiteboxTools, DigitalOcean/Caddy, OTel → Honeycomb."
+    impact: "2,000 acres in <20 min. No GIS expertise required."
+    tags: [geospatial, full_stack, gis, lidar]
+
+  - id: proj_swagger_importer
+    name: "Swagger Spec Importer"
+    role_id: role_markit
+    summary: "API aliasing for client-specific interfaces over shared APIs"
+    technical_detail: "Attempted 80% reuse. Learned abstraction cost often exceeds duplication cost."
+    impact: "Failed to justify itself — taught the principle that became dependency minimalism."
+    tags: [api, architecture, lessons_learned]
+
+  - id: proj_local_dev
+    name: "Production-Analog Local Dev"
+    role_id: role_markit
+    summary: "Insisted everything run locally to match production"
+    technical_detail: "Docker: databases, Redis, file storage, full service topology."
+    impact: "Self-taught databases, Redis, Linux, bash through stubbornness."
+    tags: [docker, automation, self_directed_learning]
+
+  - id: proj_keycloak
+    name: "Containerized Keycloak"
+    role_id: role_cognizant
+    summary: "Automated, containerized identity provider"
+    technical_detail: "Dockerized Keycloak with automated config. Dove in because identity was hard."
+    impact: "Established pattern of containerized identity infrastructure."
+    tags: [identity, containers]
+
+  - id: proj_supply_chain
+    name: "Supply Chain Optimization"
+    role_id: role_cognizant
+    summary: "Bullwhip effect prototype for major US retailer"
+    technical_detail: "DB design, frontend, containerized one-click cloud deployments."
+    impact: "On-time delivery improvements for enterprise logistics"
+    tags: [supply_chain, full_stack, containers]
+
+  - id: proj_rag_system
+    name: "RAG System"
+    role_id: role_corewood
+    summary: "Graph + vector retrieval with identity-aware authorization"
+    technical_detail: "DGraph + Qdrant. Eigenvector-based semantic search. Policy-enforced retrieval."
+    impact: "Enterprise knowledge retrieval with auth controls"
+    tags: [rag, graph_db, vector_search, identity]
+
+  - id: proj_uplight_llm
+    name: "Internal LLM Knowledge Base"
+    role_id: role_uplight
+    summary: "Hackathon: embedding-enhanced internal AI"
+    technical_detail: "GCP VMs with GPUs, embedded queries to internal knowledge base, Terraform-captured. Independent hackathon submission."
+    impact: "Proof-of-concept for internal knowledge retrieval"
+    tags: [llm, embeddings, gcp, hackathon]
+
+  - id: proj_gdpr_portability
+    name: "GDPR Data Portability Service"
+    role_id: role_trimble_arch
+    summary: "Geo-isolated, globally integrated data transfer with encryption"
+    technical_detail: "Cross-region data portability with secure encryption. Purpose-built to handle GDPR data residency requirements."
+    impact: "Enabled compliant data processing across continents for Fortune 1000 enterprise."
+    tags: [gdpr, security, distributed, identity]
+
+  - id: proj_invitation_service
+    name: "Invitation Service"
+    role_id: role_trimble_arch
+    summary: "Webhook-driven async user onboarding system"
+    technical_detail: "Webhooks + DynamoDB + Lambda + API Gateway. Internal products invite end users; notified on acceptance."
+    impact: "Standardized user onboarding across Trimble's internal platform."
+    tags: [aws, serverless, identity, async]
+
+  - id: proj_otel_collector
+    name: "OpenTelemetry Collector"
+    role_id: role_uplight
+    summary: "Shared OTel collector with credential management and dashboards"
+    technical_detail: "Terraform + Kubernetes. Metrics, traces, logs → Datadog. Custom performance dashboards."
+    impact: "Centralized observability for distributed services."
+    tags: [observability, terraform, kubernetes, datadog]
+
+  - id: proj_banking_integration
+    name: "Banking Integration & Reporting System"
+    role_id: role_corewood
+    summary: "Contract: automated financial reporting with third-party integrations"
+    technical_detail: "Plaid, SendGrid, Swagger/OpenAPI, TypeScript, Express, Node. Monthly automated CSV reports."
+    impact: "Automated monthly financial reporting for client."
+    tags: [typescript, api, contract, finance]
+
+  - id: proj_crypto_ticketing
+    name: "Serverless Crypto Conference Ticketing"
+    role_id: role_corewood
+    summary: "Contract: serverless API for credit card and cryptocurrency transactions"
+    technical_detail: "SquareSpace integration, Stripe, Globee (crypto), SendGrid. Open source with client permission."
+    impact: "Processed both fiat and crypto payments for conference."
+    tags: [serverless, contract, open_source]
+
+  - id: proj_legacy_migration
+    name: "Legacy AWS Migration"
+    role_id: role_element3
+    summary: "Containerized legacy PHP app, deployed to EC2, security hardened"
+    technical_detail: "Docker images per repo, EC2 deployment, Hashicorp Vault for secrets, automated deployment scripts."
+    impact: "Security audit: 80% attack surface reduction."
+    tags: [docker, aws, security, migration]
+
+  - id: proj_mvp_prototype
+    name: "MVP Prototype (Distributed Team)"
+    role_id: role_trimble_lead
+    summary: "React + Apollo + Python + GraphQL prototype with India team"
+    technical_detail: "Prepared roadmaps and resourcing estimates for decision makers."
+    impact: "Informed product strategy and team scaling decisions."
+    tags: [react, graphql, python, distributed_team]
+
+  - id: proj_nepal_site
+    name: "Nepal Earthquake Donation Site"
+    role_id: role_corewood
+    summary: "Volunteer: emergency donation site for Namlo.org after 2015 Nepal earthquake"
+    technical_detail: "Earthquake statistics, donation requests, Stripe/PayPal/Colorado Gives integration. Built quickly in response to crisis."
+    impact: "Organization raised record funding. Received Tech Enablement Appreciation award."
+    tags: [volunteer, social_impact, stripe, paypal]
+
+
+# =============================================================================
+# PHILOSOPHIES
+# =============================================================================
+
+philosophies:
+  - id: phil_dep_minimalism
+    name: "Radical Dependency Minimalism"
+    statement: "Dependencies are liabilities. Duplication of implementation > coupling via dependencies."
+    origin_story: "Born from the Swagger spec importer at Markit (~2016). Tried 80% reuse. Learned abstraction cost exceeds duplication cost at least half the time."
+
+  - id: phil_fail_fast
+    name: "Fail Fast and Loudly"
+    statement: "No silent fallbacks. Optimize for the engineer debugging at 2am."
+    origin_story: "Malware debugging at MHCD → 99.5% uptime at Trimble → zero-bug launch at Uplight. Ops across career."
+
+  - id: phil_boring_tech
+    name: "Boring Technology Bias"
+    statement: "PostgreSQL over NewSQL. Boring tech has 10 years of Stack Overflow answers for 2am debugging."
+    origin_story: ".NET Rocks during Markit commutes. Reinforced by every production incident."
+
+  - id: phil_obs_first
+    name: "Observability as First-Class Citizen"
+    statement: "OpenTelemetry from day one. You cannot fix what you cannot see."
+    origin_story: "Trimble (Datadog/PagerDuty → 99.5%), Uplight (distributed tracing), carried into Corewood and LandScope."
+
+  - id: phil_great_systems
+    name: "Great Systems Don't Let You Do It Wrong"
+    statement: "Good systems let you do things right. Great systems don't let you do it wrong."
+    origin_story: "Trimble GDPR, Uplight API governance, Corewood Masquer. Reinforced by Secure by Design."
+
+  - id: phil_prod_first
+    name: "Production-First Mindset"
+    statement: "POCs are production-capable systems that do less, not prototypes to be rewritten."
+    origin_story: "Production-analog local dev obsession at Markit. If dev doesn't match prod, you're lying to yourself."
+
+  - id: phil_scope_discipline
+    name: "Ruthless Scope Discipline"
+    statement: "Ship the valuable core, cut everything else."
+    origin_story: "Turnaround pattern — behind-schedule → on-track by cutting to what matters."
+
+  - id: phil_volatility_decomp
+    name: "Volatility-Based Decomposition"
+    statement: "Organize by rate of change, not by function. Things that change together live together."
+    origin_story: "From Righting Software (Löwy). Applied across Corewood consulting, LandScope, Workers projects."
+
+  - id: phil_requirements_first
+    name: "Requirements Before Code"
+    statement: "Requirements can only exist once context is established. Business use cases → product use cases → implementation."
+    origin_story: "From Mastering the Requirements Process (Robertson). 'Building working software is the MOST expensive way to elicit requirements.'"
+
+  - id: phil_space_between
+    name: "Optimize the Space Between"
+    statement: "Most value lives in the interconnects — protocols, handoffs, boundaries — not the nodes."
+    origin_story: "From Thinking in Systems (Meadows). Applied to binary protocols, tokenizer optimization, the virtuous cycle of fast runtimes."
+
+  - id: phil_security_as_design
+    name: "Security as Design Constraint"
+    statement: "Security is business logic enforcement at the application code level, not a bolt-on."
+    origin_story: "From Secure by Design. Reinforced by Trimble GDPR, Masquer HIPAA, API governance pen testing."
+
+
+# =============================================================================
+# EDUCATION
+# =============================================================================
+
+education:
+  - id: edu_csu
+    name: "Undergraduate Studies — English, Psychology, Philosophy"
+    institution: "Colorado State University"
+    timeframe: "2003-2007"
+    type: undergraduate
+    subjects: [Philosophy, English, Psychology, Cognitive Science, Linguistics]
+    relevance: "Chomsky/Pinker/generative grammar → NLP foundation. English → technical communication. Did not complete degree."
+
+  - id: edu_ap_cs
+    name: "AP Computer Science"
+    institution: "High School"
+    timeframe: "~2002-2003"
+    type: course
+    subjects: [Intro to CS, AP Computer Science]
+    relevance: "First formal programming."
+
+
+# =============================================================================
+# AWARDS
+# =============================================================================
+
+awards:
+  - id: award_uplifter_nov2023
+    name: "Uplifter Award"
+    organization: "Uplight"
+    date: "2023-11"
+    description: "Awarded for ability to get software built, deployed, and fixed. Facilitated book club, participated in product and security guilds."
+
+  - id: award_uplifter_jul2024
+    name: "Uplifter Award"
+    organization: "Uplight"
+    date: "2024-07"
+    description: "Second Uplifter Award recognition."
+
+  - id: award_namlo
+    name: "Tech Enablement Appreciation"
+    organization: "Namlo.org"
+    date: "2015"
+    description: "Built emergency donation site after 2015 Nepal earthquake. Stripe, PayPal, Colorado Gives. Organization raised record funding."
+
+
+# =============================================================================
+# EDGES
+# =============================================================================
+# RULE: Every edge must explain something non-obvious. If the relationship
+# is just "used X at Y," it doesn't belong here.
+# =============================================================================
+
+edges:
+  # ---------------------------------------------------------------------------
+  # FORMATIVE: Where key capabilities were first built
+  # ---------------------------------------------------------------------------
+  - type: learned_at
+    source: skill_technical_writing
+    target: role_apex
+    story: "4 years under Dr. Mahrer — a slide-rule scientist who was also a university writing professor. Not code. Writing and scientific thinking."
+
+  - type: learned_at
+    source: skill_geospatial
+    target: role_apex
+    story: "Working alongside geophysicists. CRS, projections, rasters, vectors — vocabulary that lay dormant 12 years then reactivated at LandScope."
+
+  - type: learned_at
+    source: skill_docker
+    target: role_markit
+    story: "2015-2016. Insisted on production-analog local dev when nobody thought it was possible. Docker was the tool; stubbornness was the method."
+
+  - type: learned_at
+    source: skill_api_design
+    target: role_markit
+    story: "Fund Fact Sheet API, Swagger importer, scaffolding automation. First time thinking about APIs as platforms, not just endpoints."
+
+  - type: learned_at
+    source: skill_identity
+    target: role_cognizant
+    story: "Dove in because it was hard. Containerized Keycloak. Nobody assigned it — chose it."
+
+  - type: learned_at
+    source: skill_graph_db
+    target: role_cognizant
+    story: "Formal Neo4j training. Dormant for years. Reactivated when building DGraph-based RAG at Corewood."
+
+  - type: learned_at
+    source: skill_observability
+    target: role_trimble_lead
+    story: "First time owning production monitoring at scale. Datadog + PagerDuty → 99.5%. Made observable systems non-negotiable."
+
+  - type: learned_at
+    source: skill_ml_infra
+    target: role_corewood
+    story: "Years of asking 'why Python?' as an ops person running data team code. Corewood was the answer: build it in Go, from scratch."
+
+  - type: learned_at
+    source: skill_requirements
+    target: role_uplight
+    story: "API governance required mapping business use cases → product use cases → implementation. Formalized via Volere process."
+
+  # ---------------------------------------------------------------------------
+  # REINFORCED: Capabilities deepened in new contexts
+  # ---------------------------------------------------------------------------
+  - type: reinforced_by
+    source: skill_identity
+    target: role_trimble_arch
+    story: "Keycloak at Cognizant → IoT identity at Trimble. Same instinct (containerize identity), vastly larger scope (100K+ devices, GDPR)."
+
+  - type: reinforced_by
+    source: skill_observability
+    target: role_uplight
+    story: "Trimble was monitoring. Uplight was distributed tracing across dozens of services. Formalized into non-negotiable practice."
+
+  - type: reinforced_by
+    source: skill_geospatial
+    target: role_landscope
+    story: "Dormant 12 years. GIS vocabulary from Apex meant Kyle could architect a geospatial platform without starting from zero."
+
+  - type: reinforced_by
+    source: skill_api_design
+    target: role_uplight
+    story: "Swagger importer lesson from Markit matured into a governance platform. Dead simple object model adopted across 50+ services."
+
+  # ---------------------------------------------------------------------------
+  # EVOLVED: Transformations
+  # ---------------------------------------------------------------------------
+  - type: evolved_into
+    source: proj_swagger_importer
+    target: phil_dep_minimalism
+    story: "Failed 80% reuse attempt → 'abstraction cost often exceeds duplication cost.' This failure became a core principle."
+
+  - type: evolved_into
+    source: proj_keycloak
+    target: proj_iot_identity
+    story: "Containerized Keycloak at Cognizant → enterprise IoT identity at Trimble. Same person, same instinct, Fortune 1000 scale."
+
+  - type: evolved_into
+    source: proj_local_dev
+    target: phil_prod_first
+    story: "Obsessive local dev at Markit became the production-first philosophy."
+
+  - type: evolved_into
+    source: inf_chomsky_pinker
+    target: skill_ml_infra
+    story: "Generative grammar (college) → syntax trees in ECMAScript → computational language processing → NLP inference in Go."
+
+  # ---------------------------------------------------------------------------
+  # SHAPED BY: Intellectual influences
+  # ---------------------------------------------------------------------------
+  - type: shaped_by
+    source: skill_technical_writing
+    target: inf_mahrer
+    story: "Scientific thinking applied to communication. Precision, clarity, evidence."
+
+  - type: shaped_by
+    source: phil_boring_tech
+    target: inf_dotnetrocks
+    story: "Hours of experienced engineers discussing tech selection during commutes."
+
+  - type: shaped_by
+    source: phil_volatility_decomp
+    target: inf_righting_software
+    story: "Organize by rate of change, not function. Applied to every project after reading it."
+
+  - type: shaped_by
+    source: phil_requirements_first
+    target: inf_mastering_reqs
+    story: "Context before requirements. Business use cases → product use cases → implementation. Changed how Kyle scopes projects."
+
+  - type: shaped_by
+    source: phil_security_as_design
+    target: inf_secure_by_design
+    story: "Security as business logic enforcement, not a bolt-on. Reinforced 'great systems don't let you do it wrong.'"
+
+  - type: shaped_by
+    source: phil_space_between
+    target: inf_thinking_in_systems
+    story: "Stocks/flows/feedback loops → optimize the interconnects. Applied to binary protocols, tokenizer handoffs, runtime virtuous cycles."
+
+  - type: shaped_by
+    source: skill_layered_arch
+    target: inf_uncle_bob
+    story: "Dependency rule. Single-directional dependencies. System shape reflects intent, not frameworks. Foundation for handlers → ops → repo."
+
+  - type: shaped_by
+    source: skill_ml_infra
+    target: inf_chomsky_pinker
+    story: "Understanding how language works structurally preceded understanding how language models work computationally."
+
+  # ---------------------------------------------------------------------------
+  # ENABLED: One thing made another possible
+  # ---------------------------------------------------------------------------
+  - type: enabled
+    source: skill_docker
+    target: skill_identity
+    mechanism: "Containerizing Keycloak was the entry to identity engineering. Docker made identity infrastructure approachable."
+
+  - type: enabled
+    source: skill_identity
+    target: skill_pii
+    mechanism: "Deep identity + GDPR at Trimble enabled privacy-by-design architecture of Masquer."
+
+  - type: enabled
+    source: skill_geospatial
+    target: role_landscope
+    mechanism: "Dormant GIS vocabulary from Apex meant the CTO role was learnable, not starting from zero."
+
+  - type: enabled
+    source: inf_neo4j_training
+    target: proj_rag_system
+    mechanism: "Neo4j training → DGraph production → graph-driven auth + semantic retrieval."
+
+  - type: enabled
+    source: proj_api_governance
+    target: phil_great_systems
+    mechanism: "Building a system that prevented non-compliant deployments crystallized 'don't let you do it wrong.'"
+
+  # ---------------------------------------------------------------------------
+  # CAREER FORKS
+  # ---------------------------------------------------------------------------
+  - type: chose_over
+    source: skill_api_design
+    target: skill_ml_infra
+    context: "Cognizant, ~2018"
+    reasoning: "Liked systems-level thinking. ML at the time was statistical modeling. Architecture was the better fit. ML came later, on his own terms."
+
+  # ---------------------------------------------------------------------------
+  # APPLIED AT: Only where the application is non-obvious
+  # ---------------------------------------------------------------------------
+  - type: applied_at
+    source: phil_dep_minimalism
+    target: proj_inference_api
+    story: "2 direct dependencies for a production inference server. Minimalism taken to logical conclusion."
+
+  - type: applied_at
+    source: phil_great_systems
+    target: proj_masquer
+    story: "Zero code changes for HIPAA compliance. Privacy by design — can't accidentally expose PII."
+
+  - type: applied_at
+    source: phil_space_between
+    target: proj_binary_tokenizer
+    story: "10-100x startup by optimizing the handoff between tokenizer and model. 'The space between' made literal."
+
+  - type: applied_at
+    source: phil_volatility_decomp
+    target: proj_api_governance
+    story: "Organized by what changes (API configs, policies) vs what doesn't (auth flow, data plane). Volatility decomposition at platform scale."
+
+  - type: applied_at
+    source: phil_requirements_first
+    target: proj_landscope_platform
+    story: "Business use cases (real estate, permaculture) mapped to product use cases before code."
+
+  - type: applied_at
+    source: phil_security_as_design
+    target: proj_iot_identity
+    story: "mTLS isn't a security feature — it's the architecture. Can't communicate without authenticating."
+
+  # ---------------------------------------------------------------------------
+  # LANGUAGE / SKILL → ROLE connections (visual graph coverage)
+  # ---------------------------------------------------------------------------
+
+  # Go
+  - type: learned_at
+    source: skill_go
+    target: role_corewood
+    story: "Interest from Markit era, lurked for years. Corewood was the right context to go all-in."
+
+  - type: reinforced_by
+    source: skill_go
+    target: role_landscope
+    story: "Go backend for gRPC APIs and terrain processing pipeline."
+
+  # TypeScript
+  - type: learned_at
+    source: skill_typescript
+    target: role_markit
+    story: "React frontends for financial data platforms. SQL → backend → React as primary full-stack engineer."
+
+  - type: reinforced_by
+    source: skill_typescript
+    target: role_uplight
+    story: "Frontend and tooling across API governance platform."
+
+  - type: reinforced_by
+    source: skill_typescript
+    target: role_corewood
+    story: "SvelteKit on Cloudflare Workers/Pages. NestJS backends. React frontends."
+
+  # Python
+  - type: learned_at
+    source: skill_python
+    target: role_macroscope
+    story: "Data pipeline architecture with Dask, Prefect, Python executors."
+
+  - type: reinforced_by
+    source: skill_python
+    target: role_cognizant
+    story: "TensorFlow CNN work and ML prototyping."
+
+  # C#
+  - type: learned_at
+    source: skill_csharp
+    target: role_tracegains
+    story: "First C# and Visual Studio. COM add-ins, SOAP integrations."
+
+  - type: reinforced_by
+    source: skill_csharp
+    target: role_markit
+    story: ".NET 4.5 rewrite of Option Strategy Screener."
+
+  - type: reinforced_by
+    source: skill_csharp
+    target: role_element3
+    story: "PHP → C# backend rewrite."
+
+  # SQL
+  - type: learned_at
+    source: skill_sql
+    target: role_markit
+    story: "Fund Fact Sheet queries required deep SQL. Learned by running real PostgreSQL locally."
+
+  - type: reinforced_by
+    source: skill_sql
+    target: role_trimble_arch
+    story: "DynamoDB for IoT identity. Different paradigm, same data thinking."
+
+  # Bash
+  - type: learned_at
+    source: skill_bash
+    target: role_markit
+    story: "Self-taught through production-analog local dev. Scripted everything nobody thought could be automated."
+
+  # AWS
+  - type: learned_at
+    source: skill_aws
+    target: role_spire
+    story: "Lambda, DynamoDB, Route53, ACM. Serverless architecture for project turnaround."
+
+  - type: reinforced_by
+    source: skill_aws
+    target: role_trimble_lead
+    story: "IAM hardening, ECS, full production operations at enterprise scale."
+
+  - type: reinforced_by
+    source: skill_aws
+    target: role_trimble_arch
+    story: "API Gateway, Lambda, DynamoDB, custom CA infrastructure."
+
+  - type: reinforced_by
+    source: skill_aws
+    target: role_uplight
+    story: "WAF, CloudFront, Lambda, Step Functions for API governance data plane."
+
+  # Terraform
+  - type: learned_at
+    source: skill_terraform
+    target: role_trimble_lead
+    story: "Captured legacy architecture in IaC. Saved hundreds of operational hours."
+
+  - type: reinforced_by
+    source: skill_terraform
+    target: role_uplight
+    story: "Terraform across AWS, GCP, and K8s. Authored organizational best practices guide."
+
+  # Kubernetes
+  - type: learned_at
+    source: skill_k8s
+    target: role_uplight
+    story: "GKE for API governance. K8s ecosystem was part of what drew Kyle toward Go years earlier."
+
+  # Team turnaround
+  - type: learned_at
+    source: skill_team_turnaround
+    target: role_apex
+    story: "First turnaround: brought behind-schedule operational reporting back on track via automation."
+
+  - type: reinforced_by
+    source: skill_team_turnaround
+    target: role_spire
+    story: "Behind-schedule project → on-track via serverless redesign. Pattern solidified."
+
+  # Tech talks
+  - type: learned_at
+    source: skill_tech_talks
+    target: role_cognizant
+    story: "Lunch-and-learns on graph DBs, Docker for devs. First formal internal presentations."
+
+  - type: reinforced_by
+    source: skill_tech_talks
+    target: role_uplight
+    story: "DevCon presentation on API governance security, reliability, and consistency."
+
+  # ---------------------------------------------------------------------------
+  # ORPHAN ROLES → skills/projects
+  # ---------------------------------------------------------------------------
+
+  # MHCD
+  - type: enabled
+    source: role_mhcd
+    target: role_apex
+    mechanism: "Night-shift schedule allowed self-directed learning. Malware removal built debugging instincts. Excel work foreshadowed automation."
+
+  - type: learned_at
+    source: skill_bash
+    target: role_mhcd
+    story: "First hands-on systems work — not scripting yet, but understanding how computers break and how to fix them."
+
+  # TracaGains
+  - type: enabled
+    source: role_tracegains
+    target: role_markit
+    mechanism: "COM add-ins, web services, C# — first professional integration engineering. Made the jump to full-stack API work possible."
+
+  # Element3
+  - type: reinforced_by
+    source: skill_docker
+    target: role_element3
+    story: "Greenfield Docker + CloudFormation. Containerization pattern from Markit applied to AWS migration."
+
+  # Spire
+  - type: reinforced_by
+    source: skill_docker
+    target: role_spire
+    story: "Containerized deployments for serverless architecture turnaround."
+
+  # Macroscope
+  - type: reinforced_by
+    source: skill_aws
+    target: role_macroscope
+    story: "CloudFormation, Fargate, VPC, RDS from scratch for founding SaaS infrastructure."
+
+  - type: reinforced_by
+    source: skill_terraform
+    target: role_macroscope
+    story: "IaC for multi-environment deployments at startup pace."
+
+  # ---------------------------------------------------------------------------
+  # ORPHAN PHILOSOPHIES → origins and applications
+  # ---------------------------------------------------------------------------
+
+  # Fail fast
+  - type: originated_from
+    source: phil_fail_fast
+    target: role_mhcd
+    story: "Malware doesn't announce itself. First lesson in adversarial debugging: if something's wrong, find it fast."
+
+  - type: reinforced_by
+    source: phil_fail_fast
+    target: role_trimble_lead
+    story: "99.5% uptime required alerting that caught problems immediately. No silent failures."
+
+  - type: applied_at
+    source: phil_fail_fast
+    target: proj_api_governance
+    story: "Zero bugs at launch. The system catches misconfigurations before deployment, not after."
+
+  # Observability first
+  - type: originated_from
+    source: phil_obs_first
+    target: role_trimble_lead
+    story: "Datadog + PagerDuty → 99.5% uptime. You cannot fix what you cannot see."
+
+  - type: applied_at
+    source: phil_obs_first
+    target: proj_landscope_platform
+    story: "OpenTelemetry → Honeycomb.io from day one. Non-negotiable."
+
+  # Scope discipline
+  - type: originated_from
+    source: phil_scope_discipline
+    target: role_spire
+    story: "Behind-schedule → on-track by cutting to what delivers value. The turnaround pattern."
+
+  - type: applied_at
+    source: phil_scope_discipline
+    target: proj_landscope_platform
+    story: "Ship terrain analysis that works. Cut everything else until it does."
+
+  # ---------------------------------------------------------------------------
+  # ORPHAN PROJECTS
+  # ---------------------------------------------------------------------------
+
+  # Custom CA (child of IoT identity, but needs its own edges)
+  - type: enabled
+    source: proj_custom_ca
+    target: proj_iot_identity
+    mechanism: "AWS Private CA too expensive → built purpose-built CA → made IoT device auth economically viable."
+
+  # Supply chain
+  - type: applied_at
+    source: skill_docker
+    target: proj_supply_chain
+    story: "One-click containerized cloud deployments for client demonstrations."
+
+  # Tensor ops
+  - type: applied_at
+    source: skill_go
+    target: proj_tensor_ops
+    story: "Arena-allocated tensors, ONNX data types, zero autograd overhead. Go's memory model made this possible."
+
+  - type: applied_at
+    source: phil_space_between
+    target: proj_tensor_ops
+    story: "Optimizing the handoff between runtime and model. The interconnect IS the bottleneck."
+
+  # Uplight LLM
+  - type: applied_at
+    source: skill_ml_infra
+    target: proj_uplight_llm
+    story: "First production LLM deployment. GCP VMs with GPUs, custom embedding pipeline."
+
+  - type: enabled
+    source: proj_uplight_llm
+    target: proj_rag_system
+    mechanism: "Uplight's internal LLM taught embedding pipelines and vector search patterns that became Corewood's RAG architecture."
+
+  # ---------------------------------------------------------------------------
+  # ORPHAN INFLUENCES / EDUCATION
+  # ---------------------------------------------------------------------------
+
+  # AP Comp Sci (both the influence and education node)
+  - type: enabled
+    source: edu_ap_cs
+    target: role_mhcd
+    mechanism: "Basic CS from high school made self-directed malware analysis approachable."
+
+  - type: enabled
+    source: inf_ap_compsci
+    target: inf_registry_hacking
+    mechanism: "Formal CS intro → curiosity about OS internals → registry customization in college."
+
+  # CSU education
+  - type: enabled
+    source: edu_csu
+    target: skill_technical_writing
+    mechanism: "English studies provided writing foundation. Dr. Mahrer refined it into technical communication."
+
+  - type: enabled
+    source: edu_csu
+    target: inf_chomsky_pinker
+    mechanism: "Linguistics coursework at CSU: Chomsky, Pinker, generative grammar, cognitive science."
+
+  # Registry hacking
+  - type: enabled
+    source: inf_registry_hacking
+    target: role_mhcd
+    mechanism: "Windows internals familiarity from college made system-level malware removal approachable."
+
+  # ECMAScript
+  - type: enabled
+    source: inf_ecmascript
+    target: skill_ml_infra
+    mechanism: "Reading the spec → seeing syntax trees in code → connecting to linguistics → understanding how language models parse structure."
+
+  # Malware forums
+  - type: shaped_by
+    source: phil_fail_fast
+    target: inf_malware_forums
+    story: "Rootkits hide. The first debugging lesson: if something's wrong, it won't tell you. You have to go find it."
+
+  # ---------------------------------------------------------------------------
+  # BACK-MAPPED: Skill ↔ Role coverage for visual graph density
+  # Every role should show the skills used there. Every skill should show
+  # where it was exercised across the career.
+  # ---------------------------------------------------------------------------
+
+  # --- API Design ---
+  - type: reinforced_by
+    source: skill_api_design
+    target: role_cognizant
+    story: "Supply chain prototype required full API architecture: DB design, endpoints, client delivery."
+
+  - type: reinforced_by
+    source: skill_api_design
+    target: role_trimble_arch
+    story: "IoT identity APIs: mTLS endpoints, webhook-driven invitation service, device-to-cloud communication."
+
+  - type: reinforced_by
+    source: skill_api_design
+    target: role_corewood
+    story: "Go inference APIs, ConnectRPC, gRPC. Radical minimalism applied to API surface."
+
+  - type: reinforced_by
+    source: skill_api_design
+    target: role_landscope
+    story: "gRPC APIs for terrain analysis. CesiumJS frontend consuming structured geospatial data."
+
+  # --- Bash ---
+  - type: reinforced_by
+    source: skill_bash
+    target: role_trimble_lead
+    story: "Infrastructure automation, deployment scripting, IaC tooling."
+
+  - type: reinforced_by
+    source: skill_bash
+    target: role_trimble_arch
+    story: "Certificate management scripts, deployment automation for identity infrastructure."
+
+  - type: reinforced_by
+    source: skill_bash
+    target: role_macroscope
+    story: "CloudFormation deployment automation, environment management scripts."
+
+  - type: reinforced_by
+    source: skill_bash
+    target: role_uplight
+    story: "Terraform automation, CI/CD pipelines, infrastructure scripting."
+
+  - type: reinforced_by
+    source: skill_bash
+    target: role_corewood
+    story: "Container build scripts, model packaging, binary tokenizer compilation."
+
+  # --- Docker ---
+  - type: reinforced_by
+    source: skill_docker
+    target: role_cognizant
+    story: "Keycloak containerization. One-click cloud deployments for supply chain prototype."
+
+  - type: reinforced_by
+    source: skill_docker
+    target: role_trimble_lead
+    story: "Containerized legacy systems as part of IaC capture."
+
+  - type: reinforced_by
+    source: skill_docker
+    target: role_macroscope
+    story: "Fargate-based job execution platform. Containerized data pipelines."
+
+  - type: reinforced_by
+    source: skill_docker
+    target: role_uplight
+    story: "Containerized services across multi-cloud. Backstage service catalogs."
+
+  - type: reinforced_by
+    source: skill_docker
+    target: role_corewood
+    story: "Container-native ML: models as mountable volumes. Binary tokenizers pre-compiled in builds."
+
+  - type: reinforced_by
+    source: skill_docker
+    target: role_landscope
+    story: "Containerized services on DigitalOcean. Caddy routing. Podman/Docker Compose."
+
+  # --- Geospatial ---
+  - type: reinforced_by
+    source: skill_geospatial
+    target: role_trimble_arch
+    story: "Trimble's domain was construction/surveying — GIS data everywhere even though role was identity/cloud. Passive reinforcement."
+
+  # --- Graph DB ---
+  - type: reinforced_by
+    source: skill_graph_db
+    target: role_corewood
+    story: "DGraph in production for RAG system. Graph-driven authorization and semantic retrieval."
+
+  # --- PII ---
+  - type: learned_at
+    source: skill_pii
+    target: role_corewood
+    story: "Built Masquer: ML-powered PII detection at the database wire protocol level. HIPAA compliance without application changes."
+
+  # --- Identity ---
+  - type: learned_at
+    source: skill_identity
+    target: role_markit
+    story: "Early OIDC with Ping Identity. First authentication implementation, before identity became a deliberate focus."
+
+  - type: reinforced_by
+    source: skill_identity
+    target: role_spire
+    story: "IAM solution for microservices ecosystem. Identity as infrastructure pattern."
+
+  - type: reinforced_by
+    source: skill_identity
+    target: role_trimble_lead
+    story: "AWS IAM hardening, reduced over-scoped permissions. Identity as security posture."
+
+  - type: reinforced_by
+    source: skill_identity
+    target: role_uplight
+    story: "OPA-based authorization across API governance. Identity became a platform concern."
+
+  - type: reinforced_by
+    source: skill_identity
+    target: role_corewood
+    story: "Zitadel integration. Identity-aware RAG queries. Privacy enforcement via identity."
+
+  - type: reinforced_by
+    source: skill_identity
+    target: role_landscope
+    story: "Authentication and authorization built on Zitadel. Identity as first-class citizen from day one."
+
+  # --- Layered Architecture ---
+  - type: learned_at
+    source: skill_layered_arch
+    target: role_markit
+    story: "Proto-layered thinking: SQL → backend → React. Single-directional data flow. Not yet formalized."
+
+  - type: reinforced_by
+    source: skill_layered_arch
+    target: role_uplight
+    story: "handlers → ops → repo applied at platform scale. API governance consolidated data plane."
+
+  - type: reinforced_by
+    source: skill_layered_arch
+    target: role_corewood
+    story: "Formalized into non-negotiable pattern. Type segregation: receive_types, emit_types, internal_types."
+
+  - type: reinforced_by
+    source: skill_layered_arch
+    target: role_landscope
+    story: "Same pattern applied to geospatial processing pipeline. gRPC handlers → terrain ops → data repo."
+
+  # --- ML Infra ---
+  - type: learned_at
+    source: skill_ml_infra
+    target: role_cognizant
+    story: "TensorFlow CNN for rooftop damage. First ML exposure. Planted the 'why Python?' question."
+
+  # --- Observability ---
+  - type: reinforced_by
+    source: skill_observability
+    target: role_corewood
+    story: "OpenTelemetry in every service. Structured logging with trace correlation."
+
+  - type: reinforced_by
+    source: skill_observability
+    target: role_landscope
+    story: "OpenTelemetry → Honeycomb.io from day one. Non-negotiable."
+
+  # --- Python ---
+  - type: reinforced_by
+    source: skill_python
+    target: role_uplight
+    story: "Infrastructure tooling, automation scripts. Alongside Go and TypeScript."
+
+  - type: reinforced_by
+    source: skill_python
+    target: role_corewood
+    story: "ML benchmarking baseline. The thing being replaced — understanding Python deeply enough to know its limits."
+
+  # --- Requirements ---
+  - type: reinforced_by
+    source: skill_requirements
+    target: role_corewood
+    story: "Volere process applied to consulting engagements. Business use cases before architecture."
+
+  - type: reinforced_by
+    source: skill_requirements
+    target: role_landscope
+    story: "Real estate, permaculture, wilderness management use cases mapped before code."
+
+  # --- SQL ---
+  - type: reinforced_by
+    source: skill_sql
+    target: role_trimble_lead
+    story: "Production database operations at enterprise scale."
+
+  - type: reinforced_by
+    source: skill_sql
+    target: role_macroscope
+    story: "RDS PostgreSQL for SaaS platform. Schema design for multi-environment deployment."
+
+  - type: reinforced_by
+    source: skill_sql
+    target: role_uplight
+    story: "PostgreSQL across API governance infrastructure."
+
+  - type: reinforced_by
+    source: skill_sql
+    target: role_corewood
+    story: "PostgreSQL wire protocol understanding for Masquer proxy. Schema-aware PII detection."
+
+  - type: reinforced_by
+    source: skill_sql
+    target: role_landscope
+    story: "PostgreSQL for project/customer data, geospatial metadata."
+
+  # --- Team Turnaround ---
+  - type: reinforced_by
+    source: skill_team_turnaround
+    target: role_trimble_lead
+    story: "Distributed team standards and training. Pandemic-era optimization. Ops-first leadership."
+
+  - type: reinforced_by
+    source: skill_team_turnaround
+    target: role_uplight
+    story: "Co-led 5-month beta launch ahead of schedule. Documentation-first culture established."
+
+  # --- Technical Writing ---
+  - type: reinforced_by
+    source: skill_technical_writing
+    target: role_tracegains
+    story: "Wrote product user manual. Technical liaison documentation for ERP integrations."
+
+  - type: reinforced_by
+    source: skill_technical_writing
+    target: role_markit
+    story: "API documentation, project scaffolding docs. Writing skills applied to developer experience."
+
+  - type: reinforced_by
+    source: skill_technical_writing
+    target: role_uplight
+    story: "Documentation-first culture. Architecture diagrams. Org best practices guide. DevCon presentations."
+
+  - type: reinforced_by
+    source: skill_technical_writing
+    target: role_corewood
+    story: "Blog posts, consulting proposals, product documentation. Writing as a business tool."
+
+  # --- TypeScript ---
+  - type: reinforced_by
+    source: skill_typescript
+    target: role_cognizant
+    story: "Node.js for supply chain prototype. Frontend architecture."
+
+  - type: reinforced_by
+    source: skill_typescript
+    target: role_element3
+    story: "React frontend standards, event handling patterns for social platform."
+
+  - type: reinforced_by
+    source: skill_typescript
+    target: role_spire
+    story: "Node.js, TypeScript, React for serverless radio scheduling dashboard."
+
+  - type: reinforced_by
+    source: skill_typescript
+    target: role_landscope
+    story: "React + CesiumJS frontend. TypeScript for 3D globe visualization."
+
+  # ---------------------------------------------------------------------------
+  # NEW PROJECT EDGES
+  # ---------------------------------------------------------------------------
+
+  # GDPR Portability
+  - type: applied_at
+    source: skill_identity
+    target: proj_gdpr_portability
+    story: "GDPR data residency requires identity-aware data routing. Encryption + geo-isolation."
+
+  - type: applied_at
+    source: phil_security_as_design
+    target: proj_gdpr_portability
+    story: "Data portability with encryption by design, not bolted on."
+
+  # Invitation Service
+  - type: applied_at
+    source: skill_aws
+    target: proj_invitation_service
+    story: "Lambda + API Gateway + DynamoDB for async webhook-driven onboarding."
+
+  # OTel Collector
+  - type: applied_at
+    source: skill_observability
+    target: proj_otel_collector
+    story: "Terraform + K8s. Centralized metrics/traces/logs → Datadog with custom dashboards."
+
+  - type: applied_at
+    source: phil_obs_first
+    target: proj_otel_collector
+    story: "Dedicated infrastructure for observability. Not an afterthought — its own service."
+
+  # Banking Integration
+  - type: applied_at
+    source: skill_typescript
+    target: proj_banking_integration
+    story: "TypeScript, Express, Node. Swagger/OpenAPI. Plaid + SendGrid integrations."
+
+  - type: applied_at
+    source: skill_api_design
+    target: proj_banking_integration
+    story: "Swagger/OpenAPI spec-driven design for financial reporting API."
+
+  # Crypto Ticketing
+  - type: applied_at
+    source: skill_aws
+    target: proj_crypto_ticketing
+    story: "Serverless API: Lambda for payment processing. Stripe + Globee for fiat + crypto."
+
+  # Legacy Migration
+  - type: applied_at
+    source: skill_docker
+    target: proj_legacy_migration
+    story: "Containerized every repo. EC2 deployment. 80% attack surface reduction."
+
+  - type: applied_at
+    source: skill_identity
+    target: proj_legacy_migration
+    story: "Hashicorp Vault for secrets management during migration."
+
+  # MVP Prototype
+  - type: applied_at
+    source: skill_typescript
+    target: proj_mvp_prototype
+    story: "React + Apollo frontend. GraphQL API. Distributed team coordination."
+
+  - type: applied_at
+    source: skill_python
+    target: proj_mvp_prototype
+    story: "Python backend for GraphQL service."
+
+  # Nepal Donation Site
+  - type: applied_at
+    source: skill_typescript
+    target: proj_nepal_site
+    story: "Emergency build: donation site with Stripe, PayPal, Colorado Gives. Record fundraising."
+
+  # Uplight LLM (already existed, add more)
+  - type: applied_at
+    source: skill_python
+    target: proj_uplight_llm
+    story: "Python embedding pipeline on GCP VMs with GPU acceleration."
+
+  # ---------------------------------------------------------------------------
+  # AWARDS
+  # ---------------------------------------------------------------------------
+  - type: earned_at
+    source: award_uplifter_nov2023
+    target: role_uplight
+    story: "Recognized for getting software built, deployed, and fixed. Book club facilitator, product and security guild member."
+
+  - type: earned_at
+    source: award_uplifter_jul2024
+    target: role_uplight
+    story: "Second Uplifter recognition during API governance platform delivery."
+
+  - type: earned_at
+    source: award_namlo
+    target: proj_nepal_site
+    story: "Built emergency donation site after 2015 Nepal earthquake. Organization raised record funding."
