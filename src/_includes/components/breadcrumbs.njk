@@ -1,10 +1,10 @@
-{# Floating breadcrumbs — sits below fixed header, hidden on homepage #}
+{# Breadcrumbs — snug beneath fixed header, subtle #}
 {% if page.url != '/' %}
-<nav aria-label="Breadcrumb" class="fixed top-[96px] md:top-[114px] left-0 right-0 z-40 pointer-events-none">
-  <div class="max-w-6xl mx-auto px-4 md:px-6 pt-2 pl-[calc(1rem+20px)] md:pl-[calc(1.5rem+20px)]">
-    <div class="inline-flex items-center gap-2 text-xs md:text-sm px-3 py-1.5 pointer-events-auto"
+<nav aria-label="Breadcrumb" class="fixed top-[76px] md:top-[116px] left-0 right-0 z-40 pointer-events-none">
+  <div class="max-w-6xl mx-auto px-4 pl-[calc(1rem+20px)]">
+    <div class="inline-flex items-center gap-1.5 text-[10px] md:text-xs px-2 py-1 pointer-events-auto"
          style="background: rgba(11, 43, 26, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-      <a href="{{ '/' | url }}" class="text-cream-500 hover:text-morpho-400 transition-colors">Home</a>
+      <a href="{{ '/' | url }}" class="text-cream-600 hover:text-morpho-400 transition-colors">Home</a>
 
       {# Build breadcrumb from URL segments #}
       {% set urlPath = page.url | replace(r/^\//, '') | replace(r/\/$/, '') %}
@@ -12,15 +12,15 @@
       {% set buildPath = '' %}
 
       {% for part in parts %}
-        <span class="text-cream-700">/</span>
+        <span class="text-cream-700/60">/</span>
         {% set buildPath = buildPath + '/' + part %}
         {% if loop.last %}
-          <span class="text-cream-300 inline-block max-w-[23ch] overflow-hidden whitespace-nowrap"
-                style="-webkit-mask-image: linear-gradient(to right, black 0, black 18ch, transparent 23ch); mask-image: linear-gradient(to right, black 0, black 18ch, transparent 23ch);">
+          <span class="text-cream-400 inline-block max-w-[18ch] overflow-hidden whitespace-nowrap"
+                style="-webkit-mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch); mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch);">
             {{ title or (part | replace('-', ' ') | title) }}
           </span>
         {% else %}
-          <a href="{{ (buildPath + '/') | url }}" class="text-cream-500 hover:text-morpho-400 transition-colors">
+          <a href="{{ (buildPath + '/') | url }}" class="text-cream-600 hover:text-morpho-400 transition-colors">
             {{ part | replace('-', ' ') | title }}
           </a>
         {% endif %}

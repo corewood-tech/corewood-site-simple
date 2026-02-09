@@ -80,6 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Image fade-in on load (lazy images only)
+  document.querySelectorAll('img[loading="lazy"]').forEach(function(img) {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        img.classList.add('loaded');
+      });
+    }
+  });
+
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
