@@ -19,15 +19,15 @@
   <meta name="author" content="{{ site.author }}">
   <meta name="robots" content="{{ robots or 'index, follow' }}">
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ (page.url) | url | absoluteUrl(site.url) }}">
+  <!-- Canonical URL — always points to corewood.io regardless of build domain -->
+  <link rel="canonical" href="https://corewood.io{{ page.url }}">
 
   <!-- Open Graph -->
   <meta property="og:type" content="{{ ogType or 'website' }}">
-  <meta property="og:url" content="{{ (page.url) | url | absoluteUrl(site.url) }}">
+  <meta property="og:url" content="https://corewood.io{{ page.url }}">
   <meta property="og:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{{ description or site.description }}">
-  <meta property="og:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl(site.url) }}">
+  <meta property="og:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
 
   {% if ogType == 'article' %}
   <meta property="article:author" content="{{ site.author }}">
@@ -43,10 +43,10 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="{{ (page.url) | url | absoluteUrl(site.url) }}">
+  <meta property="twitter:url" content="https://corewood.io{{ page.url }}">
   <meta property="twitter:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="twitter:description" content="{{ description or site.description }}">
-  <meta property="twitter:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl(site.url) }}">
+  <meta property="twitter:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
 
   {% if keywords %}
   <meta name="keywords" content="{{ keywords }}">

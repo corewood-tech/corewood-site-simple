@@ -485,24 +485,26 @@ img[loading="lazy"].loaded {
 }
 
 /* Detail panel — desktop: right side, mobile: bottom sheet */
+/* Inset past rivets (rivets at 24px, content inside rivet boundary) */
 .graph-detail-panel {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 340px;
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+  width: 320px;
+  border-radius: 8px;
 }
 
 @media (max-width: 767px) {
   .graph-detail-panel {
     top: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
+    left: 16px;
+    right: 16px;
+    bottom: 40px;
+    width: auto;
     max-height: 50vh;
     border-left: none;
     border-top: 1px solid rgba(245, 240, 230, 0.1);
-    border-radius: 12px 12px 0 0;
+    border-radius: 12px 12px 8px 8px;
   }
 }
 

@@ -8,13 +8,21 @@ permalink: /about/mickey/
 {# Inline graph data for JS consumption #}
 <script id="graph-data" type="application/json">{{ mygraph | dump | safe }}</script>
 
-<section class="section-wash pt-32 md:pt-40 pb-16 px-4" x-data="experienceGraph()">
+<section class="section-wash pt-40 pb-24" x-data="experienceGraph()">
 
-  {# ── Full-viewport plate ── #}
-  <div class="max-w-[1400px] mx-auto">
+  {# ── Header + intro ── #}
+  <div class="max-w-6xl mx-auto px-6 mb-8">
+    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-4">Mickey's Technical Background</h1>
+    <p class="text-cream-400 text-lg">
+      Resumes list skills. This shows you what we do and the context we learned it.
+    </p>
+  </div>
+
+  {# ── Graph plate ── #}
+  <div class="max-w-6xl mx-auto px-6">
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg relative overflow-hidden"
-           style="height: calc(100vh - 200px); min-height: 500px;">
+           style="height: calc(100vh - 300px); min-height: 500px;">
 
         {# Rivets #}
         <div class="rivet absolute top-6 left-6 z-20"></div>
@@ -22,8 +30,8 @@ permalink: /about/mickey/
         <div class="rivet absolute bottom-6 left-6 z-20"></div>
         <div class="rivet absolute bottom-6 right-6 z-20"></div>
 
-        {# ── Filter / legend panel — left edge ── #}
-        <div class="absolute top-3 left-3 z-10" x-data="{ filtersOpen: false }">
+        {# ── Filter / legend panel — left edge, inset past rivets ── #}
+        <div class="absolute top-14 left-14 z-10" x-data="{ filtersOpen: false }">
           {# Toggle button — always visible #}
           <button
             @click="filtersOpen = !filtersOpen"
@@ -71,8 +79,8 @@ permalink: /about/mickey/
           </div>
         </div>
 
-        {# ── Controls — top-right ── #}
-        <div class="absolute top-4 right-4 z-10 flex gap-2">
+        {# ── Controls — top-right, inset past rivets ── #}
+        <div class="absolute top-14 right-14 z-10 flex gap-2">
           <button @click="zoomIn()" class="w-8 h-8 flex items-center justify-center text-cream-500 hover:text-cream-200 transition-colors bg-forest-900/60 rounded" title="Zoom in">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>

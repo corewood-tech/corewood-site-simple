@@ -1,11 +1,259 @@
-<!doctype html><html lang="en" style="scroll-behavior: smooth;"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="https://corewood.io/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="https://corewood.io/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="https://corewood.io/favicon.png"><link rel="preload" href="https://corewood.io/fonts/roca-two-bold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://corewood.io/fonts/hk-grotesk-pro-regular.woff2" as="font" type="font/woff2" crossorigin><title>From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster | Corewood</title><meta name="description" content="How we eliminated JSON parsing overhead and achieved 10-100x faster DeBERTa tokenizer startup with a custom binary format for production ML inference."><meta name="author" content="Corewood"><meta name="robots" content="index, follow"><link rel="canonical" href="https://corewood.io/blog/json-to-binary-deberta-tokenizer/"><meta property="og:type" content="article"><meta property="og:url" content="https://corewood.io/blog/json-to-binary-deberta-tokenizer/"><meta property="og:title" content="From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster | Corewood"><meta property="og:description" content="How we eliminated JSON parsing overhead and achieved 10-100x faster DeBERTa tokenizer startup with a custom binary format for production ML inference."><meta property="og:image" content="https://corewood.io/meta.png"><meta property="article:author" content="Corewood"><meta property="article:published_time" content="2025-06-03"><meta property="article:section" content="Technology"><meta property="article:tag" content="DeBERTa"><meta property="article:tag" content="tokenizer"><meta property="article:tag" content="optimization"><meta property="article:tag" content="binary format"><meta property="article:tag" content="JSON parsing"><meta property="article:tag" content="ML inference"><meta property="article:tag" content="performance"><meta property="article:tag" content="Go"><meta property="article:tag" content="Python"><meta property="article:tag" content="NLP"><meta property="article:tag" content="machine learning"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://corewood.io/blog/json-to-binary-deberta-tokenizer/"><meta property="twitter:title" content="From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster | Corewood"><meta property="twitter:description" content="How we eliminated JSON parsing overhead and achieved 10-100x faster DeBERTa tokenizer startup with a custom binary format for production ML inference."><meta property="twitter:image" content="https://corewood.io/meta.png"><meta name="keywords" content="DeBERTa, tokenizer, optimization, binary format, JSON parsing, ML inference, performance, Go, Python, NLP, machine learning"><link rel="stylesheet" href="https://corewood.io/assets/css/main.css"><script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+
+  <!-- Font preload -->
+  <link rel="preload" href="/fonts/roca-two-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/hk-grotesk-pro-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- SEO Meta Tags -->
+  <title>From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster | Corewood</title>
+  <meta name="description" content="How we eliminated JSON parsing overhead and achieved 10-100x faster DeBERTa tokenizer startup with a custom binary format for production ML inference.">
+  <meta name="author" content="Corewood">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL — always points to corewood.io regardless of build domain -->
+  <link rel="canonical" href="https://corewood.io/blog/json-to-binary-deberta-tokenizer/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://corewood.io/blog/json-to-binary-deberta-tokenizer/">
+  <meta property="og:title" content="From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster | Corewood">
+  <meta property="og:description" content="How we eliminated JSON parsing overhead and achieved 10-100x faster DeBERTa tokenizer startup with a custom binary format for production ML inference.">
+  <meta property="og:image" content="https://corewood.io/meta.png">
+
+  
+  <meta property="article:author" content="Corewood">
+  <meta property="article:published_time" content="2025-06-03">
+  <meta property="article:section" content="Technology">
+  
+  
+  
+  <meta property="article:tag" content="DeBERTa">
+  
+  <meta property="article:tag" content="tokenizer">
+  
+  <meta property="article:tag" content="optimization">
+  
+  <meta property="article:tag" content="binary format">
+  
+  <meta property="article:tag" content="JSON parsing">
+  
+  <meta property="article:tag" content="ML inference">
+  
+  <meta property="article:tag" content="performance">
+  
+  <meta property="article:tag" content="Go">
+  
+  <meta property="article:tag" content="Python">
+  
+  <meta property="article:tag" content="NLP">
+  
+  <meta property="article:tag" content="machine learning">
+  
+  
+  
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://corewood.io/blog/json-to-binary-deberta-tokenizer/">
+  <meta property="twitter:title" content="From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster | Corewood">
+  <meta property="twitter:description" content="How we eliminated JSON parsing overhead and achieved 10-100x faster DeBERTa tokenizer startup with a custom binary format for production ML inference.">
+  <meta property="twitter:image" content="https://corewood.io/meta.png">
+
+  
+  <meta name="keywords" content="DeBERTa, tokenizer, optimization, binary format, JSON parsing, ML inference, performance, Go, Python, NLP, machine learning">
+  
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- JSON-LD -->
+  
+
+  <!-- PostHog Analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     var consent = localStorage.getItem('corewood_cookie_consent');
     posthog.init('phc_aeVynFTu2UWNDdZ3SNBx3XUQGBQHAFZrFMyHk6cIHRs', {
       api_host: 'https://helper.corewood.io',
       ui_host: 'https://us.posthog.com',
       person_profiles: 'identified_only',
       cookieless_mode: consent === 'accepted' ? false : 'always'
-    });</script></head><body class="min-h-screen text-cream-100 font-body"><header x-data="{ mobileMenuOpen: false }" class="fixed top-0 left-0 right-0 pt-4 md:pt-6 px-4 md:px-6 z-50 pointer-events-none"><div class="max-w-6xl mx-auto"><div class="plate-wrap"><div class="plate chamfer-full md:chamfer-full-lg px-4 md:px-6 py-3 md:py-4 pointer-events-auto relative"><div class="rivet absolute top-1/2 left-7 -translate-y-1/2 z-20"></div><div class="rivet absolute top-1/2 right-7 -translate-y-1/2 z-20"></div><div class="hidden md:flex items-center"><div class="flex-1 flex items-center justify-end gap-8 pr-8"><a href="https://corewood.io/profile/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Work</a> <a href="https://corewood.io/about/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">About</a></div><a href="https://corewood.io/" class="flex-shrink-0 hover:scale-[1.18] transition-all duration-200 origin-center inline-block [&_img]:transition-all [&_img]:duration-200 [&_img]:hover:brightness-125 hover:[filter:drop-shadow(0_0_10px_#2A95C8)_drop-shadow(0_0_20px_#2A95C880)]"><picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-56.webp 56w" sizes="56px"><img src="/assets/images/6eQoOyOHHi-56.png" alt="Corewood" loading="eager" decoding="async" class="h-14" width="56" height="55"></picture></a><div class="flex-1 flex items-center justify-start gap-8 pl-8 pr-[40px]"><a href="https://corewood.io/blog/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Blog</a> <a href="https://corewood.io/contact/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Contact</a> <span class="flex-1"></span> <a href="https://corewood.io/schedule-meeting/" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Schedule a Meeting</a></div></div><div class="flex md:hidden items-center justify-center relative"><button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute left-[25%] -translate-x-1/2 p-2 text-cream-200 hover:text-morpho-400 focus:outline-none" aria-label="Toggle menu"><svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg> <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m18 6-12 12"/><path d="m6 6 12 12"/></svg></button> <a href="https://corewood.io/"><picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-40.webp 40w" sizes="40px"><img src="/assets/images/6eQoOyOHHi-40.png" alt="Corewood" loading="eager" decoding="async" class="h-10" width="40" height="39"></picture></a><a href="https://corewood.io/schedule-meeting/" class="absolute right-[25%] translate-x-1/2 btn-primary text-[10px] px-3 py-1.5">Book</a></div></div></div></div><div x-show="mobileMenuOpen" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="md:hidden max-w-6xl mx-auto mt-4 pointer-events-auto"><div class="plate-wrap"><div class="plate chamfer-full p-8"><nav class="flex flex-col items-center space-y-6"><a href="https://corewood.io/profile/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Work</a> <a href="https://corewood.io/about/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">About</a> <a href="https://corewood.io/blog/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Blog</a> <a href="https://corewood.io/contact/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Contact</a> <a href="https://corewood.io/schedule-meeting/" @click="mobileMenuOpen = false" class="btn-primary text-center mt-2">Schedule a Meeting</a></nav></div></div></div></header><nav aria-label="Breadcrumb" class="fixed top-[76px] md:top-[116px] left-0 right-0 z-40 pointer-events-none"><div class="max-w-6xl mx-auto px-4 pl-[calc(1rem+20px)]"><div class="inline-flex items-center gap-1.5 text-[10px] md:text-xs px-2 py-1 pointer-events-auto" style="background: rgba(11, 43, 26, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);"><a href="https://corewood.io/" class="text-cream-600 hover:text-morpho-400 transition-colors">Home</a> <span class="text-cream-700/60">/</span> <a href="https://corewood.io/blog/" class="text-cream-600 hover:text-morpho-400 transition-colors">Blog </a><span class="text-cream-700/60">/</span> <span class="text-cream-400 inline-block max-w-[18ch] overflow-hidden whitespace-nowrap" style="-webkit-mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch); mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch);">From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster</span></div></div></nav><main class="pt-40 pb-24"><div class="container px-4 mx-auto max-w-6xl"><div class="flex gap-12"><article class="flex-1 max-w-3xl"><header class="mb-12"><h1 class="text-4xl md:text-5xl font-display font-bold text-cream-100 mb-6">From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster</h1><div class="flex flex-wrap items-center gap-4 text-sm text-cream-600"><time datetime="2025-06-03">June 2, 2025</time> <span class="text-forest-500">•</span> <span>6 min read</span></div></header><div class="prose prose-lg"><p>When deploying machine learning models in production, every millisecond matters. While most optimization efforts focus on model weights and GPU utilization, we discovered a hidden bottleneck that was quietly eating away at our inference performance: tokenizer loading time.</p><p>Our solution? A custom binary format that eliminated JSON parsing overhead and delivered 10-100x faster tokenizer startup times. Here's how we did it and why it matters.</p><h2>The Problem: JSON Parsing Tax</h2><p>Modern NLP models like DeBERTa rely on sophisticated tokenizers to convert text into numerical tokens. These tokenizers typically come packaged as JSON files containing vocabulary mappings, special tokens, and configuration data. While JSON is human-readable and flexible, it comes with a hidden performance cost.</p><p>Every time your inference service starts up, here's what happens with traditional JSON tokenizers:</p><ol><li><strong>Parse the entire JSON tree</strong> - The parser must validate syntax and build object structures</li><li><strong>String key lookups</strong> - Converting vocabulary entries from string keys to usable mappings</li><li><strong>Type conversions</strong> - Converting string representations to integers</li><li><strong>Memory allocation overhead</strong> - Creating temporary objects during parsing</li></ol><p>For DeBERTa v3-base with its 128,000-token vocabulary, this process can take hundreds of milliseconds. In containerized deployments where services frequently restart, this adds up to significant latency.</p><h2>The Solution: Custom Binary Format</h2><p>We designed a binary format optimized for direct memory access and minimal parsing overhead. The structure is intentionally simple:</p><pre><code>1. Max Length (8 bytes, int64)
+    });
+  </script>
+</head>
+<body class="min-h-screen text-cream-100 font-body">
+  
+<header
+  x-data="{ mobileMenuOpen: false }"
+  class="fixed top-0 left-0 right-0 pt-4 md:pt-6 px-4 md:px-6 z-50 pointer-events-none"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full md:chamfer-full-lg px-4 md:px-6 py-3 md:py-4 pointer-events-auto relative">
+        <!-- Rivets — one on each side, vertically centered -->
+        <div class="rivet absolute top-1/2 left-7 -translate-y-1/2 z-20"></div>
+        <div class="rivet absolute top-1/2 right-7 -translate-y-1/2 z-20"></div>
+
+        <!-- Desktop layout -->
+        <div class="hidden md:flex items-center">
+          <!-- Left nav — right-aligned so links sit near center -->
+          <div class="flex-1 flex items-center justify-end gap-8 pr-8">
+            <a href="/profile/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Work</a>
+            <a href="/about/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">About</a>
+          </div>
+
+          <!-- Center logo -->
+          <a href="/" class="flex-shrink-0 hover:scale-[1.18] transition-all duration-200 origin-center inline-block [&_img]:transition-all [&_img]:duration-200 [&_img]:hover:brightness-125 hover:[filter:drop-shadow(0_0_10px_#2A95C8)_drop-shadow(0_0_20px_#2A95C880)]">
+            <picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-56.webp 56w" sizes="56px"><img src="/assets/images/6eQoOyOHHi-56.png" alt="Corewood" loading="eager" decoding="async" class="h-14" width="56" height="55"></picture>
+          </a>
+
+          <!-- Right nav + CTA — left-aligned so links sit near center, CTA aligns with chamfer -->
+          <div class="flex-1 flex items-center justify-start gap-8 pl-8 pr-[40px]">
+            <a href="/blog/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Blog</a>
+            <a href="/contact/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Contact</a>
+            <span class="flex-1"></span>
+            <a href="/schedule-meeting/" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Schedule a Meeting</a>
+          </div>
+        </div>
+
+        <!-- Mobile layout -->
+        <div class="flex md:hidden items-center justify-center relative">
+          <!-- Hamburger — positioned between logo and left edge -->
+          <button
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            class="absolute left-[25%] -translate-x-1/2 p-2 text-cream-200 hover:text-morpho-400 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <line x1="4" x2="20" y1="6" y2="6"/>
+              <line x1="4" x2="20" y1="12" y2="12"/>
+              <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+            <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="m18 6-12 12"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          </button>
+
+          <!-- Center logo -->
+          <a href="/">
+            <picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-40.webp 40w" sizes="40px"><img src="/assets/images/6eQoOyOHHi-40.png" alt="Corewood" loading="eager" decoding="async" class="h-10" width="40" height="39"></picture>
+          </a>
+
+          <!-- Mobile CTA — between logo and right edge -->
+          <a href="/schedule-meeting/" class="absolute right-[25%] translate-x-1/2 btn-primary text-[10px] px-3 py-1.5">Book</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    x-show="mobileMenuOpen"
+    x-cloak
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-150"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="md:hidden max-w-6xl mx-auto mt-4 pointer-events-auto"
+  >
+    <div class="plate-wrap">
+      <div class="plate chamfer-full p-8">
+        <nav class="flex flex-col items-center space-y-6">
+          <a href="/profile/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Work</a>
+          <a href="/about/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">About</a>
+          <a href="/blog/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Blog</a>
+          <a href="/contact/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Contact</a>
+          <a href="/schedule-meeting/" @click="mobileMenuOpen = false"
+             class="btn-primary text-center mt-2">Schedule a Meeting</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<nav aria-label="Breadcrumb" class="fixed top-[76px] md:top-[116px] left-0 right-0 z-40 pointer-events-none">
+  <div class="max-w-6xl mx-auto px-4 pl-[calc(1rem+20px)]">
+    <div class="inline-flex items-center gap-1.5 text-[10px] md:text-xs px-2 py-1 pointer-events-auto"
+         style="background: rgba(11, 43, 26, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+      <a href="/" class="text-cream-600 hover:text-morpho-400 transition-colors">Home</a>
+
+      
+      
+      
+      
+
+      
+        <span class="text-cream-700/60">/</span>
+        
+        
+          <a href="/blog/" class="text-cream-600 hover:text-morpho-400 transition-colors">
+            Blog
+          </a>
+        
+      
+        <span class="text-cream-700/60">/</span>
+        
+        
+          <span class="text-cream-400 inline-block max-w-[18ch] overflow-hidden whitespace-nowrap"
+                style="-webkit-mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch); mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch);">
+            From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster
+          </span>
+        
+      
+    </div>
+  </div>
+</nav>
+
+
+<main class="pt-40 pb-24">
+  <div class="container px-4 mx-auto max-w-6xl">
+    <div class="flex gap-12">
+      <!-- Main content -->
+      <article class="flex-1 max-w-3xl">
+        <header class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-cream-100 mb-6">From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster</h1>
+          <div class="flex flex-wrap items-center gap-4 text-sm text-cream-600">
+            <time datetime="2025-06-03">June 2, 2025</time>
+            <span class="text-forest-500">•</span>
+            <span>6 min read</span>
+          </div>
+        </header>
+
+        <div class="prose prose-lg">
+          <p>When deploying machine learning models in production, every millisecond matters. While most optimization efforts focus on model weights and GPU utilization, we discovered a hidden bottleneck that was quietly eating away at our inference performance: tokenizer loading time.</p>
+<p>Our solution? A custom binary format that eliminated JSON parsing overhead and delivered 10-100x faster tokenizer startup times. Here's how we did it and why it matters.</p>
+<h2>The Problem: JSON Parsing Tax</h2>
+<p>Modern NLP models like DeBERTa rely on sophisticated tokenizers to convert text into numerical tokens. These tokenizers typically come packaged as JSON files containing vocabulary mappings, special tokens, and configuration data. While JSON is human-readable and flexible, it comes with a hidden performance cost.</p>
+<p>Every time your inference service starts up, here's what happens with traditional JSON tokenizers:</p>
+<ol>
+<li><strong>Parse the entire JSON tree</strong> - The parser must validate syntax and build object structures</li>
+<li><strong>String key lookups</strong> - Converting vocabulary entries from string keys to usable mappings</li>
+<li><strong>Type conversions</strong> - Converting string representations to integers</li>
+<li><strong>Memory allocation overhead</strong> - Creating temporary objects during parsing</li>
+</ol>
+<p>For DeBERTa v3-base with its 128,000-token vocabulary, this process can take hundreds of milliseconds. In containerized deployments where services frequently restart, this adds up to significant latency.</p>
+<h2>The Solution: Custom Binary Format</h2>
+<p>We designed a binary format optimized for direct memory access and minimal parsing overhead. The structure is intentionally simple:</p>
+<pre><code>1. Max Length (8 bytes, int64)
 2. Vocab Size (8 bytes, int64)  
 3. For each vocab entry:
    - Token length (8 bytes, int64)
@@ -17,7 +265,16 @@
    - Token bytes (UTF-8)
    - Token ID (8 bytes, int64)
 6. Config JSON (string with length prefix)
-</code></pre><h3>Key Design Decisions</h3><p><strong>Fixed 8-byte integers</strong>: Using consistent integer sizes eliminates alignment issues and enables predictable memory access patterns.</p><p><strong>Little-endian byte order</strong>: Standard for most modern processors, enabling direct memory mapping.</p><p><strong>Length-prefixed strings</strong>: Variable-length data is handled efficiently without complex parsing.</p><p><strong>Sequential layout</strong>: Data flows in the order it's needed, maximizing cache efficiency.</p><h2>Implementation: Python to Go Pipeline</h2><h3>Python Conversion Script</h3><p>Our build process converts HuggingFace tokenizers to binary format at container build time:</p><pre><code class="language-python">import struct
+</code></pre>
+<h3>Key Design Decisions</h3>
+<p><strong>Fixed 8-byte integers</strong>: Using consistent integer sizes eliminates alignment issues and enables predictable memory access patterns.</p>
+<p><strong>Little-endian byte order</strong>: Standard for most modern processors, enabling direct memory mapping.</p>
+<p><strong>Length-prefixed strings</strong>: Variable-length data is handled efficiently without complex parsing.</p>
+<p><strong>Sequential layout</strong>: Data flows in the order it's needed, maximizing cache efficiency.</p>
+<h2>Implementation: Python to Go Pipeline</h2>
+<h3>Python Conversion Script</h3>
+<p>Our build process converts HuggingFace tokenizers to binary format at container build time:</p>
+<pre><code class="language-python">import struct
 import json
 from transformers import AutoTokenizer
 
@@ -55,7 +312,10 @@ with open(&quot;tokenizer.bin&quot;, &quot;wb&quot;) as f:
         write_int64(f, len(token_bytes))
         f.write(token_bytes)
         write_int64(f, tokenizer.convert_tokens_to_ids(token))
-</code></pre><h3>Go Runtime Loader</h3><p>The Go implementation leverages <code>binary.Read()</code> for direct memory access:</p><pre><code class="language-go">type Tokenizer struct {
+</code></pre>
+<h3>Go Runtime Loader</h3>
+<p>The Go implementation leverages <code>binary.Read()</code> for direct memory access:</p>
+<pre><code class="language-go">type Tokenizer struct {
     vocabulary    map[string]int64
     specialTokens map[string]int64
     maxLength     int64
@@ -104,7 +364,150 @@ func NewTokenizer(path string) (*Tokenizer, error) {
 
     return t, nil
 }
-</code></pre><h2>Performance Results</h2><p>The performance gains are substantial:</p><table><thead><tr><th>Method</th><th>Loading Time</th><th>Memory Allocations</th><th>Cache Efficiency</th></tr></thead><tbody><tr><td>JSON Parsing</td><td>200-500ms</td><td>High (temporary objects)</td><td>Poor (scattered access)</td></tr><tr><td>Binary Format</td><td>2-5ms</td><td>Minimal (direct reads)</td><td>Excellent (sequential)</td></tr><tr><td><strong>Improvement</strong></td><td><strong>40-100x faster</strong></td><td><strong>90% reduction</strong></td><td><strong>Significantly better</strong></td></tr></tbody></table><h2>Runtime Optimizations</h2><p>The binary format enables additional optimizations during tokenization:</p><p><strong>Pre-computed Special Tokens</strong>: Common tokens like <code>[CLS]</code>, <code>[SEP]</code>, and <code>[UNK]</code> are cached as integers for direct comparison.</p><p><strong>Memory-Mapped Loading</strong>: The sequential layout supports memory mapping for even faster access.</p><p><strong>Cache-Friendly Access</strong>: Sequential reads maximize CPU cache utilization.</p><p><strong>Reduced Garbage Collection</strong>: Fewer temporary objects mean less pressure on Go's garbage collector.</p><h2>Production Impact</h2><p>In our containerized inference pipeline, this optimization delivered:</p><ul><li><strong>Faster cold starts</strong>: Services come online 100x faster</li><li><strong>Better resource utilization</strong>: Less CPU spent on tokenizer initialization</li><li><strong>Improved user experience</strong>: Reduced latency for first requests after deployment</li><li><strong>Cost savings</strong>: More efficient container scaling and resource usage</li></ul><h2>Implementation Considerations</h2><p><strong>Build-time compilation</strong>: The conversion happens during container builds, adding no runtime overhead.</p><p><strong>Backward compatibility</strong>: The system falls back to JSON loading if binary format isn't available.</p><p><strong>Memory efficiency</strong>: Pre-allocated caches and minimal object creation reduce memory pressure.</p><p><strong>Error handling</strong>: Robust validation ensures corrupted binary files are detected early.</p><h2>When to Use This Approach</h2><p>This optimization makes sense when:</p><ul><li><strong>Startup time matters</strong>: Containerized or serverless deployments with frequent restarts</li><li><strong>Resource constraints</strong>: CPU or memory limitations make parsing overhead significant</li><li><strong>High throughput</strong>: Services processing many requests where startup time affects overall performance</li><li><strong>Edge deployment</strong>: Resource-constrained environments where every optimization counts</li></ul><h2>The Bigger Picture</h2><p>While quantization and model compression get most of the attention in ML optimization, this project highlights an important principle: <strong>infrastructure optimizations can deliver outsized returns</strong>.</p><p>Tokenizer loading represents a class of &quot;hidden&quot; bottlenecks that exist throughout ML pipelines. By identifying and systematically eliminating these inefficiencies, we can achieve significant performance gains with relatively simple engineering solutions.</p><p>The binary tokenizer format isn't revolutionary technology—it's applied systems engineering that solves a real problem. Sometimes the best optimizations are the ones that eliminate unnecessary work entirely.</p><h2>Try It Yourself</h2><p>The approach is straightforward to implement for other tokenizers and frameworks. The key insight is recognizing that <strong>startup performance matters</strong> and that custom binary formats can eliminate parsing overhead while maintaining all the functionality of the original tokenizer.</p><p>For Go-based ML inference pipelines, this optimization can be a game-changer. The 100x speedup in tokenizer loading translates directly to better user experience and more efficient resource utilization.</p><h2>Sources</h2><ul><li>He, Pengcheng et al. <a href="https://arxiv.org/abs/2006.03654">DeBERTa: Decoding-enhanced BERT with Disentangled Attention</a>. <em>ICLR</em>, 2021.</li><li>He, Pengcheng et al. <a href="https://arxiv.org/abs/2111.09543">DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing</a>. <em>ICLR</em>, 2023.</li><li>Microsoft. <a href="https://huggingface.co/microsoft/deberta-v3-base">microsoft/deberta-v3-base</a>. HuggingFace Model Hub.</li></ul><hr><p><em>Want to discuss this optimization or share your own inference performance improvements? The ML systems community thrives on sharing practical solutions to real-world problems.</em></p><p><a href="https://corewood.io/schedule-meeting/">Contact us today</a></p></div><footer class="mt-16 pt-8 border-t border-forest-700"><div class="flex justify-between items-center"><a href="https://corewood.io/blog/" class="text-morpho-400 hover:text-morpho-300 transition-colors">← Back to Blog</a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcorewood.io%2Fblog%2Fjson-to-binary-deberta-tokenizer%2F" class="text-morpho-400 hover:text-morpho-300 transition-colors" target="_blank" rel="noopener">Share on LinkedIn</a></div></footer></article><aside class="hidden lg:block w-64 flex-shrink-0"><div class="sticky top-32"><h3 class="text-sm font-medium text-cream-600 uppercase tracking-wider mb-4">Recent Posts</h3><nav class="space-y-3"><a href="https://corewood.io/blog/precarious-infrastructure/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">Precarious Infrastructure </a><a href="https://corewood.io/blog/llm-context-synthesis/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">LLMs as Context Synthesizers: Why Direct Instructions Don&#39;t Work </a><a href="https://corewood.io/blog/product-engineering/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">Building Software That Actually Works: An Engineer&#39;s Guide to Requirements-First Development </a><a href="https://corewood.io/blog/unix-philosophy-ai/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">The Unix Philosophy in the Age of AI: Timeless Principles for Modern Engineering </a><a href="https://corewood.io/blog/json-to-binary-deberta-tokenizer/" class="block text-sm text-morpho-400 transition-colors">From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster </a><a href="https://corewood.io/blog/great-data-privacy-divide/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">The Great Data Privacy Divide: Why Engineering Speed Meets Compliance Reality </a><a href="https://corewood.io/blog/healthcare-privacy-paradox/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">Healthcare Software&#39;s Privacy Paradox: Breaking Free from Legacy Thinking </a><a href="https://corewood.io/blog/data-compliance-reality/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">The Reality of Data Compliance: A Technical Evolution</a></nav></div></aside></div></div></main><script type="application/ld+json">{
+</code></pre>
+<h2>Performance Results</h2>
+<p>The performance gains are substantial:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Loading Time</th>
+<th>Memory Allocations</th>
+<th>Cache Efficiency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JSON Parsing</td>
+<td>200-500ms</td>
+<td>High (temporary objects)</td>
+<td>Poor (scattered access)</td>
+</tr>
+<tr>
+<td>Binary Format</td>
+<td>2-5ms</td>
+<td>Minimal (direct reads)</td>
+<td>Excellent (sequential)</td>
+</tr>
+<tr>
+<td><strong>Improvement</strong></td>
+<td><strong>40-100x faster</strong></td>
+<td><strong>90% reduction</strong></td>
+<td><strong>Significantly better</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>Runtime Optimizations</h2>
+<p>The binary format enables additional optimizations during tokenization:</p>
+<p><strong>Pre-computed Special Tokens</strong>: Common tokens like <code>[CLS]</code>, <code>[SEP]</code>, and <code>[UNK]</code> are cached as integers for direct comparison.</p>
+<p><strong>Memory-Mapped Loading</strong>: The sequential layout supports memory mapping for even faster access.</p>
+<p><strong>Cache-Friendly Access</strong>: Sequential reads maximize CPU cache utilization.</p>
+<p><strong>Reduced Garbage Collection</strong>: Fewer temporary objects mean less pressure on Go's garbage collector.</p>
+<h2>Production Impact</h2>
+<p>In our containerized inference pipeline, this optimization delivered:</p>
+<ul>
+<li><strong>Faster cold starts</strong>: Services come online 100x faster</li>
+<li><strong>Better resource utilization</strong>: Less CPU spent on tokenizer initialization</li>
+<li><strong>Improved user experience</strong>: Reduced latency for first requests after deployment</li>
+<li><strong>Cost savings</strong>: More efficient container scaling and resource usage</li>
+</ul>
+<h2>Implementation Considerations</h2>
+<p><strong>Build-time compilation</strong>: The conversion happens during container builds, adding no runtime overhead.</p>
+<p><strong>Backward compatibility</strong>: The system falls back to JSON loading if binary format isn't available.</p>
+<p><strong>Memory efficiency</strong>: Pre-allocated caches and minimal object creation reduce memory pressure.</p>
+<p><strong>Error handling</strong>: Robust validation ensures corrupted binary files are detected early.</p>
+<h2>When to Use This Approach</h2>
+<p>This optimization makes sense when:</p>
+<ul>
+<li><strong>Startup time matters</strong>: Containerized or serverless deployments with frequent restarts</li>
+<li><strong>Resource constraints</strong>: CPU or memory limitations make parsing overhead significant</li>
+<li><strong>High throughput</strong>: Services processing many requests where startup time affects overall performance</li>
+<li><strong>Edge deployment</strong>: Resource-constrained environments where every optimization counts</li>
+</ul>
+<h2>The Bigger Picture</h2>
+<p>While quantization and model compression get most of the attention in ML optimization, this project highlights an important principle: <strong>infrastructure optimizations can deliver outsized returns</strong>.</p>
+<p>Tokenizer loading represents a class of &quot;hidden&quot; bottlenecks that exist throughout ML pipelines. By identifying and systematically eliminating these inefficiencies, we can achieve significant performance gains with relatively simple engineering solutions.</p>
+<p>The binary tokenizer format isn't revolutionary technology—it's applied systems engineering that solves a real problem. Sometimes the best optimizations are the ones that eliminate unnecessary work entirely.</p>
+<h2>Try It Yourself</h2>
+<p>The approach is straightforward to implement for other tokenizers and frameworks. The key insight is recognizing that <strong>startup performance matters</strong> and that custom binary formats can eliminate parsing overhead while maintaining all the functionality of the original tokenizer.</p>
+<p>For Go-based ML inference pipelines, this optimization can be a game-changer. The 100x speedup in tokenizer loading translates directly to better user experience and more efficient resource utilization.</p>
+<h2>Sources</h2>
+<ul>
+<li>He, Pengcheng et al. <a href="https://arxiv.org/abs/2006.03654">DeBERTa: Decoding-enhanced BERT with Disentangled Attention</a>. <em>ICLR</em>, 2021.</li>
+<li>He, Pengcheng et al. <a href="https://arxiv.org/abs/2111.09543">DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing</a>. <em>ICLR</em>, 2023.</li>
+<li>Microsoft. <a href="https://huggingface.co/microsoft/deberta-v3-base">microsoft/deberta-v3-base</a>. HuggingFace Model Hub.</li>
+</ul>
+<hr>
+<p><em>Want to discuss this optimization or share your own inference performance improvements? The ML systems community thrives on sharing practical solutions to real-world problems.</em></p>
+<p><a href="/schedule-meeting/">Contact us today</a></p>
+
+        </div>
+
+        <footer class="mt-16 pt-8 border-t border-forest-700">
+          <div class="flex justify-between items-center">
+            <a href="/blog/" class="text-morpho-400 hover:text-morpho-300 transition-colors">← Back to Blog</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcorewood.io%2Fblog%2Fjson-to-binary-deberta-tokenizer%2F"
+               class="text-morpho-400 hover:text-morpho-300 transition-colors" target="_blank" rel="noopener">
+              Share on LinkedIn
+            </a>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Sidebar — desktop only -->
+      <aside class="hidden lg:block w-64 flex-shrink-0">
+        <div class="sticky top-32">
+          <h3 class="text-sm font-medium text-cream-600 uppercase tracking-wider mb-4">Recent Posts</h3>
+          <nav class="space-y-3">
+            
+            <a href="/blog/precarious-infrastructure/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              Precarious Infrastructure
+            </a>
+            
+            <a href="/blog/llm-context-synthesis/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              LLMs as Context Synthesizers: Why Direct Instructions Don&#39;t Work
+            </a>
+            
+            <a href="/blog/product-engineering/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              Building Software That Actually Works: An Engineer&#39;s Guide to Requirements-First Development
+            </a>
+            
+            <a href="/blog/unix-philosophy-ai/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              The Unix Philosophy in the Age of AI: Timeless Principles for Modern Engineering
+            </a>
+            
+            <a href="/blog/json-to-binary-deberta-tokenizer/"
+               class="block text-sm text-morpho-400 transition-colors">
+              From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster
+            </a>
+            
+            <a href="/blog/great-data-privacy-divide/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              The Great Data Privacy Divide: Why Engineering Speed Meets Compliance Reality
+            </a>
+            
+            <a href="/blog/healthcare-privacy-paradox/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              Healthcare Software&#39;s Privacy Paradox: Breaking Free from Legacy Thinking
+            </a>
+            
+            <a href="/blog/data-compliance-reality/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              The Reality of Data Compliance: A Technical Evolution
+            </a>
+            
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -136,7 +539,54 @@ func NewTokenizer(path string) (*Tokenizer, error) {
       ]
     }
   ]
-}</script><footer class="border-t border-forest-800 py-8"><div class="max-w-7xl mx-auto px-6"><div class="flex flex-col md:flex-row justify-between items-center gap-4"><div class="flex items-center gap-6 text-sm"><a href="https://corewood.io/privacy/" class="text-cream-600 hover:text-morpho-400 transition-colors">Privacy</a> <a href="mailto:hello@corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors">hello@corewood.io</a></div><div class="flex items-center gap-6 text-sm"><a href="https://www.linkedin.com/in/kylemickey/" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> </a><a href="https://github.com/orgs/corewood-tech" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> </a><a href="https://www.instagram.com/corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> </a><span class="text-cream-700">&copy; 2026 Corewood LLC</span></div></div><div class="flex justify-center gap-3 mt-4 text-[10px] leading-none text-forest-900"><a href="https://corewood.tech/blog/json-to-binary-deberta-tokenizer/" class="hover:text-forest-800 transition-colors">corewood.tech</a> <a href="https://corewood.cloud/blog/json-to-binary-deberta-tokenizer/" class="hover:text-forest-800 transition-colors">corewood.cloud</a> <a href="https://corewood.info/blog/json-to-binary-deberta-tokenizer/" class="hover:text-forest-800 transition-colors">corewood.info</a></div></div></footer><div x-data="{
+}
+</script>
+<footer class="border-t border-forest-800 py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/privacy/" class="text-cream-600 hover:text-morpho-400 transition-colors">Privacy</a>
+        <a href="mailto:hello@corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors">hello@corewood.io</a>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a href="https://www.linkedin.com/in/kylemickey/" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect width="4" height="12" x="2" y="9"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://github.com/orgs/corewood-tech" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+        <span class="text-cream-700">&copy; 2026 Corewood LLC</span>
+      </div>
+    </div>
+    
+    <div class="flex justify-center gap-3 mt-4 text-[10px] leading-none text-forest-900">
+      <a href="https://corewood.tech/blog/json-to-binary-deberta-tokenizer/" class="hover:text-forest-800 transition-colors">corewood.tech</a>
+      <a href="https://corewood.cloud/blog/json-to-binary-deberta-tokenizer/" class="hover:text-forest-800 transition-colors">corewood.cloud</a>
+      <a href="https://corewood.info/blog/json-to-binary-deberta-tokenizer/" class="hover:text-forest-800 transition-colors">corewood.info</a>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+  <!-- Cookie Consent Banner -->
+  <div x-data="{
     show: false,
     init() {
       this.show = !localStorage.getItem('corewood_cookie_consent');
@@ -155,4 +605,32 @@ func NewTokenizer(path string) (*Tokenizer, error) {
       if (window.posthog) posthog.capture('cookie_consent', { consent: 'rejected' });
       this.show = false;
     }
-  }" x-show="show" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" class="fixed bottom-6 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-[100]"><div class="plate-wrap"><div class="plate chamfer-full p-6"><div class="rivet absolute top-4 left-4 z-10"></div><div class="rivet absolute top-4 right-4 z-10"></div><p class="text-cream-200 text-sm leading-relaxed mb-4">We use cookies to understand how you use our site and improve your experience. <a href="https://corewood.io/privacy/" class="text-morpho-400 hover:text-morpho-300 transition-colors underline">Privacy Policy</a></p><div class="flex gap-3"><button @click="accept()" class="btn-primary text-sm px-5 py-2">Accept</button> <button @click="reject()" class="btn-secondary text-sm px-5 py-2">Reject</button></div></div></div></div><script defer="defer" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script><script src="https://corewood.io/assets/js/main.js" defer="defer"></script></body></html>
+  }" x-show="show" x-cloak
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 translate-y-4"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 translate-y-4"
+     class="fixed bottom-6 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-[100]"
+  >
+    <div class="plate-wrap">
+      <div class="plate chamfer-full p-6">
+        <div class="rivet absolute top-4 left-4 z-10"></div>
+        <div class="rivet absolute top-4 right-4 z-10"></div>
+        <p class="text-cream-200 text-sm leading-relaxed mb-4">
+          We use cookies to understand how you use our site and improve your experience.
+          <a href="/privacy/" class="text-morpho-400 hover:text-morpho-300 transition-colors underline">Privacy Policy</a>
+        </p>
+        <div class="flex gap-3">
+          <button @click="accept()" class="btn-primary text-sm px-5 py-2">Accept</button>
+          <button @click="reject()" class="btn-secondary text-sm px-5 py-2">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

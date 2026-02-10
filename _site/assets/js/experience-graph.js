@@ -9,7 +9,7 @@
     project:    '#8B6914',
     philosophy: '#E85A48',
     influence:  '#C4B899',
-    education:  '#4AADDA'
+    education:  '#A67BC5'
   };
 
   // ── Node radius by type ──
@@ -130,9 +130,9 @@
         var g = svg.append('g');
         this._g = g;
 
-        // Zoom behavior
+        // Zoom behavior — extent clamped after simulation settles
         var zoom = d3.zoom()
-          .scaleExtent([0.3, 3])
+          .scaleExtent([0.5, 2.5])
           .on('zoom', function (event) {
             g.attr('transform', event.transform);
           });
@@ -284,8 +284,9 @@
           self.deselectNode();
         });
 
-        // Fit graph initially after simulation settles
+        // Fit graph initially after simulation settles, then clamp zoom to data bounds
         setTimeout(function () {
+          self._clampZoomToData();
           self.resetView();
         }, 2000);
       },
@@ -481,6 +482,33 @@
           .translate(width / 2 - cx * scale, height / 2 - cy * scale)
           .scale(scale);
         this._svg.transition().duration(600).call(this._zoom.transform, transform);
+      },
+
+      // ── Clamp zoom + pan to data bounds ──
+      _clampZoomToData: function () {
+        var svg = this._svg.node();
+        if (!svg) return;
+        var width = svg.clientWidth;
+        var height = svg.clientHeight;
+
+        var xExtent = d3.extent(this.nodes, function (d) { return d.x; });
+        var yExtent = d3.extent(this.nodes, function (d) { return d.y; });
+        if (xExtent[0] == null) return;
+
+        var padding = 150;
+
+        // Minimum scale = the scale that fits all data in view
+        var graphWidth = xExtent[1] - xExtent[0] + padding * 2;
+        var graphHeight = yExtent[1] - yExtent[0] + padding * 2;
+        var minScale = Math.min(width / graphWidth, height / graphHeight) * 0.85;
+        minScale = Math.max(minScale, 0.3);
+
+        this._zoom
+          .scaleExtent([minScale, 2.5])
+          .translateExtent([
+            [xExtent[0] - padding, yExtent[0] - padding],
+            [xExtent[1] + padding, yExtent[1] + padding]
+          ]);
       },
 
       // ── Helpers ──

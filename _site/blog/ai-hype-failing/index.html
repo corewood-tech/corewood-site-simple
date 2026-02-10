@@ -1,11 +1,344 @@
-<!doctype html><html lang="en" style="scroll-behavior: smooth;"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="https://corewood.io/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="https://corewood.io/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="https://corewood.io/favicon.png"><link rel="preload" href="https://corewood.io/fonts/roca-two-bold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://corewood.io/fonts/hk-grotesk-pro-regular.woff2" as="font" type="font/woff2" crossorigin><title>Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses | Corewood</title><meta name="description" content="Despite billions in investment, current ML approaches fail to deliver. Why &#39;bigger is better&#39; has hit its ceiling and how targeted intelligence can help."><meta name="author" content="Corewood"><meta name="robots" content="index, follow"><link rel="canonical" href="https://corewood.io/blog/ai-hype-failing/"><meta property="og:type" content="article"><meta property="og:url" content="https://corewood.io/blog/ai-hype-failing/"><meta property="og:title" content="Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses | Corewood"><meta property="og:description" content="Despite billions in investment, current ML approaches fail to deliver. Why &#39;bigger is better&#39; has hit its ceiling and how targeted intelligence can help."><meta property="og:image" content="https://corewood.io/meta.png"><meta property="article:author" content="Corewood"><meta property="article:published_time" content="2025-04-14"><meta property="article:section" content="Technology"><meta property="article:tag" content="AI hype"><meta property="article:tag" content="machine learning"><meta property="article:tag" content="ML limitations"><meta property="article:tag" content="AI efficiency"><meta property="article:tag" content="computational resources"><meta property="article:tag" content="targeted AI solutions"><meta property="article:tag" content="AI ROI"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://corewood.io/blog/ai-hype-failing/"><meta property="twitter:title" content="Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses | Corewood"><meta property="twitter:description" content="Despite billions in investment, current ML approaches fail to deliver. Why &#39;bigger is better&#39; has hit its ceiling and how targeted intelligence can help."><meta property="twitter:image" content="https://corewood.io/meta.png"><meta name="keywords" content="AI hype, machine learning, ML limitations, AI efficiency, computational resources, targeted AI solutions, AI ROI"><link rel="stylesheet" href="https://corewood.io/assets/css/main.css"><script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+
+  <!-- Font preload -->
+  <link rel="preload" href="/fonts/roca-two-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/hk-grotesk-pro-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- SEO Meta Tags -->
+  <title>Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses | Corewood</title>
+  <meta name="description" content="Despite billions in investment, current ML approaches fail to deliver. Why &#39;bigger is better&#39; has hit its ceiling and how targeted intelligence can help.">
+  <meta name="author" content="Corewood">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL — always points to corewood.io regardless of build domain -->
+  <link rel="canonical" href="https://corewood.io/blog/ai-hype-failing/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://corewood.io/blog/ai-hype-failing/">
+  <meta property="og:title" content="Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses | Corewood">
+  <meta property="og:description" content="Despite billions in investment, current ML approaches fail to deliver. Why &#39;bigger is better&#39; has hit its ceiling and how targeted intelligence can help.">
+  <meta property="og:image" content="https://corewood.io/meta.png">
+
+  
+  <meta property="article:author" content="Corewood">
+  <meta property="article:published_time" content="2025-04-14">
+  <meta property="article:section" content="Technology">
+  
+  
+  
+  <meta property="article:tag" content="AI hype">
+  
+  <meta property="article:tag" content="machine learning">
+  
+  <meta property="article:tag" content="ML limitations">
+  
+  <meta property="article:tag" content="AI efficiency">
+  
+  <meta property="article:tag" content="computational resources">
+  
+  <meta property="article:tag" content="targeted AI solutions">
+  
+  <meta property="article:tag" content="AI ROI">
+  
+  
+  
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://corewood.io/blog/ai-hype-failing/">
+  <meta property="twitter:title" content="Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses | Corewood">
+  <meta property="twitter:description" content="Despite billions in investment, current ML approaches fail to deliver. Why &#39;bigger is better&#39; has hit its ceiling and how targeted intelligence can help.">
+  <meta property="twitter:image" content="https://corewood.io/meta.png">
+
+  
+  <meta name="keywords" content="AI hype, machine learning, ML limitations, AI efficiency, computational resources, targeted AI solutions, AI ROI">
+  
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- JSON-LD -->
+  
+
+  <!-- PostHog Analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     var consent = localStorage.getItem('corewood_cookie_consent');
     posthog.init('phc_aeVynFTu2UWNDdZ3SNBx3XUQGBQHAFZrFMyHk6cIHRs', {
       api_host: 'https://helper.corewood.io',
       ui_host: 'https://us.posthog.com',
       person_profiles: 'identified_only',
       cookieless_mode: consent === 'accepted' ? false : 'always'
-    });</script></head><body class="min-h-screen text-cream-100 font-body"><header x-data="{ mobileMenuOpen: false }" class="fixed top-0 left-0 right-0 pt-4 md:pt-6 px-4 md:px-6 z-50 pointer-events-none"><div class="max-w-6xl mx-auto"><div class="plate-wrap"><div class="plate chamfer-full md:chamfer-full-lg px-4 md:px-6 py-3 md:py-4 pointer-events-auto relative"><div class="rivet absolute top-1/2 left-7 -translate-y-1/2 z-20"></div><div class="rivet absolute top-1/2 right-7 -translate-y-1/2 z-20"></div><div class="hidden md:flex items-center"><div class="flex-1 flex items-center justify-end gap-8 pr-8"><a href="https://corewood.io/profile/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Work</a> <a href="https://corewood.io/about/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">About</a></div><a href="https://corewood.io/" class="flex-shrink-0 hover:scale-[1.18] transition-all duration-200 origin-center inline-block [&_img]:transition-all [&_img]:duration-200 [&_img]:hover:brightness-125 hover:[filter:drop-shadow(0_0_10px_#2A95C8)_drop-shadow(0_0_20px_#2A95C880)]"><picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-56.webp 56w" sizes="56px"><img src="/assets/images/6eQoOyOHHi-56.png" alt="Corewood" loading="eager" decoding="async" class="h-14" width="56" height="55"></picture></a><div class="flex-1 flex items-center justify-start gap-8 pl-8 pr-[40px]"><a href="https://corewood.io/blog/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Blog</a> <a href="https://corewood.io/contact/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Contact</a> <span class="flex-1"></span> <a href="https://corewood.io/schedule-meeting/" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Schedule a Meeting</a></div></div><div class="flex md:hidden items-center justify-center relative"><button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute left-[25%] -translate-x-1/2 p-2 text-cream-200 hover:text-morpho-400 focus:outline-none" aria-label="Toggle menu"><svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg> <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m18 6-12 12"/><path d="m6 6 12 12"/></svg></button> <a href="https://corewood.io/"><picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-40.webp 40w" sizes="40px"><img src="/assets/images/6eQoOyOHHi-40.png" alt="Corewood" loading="eager" decoding="async" class="h-10" width="40" height="39"></picture></a><a href="https://corewood.io/schedule-meeting/" class="absolute right-[25%] translate-x-1/2 btn-primary text-[10px] px-3 py-1.5">Book</a></div></div></div></div><div x-show="mobileMenuOpen" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="md:hidden max-w-6xl mx-auto mt-4 pointer-events-auto"><div class="plate-wrap"><div class="plate chamfer-full p-8"><nav class="flex flex-col items-center space-y-6"><a href="https://corewood.io/profile/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Work</a> <a href="https://corewood.io/about/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">About</a> <a href="https://corewood.io/blog/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Blog</a> <a href="https://corewood.io/contact/" @click="mobileMenuOpen = false" class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Contact</a> <a href="https://corewood.io/schedule-meeting/" @click="mobileMenuOpen = false" class="btn-primary text-center mt-2">Schedule a Meeting</a></nav></div></div></div></header><nav aria-label="Breadcrumb" class="fixed top-[76px] md:top-[116px] left-0 right-0 z-40 pointer-events-none"><div class="max-w-6xl mx-auto px-4 pl-[calc(1rem+20px)]"><div class="inline-flex items-center gap-1.5 text-[10px] md:text-xs px-2 py-1 pointer-events-auto" style="background: rgba(11, 43, 26, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);"><a href="https://corewood.io/" class="text-cream-600 hover:text-morpho-400 transition-colors">Home</a> <span class="text-cream-700/60">/</span> <a href="https://corewood.io/blog/" class="text-cream-600 hover:text-morpho-400 transition-colors">Blog </a><span class="text-cream-700/60">/</span> <span class="text-cream-400 inline-block max-w-[18ch] overflow-hidden whitespace-nowrap" style="-webkit-mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch); mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch);">Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses</span></div></div></nav><main class="pt-40 pb-24"><div class="container px-4 mx-auto max-w-6xl"><div class="flex gap-12"><article class="flex-1 max-w-3xl"><header class="mb-12"><h1 class="text-4xl md:text-5xl font-display font-bold text-cream-100 mb-6">Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses</h1><div class="flex flex-wrap items-center gap-4 text-sm text-cream-600"><time datetime="2025-04-14">April 13, 2025</time> <span class="text-forest-500">•</span> <span>3 min read</span></div></header><div class="prose prose-lg"><p>The AI industry has been promising the world for years now. Artificial General Intelligence. Self-driving cars. Automated healthcare. Smart cities. Yet despite billions in investment and endless hype cycles, we're still waiting for many of these promises to materialize.</p><p>Why is this happening? And more importantly, what can forward-thinking businesses do about it?</p><h2>The Great ML Disconnect</h2><p>The current machine learning landscape suffers from a fundamental misalignment:</p><p><strong>What we're building:</strong> Massive, general-purpose models requiring extraordinary computational resources.</p><p><strong>What businesses actually need:</strong> Efficient, targeted solutions that solve specific problems with reasonable resources.</p><p>This disconnect creates a cascade of problems that directly impact your bottom line:</p><h3>The Resource Problem</h3><p>Today's approach to machine learning is the computational equivalent of using a sledgehammer to crack a nut:</p><ul><li>Unnecessarily complex systems consuming excessive energy</li><li>Premium hardware running basic preprocessing tasks</li><li>Inflated cloud computing costs that keep executives awake at night</li><li>Environmental impacts that contradict sustainability commitments</li></ul><h3>The Diminishing Returns Problem</h3><p>We're witnessing a clear asymptote in AI development. Despite doubling parameters and computational resources, performance gains are flatlining. The &quot;bigger is better&quot; approach has hit its ceiling, yet companies continue pouring resources into this diminishing returns trap.</p><h2>The Corewood Approach: Targeted Intelligence</h2><p>At Corewood, we've pioneered a fundamentally different approach to machine learning implementation:</p><ul><li><strong>Strategic preprocessing at the API level</strong> - Moving tensor manipulations and data preparation to appropriate system layers</li><li><strong>Specialized, purpose-built models</strong> - Replacing general-purpose AI with targeted solutions</li><li><strong>Resource-optimized architecture</strong> - Using premium computational resources only where actually needed</li></ul><p>This approach delivers what matters: faster implementation, lower costs, reduced environmental impact, and solutions that directly address your specific business challenges.</p><h2>The Future Belongs to the Efficient</h2><p>While industry giants continue chasing diminishing returns with increasingly resource-intensive models, businesses working with Corewood gain immediate advantages:</p><ul><li>40-60% reduction in computational costs</li><li>Significantly faster inference times</li><li>Solutions aligned with specific business objectives</li><li>Sustainable AI implementation that scales with your business</li></ul><h2>Breaking Through the ML Ceiling</h2><p>The machine learning industry is experiencing its own version of the law of diminishing returns. Throwing more resources at the problem isn't working. The future belongs to companies who recognize this fundamental truth and pivot to efficiency-focused, brain-inspired approaches.</p><p>Corewood specializes in delivering cutting-edge machine learning solutions that others can't even conceptualize—not because we use more resources, but because we use them intelligently.</p><p>Don't let your business become another casualty of the AI hype cycle.</p><hr><p><em>Corewood: Machine Learning Beyond the Asymptote</em></p><p><a href="https://corewood.io/schedule-meeting/">Contact us today</a></p></div><footer class="mt-16 pt-8 border-t border-forest-700"><div class="flex justify-between items-center"><a href="https://corewood.io/blog/" class="text-morpho-400 hover:text-morpho-300 transition-colors">← Back to Blog</a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcorewood.io%2Fblog%2Fai-hype-failing%2F" class="text-morpho-400 hover:text-morpho-300 transition-colors" target="_blank" rel="noopener">Share on LinkedIn</a></div></footer></article><aside class="hidden lg:block w-64 flex-shrink-0"><div class="sticky top-32"><h3 class="text-sm font-medium text-cream-600 uppercase tracking-wider mb-4">Recent Posts</h3><nav class="space-y-3"><a href="https://corewood.io/blog/precarious-infrastructure/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">Precarious Infrastructure </a><a href="https://corewood.io/blog/llm-context-synthesis/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">LLMs as Context Synthesizers: Why Direct Instructions Don&#39;t Work </a><a href="https://corewood.io/blog/product-engineering/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">Building Software That Actually Works: An Engineer&#39;s Guide to Requirements-First Development </a><a href="https://corewood.io/blog/unix-philosophy-ai/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">The Unix Philosophy in the Age of AI: Timeless Principles for Modern Engineering </a><a href="https://corewood.io/blog/json-to-binary-deberta-tokenizer/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster </a><a href="https://corewood.io/blog/great-data-privacy-divide/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">The Great Data Privacy Divide: Why Engineering Speed Meets Compliance Reality </a><a href="https://corewood.io/blog/healthcare-privacy-paradox/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">Healthcare Software&#39;s Privacy Paradox: Breaking Free from Legacy Thinking </a><a href="https://corewood.io/blog/data-compliance-reality/" class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">The Reality of Data Compliance: A Technical Evolution</a></nav></div></aside></div></div></main><script type="application/ld+json">{
+    });
+  </script>
+</head>
+<body class="min-h-screen text-cream-100 font-body">
+  
+<header
+  x-data="{ mobileMenuOpen: false }"
+  class="fixed top-0 left-0 right-0 pt-4 md:pt-6 px-4 md:px-6 z-50 pointer-events-none"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full md:chamfer-full-lg px-4 md:px-6 py-3 md:py-4 pointer-events-auto relative">
+        <!-- Rivets — one on each side, vertically centered -->
+        <div class="rivet absolute top-1/2 left-7 -translate-y-1/2 z-20"></div>
+        <div class="rivet absolute top-1/2 right-7 -translate-y-1/2 z-20"></div>
+
+        <!-- Desktop layout -->
+        <div class="hidden md:flex items-center">
+          <!-- Left nav — right-aligned so links sit near center -->
+          <div class="flex-1 flex items-center justify-end gap-8 pr-8">
+            <a href="/profile/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Work</a>
+            <a href="/about/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">About</a>
+          </div>
+
+          <!-- Center logo -->
+          <a href="/" class="flex-shrink-0 hover:scale-[1.18] transition-all duration-200 origin-center inline-block [&_img]:transition-all [&_img]:duration-200 [&_img]:hover:brightness-125 hover:[filter:drop-shadow(0_0_10px_#2A95C8)_drop-shadow(0_0_20px_#2A95C880)]">
+            <picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-56.webp 56w" sizes="56px"><img src="/assets/images/6eQoOyOHHi-56.png" alt="Corewood" loading="eager" decoding="async" class="h-14" width="56" height="55"></picture>
+          </a>
+
+          <!-- Right nav + CTA — left-aligned so links sit near center, CTA aligns with chamfer -->
+          <div class="flex-1 flex items-center justify-start gap-8 pl-8 pr-[40px]">
+            <a href="/blog/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Blog</a>
+            <a href="/contact/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Contact</a>
+            <span class="flex-1"></span>
+            <a href="/schedule-meeting/" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Schedule a Meeting</a>
+          </div>
+        </div>
+
+        <!-- Mobile layout -->
+        <div class="flex md:hidden items-center justify-center relative">
+          <!-- Hamburger — positioned between logo and left edge -->
+          <button
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            class="absolute left-[25%] -translate-x-1/2 p-2 text-cream-200 hover:text-morpho-400 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <line x1="4" x2="20" y1="6" y2="6"/>
+              <line x1="4" x2="20" y1="12" y2="12"/>
+              <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+            <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="m18 6-12 12"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          </button>
+
+          <!-- Center logo -->
+          <a href="/">
+            <picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-40.webp 40w" sizes="40px"><img src="/assets/images/6eQoOyOHHi-40.png" alt="Corewood" loading="eager" decoding="async" class="h-10" width="40" height="39"></picture>
+          </a>
+
+          <!-- Mobile CTA — between logo and right edge -->
+          <a href="/schedule-meeting/" class="absolute right-[25%] translate-x-1/2 btn-primary text-[10px] px-3 py-1.5">Book</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    x-show="mobileMenuOpen"
+    x-cloak
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-150"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="md:hidden max-w-6xl mx-auto mt-4 pointer-events-auto"
+  >
+    <div class="plate-wrap">
+      <div class="plate chamfer-full p-8">
+        <nav class="flex flex-col items-center space-y-6">
+          <a href="/profile/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Work</a>
+          <a href="/about/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">About</a>
+          <a href="/blog/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Blog</a>
+          <a href="/contact/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Contact</a>
+          <a href="/schedule-meeting/" @click="mobileMenuOpen = false"
+             class="btn-primary text-center mt-2">Schedule a Meeting</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<nav aria-label="Breadcrumb" class="fixed top-[76px] md:top-[116px] left-0 right-0 z-40 pointer-events-none">
+  <div class="max-w-6xl mx-auto px-4 pl-[calc(1rem+20px)]">
+    <div class="inline-flex items-center gap-1.5 text-[10px] md:text-xs px-2 py-1 pointer-events-auto"
+         style="background: rgba(11, 43, 26, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+      <a href="/" class="text-cream-600 hover:text-morpho-400 transition-colors">Home</a>
+
+      
+      
+      
+      
+
+      
+        <span class="text-cream-700/60">/</span>
+        
+        
+          <a href="/blog/" class="text-cream-600 hover:text-morpho-400 transition-colors">
+            Blog
+          </a>
+        
+      
+        <span class="text-cream-700/60">/</span>
+        
+        
+          <span class="text-cream-400 inline-block max-w-[18ch] overflow-hidden whitespace-nowrap"
+                style="-webkit-mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch); mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch);">
+            Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses
+          </span>
+        
+      
+    </div>
+  </div>
+</nav>
+
+
+<main class="pt-40 pb-24">
+  <div class="container px-4 mx-auto max-w-6xl">
+    <div class="flex gap-12">
+      <!-- Main content -->
+      <article class="flex-1 max-w-3xl">
+        <header class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-cream-100 mb-6">Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses</h1>
+          <div class="flex flex-wrap items-center gap-4 text-sm text-cream-600">
+            <time datetime="2025-04-14">April 13, 2025</time>
+            <span class="text-forest-500">•</span>
+            <span>3 min read</span>
+          </div>
+        </header>
+
+        <div class="prose prose-lg">
+          <p>The AI industry has been promising the world for years now. Artificial General Intelligence. Self-driving cars. Automated healthcare. Smart cities. Yet despite billions in investment and endless hype cycles, we're still waiting for many of these promises to materialize.</p>
+<p>Why is this happening? And more importantly, what can forward-thinking businesses do about it?</p>
+<h2>The Great ML Disconnect</h2>
+<p>The current machine learning landscape suffers from a fundamental misalignment:</p>
+<p><strong>What we're building:</strong> Massive, general-purpose models requiring extraordinary computational resources.</p>
+<p><strong>What businesses actually need:</strong> Efficient, targeted solutions that solve specific problems with reasonable resources.</p>
+<p>This disconnect creates a cascade of problems that directly impact your bottom line:</p>
+<h3>The Resource Problem</h3>
+<p>Today's approach to machine learning is the computational equivalent of using a sledgehammer to crack a nut:</p>
+<ul>
+<li>Unnecessarily complex systems consuming excessive energy</li>
+<li>Premium hardware running basic preprocessing tasks</li>
+<li>Inflated cloud computing costs that keep executives awake at night</li>
+<li>Environmental impacts that contradict sustainability commitments</li>
+</ul>
+<h3>The Diminishing Returns Problem</h3>
+<p>We're witnessing a clear asymptote in AI development. Despite doubling parameters and computational resources, performance gains are flatlining. The &quot;bigger is better&quot; approach has hit its ceiling, yet companies continue pouring resources into this diminishing returns trap.</p>
+<h2>The Corewood Approach: Targeted Intelligence</h2>
+<p>At Corewood, we've pioneered a fundamentally different approach to machine learning implementation:</p>
+<ul>
+<li><strong>Strategic preprocessing at the API level</strong> - Moving tensor manipulations and data preparation to appropriate system layers</li>
+<li><strong>Specialized, purpose-built models</strong> - Replacing general-purpose AI with targeted solutions</li>
+<li><strong>Resource-optimized architecture</strong> - Using premium computational resources only where actually needed</li>
+</ul>
+<p>This approach delivers what matters: faster implementation, lower costs, reduced environmental impact, and solutions that directly address your specific business challenges.</p>
+<h2>The Future Belongs to the Efficient</h2>
+<p>While industry giants continue chasing diminishing returns with increasingly resource-intensive models, businesses working with Corewood gain immediate advantages:</p>
+<ul>
+<li>40-60% reduction in computational costs</li>
+<li>Significantly faster inference times</li>
+<li>Solutions aligned with specific business objectives</li>
+<li>Sustainable AI implementation that scales with your business</li>
+</ul>
+<h2>Breaking Through the ML Ceiling</h2>
+<p>The machine learning industry is experiencing its own version of the law of diminishing returns. Throwing more resources at the problem isn't working. The future belongs to companies who recognize this fundamental truth and pivot to efficiency-focused, brain-inspired approaches.</p>
+<p>Corewood specializes in delivering cutting-edge machine learning solutions that others can't even conceptualize—not because we use more resources, but because we use them intelligently.</p>
+<p>Don't let your business become another casualty of the AI hype cycle.</p>
+<hr>
+<p><em>Corewood: Machine Learning Beyond the Asymptote</em></p>
+<p><a href="/schedule-meeting/">Contact us today</a></p>
+
+        </div>
+
+        <footer class="mt-16 pt-8 border-t border-forest-700">
+          <div class="flex justify-between items-center">
+            <a href="/blog/" class="text-morpho-400 hover:text-morpho-300 transition-colors">← Back to Blog</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcorewood.io%2Fblog%2Fai-hype-failing%2F"
+               class="text-morpho-400 hover:text-morpho-300 transition-colors" target="_blank" rel="noopener">
+              Share on LinkedIn
+            </a>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Sidebar — desktop only -->
+      <aside class="hidden lg:block w-64 flex-shrink-0">
+        <div class="sticky top-32">
+          <h3 class="text-sm font-medium text-cream-600 uppercase tracking-wider mb-4">Recent Posts</h3>
+          <nav class="space-y-3">
+            
+            <a href="/blog/precarious-infrastructure/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              Precarious Infrastructure
+            </a>
+            
+            <a href="/blog/llm-context-synthesis/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              LLMs as Context Synthesizers: Why Direct Instructions Don&#39;t Work
+            </a>
+            
+            <a href="/blog/product-engineering/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              Building Software That Actually Works: An Engineer&#39;s Guide to Requirements-First Development
+            </a>
+            
+            <a href="/blog/unix-philosophy-ai/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              The Unix Philosophy in the Age of AI: Timeless Principles for Modern Engineering
+            </a>
+            
+            <a href="/blog/json-to-binary-deberta-tokenizer/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster
+            </a>
+            
+            <a href="/blog/great-data-privacy-divide/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              The Great Data Privacy Divide: Why Engineering Speed Meets Compliance Reality
+            </a>
+            
+            <a href="/blog/healthcare-privacy-paradox/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              Healthcare Software&#39;s Privacy Paradox: Breaking Free from Legacy Thinking
+            </a>
+            
+            <a href="/blog/data-compliance-reality/"
+               class="block text-sm text-cream-400 hover:text-cream-100 transition-colors">
+              The Reality of Data Compliance: A Technical Evolution
+            </a>
+            
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -37,7 +370,54 @@
       ]
     }
   ]
-}</script><footer class="border-t border-forest-800 py-8"><div class="max-w-7xl mx-auto px-6"><div class="flex flex-col md:flex-row justify-between items-center gap-4"><div class="flex items-center gap-6 text-sm"><a href="https://corewood.io/privacy/" class="text-cream-600 hover:text-morpho-400 transition-colors">Privacy</a> <a href="mailto:hello@corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors">hello@corewood.io</a></div><div class="flex items-center gap-6 text-sm"><a href="https://www.linkedin.com/in/kylemickey/" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> </a><a href="https://github.com/orgs/corewood-tech" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> </a><a href="https://www.instagram.com/corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> </a><span class="text-cream-700">&copy; 2026 Corewood LLC</span></div></div><div class="flex justify-center gap-3 mt-4 text-[10px] leading-none text-forest-900"><a href="https://corewood.tech/blog/ai-hype-failing/" class="hover:text-forest-800 transition-colors">corewood.tech</a> <a href="https://corewood.cloud/blog/ai-hype-failing/" class="hover:text-forest-800 transition-colors">corewood.cloud</a> <a href="https://corewood.info/blog/ai-hype-failing/" class="hover:text-forest-800 transition-colors">corewood.info</a></div></div></footer><div x-data="{
+}
+</script>
+<footer class="border-t border-forest-800 py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/privacy/" class="text-cream-600 hover:text-morpho-400 transition-colors">Privacy</a>
+        <a href="mailto:hello@corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors">hello@corewood.io</a>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a href="https://www.linkedin.com/in/kylemickey/" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect width="4" height="12" x="2" y="9"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://github.com/orgs/corewood-tech" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+        <span class="text-cream-700">&copy; 2026 Corewood LLC</span>
+      </div>
+    </div>
+    
+    <div class="flex justify-center gap-3 mt-4 text-[10px] leading-none text-forest-900">
+      <a href="https://corewood.tech/blog/ai-hype-failing/" class="hover:text-forest-800 transition-colors">corewood.tech</a>
+      <a href="https://corewood.cloud/blog/ai-hype-failing/" class="hover:text-forest-800 transition-colors">corewood.cloud</a>
+      <a href="https://corewood.info/blog/ai-hype-failing/" class="hover:text-forest-800 transition-colors">corewood.info</a>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+  <!-- Cookie Consent Banner -->
+  <div x-data="{
     show: false,
     init() {
       this.show = !localStorage.getItem('corewood_cookie_consent');
@@ -56,4 +436,32 @@
       if (window.posthog) posthog.capture('cookie_consent', { consent: 'rejected' });
       this.show = false;
     }
-  }" x-show="show" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" class="fixed bottom-6 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-[100]"><div class="plate-wrap"><div class="plate chamfer-full p-6"><div class="rivet absolute top-4 left-4 z-10"></div><div class="rivet absolute top-4 right-4 z-10"></div><p class="text-cream-200 text-sm leading-relaxed mb-4">We use cookies to understand how you use our site and improve your experience. <a href="https://corewood.io/privacy/" class="text-morpho-400 hover:text-morpho-300 transition-colors underline">Privacy Policy</a></p><div class="flex gap-3"><button @click="accept()" class="btn-primary text-sm px-5 py-2">Accept</button> <button @click="reject()" class="btn-secondary text-sm px-5 py-2">Reject</button></div></div></div></div><script defer="defer" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script><script src="https://corewood.io/assets/js/main.js" defer="defer"></script></body></html>
+  }" x-show="show" x-cloak
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 translate-y-4"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 translate-y-4"
+     class="fixed bottom-6 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-[100]"
+  >
+    <div class="plate-wrap">
+      <div class="plate chamfer-full p-6">
+        <div class="rivet absolute top-4 left-4 z-10"></div>
+        <div class="rivet absolute top-4 right-4 z-10"></div>
+        <p class="text-cream-200 text-sm leading-relaxed mb-4">
+          We use cookies to understand how you use our site and improve your experience.
+          <a href="/privacy/" class="text-morpho-400 hover:text-morpho-300 transition-colors underline">Privacy Policy</a>
+        </p>
+        <div class="flex gap-3">
+          <button @click="accept()" class="btn-primary text-sm px-5 py-2">Accept</button>
+          <button @click="reject()" class="btn-secondary text-sm px-5 py-2">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
