@@ -459,6 +459,134 @@ skills:
     summary: "Repeating pattern: behind-schedule → on-track. Ops-first, containerize, automate, cut scope."
     tags: [leadership, ops]
 
+  # --- Additional Skills (LinkedIn + Resume coverage) ---
+
+  - id: skill_cicd
+    name: "CI/CD"
+    category: infrastructure
+    depth: expert
+    summary: "BuildKite, CircleCI, GitHub Actions. Pipeline design, shared CI/CD tooling, automated testing and deployment."
+    tags: [automation, devops]
+
+  - id: skill_cloud_security
+    name: "Cloud Security"
+    category: architecture
+    depth: expert
+    summary: "OWASP, secure code review, IAM hardening, pen testing, secrets management, attack surface reduction."
+    tags: [security, cloud]
+
+  - id: skill_networking
+    name: "Networking & Protocols"
+    category: infrastructure
+    depth: proficient
+    summary: "TCP/IP, load balancing, DNS, VPC design, Nginx, Cloudflare, CDN, wire protocol understanding (PostgreSQL)."
+    tags: [networking, infrastructure]
+
+  - id: skill_gcp
+    name: "GCP"
+    category: infrastructure
+    depth: proficient
+    summary: "GKE, GCP VMs with GPUs, multi-cloud architecture spanning AWS and GCP."
+    tags: [cloud]
+
+  - id: skill_sre
+    name: "Site Reliability Engineering"
+    category: methodology
+    depth: expert
+    summary: "Uptime SLOs, incident response, change management, runbooks, PagerDuty, Datadog, post-incident RCA."
+    tags: [ops, reliability]
+
+  - id: skill_leadership
+    name: "Engineering Leadership"
+    category: soft_skill
+    depth: expert
+    summary: "Team leadership, mentoring, distributed teams (US+India), business strategy, scope planning, hiring."
+    tags: [leadership, management]
+
+  - id: skill_frontend
+    name: "Frontend / React / Svelte"
+    category: tool
+    depth: proficient
+    summary: "React.js (endorsed/assessed), SvelteKit, CesiumJS, jQuery (early). Event handling patterns, component architecture."
+    tags: [frontend, ui]
+
+  - id: skill_linux
+    name: "Linux / Systems Administration"
+    category: infrastructure
+    depth: proficient
+    summary: "Ubuntu, container hosts, file systems, process management. Self-taught from registry hacking through production ops."
+    tags: [systems, ops]
+
+  - id: skill_data_pipelines
+    name: "Data Pipelines & Analysis"
+    category: domain
+    depth: proficient
+    summary: "Dask, Prefect, Python executors, data modeling, ETL. Built pipeline architecture at Macroscope."
+    tags: [data, automation]
+
+  - id: skill_serverless
+    name: "Serverless Architecture"
+    category: architecture
+    depth: expert
+    summary: "AWS Lambda, DynamoDB, Step Functions, API Gateway, event-driven patterns. Turnaround architecture at Spire."
+    tags: [aws, event_driven, architecture]
+
+  - id: skill_grpc
+    name: "gRPC / Binary Protocols"
+    category: protocol
+    depth: expert
+    summary: "ConnectRPC, Protocol Buffers, binary tokenizers, wire protocol optimization. Core to Corewood and LandScope."
+    tags: [performance, protocols]
+
+  - id: skill_microservices
+    name: "Microservices Architecture"
+    category: architecture
+    depth: expert
+    summary: "Service decomposition, inter-service communication, API gateways, event-driven coordination."
+    tags: [architecture, distributed]
+
+  - id: skill_agile
+    name: "Agile / SDLC"
+    category: methodology
+    depth: proficient
+    summary: "SAFe, Scrum, sprint planning. Practiced across career while advocating for requirements-first augmentation."
+    tags: [process, methodology]
+
+  - id: skill_nosql
+    name: "NoSQL Databases"
+    category: tool
+    depth: proficient
+    summary: "DynamoDB, Redis, DGraph. Schema-less data stores for event-driven and graph-based systems."
+    tags: [databases, data]
+
+  - id: skill_git
+    name: "Git / Version Control"
+    category: tool
+    depth: expert
+    summary: "Git, GitHub. Branching strategies, code review workflows, monorepo and multi-repo patterns."
+    tags: [tooling, collaboration]
+
+  - id: skill_html_css
+    name: "HTML / CSS / Web Fundamentals"
+    category: language
+    depth: proficient
+    summary: "HTML, CSS, SCSS/LESS, Tailwind. Web standards, semantic markup, responsive design."
+    tags: [frontend, web]
+
+  - id: skill_excel_vba
+    name: "Excel / VBA"
+    category: tool
+    depth: proficient
+    summary: "Excel macros, VBA automation, COM add-ins, chart generation, data integration. Origin of automation instinct."
+    tags: [automation, early_career]
+
+  - id: skill_product_eng
+    name: "Product Engineering"
+    category: methodology
+    depth: proficient
+    summary: "Business use cases → product use cases → implementation. Cost/benefit analysis. Scope and planning."
+    tags: [product, strategy]
+
 
 # =============================================================================
 # INFLUENCES
@@ -1728,3 +1856,365 @@ edges:
     source: award_namlo
     target: proj_nepal_site
     story: "Built emergency donation site after 2015 Nepal earthquake. Organization raised record funding."
+
+  # ---------------------------------------------------------------------------
+  # NEW SKILLS → ROLE BACK-MAP
+  # ---------------------------------------------------------------------------
+
+  # --- CI/CD ---
+  - type: learned_at
+    source: skill_cicd
+    target: role_markit
+    story: "Deployment automation, project scaffolding. Consistent environment states."
+
+  - type: reinforced_by
+    source: skill_cicd
+    target: role_spire
+    story: "IaC and CI/CD for containerized and serverless apps."
+
+  - type: reinforced_by
+    source: skill_cicd
+    target: role_trimble_lead
+    story: "Deployment automation for legacy infrastructure capture."
+
+  - type: reinforced_by
+    source: skill_cicd
+    target: role_macroscope
+    story: "CloudFormation-based multi-environment deployments."
+
+  - type: reinforced_by
+    source: skill_cicd
+    target: role_uplight
+    story: "Shared CI/CD tooling with Terraform and CircleCI. BuildKite pipelines."
+
+  - type: reinforced_by
+    source: skill_cicd
+    target: role_corewood
+    story: "Container build pipelines, model packaging automation."
+
+  - type: reinforced_by
+    source: skill_cicd
+    target: role_landscope
+    story: "Automated deployments for containerized services."
+
+  # --- Cloud Security ---
+  - type: learned_at
+    source: skill_cloud_security
+    target: role_trimble_lead
+    story: "AWS IAM hardening, over-scoped permission reduction. Security as ops practice."
+
+  - type: reinforced_by
+    source: skill_cloud_security
+    target: role_trimble_arch
+    story: "GDPR compliance, custom CA, mTLS. Security architecture at enterprise scale."
+
+  - type: reinforced_by
+    source: skill_cloud_security
+    target: role_uplight
+    story: "OWASP, secure code review, pen testing, WAF configuration."
+
+  - type: reinforced_by
+    source: skill_cloud_security
+    target: role_corewood
+    story: "Privacy-by-design, HIPAA compliance, PII protection architecture."
+
+  - type: reinforced_by
+    source: skill_cloud_security
+    target: role_landscope
+    story: "Best-of-class auth, premium cloud infrastructure security."
+
+  # --- Networking ---
+  - type: learned_at
+    source: skill_networking
+    target: role_markit
+    story: "Load balancing, Nginx, TCP/IP fundamentals from production-analog local dev."
+
+  - type: reinforced_by
+    source: skill_networking
+    target: role_trimble_arch
+    story: "VPC design, cross-regional networking for GDPR."
+
+  - type: reinforced_by
+    source: skill_networking
+    target: role_uplight
+    story: "CloudFront, WAF, Lambda@Edge, API Gateway, VPC-bound proxies. Wire-level data plane."
+
+  - type: reinforced_by
+    source: skill_networking
+    target: role_corewood
+    story: "PostgreSQL wire protocol understanding for Masquer. Cloudflare Workers/CDN."
+
+  - type: reinforced_by
+    source: skill_networking
+    target: role_landscope
+    story: "Caddy routing, DigitalOcean Spaces CDN, gRPC transport."
+
+  # --- GCP ---
+  - type: learned_at
+    source: skill_gcp
+    target: role_uplight
+    story: "GKE for API governance. GCP VMs with GPUs for LLM hackathon. Multi-cloud Terraform."
+
+  # --- SRE ---
+  - type: learned_at
+    source: skill_sre
+    target: role_trimble_lead
+    story: "99.5% uptime, Datadog, PagerDuty, change management, post-incident RCA. First time owning SRE."
+
+  - type: reinforced_by
+    source: skill_sre
+    target: role_uplight
+    story: "Formal SRE title. K8s autoscaling, vendor management, system catalog, service readiness."
+
+  # --- Leadership ---
+  - type: learned_at
+    source: skill_leadership
+    target: role_spire
+    story: "First tech lead. 3-member team. Mentoring, architectural decision-making."
+
+  - type: reinforced_by
+    source: skill_leadership
+    target: role_trimble_lead
+    story: "Distributed team (US + India). Standards, training, process. 6,000+ users."
+
+  - type: reinforced_by
+    source: skill_leadership
+    target: role_trimble_arch
+    story: "Cross-division architecture. Driving strategic technology adoption."
+
+  - type: reinforced_by
+    source: skill_leadership
+    target: role_uplight
+    story: "Co-led beta launch. Presented at DevCon. Book club. Product/security guilds."
+
+  - type: reinforced_by
+    source: skill_leadership
+    target: role_corewood
+    story: "Founded company. Consulting leadership. Technical strategy for clients."
+
+  - type: reinforced_by
+    source: skill_leadership
+    target: role_landscope
+    story: "CTO. Business needs → technical results. Product direction."
+
+  # --- Frontend ---
+  - type: learned_at
+    source: skill_frontend
+    target: role_markit
+    story: "React frontends for financial platforms. Full-stack: SQL → API → React."
+
+  - type: reinforced_by
+    source: skill_frontend
+    target: role_cognizant
+    story: "Frontend architecture for supply chain prototype."
+
+  - type: reinforced_by
+    source: skill_frontend
+    target: role_element3
+    story: "React event handling standards for social platform."
+
+  - type: reinforced_by
+    source: skill_frontend
+    target: role_spire
+    story: "React admin dashboard for radio scheduling."
+
+  - type: reinforced_by
+    source: skill_frontend
+    target: role_corewood
+    story: "SvelteKit on Cloudflare Workers. React for client projects."
+
+  - type: reinforced_by
+    source: skill_frontend
+    target: role_landscope
+    story: "React + CesiumJS for 3D globe visualization."
+
+  # --- Linux ---
+  - type: learned_at
+    source: skill_linux
+    target: role_markit
+    story: "Self-taught via Docker and production-analog local dev. Container hosts, bash, file systems."
+
+  - type: reinforced_by
+    source: skill_linux
+    target: role_trimble_lead
+    story: "Production operations, systems administration."
+
+  - type: reinforced_by
+    source: skill_linux
+    target: role_corewood
+    story: "Container-native development. Linux as primary dev/deploy environment."
+
+  - type: reinforced_by
+    source: skill_linux
+    target: role_landscope
+    story: "DigitalOcean Ubuntu hosts, Caddy, containerized services."
+
+  # --- Data Pipelines ---
+  - type: learned_at
+    source: skill_data_pipelines
+    target: role_macroscope
+    story: "Dask, Prefect, Python executors. Data pipeline architecture for analysis team."
+
+  - type: reinforced_by
+    source: skill_data_pipelines
+    target: role_corewood
+    story: "ML data processing pipelines, tokenizer pipelines, embedding pipelines."
+
+  # --- Serverless ---
+  - type: learned_at
+    source: skill_serverless
+    target: role_spire
+    story: "Turned around behind-schedule project with Lambda + DynamoDB. Serverless as rescue architecture."
+
+  - type: reinforced_by
+    source: skill_serverless
+    target: role_trimble_arch
+    story: "Lambda + API Gateway + DynamoDB for IoT identity and invitation service."
+
+  - type: reinforced_by
+    source: skill_serverless
+    target: role_uplight
+    story: "Lambda, Step Functions, DynamoDB for API governance engine. Event-driven control plane."
+
+  - type: reinforced_by
+    source: skill_serverless
+    target: role_corewood
+    story: "Cloudflare Workers for marketing platforms. Serverless edge computing."
+
+  # --- gRPC / Binary Protocols ---
+  - type: learned_at
+    source: skill_grpc
+    target: role_corewood
+    story: "ConnectRPC, Protocol Buffers, binary tokenizer format. Wire protocol optimization."
+
+  - type: reinforced_by
+    source: skill_grpc
+    target: role_landscope
+    story: "gRPC APIs for terrain analysis. Binary transport for geospatial data."
+
+  # --- Microservices ---
+  - type: learned_at
+    source: skill_microservices
+    target: role_cognizant
+    story: "Supply chain prototype: multi-service containerized architecture."
+
+  - type: reinforced_by
+    source: skill_microservices
+    target: role_spire
+    story: "IAM solution for microservices ecosystem."
+
+  - type: reinforced_by
+    source: skill_microservices
+    target: role_trimble_arch
+    story: "Unified identity across multiple engineering divisions and services."
+
+  - type: reinforced_by
+    source: skill_microservices
+    target: role_uplight
+    story: "50+ services behind unified API data plane."
+
+  # --- Agile / SDLC ---
+  - type: learned_at
+    source: skill_agile
+    target: role_markit
+    story: "Agile feature teams. Sprint planning. QA metrics."
+
+  - type: reinforced_by
+    source: skill_agile
+    target: role_cognizant
+    story: "SAFe/Scrum ceremonies, pair programming."
+
+  - type: reinforced_by
+    source: skill_agile
+    target: role_spire
+    story: "Scrum ceremonies, design/product collaboration."
+
+  - type: reinforced_by
+    source: skill_agile
+    target: role_uplight
+    story: "SDLC practices while advocating requirements-first augmentation."
+
+  # --- NoSQL ---
+  - type: learned_at
+    source: skill_nosql
+    target: role_spire
+    story: "DynamoDB for serverless architecture. First significant NoSQL use."
+
+  - type: reinforced_by
+    source: skill_nosql
+    target: role_trimble_arch
+    story: "DynamoDB for IoT identity state management."
+
+  - type: reinforced_by
+    source: skill_nosql
+    target: role_uplight
+    story: "DynamoDB for API governance state. Redis caching."
+
+  - type: reinforced_by
+    source: skill_nosql
+    target: role_corewood
+    story: "DGraph (graph NoSQL), Qdrant (vector store) for RAG system."
+
+  # --- Git ---
+  - type: learned_at
+    source: skill_git
+    target: role_tracegains
+    story: "First version control in professional context."
+
+  - type: reinforced_by
+    source: skill_git
+    target: role_markit
+    story: "Code review workflows, branching strategies."
+
+  - type: reinforced_by
+    source: skill_git
+    target: role_uplight
+    story: "Multi-repo governance, Backstage service catalogs, automated repo scans."
+
+  # --- HTML/CSS ---
+  - type: learned_at
+    source: skill_html_css
+    target: role_markit
+    story: "Full-stack: built through to frontend. React components, HTML/CSS."
+
+  - type: reinforced_by
+    source: skill_html_css
+    target: role_corewood
+    story: "SvelteKit, Tailwind CSS for marketing sites and client projects."
+
+  - type: reinforced_by
+    source: skill_html_css
+    target: role_landscope
+    story: "CesiumJS UI, Tailwind, responsive geospatial interface."
+
+  # --- Excel / VBA ---
+  - type: learned_at
+    source: skill_excel_vba
+    target: role_mhcd
+    story: "Medication inventory spreadsheets. Substance tracking charts. First structured data work."
+
+  - type: reinforced_by
+    source: skill_excel_vba
+    target: role_apex
+    story: "Excel macros for chart automation, multi-format export. Saved thousands of man-hours."
+
+  - type: reinforced_by
+    source: skill_excel_vba
+    target: role_tracegains
+    story: "COM add-ins for Excel. Excel-to-database automation via web services."
+
+  # --- Product Engineering ---
+  - type: learned_at
+    source: skill_product_eng
+    target: role_uplight
+    story: "Business use case and product use case analysis. Cost/benefit. Scope and planning for API governance."
+
+  - type: reinforced_by
+    source: skill_product_eng
+    target: role_corewood
+    story: "Consulting: mapping client business needs to technical solutions."
+
+  - type: reinforced_by
+    source: skill_product_eng
+    target: role_landscope
+    story: "CTO: understanding business needs and marrying them to technical results."
