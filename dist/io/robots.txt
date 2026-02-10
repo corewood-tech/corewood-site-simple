@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 Disallow: /schedule-meeting/
+Disallow: /masquer/
 
 # Sitemap
 Sitemap: https://corewood.io/sitemap.xml

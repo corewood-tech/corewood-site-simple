@@ -1,108 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://corewood.cloud/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://corewood.cloud/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://corewood.cloud/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://corewood.cloud/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://corewood.cloud/profile/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://corewood.cloud/profile/landscope/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://corewood.cloud/profile/masquer/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://corewood.cloud/profile/llm-apis/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://corewood.cloud/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://corewood.io/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://corewood.io/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://corewood.io/about/mickey/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corewood.io/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://corewood.io/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://corewood.io/profile/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://corewood.io/profile/landscope/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corewood.io/profile/masquer/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corewood.io/profile/llm-apis/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corewood.io/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   
   <url>
-    <loc>https://corewood.cloud/blog/precarious-infrastructure/</loc>
+    <loc>https://corewood.io/blog/precarious-infrastructure/</loc>
     <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/llm-context-synthesis/</loc>
+    <loc>https://corewood.io/blog/llm-context-synthesis/</loc>
     <lastmod>2025-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/product-engineering/</loc>
+    <loc>https://corewood.io/blog/product-engineering/</loc>
     <lastmod>2025-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/unix-philosophy-ai/</loc>
+    <loc>https://corewood.io/blog/unix-philosophy-ai/</loc>
     <lastmod>2025-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/json-to-binary-deberta-tokenizer/</loc>
+    <loc>https://corewood.io/blog/json-to-binary-deberta-tokenizer/</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/great-data-privacy-divide/</loc>
+    <loc>https://corewood.io/blog/great-data-privacy-divide/</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/healthcare-privacy-paradox/</loc>
+    <loc>https://corewood.io/blog/healthcare-privacy-paradox/</loc>
     <lastmod>2025-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/data-compliance-reality/</loc>
+    <loc>https://corewood.io/blog/data-compliance-reality/</loc>
     <lastmod>2025-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/so-you-want-to-build/</loc>
+    <loc>https://corewood.io/blog/so-you-want-to-build/</loc>
     <lastmod>2025-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/unsustainable-economics-ai/</loc>
+    <loc>https://corewood.io/blog/unsustainable-economics-ai/</loc>
     <lastmod>2025-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/beyond-the-model/</loc>
+    <loc>https://corewood.io/blog/beyond-the-model/</loc>
     <lastmod>2025-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/ai-on-prem/</loc>
+    <loc>https://corewood.io/blog/ai-on-prem/</loc>
     <lastmod>2025-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/ai-hype-failing/</loc>
+    <loc>https://corewood.io/blog/ai-hype-failing/</loc>
     <lastmod>2025-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://corewood.cloud/blog/roi-beyond-the-demo/</loc>
+    <loc>https://corewood.io/blog/roi-beyond-the-demo/</loc>
     <lastmod>2025-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
