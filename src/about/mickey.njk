@@ -12,9 +12,9 @@ permalink: /about/mickey/
 
   {# ── Header + intro ── #}
   <div class="max-w-6xl mx-auto px-6 mb-8">
-    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-4">Mickey's Technical Background</h1>
+    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-4">Mickey's Technical Credentials</h1>
     <p class="text-cream-400 text-lg">
-      Resumes list skills. This shows you what we do and the context we learned it.
+      You don't spend 15 years solving hard problems without picking up a few tips and tricks.
     </p>
   </div>
 
@@ -95,120 +95,42 @@ permalink: /about/mickey/
         {# ── SVG graph container ── #}
         <svg id="graph-svg" class="w-full h-full"></svg>
 
-        {# Legend merged into filter panel above #}
-
-        {# ── Detail panel — right side (desktop) / bottom sheet (mobile) ── #}
+        {# ── Popup — click a node to show, click scrim or X to close ── #}
         <div
-          id="detail-panel"
-          class="graph-detail-panel absolute z-30 bg-forest-900/95 border-l border-cream-100/10 overflow-y-auto"
-          :class="selectedNode ? 'open' : ''"
+          class="fixed inset-0 z-50 flex items-center justify-center p-4"
           x-show="selectedNode"
           x-cloak
-          x-transition:enter="transition ease-out duration-300"
-          x-transition:enter-start="translate-x-full md:translate-x-full translate-y-full md:translate-y-0"
-          x-transition:enter-end="translate-x-0 translate-y-0"
-          x-transition:leave="transition ease-in duration-200"
-          x-transition:leave-start="translate-x-0 translate-y-0"
-          x-transition:leave-end="translate-x-full md:translate-x-full translate-y-full md:translate-y-0"
-          style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
         >
-          <template x-if="selectedNode">
-            <div class="p-5 md:p-6">
-              {# Close button #}
-              <button @click="deselectNode()" class="absolute top-3 right-3 text-cream-600 hover:text-cream-200 transition-colors cursor-pointer">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              </button>
-
-              {# Type badge #}
-              <div class="flex items-center gap-2 mb-3">
-                <span class="text-[10px] uppercase tracking-widest font-medium px-2 py-0.5 rounded"
-                      :style="'background:' + getNodeColor(selectedNode.type) + '33; color:' + getNodeColor(selectedNode.type)">
-                  <span x-text="selectedNode.type"></span>
-                </span>
+          {# Scrim #}
+          <div class="absolute inset-0 bg-black/40"
+               x-show="selectedNode"
+               x-transition:enter="transition ease-out duration-200"
+               x-transition:enter-start="opacity-0"
+               x-transition:enter-end="opacity-100"
+               x-transition:leave="transition ease-in duration-150"
+               x-transition:leave-start="opacity-100"
+               x-transition:leave-end="opacity-0"
+               @click="deselectNode()"></div>
+          {# Card #}
+          <div class="relative w-full max-w-md max-h-[70vh] overflow-y-auto rounded-xl bg-forest-900/95 border border-cream-100/10"
+               x-show="selectedNode"
+               x-transition:enter="transition ease-out duration-200"
+               x-transition:enter-start="opacity-0 scale-95"
+               x-transition:enter-end="opacity-100 scale-100"
+               x-transition:leave="transition ease-in duration-150"
+               x-transition:leave-start="opacity-100 scale-100"
+               x-transition:leave-end="opacity-0 scale-95"
+               style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
+               @click.stop>
+            <template x-if="selectedNode">
+              <div class="p-5 md:p-6">
+                <button @click="deselectNode()" class="absolute top-3 right-3 text-cream-600 hover:text-cream-200 transition-colors cursor-pointer z-10">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                {% include "components/graph-node-detail.njk" %}
               </div>
-
-              {# Name #}
-              <h2 class="font-display text-lg md:text-xl text-cream-100 mb-1 pr-6" x-text="selectedNode.name"></h2>
-
-              {# Organization / Institution #}
-              <p class="text-cream-500 text-sm mb-3"
-                 x-show="selectedNode.organization || selectedNode.institution"
-                 x-text="selectedNode.organization || selectedNode.institution"></p>
-
-              {# Timeframe #}
-              <p class="text-cream-600 text-xs mb-4"
-                 x-show="selectedNode.start || selectedNode.timeframe"
-                 x-text="selectedNode.start ? (selectedNode.start + ' — ' + (selectedNode.end || 'present')) : selectedNode.timeframe"></p>
-
-              {# Summary / Statement #}
-              <p class="text-cream-300 text-sm leading-relaxed mb-4"
-                 x-text="selectedNode.summary || selectedNode.statement || selectedNode.relevance || ''"></p>
-
-              {# Origin story (philosophies) #}
-              <template x-if="selectedNode.origin_story">
-                <div class="mb-4">
-                  <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-1">Origin</p>
-                  <p class="text-cream-400 text-sm leading-relaxed italic" x-text="selectedNode.origin_story"></p>
-                </div>
-              </template>
-
-              {# Technical detail (projects) #}
-              <template x-if="selectedNode.technical_detail">
-                <div class="mb-4">
-                  <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-1">Technical Detail</p>
-                  <p class="text-cream-400 text-sm leading-relaxed" x-text="selectedNode.technical_detail"></p>
-                </div>
-              </template>
-
-              {# Impact (projects) #}
-              <template x-if="selectedNode.impact">
-                <div class="mb-4">
-                  <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-1">Impact</p>
-                  <p class="text-cream-400 text-sm leading-relaxed" x-text="selectedNode.impact"></p>
-                </div>
-              </template>
-
-              {# Highlights (roles) #}
-              <template x-if="selectedNode.highlights && selectedNode.highlights.length">
-                <div class="mb-4">
-                  <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-2">Highlights</p>
-                  <ul class="space-y-1.5">
-                    <template x-for="h in selectedNode.highlights" :key="h">
-                      <li class="text-cream-400 text-sm leading-relaxed flex gap-2">
-                        <span class="text-morpho-500 mt-1.5 flex-shrink-0">&#x2022;</span>
-                        <span x-text="h"></span>
-                      </li>
-                    </template>
-                  </ul>
-                </div>
-              </template>
-
-              {# Connections #}
-              <template x-if="connectedEdges.length > 0">
-                <div class="border-t border-cream-100/8 pt-4 mt-4">
-                  <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-3">Connections</p>
-                  <div class="space-y-2">
-                    <template x-for="edge in connectedEdges" :key="edge.source + '-' + edge.target + '-' + edge.type">
-                      <button
-                        class="w-full text-left flex items-start gap-2 group cursor-pointer hover:bg-cream-100/5 rounded px-2 py-1.5 -mx-2 transition-colors"
-                        @click="navigateToNode(edge.otherId)"
-                      >
-                        <span class="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
-                              :style="'background:' + getNodeColor(edge.otherType)"></span>
-                        <div class="min-w-0">
-                          <span class="text-cream-300 text-sm group-hover:text-morpho-400 transition-colors block truncate" x-text="edge.otherName"></span>
-                          <span class="text-cream-700 text-[10px]" x-text="formatEdgeType(edge.type, edge.direction)"></span>
-                          <template x-if="edge.story || edge.mechanism || edge.reasoning">
-                            <p class="text-cream-600 text-[11px] leading-snug mt-0.5 line-clamp-2" x-text="edge.story || edge.mechanism || edge.reasoning"></p>
-                          </template>
-                        </div>
-                      </button>
-                    </template>
-                  </div>
-                </div>
-              </template>
-            </div>
-          </template>
+            </template>
+          </div>
         </div>
 
       </div>{# /.plate #}
@@ -216,7 +138,7 @@ permalink: /about/mickey/
   </div>
 
   {# Instruction hint #}
-  <p class="text-center text-cream-700 text-xs mt-4" x-show="!selectedNode">
+  <p class="text-center text-cream-700 text-xs mt-4">
     Click a node to explore &mdash; drag to rearrange &mdash; scroll to zoom
   </p>
 

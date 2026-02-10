@@ -218,12 +218,14 @@ roles:
     start: "2022-02"
     end: "2023-01"
     type: employment
-    summary: "Founding infrastructure. Multi-environment SaaS from scratch on AWS."
+    summary: "Founding infrastructure. Multi-environment SaaS from scratch on AWS. Two planes: Go for API/identity/business logic, Python for data pipelines."
     highlights:
       - "Built foundational SaaS infrastructure with CloudFormation"
+      - "Go API and business logic plane with identity integration"
+      - "Self-hosted FusionAuth (OAuth2/OIDC) — Go integration layer"
       - "Data pipeline architecture: Dask, Prefect, Python executors"
       - "Self-hosted job execution: Fargate, VPCs, PostgreSQL"
-      - "Self-hosted FusionAuth (OAuth2/OIDC), Retool, SuperBlocks"
+      - "Self-hosted Retool, SuperBlocks"
       - "Centralized secret management, CloudFront asset delivery"
       - "Rapid prototyping: CloudFront → API Gateway → Lambda → PostgreSQL"
     tags: [infrastructure, aws, saas, data_pipelines, startup]
@@ -272,6 +274,7 @@ roles:
       - "RAG: DGraph + Qdrant + eigenvector-based semantic search"
       - "6 production websites, 4 working products in 12 months"
       - "Cloudflare Workers marketing platforms (SvelteKit + D1)"
+      - "Uplevers: 'batteries included' marketing site platform — 5 client sites on same stack (Simbiotica, Nuna Yoga, Kauri Lights, Fresh Aire Network, Mold Proofing Experts)"
     tags: [ml_infrastructure, golang, privacy, rag, founder, consulting]
 
   - id: role_landscope
@@ -281,7 +284,7 @@ roles:
     start: "2025-07"
     end: "present"
     type: employment
-    summary: "Geospatial platform. 3D visualization. Terrain analysis accessible without GIS expertise."
+    summary: "Fractional CTO. Geospatial platform. 3D visualization. Terrain analysis accessible without GIS expertise. Origin: tried to sell LandScope on Corewood services, got pushback — no browser product. Built CesiumJS 3D map in a weekend. Got invited to be CTO."
     highlights:
       - "2,000-acre analysis in under 20 minutes"
       - "10+ analysis layers: elevation, slope, aspect, hydrology, geomorphon, contours"
@@ -305,7 +308,7 @@ skills:
     name: "Go"
     category: language
     depth: expert
-    summary: "Primary systems language. Custom tensor ops, CGo bindings, binary protocols, inference APIs."
+    summary: "Interested since ~2016 — arch-specific binary distributable, no runtime, no dependency chain. Scripts/tooling for years. First full professional use at Macroscope (API/identity plane). Now primary language: tensor ops, CGo bindings, binary protocols, inference APIs."
     tags: [systems, performance, ml]
 
   - id: skill_typescript
@@ -587,6 +590,13 @@ skills:
     summary: "Business use cases → product use cases → implementation. Cost/benefit analysis. Scope and planning."
     tags: [product, strategy]
 
+  - id: skill_cpp_gpu
+    name: "C++ / GPU Kernel Development"
+    category: language
+    depth: practicing
+    summary: "Custom CUDA kernels for KV cache optimization and prefill timing experiments. Entered through llama.cpp CGo bindings → sticky GPU sessions → KV cache research."
+    tags: [systems, performance, gpu, ml]
+
 
 # =============================================================================
 # INFLUENCES
@@ -638,6 +648,12 @@ influences:
     timeframe: "~2017-onward"
     summary: "Dependency rule. System shape reflects intent, not frameworks. Single-directional dependencies."
 
+  - id: inf_google_sre
+    name: "Site Reliability Engineering (Google)"
+    type: book
+    timeframe: "~2023-onward"
+    summary: "SRE handbook. Error budgets, SLOs, toil reduction, incident management. Read in Uplight book club alongside Thinking in Systems."
+
   # --- Self-directed ---
   - id: inf_malware_forums
     name: "Security Forums (MalwareBytes)"
@@ -686,16 +702,16 @@ projects:
     name: "Masquer"
     role_id: role_corewood
     summary: "Zero-copy PII detection and masking database proxy"
-    technical_detail: "ML-powered (DeBERTa/ONNX), transparent PostgreSQL wire protocol proxy, deterministic tokenization, format-preserving replacements"
-    impact: "HIPAA compliance without application code changes. 98.48% accuracy."
+    technical_detail: "ML-powered (DeBERTa/ONNX), transparent PostgreSQL wire protocol proxy, deterministic tokenization, format-preserving replacements. Origin: Kyle was basement-hacking PII detection tooling and advertising it. A friend called — their org had the problem. Client said PII issues were in databases, not files/freeform text. That constraint pointed at the wire protocol: intercept between app and DB, detect and mask in transit. 'Zero code changes' wasn't a design philosophy first — it was the practical answer to 'we can't rewrite every app that touches the database.'"
+    impact: "HIPAA compliance without application code changes. 98.48% accuracy. Contract-driven product."
     tags: [pii, privacy, ml, database_proxy, hipaa]
 
   - id: proj_tensor_ops
     name: "Custom Go Tensor Operations"
     role_id: role_corewood
     summary: "Hand-rolled tensor ops replacing PyTorch for inference"
-    technical_detail: "Arena-allocated, ONNX data types, task-specific (no autograd). 10-17x over Python, 14.5x less memory."
-    impact: "CPU-only inference at 715 tokens/sec on consumer hardware"
+    technical_detail: "Arena-allocated, ONNX data types, task-specific (no autograd). 10-17x over Python, 14.5x less memory. Benchmarked: containerized side-by-side, same workload — PyTorch + HuggingFace tokenizer vs Go. 715 tokens/sec CPU-only on MacBook M4 Pro running Piihrana PII model (280M param DeBERTa)."
+    impact: "CPU-only inference at production speed on consumer hardware."
     tags: [ml, performance, golang]
 
   - id: proj_binary_tokenizer
@@ -710,23 +726,32 @@ projects:
     name: "Go Inference API"
     role_id: role_corewood
     summary: "Production inference server with 2 direct dependencies"
-    technical_detail: "ONNX runtime via CGo, session pooling, 512-token slicing. llama.cpp bindings for LLMs."
+    technical_detail: "ONNX runtime via CGo, session pooling, 512-token slicing with overlap. Serves smaller NLP models."
     impact: "123,363 tokens/min on CPU. 20MB vs 2GB Python equivalent."
     tags: [ml, api, golang]
+
+  - id: proj_llama_kvcache
+    name: "llama.cpp Bindings → KV Cache Research"
+    role_id: role_corewood
+    timeframe: "2025-04-onward"
+    summary: "Started by trying LLM for NLP tasks via llama.cpp CGo bindings. Discovered sticky API-GPU sessions → realized that's the KV cache → now writing custom C++ GPU kernels for KV cache optimization and prefill timing."
+    technical_detail: "llama.cpp CGo bindings with METAL and CUDA support. Custom C++ CUDA kernels. KV cache lifecycle research. Prefill timing optimization."
+    impact: "Active research into inference optimization at the GPU kernel level."
+    tags: [ml, gpu, cpp, llm, research, performance]
 
   - id: proj_api_governance
     name: "API Governance Platform"
     role_id: role_uplight
     summary: "Event-based API governance for enterprise developer platform"
-    technical_detail: "Event-driven config, consolidated data plane (WAF, CloudFront, API Gateway, OPA). Lambda, Step Functions, DynamoDB."
-    impact: "12 weeks → 2 days. Zero bugs at launch. Passed pen testing."
-    tags: [api, governance, aws, event_driven]
+    technical_detail: "Event-driven config, consolidated data plane (WAF, CloudFront, Lambda@Edge, API Gateway, OPA in Go, VPC-bound proxy). Lambda, Step Functions, DynamoDB. Co-led: Kyle owned technical architecture, partner ran org/business ground game with other engineering teams. Senior engineer on the back line. The 12-week deployment bottleneck was fundamentally a developer experience problem the org hadn't recognized — Kyle reframed it."
+    impact: "12 weeks → 2 days. No functional blockers at launch. Passed pen testing. Requirements-first approach caught issues before code."
+    tags: [api, governance, aws, event_driven, devex]
 
   - id: proj_iot_identity
     name: "IoT Identity Platform"
     role_id: role_trimble_arch
     summary: "GDPR-compliant mTLS for 100K+ construction devices"
-    technical_detail: "mTLS → API Gateway → DynamoDB → JWT. Custom CA. Cross-continental GDPR."
+    technical_detail: "mTLS direction given; implementation was Kyle's. Evaluated AWS Private CA (too expensive), OSS alternatives, settled on roll-your-own in DynamoDB — using cert like a bearer credential. mTLS → API Gateway → DynamoDB → JWT."
     impact: "Unified fragmented enterprise identity."
     tags: [identity, iot, mtls, gdpr]
 
@@ -781,10 +806,10 @@ projects:
   - id: proj_rag_system
     name: "RAG System"
     role_id: role_corewood
-    summary: "Graph + vector retrieval with identity-aware authorization"
-    technical_detail: "DGraph + Qdrant. Eigenvector-based semantic search. Policy-enforced retrieval."
-    impact: "Enterprise knowledge retrieval with auth controls"
-    tags: [rag, graph_db, vector_search, identity]
+    summary: "Graph + vector retrieval with identity-aware authorization. Born from directory service concept — multilingual semantic search."
+    technical_detail: "DGraph + Qdrant. Multilingual embeddings for cross-language similarity search. Policy-enforced retrieval. Eigenvector-based semantic search (Laplacian graphs) is a more recent addition."
+    impact: "Enterprise knowledge retrieval with authorization controls and multilingual support."
+    tags: [rag, graph_db, vector_search, identity, multilingual]
 
   - id: proj_uplight_llm
     name: "Internal LLM Knowledge Base"
@@ -797,18 +822,18 @@ projects:
   - id: proj_gdpr_portability
     name: "GDPR Data Portability Service"
     role_id: role_trimble_arch
-    summary: "Geo-isolated, globally integrated data transfer with encryption"
-    technical_detail: "Cross-region data portability with secure encryption. Purpose-built to handle GDPR data residency requirements."
+    summary: "Kyle-initiated: geo-isolated, globally integrated data transfer with encryption"
+    technical_detail: "Identified GDPR-compliant login + bot control (hCaptcha) as unaddressed need. Designed geo-isolated architecture with secure encryption for cross-region data portability. Proposed and got greenlight from manager."
     impact: "Enabled compliant data processing across continents for Fortune 1000 enterprise."
     tags: [gdpr, security, distributed, identity]
 
   - id: proj_invitation_service
     name: "Invitation Service"
     role_id: role_trimble_arch
-    summary: "Webhook-driven async user onboarding system"
-    technical_detail: "Webhooks + DynamoDB + Lambda + API Gateway. Internal products invite end users; notified on acceptance."
-    impact: "Standardized user onboarding across Trimble's internal platform."
-    tags: [aws, serverless, identity, async]
+    summary: "Webhook-driven async user onboarding — designed to work around PII constraints"
+    technical_detail: "No 'add user' API existed and PII concerns prevented building one directly. Kyle designed webhook-driven invitation flow: internal products invite users, system notifies on acceptance. DynamoDB + Lambda + API Gateway."
+    impact: "Standardized user onboarding across Trimble's internal platform without exposing PII."
+    tags: [aws, serverless, identity, async, privacy]
 
   - id: proj_otel_collector
     name: "OpenTelemetry Collector"
@@ -820,16 +845,20 @@ projects:
 
   - id: proj_banking_integration
     name: "Banking Integration & Reporting System"
-    role_id: role_corewood
-    summary: "Contract: automated financial reporting with third-party integrations"
+    role_id: null
+    type: contract
+    timeframe: "2018"
+    summary: "Contract (pre-Spire): automated financial reporting with third-party integrations"
     technical_detail: "Plaid, SendGrid, Swagger/OpenAPI, TypeScript, Express, Node. Monthly automated CSV reports."
     impact: "Automated monthly financial reporting for client."
     tags: [typescript, api, contract, finance]
 
   - id: proj_crypto_ticketing
     name: "Serverless Crypto Conference Ticketing"
-    role_id: role_corewood
-    summary: "Contract: serverless API for credit card and cryptocurrency transactions"
+    role_id: role_spire
+    type: contract
+    timeframe: "2019"
+    summary: "Contract (during Spire): serverless API for credit card and cryptocurrency transactions"
     technical_detail: "SquareSpace integration, Stripe, Globee (crypto), SendGrid. Open source with client permission."
     impact: "Processed both fiat and crypto payments for conference."
     tags: [serverless, contract, open_source]
@@ -852,11 +881,20 @@ projects:
 
   - id: proj_nepal_site
     name: "Nepal Earthquake Donation Site"
-    role_id: role_corewood
+    role_id: role_tracegains
+    type: volunteer
     summary: "Volunteer: emergency donation site for Namlo.org after 2015 Nepal earthquake"
-    technical_detail: "Earthquake statistics, donation requests, Stripe/PayPal/Colorado Gives integration. Built quickly in response to crisis."
-    impact: "Organization raised record funding. Received Tech Enablement Appreciation award."
-    tags: [volunteer, social_impact, stripe, paypal]
+    technical_detail: "Namlo had an existing site but no ability to update/maintain it. Kyle built the fundraising infrastructure into the existing site: Stripe, PayPal, Colorado Gives integrations, earthquake statistics, donation flow. Built while seeking web dev opportunities to build portfolio for full-time engineering career."
+    impact: "Organization raised record funding. Demonstrated ability to ship under pressure. Helped land Markit role 3 months later."
+    tags: [volunteer, social_impact, stripe, paypal, career_inflection]
+
+  - id: proj_uplevers
+    name: "Uplevers Marketing Platform"
+    role_id: role_corewood
+    summary: "'Batteries included' marketing site platform on Cloudflare Workers"
+    technical_detail: "SvelteKit + Cloudflare Workers + D1 (SQLite at edge). Repeatable platform: deploy a full marketing site with CMS, analytics, forms. 5 client sites: Simbiotica, Nuna Yoga, Kauri Lights, Fresh Aire Network, Mold Proofing Experts."
+    impact: "6 production sites on same stack. Productized offering for small businesses."
+    tags: [svelte, cloudflare, d1, marketing, platform, product]
 
 
 # =============================================================================
@@ -1188,8 +1226,18 @@ edges:
   # Go
   - type: learned_at
     source: skill_go
+    target: role_macroscope
+    story: "Tutorial in 2016 (Markit era), scripts for years, but Macroscope was first full professional Go — API plane, identity integration, business logic."
+
+  - type: reinforced_by
+    source: skill_go
+    target: role_uplight
+    story: "OPA authorizer in Go for API governance Lambda@Edge."
+
+  - type: reinforced_by
+    source: skill_go
     target: role_corewood
-    story: "Interest from Markit era, lurked for years. Corewood was the right context to go all-in."
+    story: "All-in: custom tensor ops, CGo bindings, binary protocols, inference APIs. Go as primary language."
 
   - type: reinforced_by
     source: skill_go
@@ -1857,6 +1905,11 @@ edges:
     target: proj_nepal_site
     story: "Built emergency donation site after 2015 Nepal earthquake. Organization raised record funding."
 
+  - type: enabled
+    source: proj_nepal_site
+    target: role_markit
+    mechanism: "Portfolio piece that demonstrated full-stack web dev capability. Helped make the jump from implementation specialist to software engineer."
+
   # ---------------------------------------------------------------------------
   # NEW SKILLS → ROLE BACK-MAP
   # ---------------------------------------------------------------------------
@@ -2218,3 +2271,52 @@ edges:
     source: skill_product_eng
     target: role_landscope
     story: "CTO: understanding business needs and marrying them to technical results."
+
+  # --- C++ / GPU Kernels ---
+  - type: learned_at
+    source: skill_cpp_gpu
+    target: role_corewood
+    story: "Entered through llama.cpp CGo bindings → sticky GPU sessions → KV cache → custom CUDA kernels. Self-directed research."
+
+  # --- llama/KV Cache project ---
+  - type: applied_at
+    source: skill_go
+    target: proj_llama_kvcache
+    story: "CGo bindings bridging Go to llama.cpp C API."
+
+  - type: applied_at
+    source: skill_cpp_gpu
+    target: proj_llama_kvcache
+    story: "Custom C++ CUDA kernels for KV cache optimization and prefill timing."
+
+  - type: applied_at
+    source: phil_space_between
+    target: proj_llama_kvcache
+    story: "KV cache IS the space between — the handoff between prefill and decode, the lifecycle of attention state on the GPU."
+
+  # --- Uplevers ---
+  - type: applied_at
+    source: skill_typescript
+    target: proj_uplevers
+    story: "SvelteKit on Cloudflare Workers. TypeScript end-to-end."
+
+  - type: applied_at
+    source: skill_html_css
+    target: proj_uplevers
+    story: "Tailwind CSS, responsive design, marketing site UI."
+
+  - type: applied_at
+    source: phil_scope_discipline
+    target: proj_uplevers
+    story: "Batteries included means knowing what to include and what to cut. Repeatable stack, not custom everything."
+
+  # --- Google SRE Book ---
+  - type: shaped_by
+    source: skill_sre
+    target: inf_google_sre
+    story: "Error budgets, SLOs, toil reduction. Formalized SRE thinking Kyle was already practicing from Trimble ops."
+
+  - type: reinforced_by
+    source: inf_thinking_in_systems
+    target: role_uplight
+    story: "Read in Uplight book club Kyle facilitated. Systems thinking applied to distributed observability and API governance."

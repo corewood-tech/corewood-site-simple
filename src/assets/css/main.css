@@ -484,30 +484,6 @@ img[loading="lazy"].loaded {
   transition: stroke 0.2s, stroke-width 0.2s;
 }
 
-/* Detail panel — desktop: right side, mobile: bottom sheet */
-/* Inset past rivets (rivets at 24px, content inside rivet boundary) */
-.graph-detail-panel {
-  top: 40px;
-  right: 40px;
-  bottom: 40px;
-  width: 320px;
-  border-radius: 8px;
-}
-
-@media (max-width: 767px) {
-  .graph-detail-panel {
-    top: auto;
-    left: 16px;
-    right: 16px;
-    bottom: 40px;
-    width: auto;
-    max-height: 50vh;
-    border-left: none;
-    border-top: 1px solid rgba(245, 240, 230, 0.1);
-    border-radius: 12px 12px 8px 8px;
-  }
-}
-
 /* ─── Reduce motion ─── */
 @media (prefers-reduced-motion: reduce) {
   .ticker-column,

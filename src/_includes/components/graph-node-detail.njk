@@ -1,0 +1,88 @@
+{# Type badge #}
+<div class="flex items-center gap-2 mb-3">
+  <span class="text-[10px] uppercase tracking-widest font-medium px-2 py-0.5 rounded"
+        :style="'background:' + getNodeColor(selectedNode.type) + '33; color:' + getNodeColor(selectedNode.type)">
+    <span x-text="selectedNode.type"></span>
+  </span>
+</div>
+
+{# Name #}
+<h2 class="font-display text-lg md:text-xl text-cream-100 mb-1 pr-6" x-text="selectedNode.name"></h2>
+
+{# Organization / Institution #}
+<p class="text-cream-500 text-sm mb-3"
+   x-show="selectedNode.organization || selectedNode.institution"
+   x-text="selectedNode.organization || selectedNode.institution"></p>
+
+{# Timeframe #}
+<p class="text-cream-600 text-xs mb-4"
+   x-show="selectedNode.start || selectedNode.timeframe"
+   x-text="selectedNode.start ? (selectedNode.start + ' — ' + (selectedNode.end || 'present')) : selectedNode.timeframe"></p>
+
+{# Summary / Statement #}
+<p class="text-cream-300 text-sm leading-relaxed mb-4"
+   x-text="selectedNode.summary || selectedNode.statement || selectedNode.relevance || ''"></p>
+
+{# Origin story (philosophies) #}
+<template x-if="selectedNode.origin_story">
+  <div class="mb-4">
+    <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-1">Origin</p>
+    <p class="text-cream-400 text-sm leading-relaxed italic" x-text="selectedNode.origin_story"></p>
+  </div>
+</template>
+
+{# Technical detail (projects) #}
+<template x-if="selectedNode.technical_detail">
+  <div class="mb-4">
+    <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-1">Technical Detail</p>
+    <p class="text-cream-400 text-sm leading-relaxed" x-text="selectedNode.technical_detail"></p>
+  </div>
+</template>
+
+{# Impact (projects) #}
+<template x-if="selectedNode.impact">
+  <div class="mb-4">
+    <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-1">Impact</p>
+    <p class="text-cream-400 text-sm leading-relaxed" x-text="selectedNode.impact"></p>
+  </div>
+</template>
+
+{# Highlights (roles) #}
+<template x-if="selectedNode.highlights && selectedNode.highlights.length">
+  <div class="mb-4">
+    <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-2">Highlights</p>
+    <ul class="space-y-1.5">
+      <template x-for="h in selectedNode.highlights" :key="h">
+        <li class="text-cream-400 text-sm leading-relaxed flex gap-2">
+          <span class="text-morpho-500 mt-1.5 flex-shrink-0">&#x2022;</span>
+          <span x-text="h"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</template>
+
+{# Connections #}
+<template x-if="connectedEdges.length > 0">
+  <div class="border-t border-cream-100/8 pt-4 mt-4">
+    <p class="text-cream-600 text-[10px] uppercase tracking-wider mb-3">Connections</p>
+    <div class="space-y-2">
+      <template x-for="edge in connectedEdges" :key="edge.source + '-' + edge.target + '-' + edge.type">
+        <button
+          class="w-full text-left flex items-start gap-2 group cursor-pointer hover:bg-cream-100/5 rounded px-2 py-1.5 -mx-2 transition-colors"
+          @click="navigateToNode(edge.otherId)"
+        >
+          <span class="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
+                :style="'background:' + getNodeColor(edge.otherType)"></span>
+          <div class="min-w-0">
+            <span class="text-cream-300 text-sm group-hover:text-morpho-400 transition-colors block truncate" x-text="edge.otherName"></span>
+            <span class="text-cream-700 text-[10px]" x-text="formatEdgeType(edge.type, edge.direction)"></span>
+            <template x-if="edge.story || edge.mechanism || edge.reasoning">
+              <p class="text-cream-600 text-[11px] leading-snug mt-0.5 line-clamp-2" x-text="edge.story || edge.mechanism || edge.reasoning"></p>
+            </template>
+          </div>
+        </button>
+      </template>
+    </div>
+  </div>
+</template>
