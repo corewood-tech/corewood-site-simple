@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="boxshadow" x="-4%" y="-4%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="7" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#2A95C8"/>
+    </marker>
+    <marker id="arrowDim" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="7" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#E85A48" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <!-- ═══ Main Pipeline Row ═══ -->
+
+  <!-- RPC entry -->
+  <g filter="url(#boxshadow)">
+    <rect x="16" y="56" width="72" height="44" rx="20" fill="#0F3B24" stroke="#A69E86" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="52" y="83" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#A69E86">RPC</text>
+  </g>
+
+  <!-- Arrow: RPC → Handler -->
+  <line x1="88" y1="78" x2="116" y2="78" stroke="#2A95C8" stroke-width="1.5" marker-end="url(#arrow)" filter="url(#glow)"/>
+
+  <!-- Handler -->
+  <g filter="url(#boxshadow)">
+    <rect x="120" y="48" width="108" height="60" rx="8" fill="#0F3B24" stroke="#2A95C8" stroke-opacity="0.5" stroke-width="1.5"/>
+    <text x="174" y="72" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#F5F0E6">Handler</text>
+    <text x="174" y="90" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#A69E86">Protocol + Policy</text>
+  </g>
+
+  <!-- Arrow: Handler → Auth -->
+  <line x1="228" y1="78" x2="254" y2="78" stroke="#2A95C8" stroke-width="1.5" marker-end="url(#arrow)" filter="url(#glow)"/>
+
+  <!-- Auth -->
+  <g filter="url(#boxshadow)">
+    <rect x="258" y="48" width="88" height="60" rx="8" fill="#0F3B24" stroke="#E85A48" stroke-opacity="0.4" stroke-width="1.5"/>
+    <text x="302" y="72" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#F5F0E6">Auth</text>
+    <text x="302" y="90" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#A69E86">Identity + Authz</text>
+  </g>
+
+  <!-- Auth → DROP (dashed, going down) -->
+  <line x1="302" y1="108" x2="302" y2="148" stroke="#E85A48" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrowDim)"/>
+  <g>
+    <rect x="272" y="152" width="60" height="28" rx="6" fill="#E85A48" fill-opacity="0.12" stroke="#E85A48" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="302" y="170" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#E85A48" opacity="0.7">DROP</text>
+  </g>
+  <text x="338" y="140" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#E85A48" opacity="0.6" font-style="italic">unauthorized</text>
+
+  <!-- Arrow: Auth → Flow -->
+  <line x1="346" y1="78" x2="376" y2="78" stroke="#2A95C8" stroke-width="1.5" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <text x="362" y="68" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#2A95C8" opacity="0.7">auth data</text>
+
+  <!-- Flow -->
+  <g filter="url(#boxshadow)">
+    <rect x="380" y="48" width="88" height="60" rx="8" fill="#0F3B24" stroke="#F5F0E6" stroke-opacity="0.12" stroke-width="1"/>
+    <text x="424" y="72" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#F5F0E6">Flow</text>
+    <text x="424" y="90" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#A69E86">Orchestration</text>
+  </g>
+
+  <!-- Arrow: Flow → Ops -->
+  <line x1="468" y1="78" x2="498" y2="78" stroke="#2A95C8" stroke-width="1.5" marker-end="url(#arrow)" filter="url(#glow)"/>
+
+  <!-- Ops -->
+  <g filter="url(#boxshadow)">
+    <rect x="502" y="48" width="88" height="60" rx="8" fill="#0F3B24" stroke="#F5F0E6" stroke-opacity="0.12" stroke-width="1"/>
+    <text x="546" y="72" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#F5F0E6">Ops</text>
+    <text x="546" y="90" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#A69E86">Business Logic</text>
+  </g>
+
+  <!-- Arrow: Ops → Repo -->
+  <line x1="590" y1="78" x2="620" y2="78" stroke="#2A95C8" stroke-width="1.5" marker-end="url(#arrow)" filter="url(#glow)"/>
+
+  <!-- Repo -->
+  <g filter="url(#boxshadow)">
+    <rect x="624" y="48" width="88" height="60" rx="8" fill="#0F3B24" stroke="#F5F0E6" stroke-opacity="0.12" stroke-width="1"/>
+    <text x="668" y="72" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#F5F0E6">Repo</text>
+    <text x="668" y="90" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#A69E86">Data Access</text>
+  </g>
+
+  <!-- ═══ Repo fan-out to backends ═══ -->
+
+  <!-- Arrow: Repo → SQL -->
+  <path d="M712,66 L740,66 L760,40" stroke="#A69E86" stroke-width="1" stroke-opacity="0.5" fill="none" marker-end="url(#arrow)"/>
+  <!-- Arrow: Repo → API -->
+  <line x1="712" y1="78" x2="756" y2="78" stroke="#A69E86" stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+  <!-- Arrow: Repo → Obj Store -->
+  <path d="M712,90 L740,90 L760,116" stroke="#A69E86" stroke-width="1" stroke-opacity="0.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Backend targets -->
+  <g>
+    <!-- SQL cylinder hint -->
+    <rect x="762" y="24" width="30" height="28" rx="4" fill="#0F3B24" stroke="#A69E86" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="777" y="43" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#A69E86">SQL</text>
+  </g>
+  <g>
+    <rect x="762" y="64" width="30" height="28" rx="4" fill="#0F3B24" stroke="#A69E86" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="777" y="83" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#A69E86">API</text>
+  </g>
+  <g>
+    <rect x="762" y="104" width="30" height="28" rx="4" fill="#0F3B24" stroke="#A69E86" stroke-opacity="0.25" stroke-width="1"/>
+    <text x="777" y="123" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#A69E86">Obj</text>
+  </g>
+
+  <!-- ═══ Direction label ═══ -->
+  <text x="400" y="210" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#A69E86" opacity="0.7">Dependencies point inward &#x2192; nothing in an inner layer knows about an outer layer</text>
+
+  <!-- ═══ Module convention callout ═══ -->
+  <g filter="url(#boxshadow)">
+    <rect x="160" y="232" width="480" height="72" rx="8" fill="#0F3B24" stroke="#F5F0E6" stroke-opacity="0.08" stroke-width="1"/>
+    <text x="400" y="256" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#F5F0E6">Every module has exactly two type files:</text>
+    <text x="320" y="280" text-anchor="middle" font-family="system-ui, -apple-system, monospace" font-size="12" fill="#2A95C8">receive_types</text>
+    <text x="400" y="280" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#A69E86">&#xB7;</text>
+    <text x="480" y="280" text-anchor="middle" font-family="system-ui, -apple-system, monospace" font-size="12" fill="#2A95C8">emit_types</text>
+  </g>
+</svg>

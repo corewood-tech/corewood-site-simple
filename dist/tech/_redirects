@@ -1,0 +1,29 @@
+# Cloudflare Pages redirects — force 301 for non-trailing-slash URLs
+# (Cloudflare defaults to 308 which Google Search Console flags)
+
+/index.html / 301
+/about /about/ 301
+/about/mickey /about/mickey/ 301
+/blog /blog/ 301
+/contact /contact/ 301
+/profile /profile/ 301
+/profile/landscope /profile/landscope/ 301
+/profile/masquer /profile/masquer/ 301
+/profile/llm-apis /profile/llm-apis/ 301
+/privacy /privacy/ 301
+/rootstock /rootstock/ 301
+
+/blog/precarious-infrastructure /blog/precarious-infrastructure/ 301
+/blog/llm-context-synthesis /blog/llm-context-synthesis/ 301
+/blog/product-engineering /blog/product-engineering/ 301
+/blog/unix-philosophy-ai /blog/unix-philosophy-ai/ 301
+/blog/json-to-binary-deberta-tokenizer /blog/json-to-binary-deberta-tokenizer/ 301
+/blog/great-data-privacy-divide /blog/great-data-privacy-divide/ 301
+/blog/healthcare-privacy-paradox /blog/healthcare-privacy-paradox/ 301
+/blog/data-compliance-reality /blog/data-compliance-reality/ 301
+/blog/so-you-want-to-build /blog/so-you-want-to-build/ 301
+/blog/unsustainable-economics-ai /blog/unsustainable-economics-ai/ 301
+/blog/beyond-the-model /blog/beyond-the-model/ 301
+/blog/ai-on-prem /blog/ai-on-prem/ 301
+/blog/ai-hype-failing /blog/ai-hype-failing/ 301
+/blog/roi-beyond-the-demo /blog/roi-beyond-the-demo/ 301
