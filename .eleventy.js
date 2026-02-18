@@ -88,6 +88,12 @@ module.exports = function(eleventyConfig) {
     return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
   });
 
+  // Strip trailing slash (for _redirects generation)
+  eleventyConfig.addFilter("stripTrailingSlash", function(url) {
+    if (!url || url === "/") return url;
+    return url.replace(/\/$/, '');
+  });
+
   // Head filter for blog sidebar
   eleventyConfig.addFilter("head", function(array, n) {
     if (!Array.isArray(array) || array.length === 0) return [];

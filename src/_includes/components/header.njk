@@ -1,7 +1,41 @@
 <header
-  x-data="{ mobileMenuOpen: false }"
-  class="fixed top-0 left-0 right-0 pt-4 md:pt-6 px-4 md:px-6 z-50 pointer-events-none"
+  x-data="{ mobileMenuOpen: false, bannerShow: false, bannerDismissed: false }"
+  x-init="setTimeout(() => bannerShow = true, 1300)"
+  class="fixed top-0 left-0 right-0 z-50"
 >
+  {# ── Rootstock announcement bar — morpho blue / dart red, slides in after 1.3s ── #}
+  {% if page.url != '/rootstock/' %}
+  <div
+    x-show="bannerShow && !bannerDismissed"
+    x-cloak
+    x-transition:enter="transition ease-out duration-500"
+    x-transition:enter-start="-translate-y-full opacity-0"
+    x-transition:enter-end="translate-y-0 opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-y-0 opacity-100"
+    x-transition:leave-end="-translate-y-full opacity-0"
+    class="absolute top-0 left-0 right-0 z-[60] bg-gradient-to-r from-morpho-600 via-morpho-500 to-morpho-600 border-b border-cream-100/30 pointer-events-auto overflow-hidden"
+  >
+    <a href="{{ '/rootstock/' | url }}"
+       class="flex items-center justify-center gap-2 py-[3px] hover:brightness-110 transition-all duration-200 px-8">
+      <span class="text-dart-400">&#x2B22;</span>
+      <img src="/assets/img/rootstock.svg" alt="Rootstock" class="h-[54px] inline-block opacity-90 -mb-8 self-start mt-[5px]" style="filter: brightness(0) invert(30%) sepia(80%) saturate(2000%) hue-rotate(350deg) brightness(95%) drop-shadow(0 0 1px #f5f0e6) drop-shadow(0 0 0.5px #f5f0e6)">
+      <span class="text-cream-100 text-[11px] md:text-xs font-medium">— open-source architecture for LLM-driven engineering</span>
+      <span class="text-cream-100/70 text-[11px] md:text-xs">View &rarr;</span>
+    </a>
+    <button
+      @click.stop="bannerDismissed = true"
+      class="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-cream-100/60 hover:text-cream-100 transition-colors"
+      aria-label="Dismiss banner"
+    >
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="m18 6-12 12"/><path d="m6 6 12 12"/>
+      </svg>
+    </button>
+  </div>
+  {% endif %}
+
+  <div class="pt-4 md:pt-6 px-4 md:px-6 pointer-events-none">
   <div class="max-w-6xl mx-auto">
     <div class="plate-wrap">
       <div class="plate chamfer-full md:chamfer-full-lg px-4 md:px-6 py-3 md:py-4 pointer-events-auto relative">

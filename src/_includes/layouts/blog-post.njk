@@ -23,6 +23,8 @@ ogType: article
           {{ content | safe }}
         </div>
 
+        {% include "components/rootstock-ad-article.njk" %}
+
         <footer class="mt-16 pt-8 border-t border-forest-700">
           <div class="flex justify-between items-center">
             <a href="{{ '/blog/' | url }}" class="text-morpho-400 hover:text-morpho-300 transition-colors">← Back to Blog</a>
@@ -46,6 +48,8 @@ ogType: article
             </a>
             {% endfor %}
           </nav>
+
+          {% include "components/rootstock-ad-sidebar.njk" %}
         </div>
       </aside>
     </div>

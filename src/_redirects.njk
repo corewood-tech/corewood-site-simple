@@ -1,0 +1,21 @@
+---
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+---
+# Cloudflare Pages redirects — force 301 for non-trailing-slash URLs
+# (Cloudflare defaults to 308 which Google Search Console flags)
+
+/index.html / 301
+/about /about/ 301
+/about/mickey /about/mickey/ 301
+/blog /blog/ 301
+/contact /contact/ 301
+/profile /profile/ 301
+/profile/landscope /profile/landscope/ 301
+/profile/masquer /profile/masquer/ 301
+/profile/llm-apis /profile/llm-apis/ 301
+/privacy /privacy/ 301
+/rootstock /rootstock/ 301
+{% for post in collections.blog %}
+{{ post.url | stripTrailingSlash }} {{ post.url }} 301
+{%- endfor %}
