@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
-title: "Rootstock — A Reference Architecture for LLM-Driven Engineering"
-description: "Rootstock is a reference architecture for vibe coding that reliably scales. Manage LLM context windows, enforce strict patterns, and use performant languages for AI-assisted development."
-keywords: "vibe coding, vibe coding architecture, AI engineering, LLM engineering, LLM-assisted development, AI code generation, scaling AI codebases, LLM context window management, AI software architecture, reference architecture LLM, Go architecture AI, vibe coded software, Claude code, cursor architecture, agentic coding, AI coding patterns, LLM software design"
+title: "Rootstock — Citizen Science IoT Platform & Reference Architecture for LLM-Driven Engineering"
+description: "Hard problems, simple solutions. Rootstock is an open-source climate tech IoT platform for citizen science and a reference architecture for LLM-driven engineering in Go. Vibe coding that scales."
+keywords: "hard problems simple solutions, climate tech, eco tech, environmental technology, citizen science platform, citizen science IoT, open source IoT platform, environmental monitoring, sensor data collection, campaign data collection, vibe coding, vibe coding architecture, AI engineering, LLM engineering, LLM-driven engineering, LLM-assisted development, AI code generation, scaling AI codebases, LLM context window management, AI software architecture, reference architecture LLM, Go architecture AI, GoLang, vibe coded software, Claude code, cursor architecture, agentic coding, software architecture, systems design"
 ogImage: "/rootstock-meta.png"
 ogType: "article"
 date: 2025-02-17
@@ -13,21 +13,21 @@ jsonLd: |
     "@graph": [
       {
         "@type": "TechArticle",
-        "headline": "Rootstock — A Reference Architecture for LLM-Driven Engineering",
-        "description": "Rootstock is a reference architecture for vibe coding that reliably scales. Manage LLM context windows, enforce strict patterns, and use performant languages for AI-assisted development.",
+        "headline": "Rootstock — Citizen Science IoT Platform & Reference Architecture for LLM-Driven Engineering",
+        "description": "Hard problems, simple solutions. Rootstock is an open-source climate tech IoT platform for citizen science and a reference architecture for LLM-driven engineering in Go. Vibe coding that scales.",
         "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
         "publisher": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
         "datePublished": "2025-02-17",
         "url": "https://corewood.io/rootstock/",
         "image": "https://corewood.io/rootstock-meta.png",
-        "keywords": "vibe coding, AI engineering, LLM engineering, reference architecture, Go, agentic coding",
+        "keywords": "hard problems, climate tech, eco tech, citizen science, IoT platform, environmental monitoring, vibe coding, AI engineering, LLM-driven engineering, reference architecture, Go, agentic coding, software architecture",
         "proficiencyLevel": "Expert",
         "dependencies": "Go, ConnectRPC, PostgreSQL, Minio, Zitadel, OPA, OpenTelemetry"
       },
       {
         "@type": "SoftwareSourceCode",
         "name": "Rootstock",
-        "description": "A reference architecture for LLM-driven engineering. Handler/Flow/Ops/Repo pattern with directional imports and strict module conventions.",
+        "description": "Open-source climate tech platform for citizen science IoT data collection, built on a reference architecture for LLM-driven engineering. Go monorepo with Handler/Flow/Ops/Repo pattern, directional imports, and strict module conventions.",
         "codeRepository": "https://github.com/corewood-tech/rootstock",
         "programmingLanguage": "Go",
         "runtimePlatform": "Linux, macOS",
@@ -45,10 +45,18 @@ jsonLd: |
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "What is Rootstock?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rootstock is two things: an open-source climate tech IoT platform that connects researchers with citizen-owned sensors for campaign-driven environmental monitoring, and a reference architecture for LLM-driven engineering in Go. Hard problems, simple solutions — the platform proves the architecture works under real conditions with multi-tenant auth, device lifecycle management, mTLS, and campaign-driven data ingestion."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Why do vibe coded projects fail at scale?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A vibe-coded project starts fast, works well, then starts toppling under its own weight. Duplicated functions everywhere. Multiple dependencies managing the same job. The LLM gets confused, finds conflicting patterns, and stops helping. The problem is structural, not skill-based — the architecture has to be designed for how LLMs actually work."
+              "text": "A vibe-coded project starts fast, works well, then starts toppling under its own weight. Duplicated functions everywhere. Multiple dependencies managing the same job. The LLM gets confused, finds conflicting patterns, and stops helping. The problem is structural — the architecture has to be designed for how LLMs actually work. Rootstock provides the LLM-driven engineering patterns that make AI-generated code reliable at production scale."
             }
           },
           {
@@ -56,7 +64,7 @@ jsonLd: |
             "name": "What programming language is best for AI-assisted coding?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "In independent benchmarks, Go executes 3-20x faster than Python and uses 1.5-3x less memory across typical workloads. The performance gap is wide enough that even suboptimal Go code routinely outperforms well-written Python. That headroom is what makes LLM-assisted coding viable at scale."
+              "text": "For LLM-driven engineering, Go is the clear choice. In independent benchmarks, Go executes 3-20x faster than Python and uses 1.5-3x less memory. The performance gap means even suboptimal AI-generated Go code outperforms well-written Python. Static types catch hallucinations at compile time. That headroom makes vibe coding viable for hard problems like climate tech IoT platforms and enterprise software."
             }
           },
           {
@@ -72,7 +80,7 @@ jsonLd: |
             "name": "What is the handler/flow/ops/repo architecture pattern?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Four layers, one direction. Handler decouples protocol and policy. Flow orchestrates by calling one or more ops. Ops does the business rules, validation, and decisions. Repo handles integration points like databases and identity providers. Every module has receive_types (what comes in) and emit_types (what comes out) as its contract."
+              "text": "Four layers, one direction — a software architecture pattern designed for LLM-driven engineering. Handler decouples protocol and policy. Flow orchestrates by calling one or more ops. Ops handles business rules, validation, and decisions. Repo wraps integration points like databases and identity providers. Every module has receive_types (what comes in) and emit_types (what comes out) as its contract. The strict pattern means AI code generation produces correct, consistent output every time."
             }
           }
         ]

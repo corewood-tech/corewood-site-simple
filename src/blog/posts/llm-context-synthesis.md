@@ -7,7 +7,7 @@ readingTime: "8 min read"
 permalink: /blog/llm-context-synthesis/
 ogType: "article"
 ogImage: "/meta.png"
-keywords: "LLM, Large Language Models, AI prompting, context synthesis, prompt engineering, artificial intelligence, machine learning"
+keywords: "LLM, Large Language Models, AI prompting, context synthesis, prompt engineering, artificial intelligence, machine learning, AI engineering, LLM-driven engineering, vibe coding, hard problems, Corewood"
 ---
 
 When I prompt an LLM, I do not attempt to say, "Do this." Direct instructions work only for basic, well understood, low-value tasks. No, in order to get LLMs to work, I must massage the context, putting the pieces of various ideas together. My prompts act as information flows, while the machine acts as a "context synthesizer." This means I keep tight eyes on the outputs. When changes are rejected, that "context," that "way of thinking," lingers on in the transformer model.

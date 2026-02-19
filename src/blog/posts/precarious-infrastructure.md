@@ -3,7 +3,7 @@ layout: layouts/blog-post.njk
 title: "Precarious Infrastructure"
 description: "Infrastructure teeters at the brink of collapse — but people carry on. Maybe that sounds like your team's software. Here's how to stop surviving and start building with intention."
 date: 2026-02-08
-keywords: "software infrastructure, requirements engineering, domain-driven design, clean architecture, software design, technical debt"
+keywords: "software infrastructure, requirements engineering, domain-driven design, clean architecture, software design, technical debt, AI engineering, software architecture, hard problems, Corewood"
 readingTime: "4 min read"
 ogType: "article"
 ogImage: "/meta.png"

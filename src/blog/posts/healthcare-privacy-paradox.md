@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "Healthcare Software's Privacy Paradox: Breaking Free from Legacy Thinking"
 description: "Legacy privacy approaches stifle healthcare software innovation. How dynamic privacy protection unlocks better UX, lower costs, and faster development."
-keywords: "healthcare software, privacy, HIPAA, compliance, healthcare innovation, dynamic privacy, de-identification, AI in healthcare, healthcare UX, Corewood"
+keywords: "healthcare software, privacy, HIPAA, compliance, healthcare innovation, dynamic privacy, de-identification, AI in healthcare, healthcare UX, Corewood, AI engineering, hard problems"
 date: 2025-05-13
 readingTime: "7 min read"
 ogType: "article"

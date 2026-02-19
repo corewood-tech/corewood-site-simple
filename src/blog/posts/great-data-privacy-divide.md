@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "The Great Data Privacy Divide: Why Engineering Speed Meets Compliance Reality"
 description: "For forty years, engineering teams optimized for speed. Then came privacy laws. How the disconnect between performance and compliance is reshaping software."
-keywords: "data privacy, GDPR, CCPA, HIPAA, compliance, engineering, software development, privacy by design, data protection, Corewood"
+keywords: "data privacy, GDPR, CCPA, HIPAA, compliance, engineering, software development, privacy by design, data protection, Corewood, AI engineering, hard problems"
 date: 2025-06-01
 readingTime: "6 min read"
 ogType: "article"

@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "The Reality of Data Compliance: A Technical Evolution"
 description: "When doing the right thing drives wrong results. How zero-copy architecture transforms healthcare data compliance from expensive constraint to foundation."
-keywords: "data compliance, HIPAA compliance, healthcare data, data security, data masking, zero-copy architecture, data redaction"
+keywords: "data compliance, HIPAA compliance, healthcare data, data security, data masking, zero-copy architecture, data redaction, AI engineering, hard problems, GoLang, Corewood"
 date: 2025-05-03
 readingTime: "6 min read"
 ogType: "article"

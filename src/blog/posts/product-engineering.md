@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "Building Software That Actually Works: An Engineer's Guide to Requirements-First Development"
 description: "Most software projects fail because teams build the wrong thing. How engineers can own requirements and build solutions that actually solve problems."
-keywords: "software engineering, requirements gathering, product development, engineering methodology, Volere framework, business analysis, technical leadership"
+keywords: "software engineering, requirements gathering, product development, engineering methodology, Volere framework, business analysis, technical leadership, AI engineering, software architecture, hard problems, Corewood"
 date: 2025-06-18
 readingTime: "12 min read"
 slug: "product-engineering"

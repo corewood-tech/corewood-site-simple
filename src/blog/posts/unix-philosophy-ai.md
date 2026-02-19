@@ -3,7 +3,7 @@ layout: layouts/blog-post.njk
 title: "The Unix Philosophy in the Age of AI: Timeless Principles for Modern Engineering"
 description: "Exploring how the foundational principles of Unix continue to guide modern AI development, from modularity to transparency and human-centric design."
 date: 2025-06-17
-keywords: "AI, engineering, Unix philosophy, software design, best practices, modularity, system architecture"
+keywords: "AI, engineering, Unix philosophy, software design, best practices, modularity, system architecture, AI engineering, LLM-driven engineering, software architecture, hard problems, Corewood"
 ogType: "article"
 ogImage: "/meta.png"
 permalink: /blog/unix-philosophy-ai/

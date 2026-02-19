@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "Beyond the AI Hype: Why Current ML Approaches Are Failing Businesses"
 description: "Despite billions in investment, current ML approaches fail to deliver. Why 'bigger is better' has hit its ceiling and how targeted intelligence can help."
-keywords: "AI hype, machine learning, ML limitations, AI efficiency, computational resources, targeted AI solutions, AI ROI"
+keywords: "AI hype, machine learning, ML limitations, AI efficiency, computational resources, targeted AI solutions, AI ROI, AI engineering, LLM-driven engineering, hard problems, Corewood"
 date: 2025-04-14
 readingTime: "3 min read"
 slug: "ai-hype-failing"

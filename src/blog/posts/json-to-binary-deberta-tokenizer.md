@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "From JSON to Binary: How We Made DeBERTa Tokenizer 100x Faster"
 description: "How we eliminated JSON parsing overhead and achieved 10-100x faster DeBERTa tokenizer startup with a custom binary format for production ML inference."
-keywords: "DeBERTa, tokenizer, optimization, binary format, JSON parsing, ML inference, performance, Go, Python, NLP, machine learning"
+keywords: "DeBERTa, tokenizer, optimization, binary format, JSON parsing, ML inference, performance, Go, Python, NLP, machine learning, AI engineering, LLM-driven engineering, hard problems, Corewood"
 date: 2025-06-03
 readingTime: "5 min read"
 ogType: "article"

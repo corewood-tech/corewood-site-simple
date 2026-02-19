@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "So you want to build an AI system..."
 description: "Building AI systems that deliver real business value requires navigating a complex landscape of technical considerations that directly impact your bottom line."
-keywords: "AI implementation, business value, AI success, AI infrastructure, AI security, AI scalability, data governance"
+keywords: "AI implementation, business value, AI success, AI infrastructure, AI security, AI scalability, data governance, AI engineering, LLM-driven engineering, software architecture, hard problems, Corewood"
 date: 2025-04-29
 readingTime: "4 min read"
 ogType: "article"

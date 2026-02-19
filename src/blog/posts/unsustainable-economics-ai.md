@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "The Unsustainable Economics of Generative AI: Finding a Path Forward"
 description: "Many companies demo AI capabilities they can't afford to operate. The sobering reality of AI economics and sustainable alternatives."
-keywords: "generative AI, AI economics, sustainable AI, OpenAI, Anthropic, AI costs, small language model, AI infrastructure"
+keywords: "generative AI, AI economics, sustainable AI, OpenAI, Anthropic, AI costs, small language model, AI infrastructure, AI engineering, LLM-driven engineering, hard problems, Corewood"
 date: 2025-04-24
 readingTime: "7 min read"
 ogType: "article"

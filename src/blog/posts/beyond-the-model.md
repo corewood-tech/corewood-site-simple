@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "Beyond the Model: Why Your AI Architecture Is Holding You Back"
 description: "Your model is only as effective as the infrastructure it runs on. Learn how the right architecture can dramatically improve AI performance and cost-efficiency."
-keywords: "AI architecture, system architecture, model deployment, AI efficiency, AI infrastructure, machine learning operations, MLOps"
+keywords: "AI architecture, system architecture, model deployment, AI efficiency, AI infrastructure, machine learning operations, MLOps, AI engineering, LLM-driven engineering, software architecture, hard problems, Corewood"
 date: 2025-04-22
 readingTime: "5 min read"
 ogType: "article"

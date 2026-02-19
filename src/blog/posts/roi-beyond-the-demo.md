@@ -2,7 +2,7 @@
 layout: layouts/blog-post.njk
 title: "ROI Beyond the Demo: Making AI Work for Your Business"
 description: "Moving beyond impressive AI demos to real business value requires infrastructure, talent, and expertise. How to achieve actual ROI from AI investments."
-keywords: "AI ROI, business value, AI implementation, AI infrastructure, AI talent, machine learning operations, production AI"
+keywords: "AI ROI, business value, AI implementation, AI infrastructure, AI talent, machine learning operations, production AI, AI engineering, LLM-driven engineering, hard problems, Corewood"
 date: 2025-04-10
 readingTime: "6 min read"
 ogType: "article"
