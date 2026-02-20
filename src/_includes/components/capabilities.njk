@@ -1,0 +1,59 @@
+{# ── Capability columns — 3 plates side-by-side showcasing core expertise ── #}
+<section class="section-wash py-section">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+
+      {# ── AI + Authorization ── #}
+      <div class="plate-wrap">
+        <div class="plate chamfer-full p-6 md:p-8 flex flex-col h-full">
+          <div class="rivet absolute top-5 left-5 z-10"></div>
+          <div class="rivet absolute top-5 right-5 z-10"></div>
+          <div class="rivet absolute bottom-5 left-5 z-10"></div>
+          <div class="rivet absolute bottom-5 right-5 z-10"></div>
+
+          <h2 class="font-display font-bold text-xl md:text-2xl text-cream-100 mb-4">&ldquo;Your RAG system doesn&rsquo;t know who&rsquo;s asking.&rdquo;</h2>
+          <div class="text-cream-200 text-sm md:text-base leading-relaxed space-y-3 flex-1">
+            <p>Most RAG implementations are open pipes &mdash; dump documents, embed, retrieve, prompt. No one checks whether the person asking should see the answer.</p>
+            <p>Corewood builds policy-enforced retrieval where authorization is evaluated at query time, not ingestion. Graph-driven access control, self-hosted inference, sub-millisecond auth decisions powered by OPA.</p>
+          </div>
+          <p class="mt-5 text-morpho-400 italic text-sm md:text-base">Your LLM never sees data the user shouldn&rsquo;t.</p>
+        </div>
+      </div>
+
+      {# ── Geospatial ── #}
+      <div class="plate-wrap">
+        <div class="plate chamfer-full p-6 md:p-8 flex flex-col h-full">
+          <div class="rivet absolute top-5 left-5 z-10"></div>
+          <div class="rivet absolute top-5 right-5 z-10"></div>
+          <div class="rivet absolute bottom-5 left-5 z-10"></div>
+          <div class="rivet absolute bottom-5 right-5 z-10"></div>
+
+          <h2 class="font-display font-bold text-xl md:text-2xl text-cream-100 mb-4">&ldquo;Your location data is trapped in legacy tools.&rdquo;</h2>
+          <div class="text-cream-200 text-sm md:text-base leading-relaxed space-y-3 flex-1">
+            <p>GIS platforms were built for researchers, not products. If your app needs maps, terrain, or spatial queries &mdash; you&rsquo;re fighting tools that weren&rsquo;t designed for what you&rsquo;re building.</p>
+            <p>Corewood builds geospatial systems that ship as product features, not science projects.</p>
+          </div>
+          <p class="mt-5 text-morpho-400 italic text-sm md:text-base">Go-native spatial processing. No PostGIS or Python in your data plane.</p>
+        </div>
+      </div>
+
+      {# ── Identity + Security ── #}
+      <div class="plate-wrap">
+        <div class="plate chamfer-full p-6 md:p-8 flex flex-col h-full">
+          <div class="rivet absolute top-5 left-5 z-10"></div>
+          <div class="rivet absolute top-5 right-5 z-10"></div>
+          <div class="rivet absolute bottom-5 left-5 z-10"></div>
+          <div class="rivet absolute bottom-5 right-5 z-10"></div>
+
+          <h2 class="font-display font-bold text-xl md:text-2xl text-cream-100 mb-4">&ldquo;You&rsquo;ll land an enterprise customer. Will your auth survive?&rdquo;</h2>
+          <div class="text-cream-200 text-sm md:text-base leading-relaxed space-y-3 flex-1">
+            <p>Most startups skip identity architecture. Then a big customer asks for SSO, SCIM provisioning, and an audit trail. Suddenly it&rsquo;s a 6-month rewrite.</p>
+            <p>Corewood builds enterprise auth from day one &mdash; OIDC, SAML, mTLS, policy-as-code with OPA. It starts simple and scales without a rewrite.</p>
+          </div>
+          <p class="mt-5 text-morpho-400 italic text-sm md:text-base">Hundreds of thousands of IoT devices authenticated via custom mTLS CA.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
 title: "Hard Problems. Simple Solutions."
-description: "Hard problems. Simple solutions. AI engineering, climate tech, and software architecture consulting. LLM-driven engineering, eco tech platforms, and production systems in Go."
-keywords: "software consulting, software architecture, systems design, climate tech, eco tech, AI engineering, LLM-driven engineering, vibe coding, hard problems simple solutions, full stack engineering, GoLang, technical leadership, fractional CTO, product engineering"
+description: "Software consulting for founders. AI systems, geospatial platforms, and security architecture — production-grade from day one."
+keywords: "software consulting, software architecture, AI engineering, RAG authorization, geospatial systems, identity security, LLM engineering, Go, technical leadership, fractional CTO, product engineering, OPA, mTLS, OIDC"
 ogType: "website"
 jsonLd: |
   {
@@ -13,7 +13,7 @@ jsonLd: |
         "name": "Corewood",
         "url": "https://corewood.io",
         "logo": "https://corewood.io/meta.png",
-        "description": "Hard problems. Simple solutions. AI engineering, climate tech, and software architecture consulting. LLM-driven engineering, eco tech platforms, and production systems in Go.",
+        "description": "Software consulting for founders. AI systems, geospatial platforms, and security architecture — production-grade from day one.",
         "foundingDate": "2024",
         "areaServed": "Worldwide",
         "email": "hello@corewood.io",
@@ -32,7 +32,7 @@ jsonLd: |
         "@type": "WebSite",
         "name": "Corewood",
         "url": "https://corewood.io",
-        "description": "Hard problems. Simple solutions. AI engineering, climate tech, and LLM-driven software architecture.",
+        "description": "Software consulting for founders. AI systems, geospatial platforms, and security architecture — production-grade from day one.",
         "inLanguage": "en-US",
         "copyrightYear": "2026",
         "publisher": {
@@ -44,7 +44,7 @@ jsonLd: |
         "@type": "ProfessionalService",
         "name": "Corewood",
         "url": "https://corewood.io",
-        "description": "Hard problems. Simple solutions. AI engineering, climate tech, and software architecture for founders, scaling teams, and enterprises.",
+        "description": "AI systems, geospatial platforms, and security architecture for founders who need production-grade from day one.",
         "priceRange": "$$$$",
         "areaServed": "Worldwide",
         "hasOfferCatalog": {
@@ -63,26 +63,20 @@ jsonLd: |
 
 {% include "components/hero.njk" %}
 
-{% include "components/tickers.njk" %}
+{% include "components/capabilities.njk" %}
 
-{# ── Between-section CTA ── #}
-{% set ctaQuote = "Research before you build." %}
-{% set ctaPrimary = "Book a Free Consultation" %}
-{% set ctaPrimarySub = "30 minutes, no commitment" %}
-{% set ctaSecondary = "Send Us a Message" %}
-{% set ctaSecondarySub = "We respond within 24 hours" %}
-{% include "components/section-cta.njk" %}
+{% include "components/testimonials.njk" %}
 
-{% include "components/tier-selector.njk" %}
-
-{# ── Between-section CTA ── #}
-{% set ctaQuote = "Building software is the most expensive way to discover your requirements." %}
-{% set ctaPrimary = "Talk to an Engineer" %}
-{% set ctaPrimarySub = "No sales pitch, just solutions" %}
-{% set ctaSecondary = "Get in Touch" %}
-{% set ctaSecondarySub = "Let's discuss your challenges" %}
-{% include "components/section-cta.njk" %}
+{% include "components/closing-cta.njk" %}
 
 {% include "components/rootstock-ad-homepage.njk" %}
 
-{% include "components/closing-cta.njk" %}
+{# ── Footer CTA ── #}
+<div class="py-12 md:py-16">
+  <div class="max-w-2xl mx-auto px-4 md:px-6 text-center">
+    <p class="text-cream-400 text-base md:text-lg italic mb-6">Building software is the most expensive way to discover your requirements.</p>
+    <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center inline-block">
+      <span class="block text-sm md:text-base font-medium">Schedule a Consultation</span>
+    </a>
+  </div>
+</div>
