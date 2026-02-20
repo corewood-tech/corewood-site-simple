@@ -263,7 +263,7 @@ roles:
     start: "2024-11"
     end: "present"
     type: founder
-    summary: "Hard problems. Simple solutions. AI infrastructure, privacy engineering, consulting."
+    summary: "Systems thinking. Software building. AI infrastructure, privacy engineering, consulting."
     highlights:
       - "Custom tensor ops in Go: 10-17x over Python, 14.5x less memory"
       - "Binary tokenizer: 10-100x faster startup than JSON"

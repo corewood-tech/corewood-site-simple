@@ -1,6 +1,6 @@
 module.exports = {
   title: "Corewood",
-  description: "Hard problems. Simple solutions. AI engineering, climate tech, and software architecture for founders, scaling teams, and enterprises.",
+  description: "Systems thinking. Software building. AI engineering, climate tech, and software architecture for founders, scaling teams, and enterprises.",
   author: "Corewood",
   url: process.env.ELEVENTY_BASE_URL || "https://corewood.io",
 
@@ -38,12 +38,12 @@ module.exports = {
       "startup CTO",
       "fractional CTO",
       "product engineering",
-      "hard problems simple solutions"
+      "systems thinking software building"
     ],
     organization: {
       name: "Corewood",
       type: "Software Consulting",
-      description: "Hard problems. Simple solutions. AI engineering, climate tech, and software architecture for founders, scaling teams, and enterprises.",
+      description: "Systems thinking. Software building. AI engineering, climate tech, and software architecture for founders, scaling teams, and enterprises.",
       foundingDate: "2024",
       industry: "Software Engineering & Consulting",
       specialties: [

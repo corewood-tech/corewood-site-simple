@@ -217,22 +217,6 @@
   border-color: rgba(250, 247, 240, 0.12);
 }
 
-/* ─── Ticker animation ─── */
-.ticker-column {
-  will-change: transform;
-}
-
-.ticker-column:hover {
-  animation-play-state: paused;
-}
-
-/* Fade overlay for ticker edges — matches plate bg */
-.ticker-fade {
-  background:
-    linear-gradient(to bottom, #0B2B1A 0%, transparent 20%),
-    linear-gradient(to top, #0B2B1A 0%, transparent 20%);
-}
-
 /* ─── Hero color pulse ─── */
 @keyframes pulse-dart {
   0%, 100% { color: #EBE4D4; }
@@ -245,27 +229,6 @@
 
 #hero-left { animation: pulse-dart 4s ease-in-out infinite; }
 #hero-right { animation: pulse-morpho 4s ease-in-out infinite; }
-
-/* ─── Ticker color pulse — staggered per item ─── */
-.ticker-problem {
-  animation: pulse-dart 6s ease-in-out infinite;
-}
-.ticker-solution {
-  animation: pulse-morpho 6s ease-in-out infinite;
-}
-/* Stagger each item so they ripple rather than flash in unison */
-.ticker-problem:nth-child(2), .ticker-solution:nth-child(2) { animation-delay: 0.5s; }
-.ticker-problem:nth-child(3), .ticker-solution:nth-child(3) { animation-delay: 1.0s; }
-.ticker-problem:nth-child(4), .ticker-solution:nth-child(4) { animation-delay: 1.5s; }
-.ticker-problem:nth-child(5), .ticker-solution:nth-child(5) { animation-delay: 2.0s; }
-.ticker-problem:nth-child(6), .ticker-solution:nth-child(6) { animation-delay: 2.5s; }
-.ticker-problem:nth-child(7), .ticker-solution:nth-child(7) { animation-delay: 3.0s; }
-.ticker-problem:nth-child(8), .ticker-solution:nth-child(8) { animation-delay: 3.5s; }
-.ticker-problem:nth-child(9), .ticker-solution:nth-child(9) { animation-delay: 4.0s; }
-.ticker-problem:nth-child(10), .ticker-solution:nth-child(10) { animation-delay: 4.5s; }
-.ticker-problem:nth-child(11), .ticker-solution:nth-child(11) { animation-delay: 5.0s; }
-.ticker-problem:nth-child(12), .ticker-solution:nth-child(12) { animation-delay: 5.5s; }
-.ticker-problem:nth-child(13), .ticker-solution:nth-child(13) { animation-delay: 0.25s; }
 
 /* ─── Custom scrollbar ─── */
 /* Webkit (Chrome, Safari, Edge) */
@@ -486,10 +449,7 @@ img[loading="lazy"].loaded {
 
 /* ─── Reduce motion ─── */
 @media (prefers-reduced-motion: reduce) {
-  .ticker-column,
   .animate-fade-in,
-  .ticker-problem,
-  .ticker-solution,
   #hero-left,
   #hero-right,
   [class*="transition"],
