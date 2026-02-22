@@ -595,3 +595,219 @@ jsonLd: |
     </div>
   </div>
 </section>
+
+<div class="max-w-3xl mx-auto px-6"><div class="section-divider"></div></div>
+
+{# ── Project Log ── #}
+<section id="log" class="py-16 pb-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-4 text-center">Project Log</h2>
+    <p class="text-cream-300 text-lg text-center mb-12">Building in public. Week by week.</p>
+
+    {# ── Week 1 ── #}
+    <div id="week1" x-data="{ open: true }" class="plate-wrap">
+      <div class="plate chamfer-full-lg">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <button
+          @click="open = !open"
+          class="w-full p-8 md:p-12 pb-6 md:pb-8 flex items-center justify-between text-left cursor-pointer group"
+        >
+          <div>
+            <h3 class="font-display font-bold text-2xl md:text-3xl text-cream-100 tracking-wider">Week 1</h3>
+            <p class="text-cream-400 text-sm tracking-widest uppercase mt-1">Feb 13 – Feb 20, 2026</p>
+          </div>
+          <span
+            class="text-cream-400 group-hover:text-cream-200 transition-transform duration-300 text-2xl flex-shrink-0 ml-4"
+            :class="open ? 'rotate-0' : '-rotate-90'"
+          >&#x25BE;</span>
+        </button>
+
+        <div
+          x-show="open"
+          x-transition:enter="transition-all ease-out duration-300"
+          x-transition:enter-start="opacity-0 max-h-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition-all ease-in duration-200"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="px-8 md:px-12 pb-8 md:pb-12 overflow-hidden"
+        >
+          {# Spec vs Implementation side-by-side #}
+          <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div>
+              <h4 class="font-display font-bold text-sm uppercase tracking-widest text-morpho-400 mb-4">Specification</h4>
+              <div class="font-mono text-sm text-cream-200 space-y-1">
+                <p><span class="text-cream-100 font-bold">127</span> functional requirements written</p>
+                <p class="text-cream-400 pl-4">88 Must / 37 Should / 2 Could</p>
+                <p><span class="text-cream-100 font-bold">10</span> business use cases defined</p>
+                <p><span class="text-cream-100 font-bold">12</span> business events cataloged</p>
+                <p><span class="text-cream-100 font-bold">24</span> spec documents <span class="text-cream-400">(6,090 lines)</span></p>
+                <p><span class="text-cream-100 font-bold">4</span> constraints with fit criteria</p>
+                <p><span class="text-cream-100 font-bold">14</span> adjacent system interfaces</p>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-sm uppercase tracking-widest text-morpho-400 mb-4">Implementation</h4>
+              <div class="font-mono text-sm text-cream-200 space-y-1">
+                <p><span class="text-cream-100 font-bold">16</span> commits</p>
+                <p><span class="text-cream-100 font-bold">114</span> files changed</p>
+                <p><span class="text-cream-100 font-bold">8,227</span> lines added</p>
+                <p><span class="text-cream-100 font-bold">17</span> test packages</p>
+                <p><span class="text-cream-100 font-bold">9</span> repos wired</p>
+                <p><span class="text-cream-100 font-bold">33</span> ops built</p>
+                <p><span class="text-cream-100 font-bold">14</span> flows composed</p>
+                <p><span class="text-cream-100 font-bold">7</span> proto services</p>
+              </div>
+            </div>
+          </div>
+
+          {# Spec Highlights #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-4">Spec Highlights</h4>
+            <p class="text-cream-300 text-sm mb-4">Volere-template requirements specification — from drivers through functional requirements.</p>
+
+            <div class="font-mono text-sm text-cream-200 space-y-3">
+              <div>
+                <p class="text-cream-100 font-bold">Scope of Work</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>10 BUCs with dependency chains</p>
+                  <p>14 external interfaces mapped</p>
+                  <p>11 named flows with direction + data elements</p>
+                  <p>12 events (temporal + non-temporal)</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-cream-100 font-bold">Functional Requirements</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>FR-001 – FR-045: Core BUC coverage (10 BUCs)</p>
+                  <p>FR-046 – FR-127: Gap analysis pass (82 additional FRs)</p>
+                  <p>Cross-cutting: Auth, notifications, admin, dashboards, accessibility, error handling, pagination</p>
+                  <p>MoSCoW: 88 Must / 37 Should / 2 Could / 0 Won't</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-cream-100 font-bold">Constraints</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>CON-001 Open Source</p>
+                  <p>CON-002 First Principles Design</p>
+                  <p>CON-003 No Shared Context Exists</p>
+                  <p>CON-004 ULID Identifiers</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-cream-100 font-bold">Backend Roadmap</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>10-phase dependency-ordered build plan (Phase 0–9)</p>
+                  <p>10 of 33 ops reused across phases</p>
+                  <p>FR → handler → flow → op → repo tracing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {# Architecture: The Grain #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-2">Architecture: The Grain</h4>
+            <p class="text-cream-300 text-sm mb-4">Boundaries drawn by volatility decomposition. Dependencies flow inward via clean architecture.</p>
+
+            <div class="font-mono text-sm space-y-3 max-w-sm mx-auto">
+              <div class="border border-forest-500/40 rounded px-4 py-2 text-center">
+                <p class="text-cream-100 font-bold">Handlers</p>
+                <p class="text-cream-400 text-xs">Protocol edge. Connect RPC + HTTP.</p>
+              </div>
+              <div class="text-center text-forest-500">↓</div>
+              <div class="border border-forest-500/40 rounded px-4 py-2 text-center">
+                <p class="text-cream-100 font-bold">Flows</p>
+                <p class="text-cream-400 text-xs">Orchestration. No repo access. Pure composition.</p>
+              </div>
+              <div class="text-center text-forest-500">↓</div>
+              <div class="border border-forest-500/40 rounded px-4 py-2 text-center">
+                <p class="text-cream-100 font-bold">Ops</p>
+                <p class="text-cream-400 text-xs">Business logic. 10 of 33 reused across phases.</p>
+              </div>
+              <div class="text-center text-forest-500">↓</div>
+              <div class="border border-forest-500/40 rounded px-4 py-2 text-center">
+                <p class="text-cream-100 font-bold">Repos</p>
+                <p class="text-cream-400 text-xs">SQL, Zitadel, OPA, OTel, MQTT, Dgraph — all behind interfaces.</p>
+              </div>
+            </div>
+          </div>
+
+          {# Infrastructure #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-4">Infrastructure Stood Up</h4>
+            <div class="font-mono text-sm space-y-2">
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Postgres + TimescaleDB</span>
+                <span class="text-cream-400">App database + time-series readings</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Zitadel + Login v2</span>
+                <span class="text-cream-400">Identity provider (all PII stays here)</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">OPA</span>
+                <span class="text-cream-400">Policy engine (Rego, 30s bundle refresh)</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Embedded MQTT (Mochi)</span>
+                <span class="text-cream-400">In-process broker, mTLS, topic ACLs</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">In-process CA</span>
+                <span class="text-cream-400">X.509 device certs, no external dependency</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Dgraph</span>
+                <span class="text-cream-400">Knowledge graph (requirements + runtime)</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">OTel Collector</span>
+                <span class="text-cream-400">Traces, metrics, logs</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Prometheus + Tempo + Loki</span>
+                <span class="text-cream-400">Storage backends</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Grafana</span>
+                <span class="text-cream-400">Dashboards + observability UI</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Caddy</span>
+                <span class="text-cream-400">Reverse proxy + auto TLS</span>
+              </div>
+            </div>
+          </div>
+
+          {# What's Next #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-4">What's Next</h4>
+            <div class="font-mono text-sm text-cream-300 space-y-2">
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> User registration flow (stubbed, uncommitted)</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> Graph repo integration (Dgraph runtime schema, uncommitted)</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> TimescaleDB migration for readings (migration 007, uncommitted)</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> Notification provider (currently log-only stub)</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> UI build-out (Playwright scaffolding in place)</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> E2E tests against running stack</p>
+            </div>
+          </div>
+
+          {# Summary line #}
+          <div class="text-center font-mono text-sm text-cream-400 pt-4 border-t border-forest-600/30">
+            <p>127 requirements. 10 business use cases. 9 repos. 33 ops. 14 flows.</p>
+            <p class="text-cream-100 font-bold mt-1">Full spec-to-code traceability. Week 1.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
