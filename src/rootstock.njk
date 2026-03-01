@@ -605,7 +605,7 @@ jsonLd: |
     <p class="text-cream-300 text-lg text-center mb-12">Building in public. Week by week.</p>
 
     {# ── Week 1 ── #}
-    <div id="week1" x-data="{ open: true }" class="plate-wrap">
+    <div id="week1" x-data="{ open: false }" class="plate-wrap">
       <div class="plate chamfer-full-lg">
         <div class="rivet absolute top-7 left-7 z-10"></div>
         <div class="rivet absolute top-7 right-7 z-10"></div>
@@ -804,6 +804,177 @@ jsonLd: |
           <div class="text-center font-mono text-sm text-cream-400 pt-4 border-t border-forest-600/30">
             <p>127 requirements. 10 business use cases. 9 repos. 33 ops. 14 flows.</p>
             <p class="text-cream-100 font-bold mt-1">Full spec-to-code traceability. Week 1.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# ── Week 2 ── #}
+    <div id="week2" x-data="{ open: true }" class="plate-wrap mt-10">
+      <div class="plate chamfer-full-lg">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <button
+          @click="open = !open"
+          class="w-full p-8 md:p-12 pb-6 md:pb-8 flex items-center justify-between text-left cursor-pointer group"
+        >
+          <div>
+            <h3 class="font-display font-bold text-2xl md:text-3xl text-cream-100 tracking-wider">Week 2</h3>
+            <p class="text-cream-400 text-sm tracking-widest uppercase mt-1">Feb 22 – Mar 1, 2026</p>
+          </div>
+          <span
+            class="text-cream-400 group-hover:text-cream-200 transition-transform duration-300 text-2xl flex-shrink-0 ml-4"
+            :class="open ? 'rotate-0' : '-rotate-90'"
+          >&#x25BE;</span>
+        </button>
+
+        <div
+          x-show="open"
+          x-transition:enter="transition-all ease-out duration-300"
+          x-transition:enter-start="opacity-0 max-h-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition-all ease-in duration-200"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="px-8 md:px-12 pb-8 md:pb-12 overflow-hidden"
+        >
+          {# Spec vs Implementation side-by-side #}
+          <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div>
+              <h4 class="font-display font-bold text-sm uppercase tracking-widest text-morpho-400 mb-4">This Week</h4>
+              <div class="font-mono text-sm text-cream-200 space-y-1">
+                <p><span class="text-cream-100 font-bold">6</span> commits</p>
+                <p><span class="text-cream-100 font-bold">153</span> files changed</p>
+                <p><span class="text-cream-100 font-bold">15,038</span> lines added <span class="text-cream-400">/ 536 removed</span></p>
+                <p><span class="text-cream-100 font-bold">19</span> new flows</p>
+                <p><span class="text-cream-100 font-bold">3</span> new ops packages <span class="text-cream-400">(enrollment, graph, scitizen)</span></p>
+                <p><span class="text-cream-100 font-bold">3</span> new repos <span class="text-cream-400">(enrollment, scitizen, session)</span></p>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-sm uppercase tracking-widest text-morpho-400 mb-4">Cumulative</h4>
+              <div class="font-mono text-sm text-cream-200 space-y-1">
+                <p><span class="text-cream-100 font-bold">2</span> new handlers <span class="text-cream-400">(notification, scitizen)</span></p>
+                <p><span class="text-cream-100 font-bold">16</span> new UI pages</p>
+                <p><span class="text-cream-100 font-bold">17</span> new E2E test files</p>
+                <p><span class="text-cream-100 font-bold">2</span> new migrations <span class="text-cream-400">(008, 009)</span></p>
+                <p class="text-cream-400 text-xs mt-3">22 total commits &middot; 267 files &middot; 23,265 lines</p>
+              </div>
+            </div>
+          </div>
+
+          {# Week 1 Checklist #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-4">Week 1 Checklist</h4>
+            <div class="font-mono text-sm text-cream-300 space-y-2">
+              <p class="flex gap-2"><span class="text-morpho-400">[x]</span> User registration flow</p>
+              <p class="flex gap-2"><span class="text-morpho-400">[x]</span> Graph repo integration</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> TimescaleDB migration for readings <span class="text-cream-500">(carried over)</span></p>
+              <p class="flex gap-2"><span class="text-morpho-400">[x]</span> Notification provider</p>
+              <p class="flex gap-2"><span class="text-morpho-400">[x]</span> UI build-out</p>
+              <p class="flex gap-2"><span class="text-morpho-400">[x]</span> E2E tests against running stack</p>
+            </div>
+            <p class="text-cream-400 text-sm mt-4 font-mono">5 of 6 shipped. TimescaleDB readings migration is the only carryover.</p>
+          </div>
+
+          {# Highlights #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-4">Highlights</h4>
+
+            <div class="font-mono text-sm text-cream-200 space-y-4">
+              <div>
+                <p class="text-cream-100 font-bold">Full scitizen vertical in one commit</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>9,029 insertions across 61 files <span class="text-cream-500">(commit 431e5fe)</span></p>
+                  <p>12 new flows, scitizen + enrollment ops & repos</p>
+                  <p>508-line handler, 9 new UI pages, migration 009</p>
+                  <p>8 new E2E specs — database to browser in one shot</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-cream-100 font-bold">Session repo replaced JWT middleware</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>server/jwt.go and server/jwt_test.go deleted</p>
+                  <p>Session management moved to repo/session/ (clean arch boundary)</p>
+                  <p>Interceptors refactored to use session repo</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-cream-100 font-bold">Auth expanded to full RBAC</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>authz.rego grew to full matrix: researcher, scitizen, admin</p>
+                  <p>Role guards in Go (auth/roles.go) and UI (lib/auth/roles.ts, guard.ts)</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="text-cream-100 font-bold">Protobuf surface area tripled</p>
+                <div class="pl-4 border-l border-forest-600/50 ml-1 mt-1 space-y-0.5 text-cream-300">
+                  <p>~309 new lines of service definitions (user, scitizen, notification)</p>
+                  <p>~3,400 lines of generated Go code</p>
+                  <p>TypeScript codegen set up (buf.gen.ts.yaml) with Connect RPC client</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {# Infrastructure #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-4">Infrastructure / Architecture Changes</h4>
+            <div class="font-mono text-sm space-y-2">
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">buf.gen.ts.yaml</span>
+                <span class="text-cream-400">Protobuf TypeScript codegen alongside Go</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">ui/src/lib/api/</span>
+                <span class="text-cream-400">Connect RPC client + transport for SvelteKit</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">ui/src/lib/state/</span>
+                <span class="text-cream-400">Svelte 5 reactive stores (notifications, scitizen)</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">MailDev fixture</span>
+                <span class="text-cream-400">E2E tests intercept + verify email flows</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Migration 008</span>
+                <span class="text-cream-400">Campaign status enum (draft/active/completed/archived)</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Migration 009</span>
+                <span class="text-cream-400">Scitizen tables (profiles, devices, enrollments, readings, notifications)</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr] gap-x-6">
+                <span class="text-cream-100">Playwright config</span>
+                <span class="text-cream-400">Auth setup project, noauth/auth separation, mobile viewports</span>
+              </div>
+            </div>
+          </div>
+
+          {# What's Next #}
+          <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6 mb-8">
+            <h4 class="font-display font-bold text-lg text-cream-100 mb-4">What's Next</h4>
+            <div class="font-mono text-sm text-cream-300 space-y-2">
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> TimescaleDB migration for readings (carried from Week 1)</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> Device provisioning + mTLS enrollment</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> MQTT reading ingestion pipeline</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> Campaign lifecycle (create, activate, archive)</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> Dashboard data visualizations</p>
+              <p class="flex gap-2"><span class="text-cream-500">[ ]</span> CI pipeline for proto + test + build</p>
+            </div>
+          </div>
+
+          {# Summary line #}
+          <div class="text-center font-mono text-sm text-cream-400 pt-4 border-t border-forest-600/30">
+            <p>5 of 6 Week 1 items shipped. Full scitizen vertical landed. Protobuf surface tripled.</p>
+            <p class="text-cream-100 font-bold mt-1">15,038 lines. 19 flows. Database to browser. Week 2.</p>
           </div>
         </div>
       </div>
