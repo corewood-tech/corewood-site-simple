@@ -1,0 +1,307 @@
+---
+layout: layouts/page.njk
+title: "Graph Databases Reduce LLM Hallucinations"
+description: "Research-backed evidence that knowledge graphs, temporal provenance, and structured prompting reduce LLM hallucination rates and token consumption."
+keywords: "graph databases, LLM hallucinations, knowledge graphs, GraphRAG, provenance, RAG, token consumption, temporal provenance, citation grounding"
+permalink: /graph-databases/
+date: 2026-03-12
+ogType: "article"
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Graph Databases Reduce LLM Hallucinations — The Evidence",
+        "description": "Research-backed evidence that knowledge graphs, temporal provenance, and structured prompting reduce LLM hallucination rates and token consumption.",
+        "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "publisher": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io", "logo": "https://corewood.io/meta.png" },
+        "url": "https://corewood.io/graph-databases/",
+        "datePublished": "2026-03-12"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Graph Databases & LLM Hallucinations" }
+        ]
+      }
+    ]
+  }
+---
+
+{# ── Hero header ── #}
+<section class="section-wash pt-40 pb-12">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-morpho-400 text-xs font-body font-medium tracking-[0.2em] uppercase mb-4">Research Summary &middot; 10 Sources &middot; March 2026</p>
+    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-2 leading-tight">Graphs Reduce LLM Hallucinations.</h1>
+    <h2 class="font-display font-bold text-4xl md:text-5xl text-cream-600 mb-8 leading-tight">Here Are the Receipts.</h2>
+    <p class="text-cream-300 text-lg leading-relaxed max-w-2xl">Knowledge graphs + temporal provenance + explicit citation constraints = the emerging stack for trustworthy LLM output. Not vibes&thinsp;&mdash;&thinsp;evidence.</p>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── Sources table ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Sources &amp; Findings</p>
+
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-0 overflow-hidden">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        {# ── Table header (hidden on mobile) ── #}
+        <div class="hidden md:grid grid-cols-[48px_200px_1fr_80px_64px] px-6 py-3 text-[10px] tracking-[0.1em] uppercase text-cream-600 border-b border-cream-100/[0.06] bg-forest-900/40">
+          <span>#</span>
+          <span>Source</span>
+          <span>Key Finding</span>
+          <span>Type</span>
+          <span class="text-right">Impact</span>
+        </div>
+
+        {# ── Row 01 ── #}
+        <a href="https://arxiv.org/abs/2311.07914" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">01</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">01</span>Agrawal et al., NAACL 2024</span>
+            <span class="text-cream-200 md:pr-4">KG-augmented LLMs show consistent improvement in factual accuracy across three major integration strategies</span>
+            <span class="text-[10px] font-semibold text-[#8b5cf6]">Survey</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-morpho-400 bg-morpho-400/[0.12] border border-morpho-400/40 rounded px-2 py-0.5 inline-block">high</span></span>
+          </div>
+        </a>
+
+        {# ── Row 02 ── #}
+        <a href="https://github.com/FalkorDB/GraphRAG-SDK" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">02</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">02</span>FalkorDB / GraphRAG SDK</span>
+            <span class="text-cream-200 md:pr-4">90% hallucination reduction vs traditional RAG with sub-50ms query latency</span>
+            <span class="text-[10px] font-semibold text-morpho-400">Benchmark</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-morpho-400 bg-morpho-400/[0.12] border border-morpho-400/40 rounded px-2 py-0.5 inline-block">high</span></span>
+          </div>
+        </a>
+
+        {# ── Row 03 ── #}
+        <a href="https://github.com/microsoft/graphrag" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">03</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">03</span>Microsoft GraphRAG</span>
+            <span class="text-cream-200 md:pr-4">Solves cross-document reasoning that chunk-based RAG cannot &mdash; LinkedIn saw 63% faster ticket resolution</span>
+            <span class="text-[10px] font-semibold text-morpho-500">System</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-morpho-400 bg-morpho-400/[0.12] border border-morpho-400/40 rounded px-2 py-0.5 inline-block">high</span></span>
+          </div>
+        </a>
+
+        {# ── Row 04 ── #}
+        <a href="https://arxiv.org/abs/2501.13956" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">04</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">04</span>Rasmussen et al., Jan 2025</span>
+            <span class="text-cream-200 md:pr-4">Bitemporal provenance graph outperforms MemGPT (94.8% vs 93.4% DMR) with 90% latency reduction</span>
+            <span class="text-[10px] font-semibold text-[#f472b6]">Paper</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-morpho-400 bg-morpho-400/[0.12] border border-morpho-400/40 rounded px-2 py-0.5 inline-block">high</span></span>
+          </div>
+        </a>
+
+        {# ── Row 05 ── #}
+        <a href="https://arxiv.org/abs/2407.10793" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">05</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">05</span>Sansford et al., Jul 2024</span>
+            <span class="text-cream-200 md:pr-4">Graph-structured eval identifies specific hallucinated triples; GraphCorrect rectifies the majority of them</span>
+            <span class="text-[10px] font-semibold text-[#f472b6]">Paper</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-cream-500 bg-cream-500/[0.10] border border-cream-500/[0.35] rounded px-2 py-0.5 inline-block">med</span></span>
+          </div>
+        </a>
+
+        {# ── Row 06 ── #}
+        <a href="https://arxiv.org/abs/2409.04181" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">06</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">06</span>Pusch et al., Sep 2024</span>
+            <span class="text-cream-200 md:pr-4">LLM + KG + query checker eliminates hallucinated Cypher queries in biomedical knowledge graphs</span>
+            <span class="text-[10px] font-semibold text-[#f472b6]">Paper</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-cream-500 bg-cream-500/[0.10] border border-cream-500/[0.35] rounded px-2 py-0.5 inline-block">med</span></span>
+          </div>
+        </a>
+
+        {# ── Row 07 ── #}
+        <a href="https://arxiv.org/html/2512.12117v1" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">07</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">07</span>Citation-Grounded Code Comprehension, Dec 2025</span>
+            <span class="text-cream-200 md:pr-4">Forcing LLMs to cite retrieved line ranges achieves 100% precision &mdash; zero false negatives in 1,080 responses</span>
+            <span class="text-[10px] font-semibold text-[#f472b6]">Paper</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-morpho-400 bg-morpho-400/[0.12] border border-morpho-400/40 rounded px-2 py-0.5 inline-block">high</span></span>
+          </div>
+        </a>
+
+        {# ── Row 08 ── #}
+        <a href="https://arxiv.org/html/2602.21045" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">08</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">08</span>PaperTrail, Feb 2025</span>
+            <span class="text-cream-200 md:pr-4">Granular claim-to-evidence provenance increases user caution vs standard citations, but trust alone doesn&rsquo;t change behavior</span>
+            <span class="text-[10px] font-semibold text-[#fb923c]">User Study</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-cream-500 bg-cream-500/[0.10] border border-cream-500/[0.35] rounded px-2 py-0.5 inline-block">med</span></span>
+          </div>
+        </a>
+
+        {# ── Row 09 ── #}
+        <a href="https://openreview.net/pdf?id=U51WxL382H" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm border-b border-cream-100/[0.03] items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">09</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">09</span>ICLR 2026 MemAgents Workshop</span>
+            <span class="text-cream-200 md:pr-4">Agent memory requires provenance-aware retrieval, write policies, and temporal credit assignment &mdash; not just bigger context</span>
+            <span class="text-[10px] font-semibold text-[#a78bfa]">Workshop</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-cream-500 bg-cream-500/[0.10] border border-cream-500/[0.35] rounded px-2 py-0.5 inline-block">med</span></span>
+          </div>
+        </a>
+
+        {# ── Row 10 ── #}
+        <a href="https://github.com/guardrails-ai/provenance_llm" target="_blank" rel="noopener noreferrer" class="block hover:bg-morpho-deep/20 transition-colors duration-150">
+          <div class="grid grid-cols-1 md:grid-cols-[48px_200px_1fr_80px_64px] gap-y-1 md:gap-y-0 px-6 py-4 text-sm items-start">
+            <span class="text-cream-700 font-semibold hidden md:block">10</span>
+            <span class="text-cream-400 text-xs md:text-[11px] leading-relaxed md:pr-4"><span class="text-cream-700 font-semibold md:hidden mr-2">10</span>Guardrails AI</span>
+            <span class="text-cream-200 md:pr-4">Post-hoc provenance checking via embedding similarity + LLM judge catches unsupported claims in RAG pipelines</span>
+            <span class="text-[10px] font-semibold text-morpho-300">Tool</span>
+            <span class="text-right"><span class="text-[10px] font-semibold text-cream-500 bg-cream-500/[0.10] border border-cream-500/[0.35] rounded px-2 py-0.5 inline-block">med</span></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── Conclusions ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Conclusions</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div class="plate-flat rounded-lg p-5">
+        <h3 class="font-display font-bold text-cream-100 text-base mb-2">Graph structure preserves relationships</h3>
+        <p class="text-cream-300 text-sm leading-relaxed">Entity relationships that flat RAG destroys are preserved in graph form &mdash; this is why chunk-based retrieval plateaus on complex queries.</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5">
+        <h3 class="font-display font-bold text-cream-100 text-base mb-2">Temporal provenance enables reasoning</h3>
+        <p class="text-cream-300 text-sm leading-relaxed">Bitemporal modeling lets agents reason about what changed, when, and why &mdash; not just what&rsquo;s true now. This cuts token waste on stale context.</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5">
+        <h3 class="font-display font-bold text-cream-100 text-base mb-2">Provenance + AuthZ at the graph layer</h3>
+        <p class="text-cream-300 text-sm leading-relaxed">You can enforce who sees what evidence &mdash; critical for enterprise trust. Authorization evaluated at query time, not ingestion.</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5">
+        <h3 class="font-display font-bold text-cream-100 text-base mb-2">Prevention beats detection</h3>
+        <p class="text-cream-300 text-sm leading-relaxed">Architectural citation constraints (must-cite-source) outperform probabilistic hallucination detection. Force the model to ground its claims.</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5">
+        <h3 class="font-display font-bold text-cream-100 text-base mb-2">Schema-as-code for knowledge graphs</h3>
+        <p class="text-cream-300 text-sm leading-relaxed">Treating extraction prompts as deployable config turns a one-off project into a platform. Fewer tokens, more structure.</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5">
+        <h3 class="font-display font-bold text-cream-100 text-base mb-2">The stack is converging</h3>
+        <p class="text-cream-300 text-sm leading-relaxed">Graph memory + explicit provenance + structured prompting is the emerging stack for trustworthy LLM systems with lower token budgets.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── Dgraph Viewer ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Open Source Tooling</p>
+
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-2">Dgraph Viewer</h2>
+        <p class="text-morpho-400 text-sm font-medium mb-6">
+          <a href="https://github.com/corewood-tech/dgraph-viewer" target="_blank" rel="noopener noreferrer" class="hover:text-morpho-300 transition-colors">github.com/corewood-tech/dgraph-viewer</a>
+        </p>
+
+        <div class="text-cream-200 text-base leading-relaxed space-y-4 mb-8">
+          <p>A lightweight, browser-based graph explorer for <a href="https://dgraph.io" target="_blank" rel="noopener noreferrer" class="text-morpho-400 hover:text-morpho-300 transition-colors">Dgraph</a> databases. Inspired by Neo4j&rsquo;s browser interface, distributed as a single Go binary with zero dependencies.</p>
+          <p>Toggle between Three.js 3D rendering and D3.js 2D SVG views while preserving graph state. Explore nodes incrementally via double-click expansion with radial glow highlighting that reveals BFS-ranked connections. Type-specific platonic solids &mdash; icosahedron, octahedron, dodecahedron &mdash; make entity types instantly distinguishable.</p>
+          <p>Read-only by design: all mutation queries are blocked at the proxy layer. Live-switch between Dgraph instances without restart.</p>
+        </div>
+
+        {# ── Screenshot ── #}
+        <a href="https://github.com/corewood-tech/dgraph-viewer" target="_blank" rel="noopener noreferrer" class="block rounded-lg overflow-hidden border border-cream-100/[0.08] hover:border-morpho-400/30 transition-colors duration-300">
+          <img
+            src="{{ '/dgraph-viewer-screenshot.png' | url }}"
+            alt="Dgraph Viewer — 3D graph visualization with force-directed layout showing interconnected nodes as platonic solids"
+            class="w-full h-auto block"
+            loading="lazy"
+          />
+        </a>
+        <p class="text-cream-700 text-xs mt-3 italic">3D force-directed graph visualization with DQL query editor and schema inspector</p>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── Provenance toggle ── #}
+<section class="py-16" x-data="{ open: false }">
+  <div class="max-w-4xl mx-auto px-6">
+    <button
+      @click="open = !open"
+      class="btn-secondary text-sm"
+    >
+      <span x-text="open ? '&#9662;' : '&#9656;'"></span>
+      <span class="ml-2">Show provenance of this artifact</span>
+    </button>
+
+    <div x-show="open" x-transition.opacity class="mt-6">
+      <div class="plate-flat rounded-lg p-6">
+        <p class="text-morpho-400 text-[10px] font-semibold tracking-[0.1em] uppercase mb-4">Provenance Chain</p>
+        <div class="text-sm leading-loose space-y-1">
+          <p><span class="text-cream-700">generated_by:</span> <span class="text-cream-400">Claude Opus 4.6</span></p>
+          <p><span class="text-cream-700">retrieval_method:</span> <span class="text-cream-400">web_search &rarr; 5 queries &rarr; 50 results &rarr; filtered to 10 sources</span></p>
+          <p><span class="text-cream-700">sources_verified:</span> <span class="text-cream-400">URLs point to arxiv, GitHub, ACL Anthology, OpenReview</span></p>
+          <p><span class="text-cream-700">citation_constraint:</span> <span class="text-cream-400">all findings paraphrased from search results with inline attribution</span></p>
+          <p><span class="text-cream-700">hallucination_risk:</span> <span class="text-cream-400">LOW &mdash; all claims grounded in retrieved documents, but verify URLs yourself</span></p>
+        </div>
+        <div class="section-divider my-4"></div>
+        <p class="text-cream-600 text-sm italic">This provenance block was generated by the same LLM that made the content above.</p>
+        <p class="text-cream-600 text-sm italic">The irony is not lost on us. That&rsquo;s the whole point.</p>
+        <p class="text-morpho-400 text-sm font-medium mt-2">Trust graphs, not tokens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── CTA ── #}
+<section class="section-wash py-16 pb-24">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <p class="text-cream-400 text-lg italic mb-6 font-display">Building graph-backed AI systems that earn trust?</p>
+    <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center inline-block">
+      <span class="block text-sm md:text-base font-medium">Talk to Corewood</span>
+    </a>
+  </div>
+</section>
