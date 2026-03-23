@@ -1,0 +1,28 @@
+{
+  "name": "retina-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3",
+    "@sveltejs/kit": "^2",
+    "@sveltejs/vite-plugin-svelte": "^7",
+    "svelte": "^5",
+    "vite": "^8",
+    "@bufbuild/buf": "^1.57",
+    "@bufbuild/protoc-gen-es": "^1.10",
+    "@connectrpc/protoc-gen-connect-es": "^1.5"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^1.10",
+    "@connectrpc/connect": "^1.5",
+    "@connectrpc/connect-web": "^1.5",
+    "d3": "^7",
+    "neo4j-driver": "^5"
+  },
+  "scripts": {
+    "dev": "vite dev --host 0.0.0.0 --port 5173",
+    "build": "vite build",
+    "proto": "buf generate --template ../proto/buf.gen.ts.yaml ../proto"
+  }
+}
