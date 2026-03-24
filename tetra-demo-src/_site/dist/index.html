@@ -6,10 +6,17 @@
 	<link rel="icon" type="image/png" href="/tetra-demo/favicon.png" />
 	<link rel="icon" type="image/x-icon" href="/tetra-demo/favicon.ico" />
 	<title>TETRA Demo — Corewood</title>
-	<link href="/tetra-demo/_app/immutable/entry/start.DdXTcfSr.js" rel="modulepreload">
+	<meta name="description" content="Interactive 3D graph visualization demo. Explore the recommendations dataset with TETRA's WebGPU-powered viewer — 2,330 nodes, 3,506 edges, running entirely in your browser." />
+	<meta property="og:title" content="TETRA Demo — Corewood" />
+	<meta property="og:description" content="Interactive 3D graph visualization. Explore the recommendations dataset in your browser." />
+	<meta property="og:image" content="/assets/img/og-tetra.png" />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="/assets/img/og-tetra.png" />
+	<link href="/tetra-demo/_app/immutable/entry/start.JfCyS-v4.js" rel="modulepreload">
 		<link href="/tetra-demo/_app/immutable/chunks/DY4Jf6pv.js" rel="modulepreload">
-		<link href="/tetra-demo/_app/immutable/chunks/fnfItL3p.js" rel="modulepreload">
-		<link href="/tetra-demo/_app/immutable/entry/app.CJx5-h-g.js" rel="modulepreload">
+		<link href="/tetra-demo/_app/immutable/chunks/Br4PySCk.js" rel="modulepreload">
+		<link href="/tetra-demo/_app/immutable/entry/app.DkaQ68IX.js" rel="modulepreload">
 		<link href="/tetra-demo/_app/immutable/chunks/Dj6f-nJM.js" rel="modulepreload">
 		<link href="/tetra-demo/_app/immutable/chunks/DEDqjojZ.js" rel="modulepreload">
 		
@@ -22,22 +29,22 @@
 				<div class="cw-rivet cw-rivet-r"></div>
 				<div class="cw-header-inner">
 					<div class="cw-nav-left">
-						<a href="https://corewood.io/profile/">Work</a>
-						<a href="https://corewood.io/about/">About</a>
+						<a href="/profile/">Work</a>
+						<a href="/about/">About</a>
 					</div>
-					<a href="https://corewood.io/" class="cw-logo-link">
+					<a href="/" class="cw-logo-link">
 						<img src="/tetra-demo/corewood-symbol.png" alt="Corewood" class="cw-logo-img" />
 					</a>
 					<div class="cw-nav-right">
-						<a href="https://corewood.io/blog/">Blog</a>
-						<a href="https://corewood.io/contact/">Contact</a>
+						<a href="/blog/">Blog</a>
+						<a href="/contact/">Contact</a>
 						<span class="cw-collab">
 							<span class="cw-collab-text">in collaboration with</span>
 							<a href="https://www.verdantintel.com/" target="_blank" rel="noopener noreferrer">
 								<img src="/tetra-demo/verdant-logo.png" alt="Verdant Intelligence" class="cw-verdant-logo" />
 							</a>
 						</span>
-						<a href="https://corewood.io/schedule-meeting/" class="cw-cta">Schedule a Meeting</a>
+						<a href="/schedule-meeting/" class="cw-cta">Schedule a Meeting</a>
 					</div>
 				</div>
 			</div>
@@ -45,7 +52,7 @@
 		<div id="app">
 			<script>
 				{
-					__sveltekit_wt9gnw = {
+					__sveltekit_c60zuf = {
 						base: "/tetra-demo",
 						assets: "/tetra-demo"
 					};
@@ -53,8 +60,8 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/tetra-demo/_app/immutable/entry/start.DdXTcfSr.js"),
-						import("/tetra-demo/_app/immutable/entry/app.CJx5-h-g.js")
+						import("/tetra-demo/_app/immutable/entry/start.JfCyS-v4.js"),
+						import("/tetra-demo/_app/immutable/entry/app.DkaQ68IX.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});

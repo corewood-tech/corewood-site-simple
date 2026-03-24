@@ -1,11 +1,12 @@
 ---
 layout: layouts/page.njk
 title: "TETRA by Corewood — Graph Everything"
-description: "TETRA is a WebAssembly-powered graph database with 3D visualization, 30+ built-in algorithms, full Cypher support, and benchmark-proven performance that beats Neo4j on 10 of 16 queries."
+description: "Data visualization and analytics. Faster than you can imagine."
 keywords: "TETRA, graph database, Corewood, WebAssembly, WASM, graph visualization, Cypher, Neo4j, graph algorithms, 3D graph, knowledge graph"
 permalink: /tetra/
 date: 2026-03-20
 ogType: "article"
+ogImage: "/assets/img/og-tetra.png"
 jsonLd: |
   {
     "@context": "https://schema.org",
@@ -298,7 +299,7 @@ jsonLd: |
 
     </div>
 
-    <p class="text-cream-600 text-[10px] font-medium tracking-[0.15em] uppercase mb-3">Native binary &mdash; Apple M4 Pro</p>
+    <p class="text-cream-600 text-[10px] font-medium tracking-[0.15em] uppercase mb-3">TETRA on bare metal &mdash; no container, no JVM, just the binary</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
       <div class="plate-flat rounded-lg p-5 text-center">
@@ -422,7 +423,7 @@ jsonLd: |
       </div>
       <div class="plate-flat rounded-lg px-5 py-3 text-center">
         <div class="text-xl font-bold font-display text-morpho-400">25µs</div>
-        <div class="text-cream-600 text-[10px] font-medium tracking-wider uppercase mt-0.5">Fastest native</div>
+        <div class="text-cream-600 text-[10px] font-medium tracking-wider uppercase mt-0.5">Fastest bare metal</div>
       </div>
       <div class="plate-flat rounded-lg px-5 py-3 text-center">
         <div class="text-xl font-bold font-display text-cream-400">5%</div>
@@ -435,9 +436,9 @@ jsonLd: |
 <section class="section-wash pt-8 pb-4">
   <div class="max-w-5xl mx-auto px-6">
     <div class="flex flex-wrap gap-6 items-center">
-      <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-sm cw-green-bg"></span><span class="text-sm font-medium cw-green">TETRA</span></div>
-      <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-sm neo-blue-bg"></span><span class="text-sm font-medium neo-blue">Neo4j</span></div>
-      <span class="text-cream-700 text-xs ml-auto">Both containerized &middot; Apple M4 Pro &middot; 16 GB &middot; CPU only</span>
+      <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-sm cw-green-bg"></span><span class="text-sm font-medium cw-green">TETRA container</span></div>
+      <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-sm" style="background:#E85A48"></span><span class="text-sm font-medium" style="color:#E85A48">Neo4j container</span></div>
+      <span class="text-cream-700 text-xs ml-auto">Both containerized &middot; Apple M4 Pro &middot; 16 GB &middot; CPU only &middot; Bar shows container head-to-head</span>
     </div>
   </div>
 </section>
@@ -492,8 +493,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 1" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 62% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count all nodes</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 61µs native</div>
-          <div class="bench-bar-track" title="Tetra 200µs / Neo4j 532µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 61µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 200µs</span><span style="color:#E85A48">532µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 200µs / Neo4j container 532µs">
             <div class="bench-bar-win cw-green-bg" style="width:38%"></div>
             <div class="bench-bar-lose" style="width:62%"></div>
           </div>
@@ -501,8 +503,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 2" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 56% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count all edges</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 62µs native</div>
-          <div class="bench-bar-track" title="Tetra 233µs / Neo4j 534µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 62µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 233µs</span><span style="color:#E85A48">534µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 233µs / Neo4j container 534µs">
             <div class="bench-bar-win cw-green-bg" style="width:44%"></div>
             <div class="bench-bar-lose" style="width:56%"></div>
           </div>
@@ -510,8 +513,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 3" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 56% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count Movie</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 53µs native</div>
-          <div class="bench-bar-track" title="Tetra 217µs / Neo4j 494µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 53µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 217µs</span><span style="color:#E85A48">494µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 217µs / Neo4j container 494µs">
             <div class="bench-bar-win cw-green-bg" style="width:44%"></div>
             <div class="bench-bar-lose" style="width:56%"></div>
           </div>
@@ -519,8 +523,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 4" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 45% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count Person</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 50µs native</div>
-          <div class="bench-bar-track" title="Tetra 171µs / Neo4j 310µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 50µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 171µs</span><span style="color:#E85A48">310µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 171µs / Neo4j container 310µs">
             <div class="bench-bar-win cw-green-bg" style="width:55%"></div>
             <div class="bench-bar-lose" style="width:45%"></div>
           </div>
@@ -528,8 +533,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 5" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 59% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count Genre</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 47µs native</div>
-          <div class="bench-bar-track" title="Tetra 169µs / Neo4j 411µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 47µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 169µs</span><span style="color:#E85A48">411µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 169µs / Neo4j container 411µs">
             <div class="bench-bar-win cw-green-bg" style="width:41%"></div>
             <div class="bench-bar-lose" style="width:59%"></div>
           </div>
@@ -537,8 +543,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 6" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 61% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count User</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 34µs native</div>
-          <div class="bench-bar-track" title="Tetra 144µs / Neo4j 372µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 34µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 144µs</span><span style="color:#E85A48">372µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 144µs / Neo4j container 372µs">
             <div class="bench-bar-win cw-green-bg" style="width:39%"></div>
             <div class="bench-bar-lose" style="width:61%"></div>
           </div>
@@ -546,8 +553,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 7" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 61% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count ACTED_IN</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 29µs native</div>
-          <div class="bench-bar-track" title="Tetra 141µs / Neo4j 358µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 29µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 141µs</span><span style="color:#E85A48">358µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 141µs / Neo4j container 358µs">
             <div class="bench-bar-win cw-green-bg" style="width:39%"></div>
             <div class="bench-bar-lose" style="width:61%"></div>
           </div>
@@ -555,8 +563,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 8" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 62% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count RATED</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 27µs native</div>
-          <div class="bench-bar-track" title="Tetra 135µs / Neo4j 351µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 27µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 135µs</span><span style="color:#E85A48">351µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 135µs / Neo4j container 351µs">
             <div class="bench-bar-win cw-green-bg" style="width:38%"></div>
             <div class="bench-bar-lose" style="width:62%"></div>
           </div>
@@ -564,8 +573,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 9" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 41% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count DIRECTED</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 26µs native</div>
-          <div class="bench-bar-track" title="Tetra 174µs / Neo4j 293µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 26µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 174µs</span><span style="color:#E85A48">293µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 174µs / Neo4j container 293µs">
             <div class="bench-bar-win cw-green-bg" style="width:59%"></div>
             <div class="bench-bar-lose" style="width:41%"></div>
           </div>
@@ -573,8 +583,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 10" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 49% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count IN_GENRE</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 25µs native</div>
-          <div class="bench-bar-track" title="Tetra 158µs / Neo4j 307µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 25µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 158µs</span><span style="color:#E85A48">307µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 158µs / Neo4j container 307µs">
             <div class="bench-bar-win cw-green-bg" style="width:51%"></div>
             <div class="bench-bar-lose" style="width:49%"></div>
           </div>
@@ -582,8 +593,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 11" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 72% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Lookup Matrix</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 28µs native</div>
-          <div class="bench-bar-track" title="Tetra 156µs / Neo4j 558µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 28µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 156µs</span><span style="color:#E85A48">558µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 156µs / Neo4j container 558µs">
             <div class="bench-bar-win cw-green-bg" style="width:28%"></div>
             <div class="bench-bar-lose" style="width:72%"></div>
           </div>
@@ -591,8 +603,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 12" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 55% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Lookup Keanu</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 27µs native</div>
-          <div class="bench-bar-track" title="Tetra 163µs / Neo4j 359µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 27µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 163µs</span><span style="color:#E85A48">359µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 163µs / Neo4j container 359µs">
             <div class="bench-bar-win cw-green-bg" style="width:45%"></div>
             <div class="bench-bar-lose" style="width:55%"></div>
           </div>
@@ -600,8 +613,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 13" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 54% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Lookup Toy Story</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 27µs native</div>
-          <div class="bench-bar-track" title="Tetra 180µs / Neo4j 393µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 27µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 180µs</span><span style="color:#E85A48">393µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 180µs / Neo4j container 393µs">
             <div class="bench-bar-win cw-green-bg" style="width:46%"></div>
             <div class="bench-bar-lose" style="width:54%"></div>
           </div>
@@ -624,8 +638,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 14" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 49% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Actors in Matrix</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 34µs native</div>
-          <div class="bench-bar-track" title="Tetra 189µs / Neo4j 371µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 34µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 189µs</span><span style="color:#E85A48">371µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 189µs / Neo4j container 371µs">
             <div class="bench-bar-win cw-green-bg" style="width:51%"></div>
             <div class="bench-bar-lose" style="width:49%"></div>
           </div>
@@ -633,8 +648,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 15" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 43% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Movies by Keanu</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 92µs native</div>
-          <div class="bench-bar-track" title="Tetra 271µs / Neo4j 475µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 92µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 271µs</span><span style="color:#E85A48">475µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 271µs / Neo4j container 475µs">
             <div class="bench-bar-win cw-green-bg" style="width:57%"></div>
             <div class="bench-bar-lose" style="width:43%"></div>
           </div>
@@ -642,8 +658,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 16" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 44% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Genres of Toy Story</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 36µs native</div>
-          <div class="bench-bar-track" title="Tetra 164µs / Neo4j 293µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 36µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 164µs</span><span style="color:#E85A48">293µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 164µs / Neo4j container 293µs">
             <div class="bench-bar-win cw-green-bg" style="width:56%"></div>
             <div class="bench-bar-lose" style="width:44%"></div>
           </div>
@@ -651,8 +668,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 17" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 38% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Directors of Matrix</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 32µs native</div>
-          <div class="bench-bar-track" title="Tetra 160µs / Neo4j 259µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 32µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 160µs</span><span style="color:#E85A48">259µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 160µs / Neo4j container 259µs">
             <div class="bench-bar-win cw-green-bg" style="width:62%"></div>
             <div class="bench-bar-lose" style="width:38%"></div>
           </div>
@@ -660,8 +678,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 18" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 48% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Movies by Spielberg</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 86µs native</div>
-          <div class="bench-bar-track" title="Tetra 272µs / Neo4j 528µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 86µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 272µs</span><span style="color:#E85A48">528µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 272µs / Neo4j container 528µs">
             <div class="bench-bar-win cw-green-bg" style="width:52%"></div>
             <div class="bench-bar-lose" style="width:48%"></div>
           </div>
@@ -669,8 +688,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 19" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 73% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Users rated Matrix</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 35µs native</div>
-          <div class="bench-bar-track" title="Tetra 143µs / Neo4j 530µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 35µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 143µs</span><span style="color:#E85A48">530µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 143µs / Neo4j container 530µs">
             <div class="bench-bar-win cw-green-bg" style="width:27%"></div>
             <div class="bench-bar-lose" style="width:73%"></div>
           </div>
@@ -693,8 +713,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 20" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 22% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Co-actors of Keanu</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 372µs native</div>
-          <div class="bench-bar-track" title="Tetra 741µs / Neo4j 950µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 372µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 741µs</span><span style="color:#E85A48">950µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 741µs / Neo4j container 950µs">
             <div class="bench-bar-win cw-green-bg" style="width:78%"></div>
             <div class="bench-bar-lose" style="width:22%"></div>
           </div>
@@ -702,8 +723,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 21" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 16% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Directors of Keanu movies</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 279µs native</div>
-          <div class="bench-bar-track" title="Tetra 1.0ms / Neo4j 835µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 279µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 1.0ms</span><span style="color:#E85A48">835µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 1.0ms / Neo4j container 835µs">
             <div class="bench-bar-win neo-blue-bg" style="width:84%"></div>
             <div class="bench-bar-lose" style="width:16%"></div>
           </div>
@@ -711,8 +733,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 22" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 5% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Genres Keanu acts in</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 277µs native</div>
-          <div class="bench-bar-track" title="Tetra 687µs / Neo4j 651µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 277µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 687µs</span><span style="color:#E85A48">651µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 687µs / Neo4j container 651µs">
             <div class="bench-bar-win neo-blue-bg" style="width:95%"></div>
             <div class="bench-bar-lose" style="width:5%"></div>
           </div>
@@ -720,8 +743,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 23" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 13% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Actors same genre as Matrix</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 514µs native</div>
-          <div class="bench-bar-track" title="Tetra 1.1ms / Neo4j 952µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 514µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 1.1ms</span><span style="color:#E85A48">952µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 1.1ms / Neo4j container 952µs">
             <div class="bench-bar-win neo-blue-bg" style="width:87%"></div>
             <div class="bench-bar-lose" style="width:13%"></div>
           </div>
@@ -729,8 +753,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 24" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 17% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Users rated Keanu movies</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 399µs native</div>
-          <div class="bench-bar-track" title="Tetra 1.0ms / Neo4j 831µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 399µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 1.0ms</span><span style="color:#E85A48">831µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 1.0ms / Neo4j container 831µs">
             <div class="bench-bar-win neo-blue-bg" style="width:83%"></div>
             <div class="bench-bar-lose" style="width:17%"></div>
           </div>
@@ -753,8 +778,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 25" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 47% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">3-hop actor chain</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 464µs native</div>
-          <div class="bench-bar-track" title="Tetra 850µs / Neo4j 1.6ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 464µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 850µs</span><span style="color:#E85A48">1.6ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 850µs / Neo4j container 1.6ms">
             <div class="bench-bar-win cw-green-bg" style="width:53%"></div>
             <div class="bench-bar-lose" style="width:47%"></div>
           </div>
@@ -762,8 +788,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 26" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 44% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Actor-movie-genre-movie</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 372µs native</div>
-          <div class="bench-bar-track" title="Tetra 1.0ms / Neo4j 561µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 372µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 1.0ms</span><span style="color:#E85A48">561µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 1.0ms / Neo4j container 561µs">
             <div class="bench-bar-win neo-blue-bg" style="width:56%"></div>
             <div class="bench-bar-lose" style="width:44%"></div>
           </div>
@@ -771,8 +798,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 27" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 75% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">User-movie-actor-movie</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 599µs native</div>
-          <div class="bench-bar-track" title="Tetra 1.6ms / Neo4j 397µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 599µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 1.6ms</span><span style="color:#E85A48">397µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 1.6ms / Neo4j container 397µs">
             <div class="bench-bar-win neo-blue-bg" style="width:25%"></div>
             <div class="bench-bar-lose" style="width:75%"></div>
           </div>
@@ -795,8 +823,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 28" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 39% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Movies per genre</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 3.8ms native</div>
-          <div class="bench-bar-track" title="Tetra 5.1ms / Neo4j 8.3ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 3.8ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 5.1ms</span><span style="color:#E85A48">8.3ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 5.1ms / Neo4j container 8.3ms">
             <div class="bench-bar-win cw-green-bg" style="width:61%"></div>
             <div class="bench-bar-lose" style="width:39%"></div>
           </div>
@@ -804,8 +833,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 29" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 97% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Top rated movies</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 1.5ms native</div>
-          <div class="bench-bar-track" title="Tetra 2.1ms / Neo4j 60.6ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 1.5ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 2.1ms</span><span style="color:#E85A48">60.6ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 2.1ms / Neo4j container 60.6ms">
             <div class="bench-bar-win cw-green-bg" style="width:3%"></div>
             <div class="bench-bar-lose" style="width:97%"></div>
           </div>
@@ -813,8 +843,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 30" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 68% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Prolific actors</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 6.8ms native</div>
-          <div class="bench-bar-track" title="Tetra 7.5ms / Neo4j 23.4ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 6.8ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 7.5ms</span><span style="color:#E85A48">23.4ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 7.5ms / Neo4j container 23.4ms">
             <div class="bench-bar-win cw-green-bg" style="width:32%"></div>
             <div class="bench-bar-lose" style="width:68%"></div>
           </div>
@@ -822,8 +853,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 31" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 37% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Prolific directors</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 5.4ms native</div>
-          <div class="bench-bar-track" title="Tetra 6.0ms / Neo4j 9.5ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 5.4ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 6.0ms</span><span style="color:#E85A48">9.5ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 6.0ms / Neo4j container 9.5ms">
             <div class="bench-bar-win cw-green-bg" style="width:63%"></div>
             <div class="bench-bar-lose" style="width:37%"></div>
           </div>
@@ -831,8 +863,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 32" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 96% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Avg ratings per genre</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 2.9ms native</div>
-          <div class="bench-bar-track" title="Tetra 3.4ms / Neo4j 84.3ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 2.9ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 3.4ms</span><span style="color:#E85A48">84.3ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 3.4ms / Neo4j container 84.3ms">
             <div class="bench-bar-win cw-green-bg" style="width:4%"></div>
             <div class="bench-bar-lose" style="width:96%"></div>
           </div>
@@ -840,8 +873,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 33" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 92% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Genre popularity</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 3.0ms native</div>
-          <div class="bench-bar-track" title="Tetra 3.2ms / Neo4j 40.1ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 3.0ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 3.2ms</span><span style="color:#E85A48">40.1ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 3.2ms / Neo4j container 40.1ms">
             <div class="bench-bar-win cw-green-bg" style="width:8%"></div>
             <div class="bench-bar-lose" style="width:92%"></div>
           </div>
@@ -864,8 +898,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 34" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 24% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Forward WITH + filter</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 333µs native</div>
-          <div class="bench-bar-track" title="Tetra 400µs / Neo4j 528µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 333µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 400µs</span><span style="color:#E85A48">528µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 400µs / Neo4j container 528µs">
             <div class="bench-bar-win cw-green-bg" style="width:76%"></div>
             <div class="bench-bar-lose" style="width:24%"></div>
           </div>
@@ -873,8 +908,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 35" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 91% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Forward WITH + DISTINCT</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 4.4ms native</div>
-          <div class="bench-bar-track" title="Tetra 4.8ms / Neo4j 438µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 4.4ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 4.8ms</span><span style="color:#E85A48">438µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 4.8ms / Neo4j container 438µs">
             <div class="bench-bar-win neo-blue-bg" style="width:9%"></div>
             <div class="bench-bar-lose" style="width:91%"></div>
           </div>
@@ -882,8 +918,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 36" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 43% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">WITH agg + filter</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 4.9ms native</div>
-          <div class="bench-bar-track" title="Tetra 5.8ms / Neo4j 10.2ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 4.9ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 5.8ms</span><span style="color:#E85A48">10.2ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 5.8ms / Neo4j container 10.2ms">
             <div class="bench-bar-win cw-green-bg" style="width:57%"></div>
             <div class="bench-bar-lose" style="width:43%"></div>
           </div>
@@ -891,8 +928,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 37" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 94% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">WITH stage barrier</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 7.9ms native</div>
-          <div class="bench-bar-track" title="Tetra 8.8ms / Neo4j 509µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 7.9ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 8.8ms</span><span style="color:#E85A48">509µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 8.8ms / Neo4j container 509µs">
             <div class="bench-bar-win neo-blue-bg" style="width:6%"></div>
             <div class="bench-bar-lose" style="width:94%"></div>
           </div>
@@ -900,8 +938,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 38" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 14% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Director's other movies</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 230µs native</div>
-          <div class="bench-bar-track" title="Tetra 378µs / Neo4j 439µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 230µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 378µs</span><span style="color:#E85A48">439µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 378µs / Neo4j container 439µs">
             <div class="bench-bar-win cw-green-bg" style="width:86%"></div>
             <div class="bench-bar-lose" style="width:14%"></div>
           </div>
@@ -909,8 +948,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 39" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 28% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Collab filter</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 642µs native</div>
-          <div class="bench-bar-track" title="Tetra 840µs / Neo4j 608µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 642µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 840µs</span><span style="color:#E85A48">608µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 840µs / Neo4j container 608µs">
             <div class="bench-bar-win neo-blue-bg" style="width:72%"></div>
             <div class="bench-bar-lose" style="width:28%"></div>
           </div>
@@ -933,8 +973,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 40" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 38% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">MATCH+MATCH shared var</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 269µs native</div>
-          <div class="bench-bar-track" title="Tetra 327µs / Neo4j 531µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 269µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 327µs</span><span style="color:#E85A48">531µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 327µs / Neo4j container 531µs">
             <div class="bench-bar-win cw-green-bg" style="width:62%"></div>
             <div class="bench-bar-lose" style="width:38%"></div>
           </div>
@@ -942,8 +983,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 41" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 45% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">MATCH+MATCH chain</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 213µs native</div>
-          <div class="bench-bar-track" title="Tetra 277µs / Neo4j 500µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 213µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 277µs</span><span style="color:#E85A48">500µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 277µs / Neo4j container 500µs">
             <div class="bench-bar-win cw-green-bg" style="width:55%"></div>
             <div class="bench-bar-lose" style="width:45%"></div>
           </div>
@@ -951,8 +993,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 42" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 91% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Return both endpoints</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 4.4ms native</div>
-          <div class="bench-bar-track" title="Tetra 4.7ms / Neo4j 427µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 4.4ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 4.7ms</span><span style="color:#E85A48">427µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 4.7ms / Neo4j container 427µs">
             <div class="bench-bar-win neo-blue-bg" style="width:9%"></div>
             <div class="bench-bar-lose" style="width:91%"></div>
           </div>
@@ -960,8 +1003,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 43" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 99% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Return all 3 vars</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 35.3ms native</div>
-          <div class="bench-bar-track" title="Tetra 35.6ms / Neo4j 453µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 35.3ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 35.6ms</span><span style="color:#E85A48">453µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 35.6ms / Neo4j container 453µs">
             <div class="bench-bar-win neo-blue-bg" style="width:1%"></div>
             <div class="bench-bar-lose" style="width:99%"></div>
           </div>
@@ -969,8 +1013,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 44" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 36% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Edge type() in RETURN</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 2.5ms native</div>
-          <div class="bench-bar-track" title="Tetra 2.2ms / Neo4j 1.4ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 2.5ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 2.2ms</span><span style="color:#E85A48">1.4ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 2.2ms / Neo4j container 1.4ms">
             <div class="bench-bar-win neo-blue-bg" style="width:64%"></div>
             <div class="bench-bar-lose" style="width:36%"></div>
           </div>
@@ -978,8 +1023,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 45" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 68% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Whole node + prop</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 234µs native</div>
-          <div class="bench-bar-track" title="Tetra 306µs / Neo4j 955µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 234µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 306µs</span><span style="color:#E85A48">955µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 306µs / Neo4j container 955µs">
             <div class="bench-bar-win cw-green-bg" style="width:32%"></div>
             <div class="bench-bar-lose" style="width:68%"></div>
           </div>
@@ -987,8 +1033,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 46" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 43% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">3-match chain</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 279µs native</div>
-          <div class="bench-bar-track" title="Tetra 453µs / Neo4j 798µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 279µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 453µs</span><span style="color:#E85A48">798µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 453µs / Neo4j container 798µs">
             <div class="bench-bar-win cw-green-bg" style="width:57%"></div>
             <div class="bench-bar-lose" style="width:43%"></div>
           </div>
@@ -996,8 +1043,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 47" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 45% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Multi-pattern shared</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 198µs native</div>
-          <div class="bench-bar-track" title="Tetra 290µs / Neo4j 525µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 198µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 290µs</span><span style="color:#E85A48">525µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 290µs / Neo4j container 525µs">
             <div class="bench-bar-win cw-green-bg" style="width:55%"></div>
             <div class="bench-bar-lose" style="width:45%"></div>
           </div>
@@ -1020,8 +1068,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 48" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 73% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">shortestPath</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 69µs native</div>
-          <div class="bench-bar-track" title="Tetra 197µs / Neo4j 730µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 69µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 197µs</span><span style="color:#E85A48">730µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 197µs / Neo4j container 730µs">
             <div class="bench-bar-win cw-green-bg" style="width:27%"></div>
             <div class="bench-bar-lose" style="width:73%"></div>
           </div>
@@ -1029,8 +1078,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 49" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 66% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">OPTIONAL MATCH basic</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 55µs native</div>
-          <div class="bench-bar-track" title="Tetra 165µs / Neo4j 492µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 55µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 165µs</span><span style="color:#E85A48">492µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 165µs / Neo4j container 492µs">
             <div class="bench-bar-win cw-green-bg" style="width:34%"></div>
             <div class="bench-bar-lose" style="width:66%"></div>
           </div>
@@ -1038,8 +1088,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 50" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 32% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">OPTIONAL MATCH chain</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 417µs native</div>
-          <div class="bench-bar-track" title="Tetra 519µs / Neo4j 768µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 417µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 519µs</span><span style="color:#E85A48">768µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 519µs / Neo4j container 768µs">
             <div class="bench-bar-win cw-green-bg" style="width:68%"></div>
             <div class="bench-bar-lose" style="width:32%"></div>
           </div>
@@ -1047,8 +1098,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 51" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 33% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">OPTIONAL null emit</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 58µs native</div>
-          <div class="bench-bar-track" title="Tetra 195µs / Neo4j 289µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 58µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 195µs</span><span style="color:#E85A48">289µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 195µs / Neo4j container 289µs">
             <div class="bench-bar-win cw-green-bg" style="width:67%"></div>
             <div class="bench-bar-lose" style="width:33%"></div>
           </div>
@@ -1056,8 +1108,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 52" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 56% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Named path return</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 288µs native</div>
-          <div class="bench-bar-track" title="Tetra 408µs / Neo4j 930µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 288µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 408µs</span><span style="color:#E85A48">930µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 408µs / Neo4j container 930µs">
             <div class="bench-bar-win cw-green-bg" style="width:44%"></div>
             <div class="bench-bar-lose" style="width:56%"></div>
           </div>
@@ -1065,8 +1118,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 53" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 8% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Edge var type()</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 393µs native</div>
-          <div class="bench-bar-track" title="Tetra 486µs / Neo4j 447µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 393µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 486µs</span><span style="color:#E85A48">447µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 486µs / Neo4j container 447µs">
             <div class="bench-bar-win neo-blue-bg" style="width:92%"></div>
             <div class="bench-bar-lose" style="width:8%"></div>
           </div>
@@ -1074,8 +1128,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 54" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 27% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Edge var props</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 181µs native</div>
-          <div class="bench-bar-track" title="Tetra 313µs / Neo4j 429µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 181µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 313µs</span><span style="color:#E85A48">429µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 313µs / Neo4j container 429µs">
             <div class="bench-bar-win cw-green-bg" style="width:73%"></div>
             <div class="bench-bar-lose" style="width:27%"></div>
           </div>
@@ -1083,8 +1138,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 55" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 55% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">RETURN *</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 299µs native</div>
-          <div class="bench-bar-track" title="Tetra 368µs / Neo4j 824µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 299µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 368µs</span><span style="color:#E85A48">824µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 368µs / Neo4j container 824µs">
             <div class="bench-bar-win cw-green-bg" style="width:45%"></div>
             <div class="bench-bar-lose" style="width:55%"></div>
           </div>
@@ -1092,8 +1148,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 56" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 58% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Cartesian 2-node</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 56µs native</div>
-          <div class="bench-bar-track" title="Tetra 214µs / Neo4j 513µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 56µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 214µs</span><span style="color:#E85A48">513µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 214µs / Neo4j container 513µs">
             <div class="bench-bar-win cw-green-bg" style="width:42%"></div>
             <div class="bench-bar-lose" style="width:58%"></div>
           </div>
@@ -1101,8 +1158,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 57" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 50% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">EXISTS in WHERE</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 2.5ms native</div>
-          <div class="bench-bar-track" title="Tetra 2.8ms / Neo4j 1.4ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 2.5ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 2.8ms</span><span style="color:#E85A48">1.4ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 2.8ms / Neo4j container 1.4ms">
             <div class="bench-bar-win neo-blue-bg" style="width:50%"></div>
             <div class="bench-bar-lose" style="width:50%"></div>
           </div>
@@ -1110,8 +1168,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 58" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 66% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">OR in WHERE</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 228µs native</div>
-          <div class="bench-bar-track" title="Tetra 279µs / Neo4j 813µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 228µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 279µs</span><span style="color:#E85A48">813µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 279µs / Neo4j container 813µs">
             <div class="bench-bar-win cw-green-bg" style="width:34%"></div>
             <div class="bench-bar-lose" style="width:66%"></div>
           </div>
@@ -1119,8 +1178,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 59" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 72% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Count + group + order</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 7.0ms native</div>
-          <div class="bench-bar-track" title="Tetra 7.6ms / Neo4j 26.8ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 7.0ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 7.6ms</span><span style="color:#E85A48">26.8ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 7.6ms / Neo4j container 26.8ms">
             <div class="bench-bar-win cw-green-bg" style="width:28%"></div>
             <div class="bench-bar-lose" style="width:72%"></div>
           </div>
@@ -1143,8 +1203,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 60" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 6% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">4-hop actor chain</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 956µs native</div>
-          <div class="bench-bar-track" title="Tetra 855µs / Neo4j 805µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 956µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 855µs</span><span style="color:#E85A48">805µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 855µs / Neo4j container 805µs">
             <div class="bench-bar-win neo-blue-bg" style="width:94%"></div>
             <div class="bench-bar-lose" style="width:6%"></div>
           </div>
@@ -1152,8 +1213,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 61" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 54% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Kevin Bacon 2-degree</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 1.0ms native</div>
-          <div class="bench-bar-track" title="Tetra 639µs / Neo4j 1.4ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 1.0ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 639µs</span><span style="color:#E85A48">1.4ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 639µs / Neo4j container 1.4ms">
             <div class="bench-bar-win cw-green-bg" style="width:46%"></div>
             <div class="bench-bar-lose" style="width:54%"></div>
           </div>
@@ -1161,8 +1223,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 62" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 22% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Kevin Bacon 3-degree</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 1.3ms native</div>
-          <div class="bench-bar-track" title="Tetra 931µs / Neo4j 1.2ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 1.3ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 931µs</span><span style="color:#E85A48">1.2ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 931µs / Neo4j container 1.2ms">
             <div class="bench-bar-win cw-green-bg" style="width:78%"></div>
             <div class="bench-bar-lose" style="width:22%"></div>
           </div>
@@ -1170,8 +1233,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 63" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 14% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Kevin Bacon 4-degree</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 1.5ms native</div>
-          <div class="bench-bar-track" title="Tetra 1.2ms / Neo4j 1.4ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 1.5ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 1.2ms</span><span style="color:#E85A48">1.4ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 1.2ms / Neo4j container 1.4ms">
             <div class="bench-bar-win cw-green-bg" style="width:86%"></div>
             <div class="bench-bar-lose" style="width:14%"></div>
           </div>
@@ -1179,8 +1243,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 64" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 72% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">VLP 1..4 from Keanu</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 194µs native</div>
-          <div class="bench-bar-track" title="Tetra 285µs / Neo4j 1.0ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 194µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 285µs</span><span style="color:#E85A48">1.0ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 285µs / Neo4j container 1.0ms">
             <div class="bench-bar-win cw-green-bg" style="width:28%"></div>
             <div class="bench-bar-lose" style="width:72%"></div>
           </div>
@@ -1188,8 +1253,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 65" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 74% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">VLP 1..6 Kevin Bacon</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 1.0ms native</div>
-          <div class="bench-bar-track" title="Tetra 653µs / Neo4j 2.5ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 1.0ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 653µs</span><span style="color:#E85A48">2.5ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 653µs / Neo4j container 2.5ms">
             <div class="bench-bar-win cw-green-bg" style="width:26%"></div>
             <div class="bench-bar-lose" style="width:74%"></div>
           </div>
@@ -1197,8 +1263,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 66" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 92% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Full genre cross-agg</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 3.1ms native</div>
-          <div class="bench-bar-track" title="Tetra 3.6ms / Neo4j 45.8ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 3.1ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 3.6ms</span><span style="color:#E85A48">45.8ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 3.6ms / Neo4j container 45.8ms">
             <div class="bench-bar-win cw-green-bg" style="width:8%"></div>
             <div class="bench-bar-lose" style="width:92%"></div>
           </div>
@@ -1221,8 +1288,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 67" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 57% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Content-based recs</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 613µs native</div>
-          <div class="bench-bar-track" title="Tetra 781µs / Neo4j 1.8ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 613µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 781µs</span><span style="color:#E85A48">1.8ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 781µs / Neo4j container 1.8ms">
             <div class="bench-bar-win cw-green-bg" style="width:43%"></div>
             <div class="bench-bar-lose" style="width:57%"></div>
           </div>
@@ -1230,8 +1298,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 68" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 100% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Collab filter recs</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 2.5ms native</div>
-          <div class="bench-bar-track" title="Tetra 2.9ms / Neo4j 825.1ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 2.5ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 2.9ms</span><span style="color:#E85A48">825.1ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 2.9ms / Neo4j container 825.1ms">
             <div class="bench-bar-win cw-green-bg" style="width:0%"></div>
             <div class="bench-bar-lose" style="width:100%"></div>
           </div>
@@ -1239,8 +1308,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 69" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 57% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Similar users</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 235µs native</div>
-          <div class="bench-bar-track" title="Tetra 395µs / Neo4j 913µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 235µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 395µs</span><span style="color:#E85A48">913µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 395µs / Neo4j container 913µs">
             <div class="bench-bar-win cw-green-bg" style="width:43%"></div>
             <div class="bench-bar-lose" style="width:57%"></div>
           </div>
@@ -1248,8 +1318,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 70" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 69% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Actor filmography</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 317µs native</div>
-          <div class="bench-bar-track" title="Tetra 277µs / Neo4j 905µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 317µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 277µs</span><span style="color:#E85A48">905µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 277µs / Neo4j container 905µs">
             <div class="bench-bar-win cw-green-bg" style="width:31%"></div>
             <div class="bench-bar-lose" style="width:69%"></div>
           </div>
@@ -1257,8 +1328,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 71" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 20% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Movie detail page</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 2.5ms native</div>
-          <div class="bench-bar-track" title="Tetra 2.0ms / Neo4j 2.5ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 2.5ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 2.0ms</span><span style="color:#E85A48">2.5ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 2.0ms / Neo4j container 2.5ms">
             <div class="bench-bar-win cw-green-bg" style="width:80%"></div>
             <div class="bench-bar-lose" style="width:20%"></div>
           </div>
@@ -1266,8 +1338,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 72" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 47% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Genre browse</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 3.1ms native</div>
-          <div class="bench-bar-track" title="Tetra 3.2ms / Neo4j 1.7ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 3.1ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 3.2ms</span><span style="color:#E85A48">1.7ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 3.2ms / Neo4j container 1.7ms">
             <div class="bench-bar-win neo-blue-bg" style="width:53%"></div>
             <div class="bench-bar-lose" style="width:47%"></div>
           </div>
@@ -1275,8 +1348,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 73" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 35% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Search by title prefix</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 337µs native</div>
-          <div class="bench-bar-track" title="Tetra 379µs / Neo4j 579µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 337µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 379µs</span><span style="color:#E85A48">579µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 379µs / Neo4j container 579µs">
             <div class="bench-bar-win cw-green-bg" style="width:65%"></div>
             <div class="bench-bar-lose" style="width:35%"></div>
           </div>
@@ -1284,8 +1358,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 74" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 62% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Mutual connections</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 67µs native</div>
-          <div class="bench-bar-track" title="Tetra 163µs / Neo4j 431µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 67µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 163µs</span><span style="color:#E85A48">431µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 163µs / Neo4j container 431µs">
             <div class="bench-bar-win cw-green-bg" style="width:38%"></div>
             <div class="bench-bar-lose" style="width:62%"></div>
           </div>
@@ -1293,8 +1368,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 75" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 23% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Friend-of-friend</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 509µs native</div>
-          <div class="bench-bar-track" title="Tetra 640µs / Neo4j 826µs">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 509µs</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 640µs</span><span style="color:#E85A48">826µs Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 640µs / Neo4j container 826µs">
             <div class="bench-bar-win cw-green-bg" style="width:77%"></div>
             <div class="bench-bar-lose" style="width:23%"></div>
           </div>
@@ -1302,8 +1378,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-neo" @click="card = 76" style="cursor:pointer">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 89% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Yearly movie count</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 34.6ms native</div>
-          <div class="bench-bar-track" title="Tetra 37.6ms / Neo4j 4.3ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 34.6ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 37.6ms</span><span style="color:#E85A48">4.3ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 37.6ms / Neo4j container 4.3ms">
             <div class="bench-bar-win neo-blue-bg" style="width:11%"></div>
             <div class="bench-bar-lose" style="width:89%"></div>
           </div>
@@ -1311,8 +1388,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 77" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 96% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Top genres by avg rating</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 2.9ms native</div>
-          <div class="bench-bar-track" title="Tetra 3.3ms / Neo4j 73.4ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 2.9ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 3.3ms</span><span style="color:#E85A48">73.4ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 3.3ms / Neo4j container 73.4ms">
             <div class="bench-bar-win cw-green-bg" style="width:4%"></div>
             <div class="bench-bar-lose" style="width:96%"></div>
           </div>
@@ -1320,8 +1398,9 @@ async function renderDiagram(cardId) {
         <div class="bench-node win-tetra" @click="card = 78" style="cursor:pointer">
           <div class="text-sm font-bold font-display cw-green mb-0.5">TETRA, 84% faster</div>
           <div class="text-cream-400 text-[11px] font-medium mb-2">Most connected actors</div>
-          <div class="text-[10px] text-cream-600 mb-1.5">⚡ 13.1ms native</div>
-          <div class="bench-bar-track" title="Tetra 13.9ms / Neo4j 88.1ms">
+          <div class="text-[10px] text-cream-600 mb-1.5">Bare metal: 13.1ms</div>
+          <div class="flex justify-between text-[9px] mb-0.5"><span class="cw-green">TETRA 13.9ms</span><span style="color:#E85A48">88.1ms Neo4j</span></div>
+          <div class="bench-bar-track" title="TETRA container 13.9ms / Neo4j container 88.1ms">
             <div class="bench-bar-win cw-green-bg" style="width:16%"></div>
             <div class="bench-bar-lose" style="width:84%"></div>
           </div>
@@ -1341,9 +1420,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count all nodes</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 62% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">61µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">200µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">532µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">61µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">200µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">532µs</span></div>
     </div>
     <code>MATCH (n) RETURN count(n)</code>
   </div>
@@ -1358,9 +1437,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count all edges</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 56% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">62µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">233µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">534µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">62µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">233µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">534µs</span></div>
     </div>
     <code>MATCH ()-[r]-&gt;() RETURN count(r)</code>
   </div>
@@ -1374,9 +1453,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count Movie</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 56% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">53µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">217µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">494µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">53µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">217µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">494µs</span></div>
     </div>
     <code>MATCH (n:Movie) RETURN count(n)</code>
   </div>
@@ -1390,9 +1469,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count Person</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 45% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">50µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">171µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">310µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">50µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">171µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">310µs</span></div>
     </div>
     <code>MATCH (n:Person) RETURN count(n)</code>
   </div>
@@ -1406,9 +1485,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count Genre</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 59% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">47µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">169µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">411µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">47µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">169µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">411µs</span></div>
     </div>
     <code>MATCH (n:Genre) RETURN count(n)</code>
   </div>
@@ -1422,9 +1501,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count User</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 61% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">34µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">144µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">372µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">34µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">144µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">372µs</span></div>
     </div>
     <code>MATCH (n:User) RETURN count(n)</code>
   </div>
@@ -1439,9 +1518,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count ACTED_IN</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 61% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">29µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">141µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">358µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">29µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">141µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">358µs</span></div>
     </div>
     <code>MATCH ()-[r:ACTED_IN]-&gt;() RETURN count(r)</code>
   </div>
@@ -1456,9 +1535,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count RATED</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 62% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">27µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">135µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">351µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">27µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">135µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">351µs</span></div>
     </div>
     <code>MATCH ()-[r:RATED]-&gt;() RETURN count(r)</code>
   </div>
@@ -1473,9 +1552,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count DIRECTED</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 41% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">26µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">174µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">293µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">26µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">174µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">293µs</span></div>
     </div>
     <code>MATCH ()-[r:DIRECTED]-&gt;() RETURN count(r)</code>
   </div>
@@ -1490,9 +1569,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count IN_GENRE</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 49% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">25µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">158µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">307µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">25µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">158µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">307µs</span></div>
     </div>
     <code>MATCH ()-[r:IN_GENRE]-&gt;() RETURN count(r)</code>
   </div>
@@ -1506,9 +1585,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Lookup Matrix</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 72% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">28µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">156µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">558µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">28µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">156µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">558µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'}) RETURN m</code>
   </div>
@@ -1522,9 +1601,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Lookup Keanu</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 55% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">27µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">163µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">359µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">27µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">163µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">359µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu Reeves'}) RETURN p</code>
   </div>
@@ -1538,9 +1617,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Lookup Toy Story</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 54% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">27µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">180µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">393µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">27µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">180µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">393µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'Toy Story'}) RETURN m</code>
   </div>
@@ -1554,9 +1633,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Actors in Matrix</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 49% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">34µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">189µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">371µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">34µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">189µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">371µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'})&lt;-[:ACTED_IN]-(a) RETURN a.name</code>
   </div>
@@ -1570,9 +1649,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Movies by Keanu</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 43% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">92µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">271µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">475µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">92µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">271µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">475µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m) RETURN m.title</code>
   </div>
@@ -1586,9 +1665,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Genres of Toy Story</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 44% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">36µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">164µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">293µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">36µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">164µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">293µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'Toy Story'})-[:IN_GENRE]-&gt;(g) RETURN g.name</code>
   </div>
@@ -1602,9 +1681,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Directors of Matrix</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 38% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">32µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">160µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">259µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">32µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">160µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">259µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'})&lt;-[:DIRECTED]-(d) RETURN d.name</code>
   </div>
@@ -1618,9 +1697,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Movies by Spielberg</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 48% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">86µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">272µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">528µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">86µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">272µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">528µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Spielberg'})-[:DIRECTED]-&gt;(m) RETURN m.title</code>
   </div>
@@ -1634,9 +1713,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Users rated Matrix</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 73% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">35µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">143µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">530µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">35µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">143µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">530µs</span></div>
     </div>
     <code>MATCH (u:User)-[:RATED]-&gt;(m:Movie {title:'The Matrix'}) RETURN count(u)</code>
   </div>
@@ -1651,9 +1730,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Co-actors of Keanu</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 22% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">372µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">741µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">950µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">372µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">741µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">950µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m)&lt;-[:ACTED_IN]-(other) RETURN DISTINCT other.name LIMIT 50</code>
   </div>
@@ -1668,9 +1747,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Directors of Keanu movies</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 16% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">279µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">1.0ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">835µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">279µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">1.0ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">835µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m)&lt;-[:DIRECTED]-(d) RETURN d.name</code>
   </div>
@@ -1684,9 +1763,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Genres Keanu acts in</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 5% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">277µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">687µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">651µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">277µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">687µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">651µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m)-[:IN_GENRE]-&gt;(g) RETURN DISTINCT g.name</code>
   </div>
@@ -1701,9 +1780,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Actors same genre as Matrix</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 13% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">514µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">1.1ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">952µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">514µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">1.1ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">952µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'})-[:IN_GENRE]-&gt;(g)&lt;-[:IN_GENRE]-(other) RETURN other.title LIMIT 50</code>
   </div>
@@ -1718,9 +1797,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Users rated Keanu movies</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 17% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">399µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">1.0ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">831µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">399µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">1.0ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">831µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m)&lt;-[:RATED]-(u) RETURN count(DISTINCT u)</code>
   </div>
@@ -1736,9 +1815,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">3-hop actor chain</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 47% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">464µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">850µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.6ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">464µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">850µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.6ms</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m)&lt;-[:ACTED_IN]-(o)-[:ACTED_IN]-&gt;(m2) RETURN DISTINCT m2.title LIMIT 50</code>
   </div>
@@ -1753,9 +1832,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Actor-movie-genre-movie</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 44% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">372µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">1.0ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">561µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">372µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">1.0ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">561µs</span></div>
     </div>
     <code>MATCH (p)-[:ACTED_IN]-&gt;(m)-[:IN_GENRE]-&gt;(g)&lt;-[:IN_GENRE]-(m2) RETURN DISTINCT m2.title LIMIT 30</code>
   </div>
@@ -1771,9 +1850,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">User-movie-actor-movie</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 75% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">599µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">1.6ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">397µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">599µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">1.6ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">397µs</span></div>
     </div>
     <code>MATCH (u:User)-[:RATED]-&gt;(m)&lt;-[:ACTED_IN]-(a)-[:ACTED_IN]-&gt;(m2) RETURN DISTINCT m2.title LIMIT 30</code>
   </div>
@@ -1790,9 +1869,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Movies per genre</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 39% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">3.8ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">5.1ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">8.3ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">3.8ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">5.1ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">8.3ms</span></div>
     </div>
     <code>MATCH (g:Genre)&lt;-[:IN_GENRE]-(m) WITH g, count(m) AS c RETURN g.name, c ORDER BY c DESC LIMIT 10</code>
   </div>
@@ -1808,9 +1887,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Top rated movies</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 97% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">1.5ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">2.1ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">60.6ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">1.5ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">2.1ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">60.6ms</span></div>
     </div>
     <code>MATCH (m:Movie)&lt;-[r:RATED]-(u) WITH m, avg(r.rating) AS avg RETURN m.title, avg ORDER BY avg DESC LIMIT 10</code>
   </div>
@@ -1826,9 +1905,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Prolific actors</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 68% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">6.8ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">7.5ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">23.4ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">6.8ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">7.5ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">23.4ms</span></div>
     </div>
     <code>MATCH (p:Person)-[:ACTED_IN]-&gt;(m) WITH p, count(m) AS c WHERE c&gt;10 RETURN p.name, c ORDER BY c DESC LIMIT 10</code>
   </div>
@@ -1844,9 +1923,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Prolific directors</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 37% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">5.4ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">6.0ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">9.5ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">5.4ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">6.0ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">9.5ms</span></div>
     </div>
     <code>MATCH (p:Person)-[:DIRECTED]-&gt;(m) WITH p, count(m) AS c RETURN p.name, c ORDER BY c DESC LIMIT 10</code>
   </div>
@@ -1861,9 +1940,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Avg ratings per genre</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 96% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">2.9ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">3.4ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">84.3ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">2.9ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">3.4ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">84.3ms</span></div>
     </div>
     <code>MATCH (g:Genre)&lt;-[:IN_GENRE]-(m)&lt;-[r:RATED]-(u) RETURN g.name, avg(r.rating) ORDER BY avg DESC</code>
   </div>
@@ -1878,9 +1957,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Genre popularity</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 92% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">3.0ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">3.2ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">40.1ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">3.0ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">3.2ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">40.1ms</span></div>
     </div>
     <code>MATCH (g:Genre)&lt;-[:IN_GENRE]-(m)&lt;-[r:RATED]-(u) RETURN g.name, count(r) ORDER BY count DESC</code>
   </div>
@@ -1894,9 +1973,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Forward WITH + filter</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 24% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">333µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">400µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">528µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">333µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">400µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">528µs</span></div>
     </div>
     <code>MATCH (p:Person)-[:ACTED_IN]-&gt;(m) WITH p, m WHERE m.year &gt; 2000 RETURN p.name, m.title LIMIT 20</code>
   </div>
@@ -1910,9 +1989,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Forward WITH + DISTINCT</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 91% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">4.4ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">4.8ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">438µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">4.4ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">4.8ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">438µs</span></div>
     </div>
     <code>MATCH (p)-[:ACTED_IN]-&gt;(m) WITH DISTINCT m RETURN m.title LIMIT 20</code>
   </div>
@@ -1927,9 +2006,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">WITH agg + filter</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 43% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">4.9ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">5.8ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">10.2ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">4.9ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">5.8ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">10.2ms</span></div>
     </div>
     <code>MATCH (p)-[:ACTED_IN]-&gt;(m) WITH p, count(m) AS c WHERE c&gt;5 RETURN p.name, c LIMIT 10</code>
   </div>
@@ -1944,9 +2023,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">WITH stage barrier</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 94% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">7.9ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">8.8ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">509µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">7.9ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">8.8ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">509µs</span></div>
     </div>
     <code>MATCH (p)-[:ACTED_IN]-&gt;(m) WITH p, count(m) AS c ORDER BY c DESC LIMIT 20 MATCH (p)-[:DIRECTED]-&gt;(m2) RETURN p.name, m2.title</code>
   </div>
@@ -1962,9 +2041,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Director's other movies</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 14% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">230µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">378µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">439µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">230µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">378µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">439µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'})&lt;-[:DIRECTED]-(d)-[:DIRECTED]-&gt;(other) RETURN other.title</code>
   </div>
@@ -1980,9 +2059,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Collab filter</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 28% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">642µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">840µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">608µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">642µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">840µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">608µs</span></div>
     </div>
     <code>MATCH (u:User)-[:RATED]-&gt;(m)&lt;-[:RATED]-(other) WITH other, count(m) AS shared WHERE shared&gt;3 RETURN other LIMIT 10</code>
   </div>
@@ -1996,9 +2075,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">MATCH+MATCH shared var</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 38% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">269µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">327µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">531µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">269µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">327µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">531µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m) MATCH (m)-[:IN_GENRE]-&gt;(g) RETURN m.title, g.name</code>
   </div>
@@ -2013,9 +2092,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">MATCH+MATCH chain</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 45% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">213µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">277µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">500µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">213µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">277µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">500µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m) MATCH (m)&lt;-[:DIRECTED]-(d) RETURN m.title, d.name</code>
   </div>
@@ -2031,9 +2110,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Return both endpoints</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 91% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">4.4ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">4.7ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">427µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">4.4ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">4.7ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">427µs</span></div>
     </div>
     <code>MATCH (p)-[:ACTED_IN]-&gt;(m) RETURN p, m LIMIT 30</code>
   </div>
@@ -2049,9 +2128,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Return all 3 vars</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 99% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">35.3ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">35.6ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">453µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">35.3ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">35.6ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">453µs</span></div>
     </div>
     <code>MATCH (p)-[r:ACTED_IN]-&gt;(m) RETURN p, r, m LIMIT 20</code>
   </div>
@@ -2065,9 +2144,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Edge type() in RETURN</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 36% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">2.2ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">2.2ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[r]-&gt;(m) RETURN type(r), m.title</code>
   </div>
@@ -2081,9 +2160,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Whole node + prop</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 68% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">234µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">306µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">955µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">234µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">306µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">955µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m) RETURN p, m.title</code>
   </div>
@@ -2099,9 +2178,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">3-match chain</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 43% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">279µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">453µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">798µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">279µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">453µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">798µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m) MATCH (m)-[:IN_GENRE]-&gt;(g) MATCH (m)&lt;-[:DIRECTED]-(d) RETURN m.title, g.name, d.name LIMIT 15</code>
   </div>
@@ -2115,9 +2194,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Multi-pattern shared</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 45% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">198µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">290µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">525µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">198µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">290µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">525µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m), (m)-[:IN_GENRE]-&gt;(g) RETURN m.title, collect(g.name)</code>
   </div>
@@ -2131,9 +2210,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">shortestPath</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 73% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">69µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">197µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">730µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">69µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">197µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">730µs</span></div>
     </div>
     <code>MATCH p=shortestPath((a:Person {name:'Keanu'})-[*]-(b:Person {name:'Tom Hanks'})) RETURN p</code>
   </div>
@@ -2147,9 +2226,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">OPTIONAL MATCH basic</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 66% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">55µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">165µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">492µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">55µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">165µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">492µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'}) OPTIONAL MATCH (m)&lt;-[:DIRECTED]-(d) RETURN m.title, d.name</code>
   </div>
@@ -2164,9 +2243,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">OPTIONAL MATCH chain</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 32% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">417µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">519µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">768µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">417µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">519µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">768µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m) OPTIONAL MATCH (m)&lt;-[:DIRECTED]-(d) RETURN m.title, d.name LIMIT 30</code>
   </div>
@@ -2180,9 +2259,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">OPTIONAL null emit</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 33% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">58µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">195µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">289µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">58µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">195µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">289µs</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'}) OPTIONAL MATCH (m)-[:SEQUEL]-&gt;(s) RETURN m.title, s.title</code>
   </div>
@@ -2196,9 +2275,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Named path return</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 56% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">288µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">408µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">930µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">288µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">408µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">930µs</span></div>
     </div>
     <code>MATCH p=(a:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m) RETURN p</code>
   </div>
@@ -2212,9 +2291,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Edge var type()</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 8% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">393µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">486µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">447µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">393µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">486µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">447µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[r]-&gt;(n) RETURN type(r), labels(n)</code>
   </div>
@@ -2228,9 +2307,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Edge var props</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 27% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">181µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">313µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">429µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">181µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">313µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">429µs</span></div>
     </div>
     <code>MATCH (u:User)-[r:RATED]-&gt;(m:Movie) WHERE r.rating &gt; 4 RETURN m.title, r.rating LIMIT 20</code>
   </div>
@@ -2246,9 +2325,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">RETURN *</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 55% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">299µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">368µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">824µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">299µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">368µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">824µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[r:ACTED_IN]-&gt;(m) RETURN * LIMIT 38</code>
   </div>
@@ -2263,9 +2342,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Cartesian 2-node</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 58% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">56µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">214µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">513µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">56µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">214µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">513µs</span></div>
     </div>
     <code>MATCH (a:Person {name:'Keanu'}), (b:Movie {title:'The Matrix'}) RETURN a, b</code>
   </div>
@@ -2279,9 +2358,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">EXISTS in WHERE</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 50% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">2.8ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">2.8ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
     </div>
     <code>MATCH (p:Person) WHERE EXISTS {(p)-[:DIRECTED]-&gt;()} RETURN p.name LIMIT 20</code>
   </div>
@@ -2295,9 +2374,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">OR in WHERE</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 66% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">228µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">279µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">813µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">228µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">279µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">813µs</span></div>
     </div>
     <code>MATCH (m:Movie) WHERE m.year=1999 OR m.year=2003 RETURN m.title LIMIT 20</code>
   </div>
@@ -2312,9 +2391,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Count + group + order</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 72% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">7.0ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">7.6ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">26.8ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">7.0ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">7.6ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">26.8ms</span></div>
     </div>
     <code>MATCH (p:Person)-[:ACTED_IN]-&gt;(m)-[:IN_GENRE]-&gt;(g) WITH g, count(DISTINCT p) AS c RETURN g.name, c ORDER BY c DESC LIMIT 10</code>
   </div>
@@ -2331,9 +2410,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">4-hop actor chain</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 6% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">956µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">855µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">805µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">956µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">855µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">805µs</span></div>
     </div>
     <code>MATCH (p)-[:ACTED_IN]-&gt;(m)&lt;-[:ACTED_IN]-(o)-[:ACTED_IN]-&gt;(m2)&lt;-[:ACTED_IN]-(o2) RETURN DISTINCT o2.name LIMIT 50</code>
   </div>
@@ -2347,9 +2426,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Kevin Bacon 2-degree</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 54% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">1.0ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">639µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">1.0ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">639µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
     </div>
     <code>MATCH (kb:Person {name:'Kevin Bacon'})-[:ACTED_IN*1..2]-(other:Person) RETURN count(DISTINCT other)</code>
   </div>
@@ -2363,9 +2442,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Kevin Bacon 3-degree</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 22% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">1.3ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">931µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.2ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">1.3ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">931µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.2ms</span></div>
     </div>
     <code>MATCH (kb:Person {name:'Kevin Bacon'})-[:ACTED_IN*1..3]-(other:Person) RETURN count(DISTINCT other)</code>
   </div>
@@ -2379,9 +2458,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Kevin Bacon 4-degree</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 14% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">1.5ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">1.2ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">1.5ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">1.2ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.4ms</span></div>
     </div>
     <code>MATCH (kb:Person {name:'Kevin Bacon'})-[:ACTED_IN*1..4]-(other:Person) RETURN count(DISTINCT other)</code>
   </div>
@@ -2395,9 +2474,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">VLP 1..4 from Keanu</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 72% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">194µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">285µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.0ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">194µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">285µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.0ms</span></div>
     </div>
     <code>MATCH (p:Person {name:'Keanu'})-[:ACTED_IN*1..4]-(other:Person) RETURN DISTINCT other.name LIMIT 33</code>
   </div>
@@ -2411,9 +2490,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">VLP 1..6 Kevin Bacon</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 74% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">1.0ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">653µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">2.5ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">1.0ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">653µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">2.5ms</span></div>
     </div>
     <code>MATCH (kb:Person {name:'Kevin Bacon'})-[:ACTED_IN*1..6]-(other:Person) RETURN DISTINCT other.name LIMIT 100</code>
   </div>
@@ -2428,9 +2507,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Full genre cross-agg</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 92% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">3.1ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">3.6ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">45.8ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">3.1ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">3.6ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">45.8ms</span></div>
     </div>
     <code>MATCH (g:Genre)&lt;-[:IN_GENRE]-(m)&lt;-[:ACTED_IN]-(p) WITH g, count(DISTINCT p) AS c RETURN g.name, c ORDER BY c DESC</code>
   </div>
@@ -2445,9 +2524,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Content-based recs</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 57% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">613µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">781µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.8ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">613µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">781µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.8ms</span></div>
     </div>
     <code>MATCH (u:User {userId:'1'})-[:RATED]-&gt;(m)-[:IN_GENRE]-&gt;(g)&lt;-[:IN_GENRE]-(rec) WHERE NOT (u)-[:RATED]-&gt;(rec) RETURN rec.title LIMIT 20</code>
   </div>
@@ -2463,9 +2542,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Collab filter recs</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 100% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">2.9ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">825.1ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">2.9ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">825.1ms</span></div>
     </div>
     <code>MATCH (u:User {userId:'1'})-[r:RATED]-&gt;(m)&lt;-[:RATED]-(other)-[r2:RATED]-&gt;(rec) WHERE r.rating&gt;3.5 AND r2.rating&gt;3.5 RETURN rec.title, count(other) AS score ORDER BY score DESC LIMIT 20</code>
   </div>
@@ -2480,9 +2559,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Similar users</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 57% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">235µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">395µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">913µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">235µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">395µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">913µs</span></div>
     </div>
     <code>MATCH (u:User {userId:'1'})-[:RATED]-&gt;(m)&lt;-[:RATED]-(other) RETURN other.userId, count(m) LIMIT 20</code>
   </div>
@@ -2496,9 +2575,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Actor filmography</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 69% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">317µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">277µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">905µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">317µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">277µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">905µs</span></div>
     </div>
     <code>MATCH (p:Person {name:'Tom Hanks'})-[:ACTED_IN]-&gt;(m) RETURN m.title, m.year ORDER BY m.year DESC</code>
   </div>
@@ -2514,9 +2593,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Movie detail page</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 20% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">2.0ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">2.5ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">2.5ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">2.0ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">2.5ms</span></div>
     </div>
     <code>MATCH (m:Movie {title:'The Matrix'})&lt;-[:ACTED_IN]-(a) RETURN m, collect(a.name)</code>
   </div>
@@ -2531,9 +2610,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Genre browse</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 47% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">3.1ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">3.2ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">1.7ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">3.1ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">3.2ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">1.7ms</span></div>
     </div>
     <code>MATCH (g:Genre {name:'Action'})&lt;-[:IN_GENRE]-(m) RETURN m.title, m.year ORDER BY m.year DESC LIMIT 50</code>
   </div>
@@ -2547,9 +2626,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Search by title prefix</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 35% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">337µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">379µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">579µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">337µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">379µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">579µs</span></div>
     </div>
     <code>MATCH (m:Movie) WHERE m.title STARTS WITH 'The' RETURN m.title LIMIT 30</code>
   </div>
@@ -2564,9 +2643,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Mutual connections</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 62% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">67µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">163µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">431µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">67µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">163µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">431µs</span></div>
     </div>
     <code>MATCH (a:Person {name:'Keanu'})-[:ACTED_IN]-&gt;(m)&lt;-[:ACTED_IN]-(b:Person {name:'Laurence'}) RETURN m.title</code>
   </div>
@@ -2582,9 +2661,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Friend-of-friend</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 23% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">509µs</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">640µs</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">826µs</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">509µs</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">640µs</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">826µs</span></div>
     </div>
     <code>MATCH (u:User {userId:'1'})-[:RATED]-&gt;(m)&lt;-[:RATED]-(other)-[:RATED]-&gt;(rec) RETURN DISTINCT rec.title LIMIT 30</code>
   </div>
@@ -2598,9 +2677,9 @@ async function renderDiagram(cardId) {
     <h3 class="neo-blue" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Yearly movie count</h3>
     <div class="neo-blue" style="font-size:13px;font-weight:600;margin-bottom:12px">Neo4j, 89% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">34.6ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">37.6ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">4.3ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">34.6ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">37.6ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">4.3ms</span></div>
     </div>
     <code>MATCH (m:Movie) RETURN m.year, count(m) ORDER BY m.year</code>
   </div>
@@ -2615,9 +2694,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Top genres by avg rating</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 96% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">2.9ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">3.3ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">73.4ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">2.9ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">3.3ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">73.4ms</span></div>
     </div>
     <code>MATCH (g:Genre)&lt;-[:IN_GENRE]-(m)&lt;-[r:RATED]-(u) RETURN g.name, avg(r.rating) ORDER BY avg DESC LIMIT 10</code>
   </div>
@@ -2633,9 +2712,9 @@ async function renderDiagram(cardId) {
     <h3 class="cw-green" style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;margin-bottom:4px">Most connected actors</h3>
     <div class="cw-green" style="font-size:13px;font-weight:600;margin-bottom:12px">TETRA, 84% faster</div>
     <div class="flex gap-6 mb-4 text-sm">
-      <div><span class="text-cream-600">Native:</span> <span class="text-cream-200 font-semibold">13.1ms</span></div>
-      <div><span class="cw-green">Tetra:</span> <span class="cw-green font-semibold">13.9ms</span></div>
-      <div><span class="neo-blue">Neo4j:</span> <span class="neo-blue font-semibold">88.1ms</span></div>
+      <div><span class="text-cream-600">TETRA bare metal:</span> <span class="text-cream-200 font-semibold">13.1ms</span></div>
+      <div><span class="cw-green">TETRA container:</span> <span class="cw-green font-semibold">13.9ms</span></div>
+      <div><span class="neo-blue">Neo4j container:</span> <span class="neo-blue font-semibold">88.1ms</span></div>
     </div>
     <code>MATCH (p:Person)-[:ACTED_IN]-&gt;(m)&lt;-[:ACTED_IN]-(other) WITH p, count(DISTINCT other) AS c RETURN p.name, c ORDER BY c DESC LIMIT 10</code>
   </div>
