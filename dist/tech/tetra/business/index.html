@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+
+  <!-- Font preload -->
+  <link rel="preload" href="/fonts/roca-two-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/hk-grotesk-pro-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- SEO Meta Tags -->
+  <title>TETRA — The Business Case | Corewood</title>
+  <meta name="description" content="The matrix operations behind AI turn out to be a radically better way to store and query data. TETRA changes the economics of enterprise data infrastructure.">
+  <meta name="author" content="Corewood">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL — always points to corewood.io regardless of build domain -->
+  <link rel="canonical" href="https://corewood.io/tetra/business/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://corewood.io/tetra/business/">
+  <meta property="og:title" content="TETRA — The Business Case | Corewood">
+  <meta property="og:description" content="The matrix operations behind AI turn out to be a radically better way to store and query data. TETRA changes the economics of enterprise data infrastructure.">
+  <meta property="og:image" content="https://corewood.io/assets/img/og-tetra.png">
+
+  
+  <meta property="article:author" content="Corewood">
+  <meta property="article:published_time" content="2026-03-30">
+  <meta property="article:section" content="Technology">
+  
+  
+  
+  <meta property="article:tag" content="TETRA">
+  
+  <meta property="article:tag" content="database">
+  
+  <meta property="article:tag" content="enterprise data infrastructure">
+  
+  <meta property="article:tag" content="AI accuracy">
+  
+  <meta property="article:tag" content="data center power">
+  
+  <meta property="article:tag" content="database costs">
+  
+  <meta property="article:tag" content="graph database">
+  
+  <meta property="article:tag" content="knowledge graph">
+  
+  <meta property="article:tag" content="RAG">
+  
+  <meta property="article:tag" content="GraphRAG">
+  
+  
+  
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://corewood.io/tetra/business/">
+  <meta property="twitter:title" content="TETRA — The Business Case | Corewood">
+  <meta property="twitter:description" content="The matrix operations behind AI turn out to be a radically better way to store and query data. TETRA changes the economics of enterprise data infrastructure.">
+  <meta property="twitter:image" content="https://corewood.io/assets/img/og-tetra.png">
+
+  
+  <meta name="keywords" content="TETRA, database, enterprise data infrastructure, AI accuracy, data center power, database costs, graph database, knowledge graph, RAG, GraphRAG">
+  
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- JSON-LD -->
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "TETRA — The Business Case",
+      "description": "The matrix operations behind AI turn out to be a radically better way to store and query data. TETRA changes the economics of enterprise data infrastructure.",
+      "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+      "publisher": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+      "url": "https://corewood.io/tetra/business/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+        { "@type": "ListItem", "position": 2, "name": "TETRA", "item": "https://corewood.io/tetra/" },
+        { "@type": "ListItem", "position": 3, "name": "Business Case" }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  <!-- PostHog Analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    var consent = localStorage.getItem('corewood_cookie_consent');
+    posthog.init('phc_aeVynFTu2UWNDdZ3SNBx3XUQGBQHAFZrFMyHk6cIHRs', {
+      api_host: 'https://helper.corewood.io',
+      ui_host: 'https://us.posthog.com',
+      person_profiles: 'identified_only',
+      cookieless_mode: consent === 'accepted' ? false : 'always'
+    });
+  </script>
+</head>
+<body class="min-h-screen text-cream-100 font-body">
+  
+<header
+  x-data="{ mobileMenuOpen: false, bannerShow: false, bannerDismissed: false }"
+  x-init="setTimeout(() => bannerShow = true, 1300)"
+  class="fixed top-0 left-0 right-0 z-50"
+>
+  
+  
+  <div
+    x-show="bannerShow && !bannerDismissed"
+    x-cloak
+    x-transition:enter="transition ease-out duration-700"
+    x-transition:enter-start="-translate-y-full opacity-0"
+    x-transition:enter-end="translate-y-0 opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-y-0 opacity-100"
+    x-transition:leave-end="-translate-y-full opacity-0"
+    class="absolute top-0 left-0 right-0 z-[60] pointer-events-auto overflow-hidden"
+    style="background: linear-gradient(135deg, rgba(11,43,26,0.95), rgba(6,21,13,0.97)); border-bottom: 1px solid rgba(89,161,79,0.2);"
+  >
+    <div class="flex items-center gap-6 md:gap-10 py-5 md:py-8 px-6 md:px-12 max-w-6xl mx-auto">
+      <img src="/tetra-logo.svg" alt="TETRA" class="h-16 md:h-24 flex-shrink-0" style="opacity: 0.95;" />
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-2xl md:text-4xl mb-1 leading-tight" style="font-family: 'Press Start 2P', 'Courier New', monospace; background: linear-gradient(90deg, #59a14f, #76b7b2, #4e79a7, #b07aa1, #e15759, #f28e2b, #edc948); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: none;">The world&rsquo;s fastest graph database.</p>
+        <p class="text-cream-400 text-sm md:text-base mt-2">Small enough to run anywhere. Fast enough to do anything.</p>
+        <a href="/tetra/" class="btn-primary inline-block mt-4 text-sm md:text-base px-6 py-2.5">See TETRA &rarr;</a>
+      </div>
+      <div class="hidden md:flex flex-col items-center gap-2 flex-shrink-0">
+        <span class="text-cream-700 text-[9px] tracking-[0.1em] uppercase">In collaboration with</span>
+        <a href="https://www.verdantintel.com/" target="_blank" rel="noopener noreferrer">
+          <img src="/verdant-logo.png" alt="Verdant Intelligence" class="h-8 opacity-70 hover:opacity-100 transition-opacity" />
+        </a>
+      </div>
+    </div>
+    <button
+      @click.stop="bannerDismissed = true"
+      class="absolute right-3 top-3 p-1.5 text-cream-100/40 hover:text-cream-100 transition-colors"
+      aria-label="Dismiss banner"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="m18 6-12 12"/><path d="m6 6 12 12"/>
+      </svg>
+    </button>
+  </div>
+  
+
+  <div class="pt-4 md:pt-6 px-4 md:px-6 pointer-events-none">
+  <div class="max-w-6xl mx-auto">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full md:chamfer-full-lg px-4 md:px-6 py-3 md:py-4 pointer-events-auto relative">
+        <!-- Rivets — one on each side, vertically centered -->
+        <div class="rivet absolute top-1/2 left-7 -translate-y-1/2 z-20"></div>
+        <div class="rivet absolute top-1/2 right-7 -translate-y-1/2 z-20"></div>
+
+        <!-- Desktop layout -->
+        <div class="hidden md:flex items-center">
+          <!-- Left nav — right-aligned so links sit near center -->
+          <div class="flex-1 flex items-center justify-end gap-8 pr-8">
+            <a href="/profile/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Work</a>
+            <a href="/about/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">About</a>
+          </div>
+
+          <!-- Center logo -->
+          <a href="/" class="flex-shrink-0 hover:scale-[1.18] transition-all duration-200 origin-center inline-block [&_img]:transition-all [&_img]:duration-200 [&_img]:hover:brightness-125 hover:[filter:drop-shadow(0_0_10px_#2A95C8)_drop-shadow(0_0_20px_#2A95C880)]">
+            <picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-56.webp 56w" sizes="56px"><img src="/assets/images/6eQoOyOHHi-56.png" alt="Corewood" loading="eager" decoding="async" class="h-14" width="56" height="55"></picture>
+          </a>
+
+          <!-- Right nav + CTA — left-aligned so links sit near center, CTA aligns with chamfer -->
+          <div class="flex-1 flex items-center justify-start gap-8 pl-8 pr-[40px]">
+            <a href="/blog/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Blog</a>
+            <a href="/contact/" class="font-display font-bold text-cream-200 hover:text-morpho-400 transition-all duration-200 md:text-lg hover:scale-[1.18] origin-center inline-block">Contact</a>
+            <span class="flex-1"></span>
+            <a href="/schedule-meeting/" class="btn-primary text-xs px-4 py-2 flex-shrink-0">Schedule a Meeting</a>
+          </div>
+        </div>
+
+        <!-- Mobile layout -->
+        <div class="flex md:hidden items-center justify-center relative">
+          <!-- Hamburger — positioned between logo and left edge -->
+          <button
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            class="absolute left-[25%] -translate-x-1/2 p-2 text-cream-200 hover:text-morpho-400 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg x-show="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <line x1="4" x2="20" y1="6" y2="6"/>
+              <line x1="4" x2="20" y1="12" y2="12"/>
+              <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+            <svg x-show="mobileMenuOpen" x-cloak class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="m18 6-12 12"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          </button>
+
+          <!-- Center logo -->
+          <a href="/">
+            <picture><source type="image/webp" srcset="/assets/images/6eQoOyOHHi-40.webp 40w" sizes="40px"><img src="/assets/images/6eQoOyOHHi-40.png" alt="Corewood" loading="eager" decoding="async" class="h-10" width="40" height="39"></picture>
+          </a>
+
+          <!-- Mobile CTA — between logo and right edge -->
+          <a href="/schedule-meeting/" class="absolute right-[25%] translate-x-1/2 btn-primary text-[10px] px-3 py-1.5">Book</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    x-show="mobileMenuOpen"
+    x-cloak
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-150"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="md:hidden max-w-6xl mx-auto mt-4 pointer-events-auto"
+  >
+    <div class="plate-wrap">
+      <div class="plate chamfer-full p-8">
+        <nav class="flex flex-col items-center space-y-6">
+          <a href="/profile/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Work</a>
+          <a href="/about/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">About</a>
+          <a href="/blog/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Blog</a>
+          <a href="/contact/" @click="mobileMenuOpen = false"
+             class="text-xl text-cream-100 hover:text-morpho-400 transition-colors">Contact</a>
+          <a href="/schedule-meeting/" @click="mobileMenuOpen = false"
+             class="btn-primary text-center mt-2">Schedule a Meeting</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<nav aria-label="Breadcrumb" class="fixed top-[76px] md:top-[116px] left-0 right-0 z-40 pointer-events-none">
+  <div class="max-w-6xl mx-auto px-4 pl-[calc(1rem+20px)]">
+    <div class="inline-flex items-center gap-1.5 text-[10px] md:text-xs px-2 py-1 pointer-events-auto"
+         style="background: rgba(11, 43, 26, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+      <a href="/" class="text-cream-600 hover:text-morpho-400 transition-colors">Home</a>
+
+      
+      
+      
+      
+
+      
+        <span class="text-cream-700/60">/</span>
+        
+        
+          <a href="/tetra/" class="text-cream-600 hover:text-morpho-400 transition-colors">
+            Tetra
+          </a>
+        
+      
+        <span class="text-cream-700/60">/</span>
+        
+        
+          <span class="text-cream-400 inline-block max-w-[18ch] overflow-hidden whitespace-nowrap"
+                style="-webkit-mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch); mask-image: linear-gradient(to right, black 0, black 14ch, transparent 18ch);">
+            TETRA — The Business Case
+          </span>
+        
+      
+    </div>
+  </div>
+</nav>
+
+
+<main>
+  
+<style>
+  .stat-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(245, 240, 230, 0.06);
+    border-radius: 8px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+  }
+  .stat-card:hover {
+    border-color: rgba(245, 240, 230, 0.12);
+  }
+  .stat-value {
+    font-family: 'Roca Two', serif;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+  }
+  .source-item {
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(245, 240, 230, 0.04);
+  }
+  .source-item:last-child { border-bottom: none; }
+  .source-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(0, 232, 143, 0.1);
+    color: #00e88f;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+  .pull-quote {
+    font-family: 'Roca Two', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #F5F0E6;
+  }
+  @media (max-width: 640px) {
+    .pull-quote { font-size: 22px; }
+  }
+  .insight-bar {
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #00e88f, rgba(0, 232, 143, 0.1));
+  }
+</style>
+
+
+
+
+<section class="section-wash pt-40 pb-16">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="flex items-center justify-center gap-4 mb-8">
+      <img src="/tetra-logo.svg" alt="TETRA" class="w-[140px] md:w-[180px] h-auto" />
+    </div>
+    <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #00e88f;">The Business Case</p>
+    <h1 class="font-display font-bold text-3xl md:text-5xl text-cream-100 leading-tight mb-8">We used the math behind AI<br class="hidden md:block"> to build a database.</h1>
+    <p class="text-cream-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">The matrix operations behind every large language model &mdash; the mathematical engine driving the AI revolution &mdash; turn out to be a radically better way to store and query data. Not to generate it. Not to predict it. To retrieve exactly what&rsquo;s there, with perfect accuracy, faster and cheaper than anything else on the market.</p>
+  </div>
+</section>
+
+<div class="section-divider max-w-5xl mx-auto"></div>
+
+
+
+
+<section class="section-wash py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #e15759;">The Problem</p>
+    <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">The cost of data infrastructure<br class="hidden md:block"> is becoming unsustainable.</h2>
+    <p class="text-cream-400 text-base leading-relaxed max-w-2xl mb-12">Behind every enterprise data budget is a deeper crisis &mdash; power, compute, and complexity compounding faster than the value they deliver.</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="stat-card">
+        <div class="stat-value text-3xl md:text-4xl" style="color: #e15759;">$29M</div>
+        <div class="stat-label text-cream-600">Avg. enterprise data<br>spend per year<sup class="text-cream-700">1</sup></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value text-3xl md:text-4xl" style="color: #f28e2b;">9%</div>
+        <div class="stat-label text-cream-600">US electricity consumed<br>by data centers by 2030<sup class="text-cream-700">2</sup></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value text-3xl md:text-4xl" style="color: #f28e2b;">$2.2M</div>
+        <div class="stat-label text-cream-600">Annual cost just to<br>maintain data pipelines<sup class="text-cream-700">1</sup></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value text-3xl md:text-4xl" style="color: #e15759;">73%</div>
+        <div class="stat-label text-cream-600">Enterprise data initiatives<br>that fail expectations<sup class="text-cream-700">1</sup></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section-wash pb-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="text-cream-200 text-lg leading-relaxed space-y-6">
+          <p>Enterprise data spending has reached <strong class="text-cream-100">$29 million per year</strong> on average, with cloud compute and ingestion alone running over $500K per month at many organizations. Engineering teams spend $2.2 million a year just maintaining data pipelines. And despite all of that, <strong class="text-cream-100">73% of enterprise data initiatives fail</strong> to meet expectations.<sup class="text-cream-400 text-sm">1</sup></p>
+
+          <p>Behind those budgets is a deeper problem: <strong class="text-cream-100">power</strong>. Data centers are on track to consume 9% of all US electricity by 2030 &mdash; triple what they use today.<sup class="text-cream-400 text-sm">2</sup> Power demand is growing at 15% per year.<sup class="text-cream-400 text-sm">3</sup> The industry&rsquo;s own new benchmark for infrastructure value is <em class="text-cream-300">&ldquo;tokens per watt per dollar&rdquo;</em><sup class="text-cream-400 text-sm">4</sup> &mdash; a metric that Jensen Huang formally introduced at GTC 2026.<sup class="text-cream-400 text-sm">5</sup></p>
+
+          <div class="insight-bar"></div>
+
+          <p class="pull-quote">Every watt spent on database overhead is a watt not available for the workloads that actually generate value.</p>
+
+          <p>Traditional databases are a major part of this waste. They store your data and then build an equally large shadow of infrastructure around it &mdash; indexes, logs, caches, replication layers &mdash; until the system is <strong class="text-cream-100">5 to 10 times larger than the data itself</strong>. All of that overhead consumes compute, memory, storage, and electricity. It exists because the old approach to databases requires it.</p>
+
+          <p class="text-cream-100 font-display font-bold text-xl">TETRA doesn&rsquo;t.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-5xl mx-auto"></div>
+
+
+
+
+<section class="section-wash py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #00e88f;">The Solution</p>
+    <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-12">One engine. A fraction of the footprint.</h2>
+  </div>
+</section>
+
+<section class="section-wash pb-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="text-cream-200 text-lg leading-relaxed space-y-6">
+          <p>TETRA&rsquo;s mathematical foundation is so efficient that the complete, queryable, encrypted database is roughly the same size as the compressed raw data it was built from. There is <strong class="text-cream-100">almost no overhead</strong>. Where a traditional system wraps your data in layers of infrastructure, TETRA&rsquo;s structure <em class="text-cream-300">is</em> the query engine. Nothing is wasted.</p>
+
+          <p>That efficiency cascades into every cost line:</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Smaller data</div>
+            <p class="text-cream-400 text-sm leading-relaxed">Smaller servers. Lower cloud bills. Lower electricity. A multi-server cluster workload runs on a single standard machine.</p>
+          </div>
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Single engine</div>
+            <p class="text-cream-400 text-sm leading-relaxed">Replaces separate systems for structured records, relationships, search, and analytics. Fewer systems, fewer teams, fewer integration points.</p>
+          </div>
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Lower ops burden</div>
+            <p class="text-cream-400 text-sm leading-relaxed">No indexes, logs, caches, or replication layers to maintain. The savings compound from the storage layer through the power grid.</p>
+          </div>
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Runs anywhere</div>
+            <p class="text-cream-400 text-sm leading-relaxed">Datacenter, edge, or a device in the field. Intelligence moves to where the data lives, without a round trip to a central server.</p>
+          </div>
+        </div>
+
+        <div class="text-cream-200 text-lg leading-relaxed space-y-6">
+          <div class="insight-bar"></div>
+          <p class="pull-quote">A workload that required a multi-server cluster &mdash; with all the licensing, staffing, cooling, and power that implies &mdash; runs on a single standard machine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="py-12 md:py-16">
+  <div class="max-w-2xl mx-auto px-4 md:px-6 text-center">
+    <p class="text-cream-400 text-base md:text-lg mb-6">Everyone else used this math to build language models. We used it to build a database.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+      <a href="/schedule-meeting/" class="btn-primary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">Schedule a Consultation</span>
+        <span class="block text-xs text-cream-300/80 font-normal mt-0.5">See what TETRA can replace</span>
+      </a>
+      <a href="/tetra/" class="btn-secondary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">See the Technical Case</span>
+        <span class="block text-xs text-cream-400/70 font-normal mt-0.5">Benchmarks and architecture</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider max-w-5xl mx-auto"></div>
+
+
+
+
+<section class="section-wash py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-morpho-400">AI + Data</p>
+    <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">It makes AI accurate<br class="hidden md:block"> instead of approximate.</h2>
+    <p class="text-cream-400 text-base leading-relaxed max-w-2xl mb-12">The biggest unsolved problem in enterprise AI is accuracy. Models hallucinate. The proven fix is giving them structured knowledge to reason over &mdash; not documents to guess from.</p>
+  </div>
+</section>
+
+<section class="section-wash pb-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        
+        <div class="flex items-center gap-6 mb-8">
+          <div class="flex-shrink-0">
+            <div class="font-display font-bold text-5xl md:text-6xl" style="color: #00e88f;">3.4&times;</div>
+          </div>
+          <div>
+            <p class="text-cream-200 text-lg leading-relaxed">better accuracy on complex business questions when LLMs reason over structured knowledge graphs vs. vector-only retrieval.<sup class="text-cream-400 text-sm">6</sup></p>
+          </div>
+        </div>
+
+        <div class="insight-bar mb-8"></div>
+
+        <div class="text-cream-200 text-lg leading-relaxed space-y-6">
+          <p>The bottleneck has been the database underneath. Existing options are too slow to keep up with a model during a live query, and too heavy to deploy alongside one.</p>
+
+          <p>TETRA is <strong class="text-cream-100">fast enough and small enough</strong> to sit inside the AI stack itself &mdash; no separate infrastructure, no additional power draw, no added complexity. This turns AI from a tool that sometimes gets it right into a system that <strong class="text-cream-100">reasons from your actual data, every time</strong>.</p>
+
+          <p>And because the engine is so compact, it runs wherever the AI runs &mdash; in a datacenter, at the edge, on a device in the field. Intelligence moves to where the data lives, without a round trip to a central server and without spinning up another rack.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-5xl mx-auto"></div>
+
+
+
+
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-600">Timing</p>
+    <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-12">Why now.</h2>
+
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="text-cream-200 text-lg leading-relaxed space-y-6">
+          <p>The data infrastructure industry is hitting a wall. Power constraints are dictating where data centers can be built, what workloads they can run, and how much they can grow.<sup class="text-cream-400 text-sm">7</sup> Every efficiency gain at the database layer translates directly into capacity freed up for everything else.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+            <div class="stat-card">
+              <div class="stat-value text-2xl md:text-3xl" style="color: #f28e2b;">175%</div>
+              <div class="stat-label text-cream-600">Power demand surge<br>projected by 2030<sup class="text-cream-700">7</sup></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value text-2xl md:text-3xl" style="color: #f28e2b;">15%</div>
+              <div class="stat-label text-cream-600">Annual growth in<br>data center power<sup class="text-cream-700">3</sup></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value text-2xl md:text-3xl" style="color: #f28e2b;">3&times;</div>
+              <div class="stat-label text-cream-600">Current electricity<br>use by 2030<sup class="text-cream-700">2</sup></div>
+            </div>
+          </div>
+
+          <div class="insight-bar"></div>
+
+          <p class="pull-quote">TETRA doesn&rsquo;t just reduce cost. It reduces the physical resources required to do the same work &mdash; at a moment when those resources are the binding constraint on the entire technology industry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="py-12 md:py-16">
+  <div class="max-w-2xl mx-auto px-4 md:px-6 text-center">
+    <p class="text-cream-400 text-base md:text-lg mb-6">The result changes the economics of enterprise data infrastructure at exactly the moment those economics are breaking.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+      <a href="/schedule-meeting/" class="btn-primary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">Schedule a Consultation</span>
+        <span class="block text-xs text-cream-300/80 font-normal mt-0.5">Talk to us about TETRA</span>
+      </a>
+      <a href="/tetra/" class="btn-secondary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">See the Technical Case</span>
+        <span class="block text-xs text-cream-400/70 font-normal mt-0.5">Benchmarks and architecture</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider max-w-5xl mx-auto"></div>
+
+
+
+
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-600">Sources</p>
+
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="space-y-0">
+          <div class="source-item flex items-start">
+            <span class="source-num">1</span>
+            <div>
+              <span class="text-cream-300">Fivetran</span>
+              <span class="text-cream-500"> &mdash; &ldquo;The Enterprise Data Infrastructure Benchmark Report 2026.&rdquo; Survey of 500+ senior data leaders at organizations with 5,000+ employees. </span>
+              <a href="https://www.fivetran.com/blog/the-enterprise-data-infrastructure-benchmark-report-2026" target="_blank" rel="noopener noreferrer" class="text-morpho-500 hover:text-morpho-400 transition-colors break-all">fivetran.com</a>
+            </div>
+          </div>
+
+          <div class="source-item flex items-start">
+            <span class="source-num">2</span>
+            <div>
+              <span class="text-cream-300">Electric Power Research Institute (EPRI)</span>
+              <span class="text-cream-500"> &mdash; Data center electricity consumption forecast. </span>
+              <a href="https://www.epri.com/about/media-resources/press-release/q5vu86fr8tkxatfx8ihf1u48vw4r1dzf" target="_blank" rel="noopener noreferrer" class="text-morpho-500 hover:text-morpho-400 transition-colors break-all">epri.com</a>
+            </div>
+          </div>
+
+          <div class="source-item flex items-start">
+            <span class="source-num">3</span>
+            <div>
+              <span class="text-cream-300">Goldman Sachs</span>
+              <span class="text-cream-500"> &mdash; &ldquo;AI to Drive 165% Increase in Data Center Power Demand by 2030.&rdquo; 15% CAGR projection for US data center power demand 2023&ndash;2030. </span>
+              <a href="https://www.goldmansachs.com/insights/articles/ai-to-drive-165-increase-in-data-center-power-demand-by-2030" target="_blank" rel="noopener noreferrer" class="text-morpho-500 hover:text-morpho-400 transition-colors break-all">goldmansachs.com</a>
+            </div>
+          </div>
+
+          <div class="source-item flex items-start">
+            <span class="source-num">4</span>
+            <div>
+              <span class="text-cream-300">Data Center Knowledge</span>
+              <span class="text-cream-500"> &mdash; &ldquo;2026 Predictions: AI Sparks Data Center Power Revolution.&rdquo; </span>
+              <a href="https://www.datacenterknowledge.com/operations-and-management/2026-predictions-ai-sparks-data-center-power-revolution" target="_blank" rel="noopener noreferrer" class="text-morpho-500 hover:text-morpho-400 transition-colors break-all">datacenterknowledge.com</a>
+            </div>
+          </div>
+
+          <div class="source-item flex items-start">
+            <span class="source-num">5</span>
+            <div>
+              <span class="text-cream-300">CIQ</span>
+              <span class="text-cream-500"> &mdash; &ldquo;Tokens Per Watt is the New CEO Metric.&rdquo; Jensen Huang&rsquo;s introduction of tokens-per-watt at GTC 2026. </span>
+              <a href="https://ciq.com/blog/tokens-per-watt-is-the-new-ceo-metric-heres-where-your-os-fits/" target="_blank" rel="noopener noreferrer" class="text-morpho-500 hover:text-morpho-400 transition-colors break-all">ciq.com</a>
+            </div>
+          </div>
+
+          <div class="source-item flex items-start">
+            <span class="source-num">6</span>
+            <div>
+              <span class="text-cream-300">Diffbot KG-LM Accuracy Benchmark</span>
+              <span class="text-cream-500"> &mdash; GraphRAG improved LLM accuracy 3.4&times; across 43 business questions vs. vector-only retrieval. </span>
+              <a href="https://www.falkordb.com/blog/graphrag-accuracy-diffbot-falkordb/" target="_blank" rel="noopener noreferrer" class="text-morpho-500 hover:text-morpho-400 transition-colors break-all">falkordb.com</a>
+            </div>
+          </div>
+
+          <div class="source-item flex items-start">
+            <span class="source-num">7</span>
+            <div>
+              <span class="text-cream-300">Goldman Sachs</span>
+              <span class="text-cream-500"> &mdash; &ldquo;Data Center Power Demand: The 6 Ps Driving Growth and Constraints.&rdquo; Power demand projected to surge 175% by 2030. </span>
+              <a href="https://www.goldmansachs.com/insights/articles/accelerating-power-demand-from-data-centers-poised-to-boost-new-energy-technologies" target="_blank" rel="noopener noreferrer" class="text-morpho-500 hover:text-morpho-400 transition-colors break-all">goldmansachs.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-wash py-section">
+  <div class="max-w-3xl mx-auto px-4 md:px-6 text-center">
+    <p class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">See TETRA in action.</p>
+    <p class="text-cream-400 text-base mb-8">Explore the technical benchmarks or talk to us about what TETRA can do for your infrastructure.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+      <a href="/tetra/" class="btn-primary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">See the Technical Case &rarr;</span>
+        <span class="block text-xs text-cream-300/80 font-normal mt-0.5">Benchmarks and architecture</span>
+      </a>
+      <a href="/schedule-meeting/" class="btn-secondary text-center w-full sm:w-auto">
+        <span class="block text-sm md:text-base font-medium">Schedule a Consultation</span>
+        <span class="block text-xs text-cream-400/70 font-normal mt-0.5">Talk to us about TETRA</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="border-t border-forest-800 py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/privacy/" class="text-cream-600 hover:text-morpho-400 transition-colors">Privacy</a>
+        <a href="mailto:hello@corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors">hello@corewood.io</a>
+      </div>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a href="https://www.linkedin.com/in/kylemickey/" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect width="4" height="12" x="2" y="9"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://github.com/orgs/corewood-tech" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/corewood.io" class="text-cream-600 hover:text-morpho-400 transition-colors" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+        <span class="text-cream-700">&copy; 2026 Corewood LLC</span>
+      </div>
+    </div>
+    
+    <div class="flex justify-center gap-3 mt-4 text-[10px] leading-none text-forest-900">
+      <a href="https://corewood.tech/tetra/business/" class="hover:text-forest-800 transition-colors">corewood.tech</a>
+      <a href="https://corewood.cloud/tetra/business/" class="hover:text-forest-800 transition-colors">corewood.cloud</a>
+      <a href="https://corewood.info/tetra/business/" class="hover:text-forest-800 transition-colors">corewood.info</a>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+  <!-- Cookie Consent Banner -->
+  <div x-data="{
+    show: false,
+    init() {
+      this.show = !localStorage.getItem('corewood_cookie_consent');
+    },
+    accept() {
+      localStorage.setItem('corewood_cookie_consent', 'accepted');
+      if (window.posthog) {
+        posthog.capture('cookie_consent', { consent: 'accepted' });
+        posthog.set_config({ cookieless_mode: false, persistence: 'localStorage+cookie' });
+        posthog.opt_in_capturing();
+      }
+      this.show = false;
+    },
+    reject() {
+      localStorage.setItem('corewood_cookie_consent', 'rejected');
+      if (window.posthog) posthog.capture('cookie_consent', { consent: 'rejected' });
+      this.show = false;
+    }
+  }" x-show="show" x-cloak
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 translate-y-4"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 translate-y-4"
+     class="fixed bottom-6 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-[100]"
+  >
+    <div class="plate-wrap">
+      <div class="plate chamfer-full p-6">
+        <div class="rivet absolute top-4 left-4 z-10"></div>
+        <div class="rivet absolute top-4 right-4 z-10"></div>
+        <p class="text-cream-200 text-sm leading-relaxed mb-4">
+          We use cookies to understand how you use our site and improve your experience.
+          <a href="/privacy/" class="text-morpho-400 hover:text-morpho-300 transition-colors underline">Privacy Policy</a>
+        </p>
+        <div class="flex gap-3">
+          <button @click="accept()" class="btn-primary text-sm px-5 py-2">Accept</button>
+          <button @click="reject()" class="btn-secondary text-sm px-5 py-2">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
