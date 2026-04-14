@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Corewood AI static website built with 11ty",
   "scripts": {
-    "dev": "eleventy --serve --watch",
+    "dev": "eleventy --serve --port=8081 --watch",
     "build": "eleventy",
     "build:production": "NODE_ENV=production eleventy",
     "clean": "rm -rf _site"
