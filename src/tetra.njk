@@ -1,12 +1,13 @@
 ---
 layout: layouts/page.njk
-title: "TETRA by Corewood"
-description: "The math behind AI, applied to data infrastructure. TETRA changes the economics of enterprise data — faster, smaller, and more efficient than anything else on the market."
-keywords: "TETRA, graph database, Corewood, WebAssembly, WASM, graph visualization, Cypher, Neo4j, graph algorithms, 3D graph, knowledge graph"
+title: "TETRA — The World's Fastest Graph Database | 172M Edges, Single Process, $299/mo"
+description: "TETRA passes 14/14 LDBC Interactive Complex queries on 172M edges from a 3.6 GB file using <4 GB RAM. Wins 37 of 56 benchmarks vs Neo4j on same hardware. Full openCypher. Post-quantum encryption. $299/month flat."
+keywords: "TETRA, graph database, fastest graph database, LDBC benchmark, Neo4j alternative, graph database benchmark, openCypher, Cypher database, graph database pricing, graph database comparison, knowledge graph, graph visualization, WebGPU, TigerGraph alternative, Neptune alternative, graph algorithms, post-quantum encryption, WebAssembly graph database, WASM database, 3D graph visualization, Corewood"
 permalink: /tetra/
-date: 2026-03-20
+date: 2026-04-16
 ogType: "article"
 ogImage: "/assets/img/og-tetra.png"
+ogImageAlt: "TETRA by Corewood — 172M edges, 14/14 LDBC IC queries, 405ms avg, $299/month"
 jsonLd: |
   {
     "@context": "https://schema.org",
@@ -14,11 +15,138 @@ jsonLd: |
       {
         "@type": "SoftwareApplication",
         "name": "TETRA",
+        "alternateName": "TETRA by Corewood",
         "applicationCategory": "Graph Database",
-        "operatingSystem": "Cross-platform",
-        "description": "WebAssembly-powered graph database with 3D visualization and 30+ built-in algorithms.",
+        "applicationSubCategory": "Knowledge Graph Platform",
+        "operatingSystem": "Cross-platform (Linux, macOS, Windows, Edge, IoT)",
+        "description": "The world's fastest graph database. TETRA passes all 14 LDBC Interactive Complex queries on 172 million edges from a single 3.6 GB file using less than 4 GB RAM. Wins 37 of 56 container benchmarks vs Neo4j on identical hardware. Full openCypher compliance (1,611/1,611 TCK). Post-quantum encryption at rest. ~38% compression ratio. Includes Retina 3D/2D visualization, 30+ graph algorithms, and operational support.",
+        "url": "https://corewood.io/tetra/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Corewood",
+          "url": "https://corewood.io",
+          "logo": "https://corewood.io/meta.png",
+          "email": "hello@corewood.io"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "TETRA Graph Database — Monthly",
+            "description": "Flat-rate graph database subscription. Includes Retina visualization, 30+ algorithms, full openCypher, operational support. No per-GB scaling.",
+            "price": "299",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "299",
+              "priceCurrency": "USD",
+              "billingDuration": "P1M",
+              "unitText": "month"
+            },
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-01-01",
+            "url": "https://corewood.io/tetra/#pricing"
+          },
+          {
+            "@type": "Offer",
+            "name": "TETRA Professional Services — Data Migration",
+            "description": "One-time data migration, ingestion, conversion, and validation. Optional — for existing data migrations only.",
+            "price": "10864",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://corewood.io/tetra/#pricing"
+          }
+        ],
+        "featureList": [
+          "172 million edges queried from a single 3.6 GB file",
+          "14/14 LDBC Interactive Complex queries passed — 405ms average latency",
+          "37-19 container benchmark wins vs Neo4j on same hardware",
+          "1,611/1,611 openCypher Technology Compatibility Kit (100%)",
+          "66 MB RAM vs Neo4j's 710 MB — 10.8x less memory",
+          "485 queries/second peak throughput at 64 concurrent clients",
+          "Post-quantum resistant encryption at rest",
+          "~38% compression ratio with zero data resolution loss",
+          "10 GB CSV ingestion in under 7 minutes on 5 GB RAM",
+          "Retina 3D/2D WebGPU graph viewer included (no add-on fee)",
+          "30+ built-in graph algorithms",
+          "Full openCypher query language with Bolt v4.4 protocol",
+          "Runs on laptop, edge device, or datacenter — single process",
+          "477ms startup time vs ~8 seconds for Neo4j"
+        ],
+        "softwareRequirements": "CPU only — no GPU required, no specialized hardware",
+        "releaseNotes": "LDBC SNB SF10 benchmark results published April 2026"
+      },
+      {
+        "@type": "Product",
+        "name": "TETRA Graph Database",
+        "description": "Enterprise graph database that uses the math behind AI for data storage and retrieval. Sub-millisecond queries, post-quantum encryption, 3D visualization.",
+        "brand": { "@type": "Organization", "name": "Corewood" },
+        "url": "https://corewood.io/tetra/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "category": "Database Software",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "299",
+          "highPrice": "10864",
+          "priceCurrency": "USD",
+          "offerCount": "2",
+          "url": "https://corewood.io/tetra/#pricing"
+        }
+      },
+      {
+        "@type": "TechArticle",
+        "headline": "TETRA — Benchmarks, Architecture, and Pricing",
+        "description": "Complete technical documentation for TETRA graph database including LDBC SF10 benchmark results, container head-to-head vs Neo4j, pricing comparison with Neptune/TigerGraph/Neo4j, and architecture details.",
+        "url": "https://corewood.io/tetra/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "datePublished": "2026-03-20",
+        "dateModified": "2026-04-16",
         "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
-        "url": "https://corewood.io/tetra/"
+        "publisher": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io", "logo": { "@type": "ImageObject", "url": "https://corewood.io/meta.png" } },
+        "about": [
+          { "@type": "Thing", "name": "Graph Database Benchmarks" },
+          { "@type": "Thing", "name": "LDBC Social Network Benchmark" },
+          { "@type": "Thing", "name": "Database Pricing Comparison" }
+        ],
+        "proficiencyLevel": "Expert",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does TETRA compare to Neo4j in benchmarks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In container head-to-head benchmarks (105 Cypher queries, same hardware), TETRA wins 37 queries to Neo4j's 19. TETRA uses 66 MB RAM vs Neo4j's 710 MB (10.8x less). Neo4j could not complete write operations under 1 GB RAM. At 64 concurrent clients, Neo4j crashes with OOM while TETRA peaks at 485 queries/second."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the LDBC benchmark and how does TETRA perform?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The LDBC Social Network Benchmark (SNB) Interactive Complex suite is the industry-standard benchmark for graph databases. TETRA passes all 14 queries at Scale Factor 10 (27.2 million nodes, 172.2 million edges) with an average latency of 405ms, from a single process and single file on a laptop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does TETRA cost compared to other graph databases?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TETRA is $299/month flat rate including Retina visualization, 30+ algorithms, and full openCypher. Neo4j AuraDB Pro starts at $1,051/month (16 GB), TigerGraph Savanna at $720/month (compute only, HA adds 2.8x), and Amazon Neptune at $297/month (single instance, no HA). TETRA's 5-year TCO is $17,940 vs Neo4j Pro's $63,072."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does TETRA support Cypher queries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. TETRA has 100% openCypher compliance, passing all 1,611 scenarios in the Cypher Technology Compatibility Kit. It uses the standard Bolt v4.4 protocol, making it wire-compatible with Neo4j drivers."
+            }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -405,48 +533,118 @@ jsonLd: |
 {# ══════════════════════════════════════════════════════════ #}
 {# ── SHARED HERO + TAB SELECTOR ── #}
 {# ══════════════════════════════════════════════════════════ #}
-<section class="section-wash pt-40 pb-4">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <img src="{{ '/tetra-logo.svg' | url }}" alt="TETRA" class="w-[200px] md:w-[250px] h-auto mb-8 mx-auto" />
+<div x-data="{ tab: (location.hash === '#tech' || location.hash.toLowerCase() === '#sf10') ? 'tech' : 'business' }" @hashchange.window="tab = (location.hash === '#tech' || location.hash.toLowerCase() === '#sf10') ? 'tech' : 'business'">
+
+<section class="pt-40 pb-12">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="text-center">
+          <img src="{{ '/tetra-logo.svg' | url }}" alt="TETRA" class="w-[200px] md:w-[250px] h-auto mb-8 mx-auto" />
+        </div>
+
+        {# ── Tab Selector ── #}
+        <div class="text-center">
+          <div class="inline-flex items-center">
+            <button @click="tab = 'business'; history.replaceState(null, '', '#business')"
+              :class="tab === 'business' ? 'text-cream-100 border-b-2 border-[#00e88f]' : 'text-cream-600 border-b-2 border-transparent hover:text-cream-400'"
+              class="px-5 py-2 text-sm font-display font-bold uppercase tracking-[0.15em] transition-all duration-200">
+              Business
+            </button>
+            <span class="text-cream-700 text-lg mx-2 select-none font-light">|</span>
+            <button @click="tab = 'tech'; history.replaceState(null, '', '#tech')"
+              :class="tab === 'tech' ? 'text-cream-100 border-b-2 border-[#00e88f]' : 'text-cream-600 border-b-2 border-transparent hover:text-cream-400'"
+              class="px-5 py-2 text-sm font-display font-bold uppercase tracking-[0.15em] transition-all duration-200">
+              Tech
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
-<div x-data="{ tab: (location.hash === '#tech' || location.hash.toLowerCase() === '#sf10') ? 'tech' : 'business' }" @hashchange.window="tab = (location.hash === '#tech' || location.hash.toLowerCase() === '#sf10') ? 'tech' : 'business'">
+{# ══════════════════════════════════════════════════════════ #}
+{# ── PROOF BANNER ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="pb-12">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-10">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
 
-{# ── Tab Selector ── #}
-<div class="max-w-5xl mx-auto px-6 text-center pb-12">
-  <div class="inline-flex items-center">
-    <button @click="tab = 'business'; history.replaceState(null, '', '#business')"
-      :class="tab === 'business' ? 'text-cream-100 border-b-2 border-[#00e88f]' : 'text-cream-600 border-b-2 border-transparent hover:text-cream-400'"
-      class="px-5 py-2 text-sm font-display font-bold uppercase tracking-[0.15em] transition-all duration-200">
-      Business
-    </button>
-    <span class="text-cream-700 text-lg mx-2 select-none font-light">|</span>
-    <button @click="tab = 'tech'; history.replaceState(null, '', '#tech')"
-      :class="tab === 'tech' ? 'text-cream-100 border-b-2 border-[#00e88f]' : 'text-cream-600 border-b-2 border-transparent hover:text-cream-400'"
-      class="px-5 py-2 text-sm font-display font-bold uppercase tracking-[0.15em] transition-all duration-200">
-      Tech
-    </button>
+        <p class="text-center font-display font-bold text-2xl md:text-3xl text-cream-100 mb-8">The proof.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div class="arcade-stat-card text-center p-4 rounded-lg" style="background:rgba(0,232,143,0.06); border:1px solid rgba(0,232,143,0.2);">
+            <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">172.2M</div>
+            <div class="text-cream-400 text-xs font-semibold mb-1">edges &middot; 27.2M nodes</div>
+            <div class="text-cream-600 text-[10px] uppercase tracking-wider">LDBC Social Network Benchmark</div>
+          </div>
+          <div class="arcade-stat-card text-center p-4 rounded-lg" style="background:rgba(0,232,143,0.06); border:1px solid rgba(0,232,143,0.2);">
+            <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">14/14</div>
+            <div class="text-cream-400 text-xs font-semibold mb-1">passed &middot; 405ms avg</div>
+            <div class="text-cream-600 text-[10px] uppercase tracking-wider">Interactive Complex suite</div>
+          </div>
+          <div class="arcade-stat-card text-center p-4 rounded-lg" style="background:rgba(0,232,143,0.06); border:1px solid rgba(0,232,143,0.2);">
+            <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">37&ndash;19</div>
+            <div class="text-cream-400 text-xs font-semibold mb-1">vs Neo4j &middot; same hardware</div>
+            <div class="text-cream-600 text-[10px] uppercase tracking-wider">105 queries &middot; Neo4j OOMs on writes</div>
+          </div>
+          <div class="arcade-stat-card text-center p-4 rounded-lg" style="background:rgba(0,232,143,0.06); border:1px solid rgba(0,232,143,0.2);">
+            <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">1,611</div>
+            <div class="text-cream-400 text-xs font-semibold mb-1">1,611 / 1,611 &middot; 100%</div>
+            <div class="text-cream-600 text-[10px] uppercase tracking-wider">Full openCypher compliance</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+          <button @click="tab = 'tech'; window.scrollTo({top: 0, behavior: 'smooth'}); history.replaceState(null, '', '#tech')" class="btn-primary text-center w-full sm:w-auto cursor-pointer">
+            <span class="block text-sm md:text-base font-medium">See the Benchmarks</span>
+          </button>
+          <a href="#pricing" class="btn-secondary text-center w-full sm:w-auto" @click="tab = 'tech'">
+            <span class="block text-sm md:text-base font-medium">See the Pricing</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 {# ══════════════════════════════════════════════════════════ #}
 {# ═══ BUSINESS TAB ═══ #}
 {# ══════════════════════════════════════════════════════════ #}
 <div x-show="tab === 'business'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
 
-<section class="section-wash pb-16">
-  <div class="max-w-4xl mx-auto px-6 text-center">
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+<div class="pb-16">
+  <div class="max-w-4xl mx-auto text-center">
     <h2 class="font-display font-bold text-3xl md:text-5xl text-cream-100 leading-tight mb-8">We used the math behind AI<br class="hidden md:block"> to build a database.</h2>
     <p class="text-cream-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">The matrix operations behind every large language model &mdash; the mathematical engine driving the AI revolution &mdash; turn out to be a radically better way to store and query data. Not to generate it. Not to predict it. To retrieve exactly what&rsquo;s there, with perfect accuracy, faster and cheaper than anything else on the market.</p>
   </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ── THE PROBLEM — STATS ── #}
-<section class="section-wash py-16">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-16">
     <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #e15759;">The Problem</p>
     <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">The cost of data infrastructure<br class="hidden md:block"> is becoming unsustainable.</h2>
     <p class="text-cream-400 text-base leading-relaxed max-w-2xl mb-12">Behind every enterprise data budget is a deeper crisis &mdash; power, compute, and complexity compounding faster than the value they deliver.</p>
@@ -469,12 +667,10 @@ jsonLd: |
         <div class="stat-label text-cream-600">Enterprise data initiatives<br>that fail expectations<sup class="text-cream-700">1</sup></div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── THE PROBLEM — NARRATIVE ── #}
-<section class="section-wash pb-16">
-  <div class="max-w-4xl mx-auto px-6">
+<div class="pb-16">
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg p-8 md:p-12">
         <div class="rivet absolute top-7 left-7 z-10"></div>
@@ -497,21 +693,17 @@ jsonLd: |
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ── THE SOLUTION ── #}
-<section class="section-wash py-16">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-16">
     <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #00e88f;">The Solution</p>
     <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-12">One engine. A fraction of the footprint.</h2>
-  </div>
-</section>
+</div>
 
-<section class="section-wash pb-16">
-  <div class="max-w-4xl mx-auto px-6">
+<div class="pb-16">
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg p-8 md:p-12">
         <div class="rivet absolute top-7 left-7 z-10"></div>
@@ -520,7 +712,9 @@ jsonLd: |
         <div class="rivet absolute bottom-7 right-7 z-10"></div>
 
         <div class="text-cream-200 text-lg leading-relaxed space-y-6">
-          <p>TETRA&rsquo;s mathematical foundation is so efficient that the complete, queryable, encrypted database is roughly the same size as the compressed raw data it was built from. There is <strong class="text-cream-100">almost no overhead</strong>. Where a traditional system wraps your data in layers of infrastructure, TETRA&rsquo;s structure <em class="text-cream-300">is</em> the query engine. Nothing is wasted.</p>
+          <p>TETRA files compress to <strong class="text-cream-100">~38% of the initial raw data size</strong> &mdash; and that includes everything needed to search and query it (what other databases call &ldquo;indexes&rdquo;). There is no separate index layer. The compressed, post-quantum encrypted file <em class="text-cream-300">is</em> the query engine. By formal proof, zero data resolution is lost.</p>
+
+          <p>Where a traditional system wraps your data in layers of infrastructure &mdash; indexes, logs, caches, replication layers &mdash; TETRA&rsquo;s structure <em class="text-cream-300">is</em> the query engine. Nothing is wasted.</p>
 
           <p>That efficiency cascades into every cost line:</p>
         </div>
@@ -550,12 +744,11 @@ jsonLd: |
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── CTA ── #}
 <div class="py-12 md:py-16">
-  <div class="max-w-2xl mx-auto px-4 md:px-6 text-center">
+  <div class="max-w-2xl mx-auto text-center">
     <p class="text-cream-400 text-base md:text-lg mb-6">Everyone else used this math to build language models. We used it to build a database.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
       <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center w-full sm:w-auto">
@@ -570,19 +763,16 @@ jsonLd: |
   </div>
 </div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ── AI ACCURACY ── #}
-<section class="section-wash py-16">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-16">
     <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-morpho-400">AI + Data</p>
     <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">It makes AI accurate<br class="hidden md:block"> instead of approximate.</h2>
     <p class="text-cream-400 text-base leading-relaxed max-w-2xl mb-12">The biggest unsolved problem in enterprise AI is accuracy. Models hallucinate. The proven fix is giving them structured knowledge to reason over &mdash; not documents to guess from.</p>
-  </div>
-</section>
+</div>
 
-<section class="section-wash pb-16">
-  <div class="max-w-4xl mx-auto px-6">
+<div class="pb-16">
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg p-8 md:p-12">
         <div class="rivet absolute top-7 left-7 z-10"></div>
@@ -610,14 +800,12 @@ jsonLd: |
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ── WHY NOW ── #}
-<section class="section-wash py-16">
-  <div class="max-w-4xl mx-auto px-6">
+<div class="py-16">
     <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-600">Timing</p>
     <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-12">Why now.</h2>
 
@@ -652,12 +840,11 @@ jsonLd: |
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── CTA ── #}
 <div class="py-12 md:py-16">
-  <div class="max-w-2xl mx-auto px-4 md:px-6 text-center">
+  <div class="max-w-2xl mx-auto text-center">
     <p class="text-cream-400 text-base md:text-lg mb-6">The result changes the economics of enterprise data infrastructure at exactly the moment those economics are breaking.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
       <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center w-full sm:w-auto">
@@ -672,11 +859,10 @@ jsonLd: |
   </div>
 </div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ── SOURCES ── #}
-<section class="section-wash py-16">
-  <div class="max-w-4xl mx-auto px-6">
+<div class="py-16">
     <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-600">Sources</p>
 
     <div class="plate-wrap">
@@ -746,12 +932,11 @@ jsonLd: |
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── Final Business CTA ── #}
-<section class="section-wash py-section">
-  <div class="max-w-3xl mx-auto px-4 md:px-6 text-center">
+<div class="py-12 md:py-16">
+  <div class="max-w-3xl mx-auto text-center">
     <p class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">See TETRA in action.</p>
     <p class="text-cream-400 text-base mb-8">Explore the technical benchmarks or talk to us about what TETRA can do for your infrastructure.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
@@ -765,7 +950,12 @@ jsonLd: |
       </a>
     </div>
   </div>
-</section>
+</div>
+
+      </div>{# /plate #}
+    </div>{# /plate-wrap #}
+  </div>
+</section>{# /business panel #}
 
 </div>{# /business tab #}
 
@@ -774,18 +964,33 @@ jsonLd: |
 {# ══════════════════════════════════════════════════════════ #}
 <div x-show="tab === 'tech'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
 
-<section class="section-wash pb-16">
-  <div class="max-w-5xl mx-auto px-6 text-center">
+{# ── Panel 3: TECH OVERVIEW ── #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+<div class="pb-16">
+  <div class="text-center">
     <h2 class="font-bold text-2xl md:text-4xl leading-tight mb-8" style="font-family: 'Press Start 2P', monospace; background: linear-gradient(90deg, #59a14f, #76b7b2, #4e79a7, #b07aa1, #e15759, #f28e2b, #edc948); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">A graph data system<br>that runs anywhere.</h2>
     <p class="text-cream-300 text-lg leading-relaxed max-w-2xl mx-auto mb-8">We didn&rsquo;t improve the graph database. We reinvented it. Sub-millisecond queries. No specialized hardware. Tiny RAM footprint.</p>
-    <div class="flex flex-wrap items-center justify-center gap-4" x-data="{ techSpecs: false }" x-init="if(location.hash.toLowerCase() === '#sf10') techSpecs = true" x-effect="if(techSpecs && typeof renderDiagram==='function') setTimeout(()=>{for(let i=1;i<=14;i++) renderDiagram('ic'+i)},400)" @hashchange.window="if(location.hash.toLowerCase() === '#sf10') techSpecs = true">
+    <div class="flex flex-wrap items-center justify-center gap-4">
       <a href="{{ '/tetra-demo/' | url }}" class="btn-primary text-center inline-block text-base md:text-lg px-8 py-3 font-bold">Launch Demo &rarr;</a>
-      <button @click="techSpecs = true" class="btn-secondary text-base md:text-lg px-8 py-3 font-bold">Tech Specs</button>
+      <a href="#ldbc-sf10" class="btn-secondary text-base md:text-lg px-8 py-3 font-bold">LDBC SF10 Results &darr;</a>
+    </div>
+  </div>
+</div>
 
-      {# ── Tech Specs Modal ── #}
-      <div x-show="techSpecs" x-transition.opacity x-cloak class="bench-modal-backdrop" @click="techSpecs = false" @keydown.escape.window="techSpecs = false">
-        <div class="bench-modal specs-modal" @click.stop style="position:relative">
-          <button class="bench-modal-close" @click="techSpecs = false">&times;</button>
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── LDBC SF10 RESULTS — INLINE ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<div class="py-16" id="ldbc-sf10" x-data="{ ic: {} }" x-init="if(typeof renderDiagram==='function') setTimeout(()=>{for(let i=1;i<=14;i++) renderDiagram('ic'+i)},400)">
 
           <p class="cw-green text-[10px] font-semibold tracking-[0.15em] uppercase mb-2">Benchmark Report</p>
           <h3 style="font-family:'Roca Two',serif;font-size:22px;font-weight:700;color:#F5F0E6;margin-bottom:4px">LDBC Social Network Benchmark</h3>
@@ -898,7 +1103,7 @@ jsonLd: |
           <h4 class="specs-cat" style="margin-top:28px">Query work &mdash; what each query actually does</h4>
           <p class="specs-cat-desc">Click any query to see the traversal shape and the factual work involved. Edge counts are estimated from the LDBC SF10 degree distributions for high-degree seed persons.</p>
 
-          <div x-data="{ ic: {} }" class="space-y-3 mb-6">
+          <div class="space-y-3 mb-6">
 
             {# IC1 #}
             <div class="ic-card">
@@ -1219,19 +1424,20 @@ jsonLd: |
           </div>
 
           <p class="text-cream-700 text-[10px] mt-6 text-center">Tetra / EdgeGlider &middot; LDBC SNB SF10 &middot; 14/14 Interactive Complex queries passed</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+          {# ── Competitive context ── #}
+          <div class="mt-8 pt-6" style="border-top:1px solid rgba(245,240,230,0.08)">
+            <p class="text-cream-500 text-[11px] font-semibold tracking-wider uppercase mb-3">For context</p>
+            <p class="text-cream-500 text-[13px] leading-relaxed">TigerGraph&rsquo;s audited LDBC SNB BI result at SF1000 was run on a Dell PowerEdge R7725 bare-metal server (AMD EPYC). GraphScope Flex holds throughput records (130K+ ops/s at SF100/SF300) on full server infrastructure. Neo4j failed to complete several IC queries at SF10 in the 2019 Rusu &amp; Huang study. Amazon Neptune has no published LDBC results and its openCypher implementation does not support shortestPath() or allShortestPaths(). <strong class="text-cream-300">TETRA passes 14/14 on a single process from a single file.</strong></p>
+          </div>
+</div>{# /ldbc-sf10 #}
+
+<div class="section-divider"></div>
 
 {# ══════════════════════════════════════════════════════════ #}
 {# ── AT A GLANCE ── #}
 {# ══════════════════════════════════════════════════════════ #}
-<section class="section-wash py-14">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-14">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
 
       <div class="plate-flat rounded-lg p-5 text-center">
@@ -1279,17 +1485,15 @@ jsonLd: |
       </div>
 
     </div>
-  </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ══════════════════════════════════════════════════════════ #}
-{# ── VISUALIZATION ENGINE ── #}
+{# ── WHAT'S INCLUDED ── #}
 {# ══════════════════════════════════════════════════════════ #}
-<section class="section-wash py-16">
-  <div class="max-w-5xl mx-auto px-6">
-    <p class="t-teal text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Visualization</p>
+<div class="py-16">
+    <p class="t-teal text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">What&rsquo;s included</p>
 
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg p-8 md:p-12">
@@ -1298,60 +1502,139 @@ jsonLd: |
         <div class="rivet absolute bottom-7 left-7 z-10"></div>
         <div class="rivet absolute bottom-7 right-7 z-10"></div>
 
-        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">Query. Analyze. Visualize. Innovate.</h2>
-        <p class="text-cream-300 text-base leading-relaxed mb-8 max-w-2xl">To give you maximum data utility, we built a 2D/3D graph viewer right in. Click a node, follow the connections, see what&rsquo;s actually there.</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">Everything. No add-on licensing.</h2>
+        <p class="text-cream-300 text-base leading-relaxed mb-10 max-w-2xl">Visualization, algorithms, encryption, compliance. It&rsquo;s all in the box. Other vendors charge separately for each of these.</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {# ── Retina ── #}
+        <div class="mb-10">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="algo-dot t-teal-bg"></span>
+            <h3 class="font-display font-bold text-xl text-cream-100">Retina &mdash; 3D/2D Graph Data Viewer &amp; Explorer</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div class="plate-flat rounded-lg p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="algo-dot t-steel-bg"></span>
+                <span class="text-[10px] font-semibold tracking-[0.1em] uppercase t-steel">Layouts</span>
+              </div>
+              <div class="text-cream-300 text-sm leading-relaxed space-y-1">
+                <p>Force-directed, spherical, and radial &mdash; switch on the fly</p>
+                <p>2D overhead or full 3D orbit</p>
+              </div>
+            </div>
+            <div class="plate-flat rounded-lg p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="algo-dot t-amber-bg"></span>
+                <span class="text-[10px] font-semibold tracking-[0.1em] uppercase t-amber">Node Shapes</span>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <div class="shape-preview shape-ico t-steel-bg"></div>
+                <div class="shape-preview shape-octa t-amber-bg"></div>
+                <div class="shape-preview shape-dod t-teal-bg"></div>
+                <div class="shape-preview shape-tet t-green-bg"></div>
+                <div class="shape-preview shape-cube t-coral-bg"></div>
+                <div class="shape-preview shape-sph t-mauve-bg"></div>
+              </div>
+              <p class="text-cream-300 text-sm leading-relaxed">Six distinct platonic solids. Each node type gets its own shape and color automatically.</p>
+            </div>
+            <div class="plate-flat rounded-lg p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="algo-dot t-teal-bg"></span>
+                <span class="text-[10px] font-semibold tracking-[0.1em] uppercase t-teal">Explore</span>
+              </div>
+              <div class="text-cream-300 text-sm leading-relaxed space-y-1">
+                <p>Click to focus &mdash; see N hops deep</p>
+                <p>Fly to any node in the graph</p>
+                <p>Pin and inspect multiple nodes at once</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-cream-400 text-sm leading-relaxed space-y-2">
+            <p>WebGPU-driven rendering (2D and 3D modes). Server-side and client-side analytics built in (shortest path, centrality, community detection). Query UI for exploring and verifying data or validating migrations. Export results as CSV or JSON.</p>
+            <p class="text-cream-500 text-xs"><strong class="text-cream-400">Free and ungated</strong> &mdash; part of the TETRA suite, no add-on licensing. Neo4j charges $1,200&ndash;$2,500/user/year for Bloom (self-hosted Enterprise). TigerGraph charges 10% compute surcharge for Insights. Neptune has only the open-source graph-explorer.</p>
+          </div>
+        </div>
 
-          {# Layouts #}
+        <div class="section-divider mb-10"></div>
+
+        {# ── Capabilities grid ── #}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {# 30+ Algorithms #}
           <div class="plate-flat rounded-lg p-5">
             <div class="flex items-center gap-2 mb-3">
-              <span class="algo-dot t-steel-bg"></span>
-              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase t-steel">Layouts</span>
+              <span class="algo-dot" style="background:#4e79a7"></span>
+              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase" style="color:#4e79a7">30+ Graph Algorithms</span>
             </div>
-            <div class="text-cream-300 text-sm leading-relaxed space-y-1">
-              <p>Force-directed, spherical, and radial &mdash; switch on the fly</p>
-              <p>2D overhead or full 3D orbit</p>
+            <div class="text-cream-300 text-sm leading-relaxed space-y-2">
+              <p>Built in. No add-on licensing. Neo4j charges <strong class="text-cream-100">$10K&ndash;$25K+/yr</strong> for Graph Data Science. TigerGraph charges 10% compute surcharge for Insights.</p>
             </div>
           </div>
 
-          {# Node Rendering #}
+          {# Post-Quantum Encryption #}
           <div class="plate-flat rounded-lg p-5">
             <div class="flex items-center gap-2 mb-3">
-              <span class="algo-dot t-amber-bg"></span>
-              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase t-amber">Node Shapes</span>
+              <span class="algo-dot" style="background:#e15759"></span>
+              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase" style="color:#e15759">Post-Quantum Encryption</span>
             </div>
-            <div class="flex flex-wrap gap-2 mb-3">
-              <div class="shape-preview shape-ico t-steel-bg"></div>
-              <div class="shape-preview shape-octa t-amber-bg"></div>
-              <div class="shape-preview shape-dod t-teal-bg"></div>
-              <div class="shape-preview shape-tet t-green-bg"></div>
-              <div class="shape-preview shape-cube t-coral-bg"></div>
-              <div class="shape-preview shape-sph t-mauve-bg"></div>
+            <div class="text-cream-300 text-sm leading-relaxed space-y-2">
+              <p>Encrypted at rest with post-quantum resistant cryptography. The encrypted, compressed file <strong class="text-cream-100">is</strong> the queryable database &mdash; no decryption step.</p>
             </div>
-            <p class="text-cream-300 text-sm leading-relaxed">Six distinct platonic solids. Each node type gets its own shape and color automatically.</p>
           </div>
 
-          {# Interaction #}
+          {# Compression #}
           <div class="plate-flat rounded-lg p-5">
             <div class="flex items-center gap-2 mb-3">
-              <span class="algo-dot t-teal-bg"></span>
-              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase t-teal">Explore</span>
+              <span class="algo-dot" style="background:#59a14f"></span>
+              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase" style="color:#59a14f">~38% Compression</span>
             </div>
-            <div class="text-cream-300 text-sm leading-relaxed space-y-1">
-              <p>Click to focus &mdash; see N hops deep</p>
-              <p>Fly to any node in the graph</p>
-              <p>Pin and inspect multiple nodes at once</p>
+            <div class="text-cream-300 text-sm leading-relaxed space-y-2">
+              <p>Raw data compresses to ~38% including all query structures. No separate indexes. By formal proof, <strong class="text-cream-100">zero data resolution lost</strong>.</p>
+            </div>
+          </div>
+
+          {# 100% Cypher TCK #}
+          <div class="plate-flat rounded-lg p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="algo-dot cw-green-bg"></span>
+              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase cw-green">100% Cypher TCK</span>
+            </div>
+            <div class="text-cream-300 text-sm leading-relaxed space-y-2">
+              <p><strong class="text-cream-100">1,611/1,611</strong> openCypher scenarios passed. Full compliance over Bolt v4.4. Neptune can&rsquo;t run shortestPath(). TigerGraph uses proprietary GSQL.</p>
+            </div>
+          </div>
+
+          {# Co-location Ready #}
+          <div class="plate-flat rounded-lg p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="algo-dot" style="background:#b07aa1"></span>
+              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase" style="color:#b07aa1">Co-location Ready</span>
+            </div>
+            <div class="text-cream-300 text-sm leading-relaxed space-y-2">
+              <p><strong class="text-cream-100">66 MB RAM</strong> for 166K edges. Native binary in a 24 MB Alpine container. Runs alongside your app &mdash; no cluster, no network hop.</p>
+            </div>
+          </div>
+
+          {# Ingestion #}
+          <div class="plate-flat rounded-lg p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="algo-dot" style="background:#f28e2b"></span>
+              <span class="text-[10px] font-semibold tracking-[0.1em] uppercase" style="color:#f28e2b">Ingestion</span>
+            </div>
+            <div class="text-cream-300 text-sm leading-relaxed space-y-2">
+              <p><strong class="text-cream-100">10 GB of CSV</strong> ingested, converted, and loaded in under 7 minutes on 5 GB of RAM. Single-process. No ETL cluster.</p>
             </div>
           </div>
 
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+      </div>{# /plate #}
+    </div>{# /plate-wrap #}
+  </div>
+</section>{# /Panel 3: TECH OVERVIEW #}
 
 {# ══════════════════════════════════════════════════════════ #}
 {# ══════════════════════════════════════════════════════════ #}
@@ -1359,17 +1642,25 @@ jsonLd: |
 {# ══════════════════════════════════════════════════════════ #}
 {# ── BENCHMARK ── #}
 {# ══════════════════════════════════════════════════════════ #}
-<section class="section-wash py-16">
+
+{# ── Panel 4: BENCHMARKS ── #}
+<section class="py-12 md:py-16">
   <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+<div class="py-16">
     <p class="cw-green text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Performance</p>
     <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">78 queries. 300 iterations each. Same hardware.</h2>
     <p class="text-cream-300 text-base leading-relaxed mb-8 max-w-2xl">Recommendations dataset &mdash; 28,863 nodes, 166,261 edges. Both containerized on Apple M4 Pro, 16GB, CPU only. Native binary shown for reference.</p>
-  </div>
-</section>
+</div>
 
 {# ── Stats ── #}
-<section class="section-wash pb-8">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="pb-8">
     <div class="inline-flex gap-6 mx-auto justify-center w-full flex-wrap">
       <div class="plate-flat rounded-lg px-5 py-3 text-center">
         <div class="text-xl font-bold font-display" style="color: #00e88f;">54</div>
@@ -1388,24 +1679,20 @@ jsonLd: |
         <div class="text-cream-600 text-[10px] font-medium tracking-wider uppercase mt-0.5">Iterations each</div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
-<section class="section-wash pt-8 pb-4">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="pt-8 pb-4">
     <div class="flex flex-wrap gap-6 items-center">
       <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-sm cw-green-bg"></span><span class="text-sm font-medium cw-green">TETRA container</span></div>
       <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-sm" style="background:#E85A48"></span><span class="text-sm font-medium" style="color:#E85A48">Neo4j container</span></div>
       <span class="text-cream-700 text-xs ml-auto">Bar shows container head-to-head &middot; p50 median latency</span>
     </div>
-  </div>
-</section>
+</div>
 
 {# ══════════════════════════════════════════════════════════ #}
 {# ── CONTAINER BENCHMARK: SETUP ── #}
 {# ══════════════════════════════════════════════════════════ #}
-<section class="section-wash py-12">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-12">
     <p class="cw-green text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Container Benchmark</p>
     <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">Head-to-head. Same hardware. Same queries. No tricks.</h2>
     <p class="text-cream-300 text-base leading-relaxed mb-8 max-w-2xl">105 Cypher queries, 30 iterations each. Both databases containerized with hard resource limits. Neo4j gets <strong class="text-cream-100">2&times; the RAM budget</strong> and still uses <strong style="color:#E85A48">10.8&times; more memory</strong> than Tetra.</p>
@@ -1467,10 +1754,9 @@ jsonLd: |
       </div>
     </div>
     <p class="text-cream-700 text-xs text-center mb-2">105 queries &middot; Dataset: Recommendations &mdash; 28,863 nodes, 166,261 edges &middot; p99 determines winner &middot; 5% tie threshold</p>
-  </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ══════════════════════════════════════════════════════════ #}
 {# ── BENCHMARK CATEGORIES ── #}
@@ -1502,8 +1788,7 @@ async function renderDiagram(id) {
 <div x-data="{ open: {} }">
 
 {# ── Counts & Lookups ── #}
-<section class="section-wash py-2">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-2">
     <button @click="open['counts'] = !open['counts']" class="w-full flex items-center gap-4 py-4 group text-left">
       <span class="text-cream-700 text-xs transition-transform duration-200" :class="open['counts'] ? 'rotate-90' : ''">&blacktriangleright;</span>
       <span class="font-display font-bold text-lg text-cream-200 group-hover:text-cream-100 transition-colors">Counts &amp; Lookups</span>
@@ -1554,12 +1839,10 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── Traversals ── #}
-<section class="section-wash py-2">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-2">
     <button @click="open['trav'] = !open['trav']" class="w-full flex items-center gap-4 py-4 group text-left">
       <span class="text-cream-700 text-xs transition-transform duration-200" :class="open['trav'] ? 'rotate-90' : ''">&blacktriangleright;</span>
       <span class="font-display font-bold text-lg text-cream-200 group-hover:text-cream-100 transition-colors">Traversals</span>
@@ -1626,12 +1909,10 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── Aggregation ── #}
-<section class="section-wash py-2">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-2">
     <button @click="open['agg'] = !open['agg']" class="w-full flex items-center gap-4 py-4 group text-left">
       <span class="text-cream-700 text-xs transition-transform duration-200" :class="open['agg'] ? 'rotate-90' : ''">&blacktriangleright;</span>
       <span class="font-display font-bold text-lg text-cream-200 group-hover:text-cream-100 transition-colors">Aggregation</span>
@@ -1690,12 +1971,10 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── WITH Pipeline & Multi-MATCH ── #}
-<section class="section-wash py-2">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-2">
     <button @click="open['with'] = !open['with']" class="w-full flex items-center gap-4 py-4 group text-left">
       <span class="text-cream-700 text-xs transition-transform duration-200" :class="open['with'] ? 'rotate-90' : ''">&blacktriangleright;</span>
       <span class="font-display font-bold text-lg text-cream-200 group-hover:text-cream-100 transition-colors">WITH Pipeline &amp; Multi-MATCH</span>
@@ -1754,12 +2033,10 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── Real-World App Queries ── #}
-<section class="section-wash py-2">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-2">
     <button @click="open['app'] = !open['app']" class="w-full flex items-center gap-4 py-4 group text-left">
       <span class="text-cream-700 text-xs transition-transform duration-200" :class="open['app'] ? 'rotate-90' : ''">&blacktriangleright;</span>
       <span class="font-display font-bold text-lg text-cream-200 group-hover:text-cream-100 transition-colors">Real-World App Queries</span>
@@ -1826,12 +2103,10 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── Devastating / Stress ── #}
-<section class="section-wash py-2">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-2">
     <button @click="open['stress'] = !open['stress']" class="w-full flex items-center gap-4 py-4 group text-left">
       <span class="text-cream-700 text-xs transition-transform duration-200" :class="open['stress'] ? 'rotate-90' : ''">&blacktriangleright;</span>
       <span class="font-display font-bold text-lg text-cream-200 group-hover:text-cream-100 transition-colors">Devastating / Stress Test</span>
@@ -1882,12 +2157,10 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── Where Neo4j Wins ── #}
-<section class="section-wash py-2">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-2">
     <button @click="open['neo'] = !open['neo']" class="w-full flex items-center gap-4 py-4 group text-left">
       <span class="text-cream-700 text-xs transition-transform duration-200" :class="open['neo'] ? 'rotate-90' : ''">&blacktriangleright;</span>
       <span class="font-display font-bold text-lg text-cream-200 group-hover:text-cream-100 transition-colors">Where Neo4j Wins</span>
@@ -1895,7 +2168,8 @@ async function renderDiagram(id) {
       <span class="ml-auto text-xs font-semibold neo-blue">Neo4j 6</span>
     </button>
     <div x-show="open['neo']" x-transition.opacity x-cloak>
-      <p class="text-cream-500 text-[13px] mb-4">Neo4j&rsquo;s wins are concentrated in multi-variable RETURN projections and OPTIONAL MATCH chains &mdash; areas where Tetra&rsquo;s query planner has known optimization opportunities.</p>
+      <p class="text-cream-500 text-[13px] mb-2">Neo4j&rsquo;s wins are concentrated in multi-variable RETURN projections and OPTIONAL MATCH chains &mdash; areas where Tetra&rsquo;s query planner has known optimization opportunities.</p>
+      <p class="text-cream-600 text-[12px] mb-4" style="border-left: 2px solid rgba(0,232,143,0.25); padding-left: 12px;">These represent active query planner optimization targets for TETRA. We expect these gaps to close as the planner matures. We ship what&rsquo;s real, including what&rsquo;s not done yet.</p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 pb-6">
         <div class="bench-node win-neo">
           <div class="text-sm font-bold font-display neo-blue mb-0.5">Neo4j, 53&times; faster</div>
@@ -1947,18 +2221,30 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 </div>{# /open x-data #}
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+      </div>{# /plate #}
+    </div>{# /plate-wrap #}
+  </div>
+</section>{# /Panel 4: BENCHMARKS #}
 
 {# ══════════════════════════════════════════════════════════ #}
 {# ── WRITE OPERATIONS ── #}
 {# ══════════════════════════════════════════════════════════ #}
-<section class="section-wash py-16">
+
+{# ── Panel 5: WRITE OPS + THROUGHPUT ── #}
+<section class="py-12 md:py-16">
   <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+<div class="py-16">
     <p class="cw-green text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Write Operations</p>
     <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">11 write tests. Tetra passes all. Neo4j: OOM.</h2>
     <p class="text-cream-300 text-base leading-relaxed mb-8 max-w-2xl">CREATE, SET, REMOVE, DELETE, DETACH DELETE, MERGE (ON CREATE, ON MATCH). Neo4j could not complete the write verification suite under 1&nbsp;GB with 1&nbsp;CPU. Every write attempt resulted in an OOM crash.</p>
@@ -1973,16 +2259,14 @@ async function renderDiagram(id) {
         <div class="text-cream-600 text-[10px] font-medium tracking-wider uppercase mt-1">Neo4j (1 GB) &mdash; OOM</div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ══════════════════════════════════════════════════════════ #}
 {# ── CONCURRENCY THROUGHPUT ── #}
 {# ══════════════════════════════════════════════════════════ #}
-<section class="section-wash py-16">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-16">
     <p class="cw-green text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Throughput</p>
     <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">Concurrent scaling. Same hardware. Fair fight.</h2>
     <p class="text-cream-300 text-base leading-relaxed mb-8 max-w-2xl">Mixed workload &mdash; queries per second as concurrent Bolt clients increase. Tetra: 1 CPU / 512&nbsp;MB. Neo4j: 1 CPU / 1&nbsp;GB. At 64 clients, <strong style="color:#E85A48">Neo4j runs out of memory and crashes</strong>. Tetra keeps serving.</p>
@@ -2086,14 +2370,166 @@ async function renderDiagram(id) {
       <p class="text-cream-500 text-[12px] mt-4 leading-relaxed">Neo4j&rsquo;s throughput <em>drops</em> as concurrency increases &mdash; from 90 q/s at 1 client to 29 q/s at 8 clients. The JVM garbage collector fights the 1&nbsp;GB memory limit. Tetra&rsquo;s throughput <em>increases</em> with concurrency and stays flat. No GC, no heap pressure.</p>
       <p class="text-cream-700 text-[10px] mt-2">Tetra: 1 CPU / 512 MB &middot; Neo4j: 1 CPU / 1 GB &middot; Bolt v4.4 &middot; Mixed read workload &middot; Recommendations dataset</p>
     </div>
+</div>
+
+      </div>{# /plate #}
+    </div>{# /plate-wrap #}
+  </div>
+</section>{# /Panel 5: WRITE OPS + THROUGHPUT #}
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── COMPETITIVE ECONOMICS ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="cw-green text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Economics</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-3">What it actually costs.</h2>
+        <p class="text-cream-400 text-base leading-relaxed mb-8 max-w-2xl">Every graph database prices differently. We did the math so you don&rsquo;t have to. All prices verified from vendor sites, April 2026.</p>
+
+        {# ── Monthly pricing table ── #}
+        <div class="overflow-x-auto mb-10">
+          <table class="w-full text-sm" style="border-collapse:collapse">
+            <thead>
+              <tr style="border-bottom:2px solid rgba(245,240,230,0.1)">
+                <th class="text-left text-cream-600 text-[10px] uppercase tracking-wider py-3 px-3">Provider</th>
+                <th class="text-left text-cream-600 text-[10px] uppercase tracking-wider py-3 px-3">Config</th>
+                <th class="text-right text-cream-600 text-[10px] uppercase tracking-wider py-3 px-3">Monthly</th>
+                <th class="text-left text-cream-600 text-[10px] uppercase tracking-wider py-3 px-3">What&rsquo;s missing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:rgba(0,232,143,0.06); border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 font-bold cw-green">TETRA</td>
+                <td class="py-3 px-3 text-cream-300 text-xs">Flat rate</td>
+                <td class="py-3 px-3 text-right font-bold font-display cw-green text-lg">$299</td>
+                <td class="py-3 px-3 text-cream-400 text-xs">Nothing. Retina, 30+ algorithms, full Cypher included.</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 font-semibold text-cream-300">Neptune</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">db.r5.large, single</td>
+                <td class="py-3 px-3 text-right font-bold font-display text-cream-300">$297</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">No HA/failover. +replicas (2&ndash;4&times; cost), +storage, +I/O. No shortestPath(). No built-in visualization.</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 font-semibold text-cream-300">Neo4j AuraDB Pro</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">16 GB / 3 CPU</td>
+                <td class="py-3 px-3 text-right font-bold font-display text-cream-300">$1,051</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">Bloom included in cloud. Self-hosted GDS: $10K&ndash;$25K+/yr extra.</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 font-semibold text-cream-300">Neo4j AuraDB BC</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">8 GB / 2 CPU</td>
+                <td class="py-3 px-3 text-right font-bold font-display text-cream-300">$1,168</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">SLAs, RBAC, SSO. Self-hosted Enterprise: $20K&ndash;$200K+/yr.</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 font-semibold text-cream-300">TigerGraph Savanna</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">TG-00 (2 vCPU, 16 GB)</td>
+                <td class="py-3 px-3 text-right font-bold font-display text-cream-300">$720</td>
+                <td class="py-3 px-3 text-cream-500 text-xs">Compute only. +HA (2.8&times; &rarr; ~$2,016/mo), +storage, +Insights (10%). Proprietary GSQL.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {# ── TCO table ── #}
+        <h3 class="font-display font-bold text-lg text-cream-100 mb-4">Cumulative annual TCO</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-sm" style="border-collapse:collapse">
+            <thead>
+              <tr style="border-bottom:2px solid rgba(245,240,230,0.1)">
+                <th class="text-left text-cream-600 text-[10px] uppercase tracking-wider py-3 px-3"></th>
+                <th class="text-right text-cream-600 text-[10px] uppercase tracking-wider py-3 px-2">Neo4j Pro</th>
+                <th class="text-right text-cream-600 text-[10px] uppercase tracking-wider py-3 px-2">Neo4j BC</th>
+                <th class="text-right text-cream-600 text-[10px] uppercase tracking-wider py-3 px-2">TigerGraph</th>
+                <th class="text-right text-cream-600 text-[10px] uppercase tracking-wider py-3 px-2">Neptune</th>
+                <th class="text-right text-cream-600 text-[10px] uppercase tracking-wider py-3 px-2 cw-green">TETRA + migration</th>
+                <th class="text-right text-cream-600 text-[10px] uppercase tracking-wider py-3 px-2 cw-green">TETRA only</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 text-cream-400 font-semibold text-xs">Year 1</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$12,614</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$14,016</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$8,640</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$3,559</td>
+                <td class="py-3 px-2 text-right cw-green font-mono text-xs font-bold">$14,452</td>
+                <td class="py-3 px-2 text-right cw-green font-mono text-xs font-bold">$3,588</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 text-cream-400 font-semibold text-xs">Year 3</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$37,843</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$42,048</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$25,920</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$10,678</td>
+                <td class="py-3 px-2 text-right cw-green font-mono text-xs font-bold">$21,328</td>
+                <td class="py-3 px-2 text-right cw-green font-mono text-xs font-bold">$10,764</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(245,240,230,0.06)">
+                <td class="py-3 px-3 text-cream-400 font-semibold text-xs">Year 5</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$63,072</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$70,080</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$43,200</td>
+                <td class="py-3 px-2 text-right text-cream-300 font-mono text-xs">$17,796</td>
+                <td class="py-3 px-2 text-right cw-green font-mono text-xs font-bold">$28,504</td>
+                <td class="py-3 px-2 text-right cw-green font-mono text-xs font-bold">$17,940</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {# ── Caveats ── #}
+        <div class="plate-flat rounded-lg p-5" x-data="{ showMath: false }">
+          <p class="text-cream-500 text-[11px] font-semibold tracking-wider uppercase mb-3">Important caveats</p>
+          <div class="text-cream-500 text-[13px] leading-relaxed space-y-2">
+            <p>Neptune $297/mo is single instance, no HA. Production requires writer + replicas (2&ndash;4&times; instance cost).</p>
+            <p>TigerGraph $720/mo is compute only. With HA (2.8&times;) it&rsquo;s ~$2,016/mo before storage or add-ons.</p>
+            <p>Neo4j self-hosted Bloom ($1,200&ndash;$2,500/user/yr) and GDS ($10K&ndash;$25K+/yr) pricing is from Vendr third-party transaction data, not Neo4j-published.</p>
+          </div>
+          <button @click="showMath = !showMath" class="mt-4 text-morpho-500 hover:text-morpho-400 text-xs transition-colors">
+            <span x-text="showMath ? 'Hide' : 'Show'"></span> math
+          </button>
+          <div x-show="showMath" x-transition x-cloak class="mt-3 text-cream-600 text-[11px] leading-relaxed space-y-1 font-mono" style="border-top:1px solid rgba(245,240,230,0.06); padding-top:12px">
+            <p>Neo4j Pro 16GB: $1,051.20 &times; 12 = $12,614/yr</p>
+            <p>Neo4j BC 8GB: $1,168.00 &times; 12 = $14,016/yr</p>
+            <p>TigerGraph TG-00: $720 &times; 12 = $8,640/yr (compute only)</p>
+            <p>Neptune db.r5.large: $296.61 &times; 12 = $3,559/yr (single instance)</p>
+            <p>TETRA w/ migration: $10,864 + ($299 &times; 12) = $14,452 yr 1; $3,588/yr after</p>
+            <p>TETRA product: $299 &times; 12 = $3,588/yr</p>
+          </div>
+        </div>
+
+        {# ── Sources ── #}
+        <div class="mt-6 text-cream-700 text-[10px] leading-relaxed space-y-1">
+          <p>Pricing sources: <a href="https://neo4j.com/pricing/" target="_blank" rel="noopener" class="text-morpho-600 hover:text-morpho-500">neo4j.com/pricing</a> &middot; <a href="https://docs.tigergraph.com/savanna/main/overview/pricing" target="_blank" rel="noopener" class="text-morpho-600 hover:text-morpho-500">TigerGraph Savanna</a> &middot; <a href="https://aws.amazon.com/neptune/pricing/" target="_blank" rel="noopener" class="text-morpho-600 hover:text-morpho-500">AWS Neptune</a> &middot; <a href="https://www.vendr.com/marketplace/neo4j" target="_blank" rel="noopener" class="text-morpho-600 hover:text-morpho-500">Vendr (self-hosted estimates)</a></p>
+          <p>All prices verified April 2026. Smallest production-viable configuration for each provider.</p>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+{# ── Panel 6: PRICING + CTA ── #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
 
 {# ── Methodology ── #}
-<section class="py-12" x-data="{ open: false }">
-  <div class="max-w-5xl mx-auto px-6">
+<div class="py-12" x-data="{ open: false }">
     <button @click="open = !open" class="btn-secondary text-sm">
       <span x-text="open ? '&#9662;' : '&#9656;'"></span>
       <span class="ml-2">Show benchmark methodology</span>
@@ -2125,25 +2561,25 @@ async function renderDiagram(id) {
         </div>
       </div>
     </div>
-  </div>
-</section>
+</div>
 
 {# ── Demo CTA ── #}
-<section class="section-wash py-16">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <p class="font-bold text-xl md:text-2xl mb-3" style="font-family: 'Press Start 2P', monospace; background: linear-gradient(90deg, #59a14f, #76b7b2, #4e79a7, #b07aa1, #e15759, #f28e2b, #edc948); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Demo the TETRA viewer for FREE in your browser.</p>
-    <p class="text-cream-400 text-base mb-8 max-w-lg mx-auto">Explore the recommendations dataset in 3D. 2,330 nodes. 3,506 edges. Running entirely in your browser.</p>
+<div class="py-16">
+  <div class="text-center">
+    <p class="font-bold text-xl md:text-2xl mb-3" style="font-family: 'Press Start 2P', monospace; background: linear-gradient(90deg, #59a14f, #76b7b2, #4e79a7, #b07aa1, #e15759, #f28e2b, #edc948); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">See it for yourself.</p>
+    <p class="text-cream-300 text-lg mb-2 max-w-lg mx-auto font-display font-bold">Explore the recommendations dataset in 3D &mdash; 2,330 nodes, 3,506 edges, running in your browser.</p>
+    <p class="text-cream-500 text-sm mb-8 max-w-md mx-auto">WebGPU-powered Retina viewer. Click a node, follow the connections, see what&rsquo;s actually there. No install. No account. Free.</p>
     <a href="{{ '/tetra-demo/' | url }}" class="btn-primary text-center inline-block text-lg md:text-xl px-10 py-4 font-bold">
       Launch Demo &rarr;
     </a>
   </div>
-</section>
+</div>
 
-<div class="section-divider max-w-5xl mx-auto"></div>
+<div class="section-divider"></div>
 
 {# ── Pricing ── #}
-<section class="section-wash py-16">
-  <div class="max-w-3xl mx-auto px-6">
+<div class="py-16" id="pricing">
+  <div class="max-w-3xl mx-auto">
     <p class="text-morpho-400 text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-center">Introductory Pricing</p>
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg p-8 md:p-12 text-center">
@@ -2151,29 +2587,35 @@ async function renderDiagram(id) {
         <div class="rivet absolute top-7 right-7 z-10"></div>
         <div class="rivet absolute bottom-7 left-7 z-10"></div>
         <div class="rivet absolute bottom-7 right-7 z-10"></div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-6">
           <div>
-            <div class="text-4xl md:text-5xl font-bold font-display text-cream-100">$10,864</div>
-            <div class="text-cream-500 text-sm mt-1">Configuration</div>
+            <div class="text-4xl md:text-5xl font-bold font-display" style="color: #00e88f;">$299<span class="text-xl text-cream-400">/mo</span></div>
+            <div class="text-cream-400 text-sm mt-1 max-w-[260px]">The database. Flat rate. No per-GB scaling. No add-on tiers.</div>
           </div>
           <div class="hidden md:block text-cream-700 text-3xl font-light">+</div>
           <div>
-            <div class="text-4xl md:text-5xl font-bold font-display" style="color: #00e88f;">$299<span class="text-xl text-cream-400">/mo</span></div>
-            <div class="text-cream-500 text-sm mt-1">Includes operational support</div>
+            <div class="text-4xl md:text-5xl font-bold font-display text-cream-100">$10,864</div>
+            <div class="text-cream-400 text-sm mt-1 max-w-[260px]">One-time professional services &mdash; data migration, ingestion, conversion &amp; validation.</div>
           </div>
         </div>
+        <p class="text-cream-500 text-xs mb-6 max-w-lg mx-auto">Includes Retina visualization, 30+ graph algorithms, full openCypher, and operational support. The one-time fee is optional &mdash; for existing data migrations only. Not a license fee.</p>
         <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center inline-block text-base md:text-lg px-10 py-4 font-bold">Get TETRA &rarr;</a>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 {# ── Contact CTA ── #}
-<section class="section-wash py-12 pb-24">
-  <div class="max-w-5xl mx-auto px-6 text-center">
+<div class="py-12 pb-24">
+  <div class="text-center">
     <p class="text-cream-600 text-sm">Questions? <a href="{{ '/schedule-meeting/' | url }}" class="text-morpho-400 hover:text-morpho-300 transition-colors">Schedule a call</a> or <a href="{{ '/contact/' | url }}" class="text-morpho-400 hover:text-morpho-300 transition-colors">reach out</a>.</p>
   </div>
-</section>
+</div>
+
+      </div>{# /plate #}
+    </div>{# /plate-wrap #}
+  </div>
+</section>{# /Panel 6: PRICING + CTA #}
 
 </div>{# /tech tab #}
 </div>{# /tab wrapper #}

@@ -1,0 +1,295 @@
+---
+layout: layouts/page.njk
+title: "TETRA for Edge — Graph Database in 24 MB | Post-Quantum Encrypted"
+description: "Graph intelligence on edge devices. TETRA: 24 MB container, 66 MB RAM, post-quantum encryption, offline capable. Single binary, single file. ARM, x86, embedded Linux."
+keywords: "edge graph database, embedded graph database, TETRA edge, post-quantum encryption database, IoT graph database, offline graph database, edge computing database, lightweight graph database, ARM graph database, defense graph database, industrial IoT database"
+permalink: /tetra/edge/
+date: 2026-04-16
+ogType: "article"
+ogImage: "/assets/img/og-tetra.png"
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "TETRA for Edge — Graph Database in 24 MB",
+        "description": "Graph intelligence on edge devices. TETRA: 24 MB container, 66 MB RAM, post-quantum encryption, offline capable. Single binary, single file. ARM, x86, embedded Linux.",
+        "url": "https://corewood.io/tetra/edge/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "datePublished": "2026-04-16",
+        "dateModified": "2026-04-16",
+        "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "publisher": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io", "logo": { "@type": "ImageObject", "url": "https://corewood.io/meta.png" } },
+        "about": [
+          { "@type": "Thing", "name": "Edge Computing" },
+          { "@type": "Thing", "name": "Graph Database" },
+          { "@type": "Thing", "name": "Post-Quantum Encryption" }
+        ],
+        "proficiencyLevel": "Expert",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "TETRA",
+        "alternateName": "TETRA for Edge",
+        "applicationCategory": "Graph Database",
+        "applicationSubCategory": "Edge Graph Intelligence",
+        "operatingSystem": "ARM, x86, embedded Linux, Docker, bare metal",
+        "description": "Graph intelligence on edge devices. 24 MB container, 66 MB RAM, post-quantum encryption, offline capable. Single binary, single file, full openCypher, 30+ algorithms.",
+        "url": "https://corewood.io/tetra/edge/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Corewood",
+          "url": "https://corewood.io",
+          "logo": "https://corewood.io/meta.png",
+          "email": "hello@corewood.io"
+        },
+        "featureList": [
+          "24 MB container image",
+          "66 MB RAM footprint",
+          "Post-quantum resistant encryption at rest",
+          "~38% compression ratio with zero data resolution loss",
+          "Single native binary — no JVM, no cluster, no cloud dependency",
+          "Full openCypher query language",
+          "30+ built-in graph algorithms",
+          "Offline capable — no network required",
+          "ARM, x86, embedded Linux, Docker, bare metal",
+          "Single encrypted file is the entire queryable database"
+        ],
+        "softwareRequirements": "No JVM, no cluster, no managed cloud — single native binary",
+        "memoryRequirements": "66 MB RAM"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "TETRA", "item": "https://corewood.io/tetra/" },
+          { "@type": "ListItem", "position": 3, "name": "Edge Deployment" }
+        ]
+      }
+    ]
+  }
+---
+
+<style>
+  .cw-green { color: #00e88f; }
+  .cw-green-bg { background: #00e88f; }
+</style>
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── HERO ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="pt-40 pb-12">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="font-display font-bold text-3xl md:text-5xl text-cream-100 leading-tight mb-8">Graph intelligence. On a gateway.<br class="hidden md:block"> In the field.</h1>
+          <p class="text-cream-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">For twenty years the answer has been &ldquo;your device can&rsquo;t run a graph database.&rdquo; A JVM is too heavy. A cluster doesn&rsquo;t fit. A managed cloud needs a network. TETRA is a single native binary. 24 MB container. 66 MB of RAM.</p>
+
+          {# ── Stat cards ── #}
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="plate-flat rounded-lg p-5 text-center">
+              <div class="text-3xl md:text-4xl font-bold font-display cw-green">24 MB</div>
+              <div class="text-cream-500 text-xs font-medium tracking-wider uppercase mt-1">Container</div>
+            </div>
+            <div class="plate-flat rounded-lg p-5 text-center">
+              <div class="text-3xl md:text-4xl font-bold font-display cw-green">66 MB</div>
+              <div class="text-cream-500 text-xs font-medium tracking-wider uppercase mt-1">RAM</div>
+            </div>
+            <div class="plate-flat rounded-lg p-5 text-center">
+              <div class="text-3xl md:text-4xl font-bold font-display cw-green">PQC</div>
+              <div class="text-cream-500 text-xs font-medium tracking-wider uppercase mt-1">Post-quantum encryption</div>
+            </div>
+            <div class="plate-flat rounded-lg p-5 text-center">
+              <div class="text-3xl md:text-4xl font-bold font-display cw-green">~38%</div>
+              <div class="text-cream-500 text-xs font-medium tracking-wider uppercase mt-1">Of raw data</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── WHAT EDGE GRAPH INTELLIGENCE UNLOCKS ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 cw-green">Use Cases</p>
+        <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">What edge graph intelligence unlocks</h2>
+        <p class="text-cream-400 text-base leading-relaxed max-w-2xl mb-10">Relationship queries where the data lives &mdash; no round-trip, no cloud dependency, no compromise.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Fleet management</div>
+            <p class="text-cream-400 text-sm leading-relaxed">Real-time relationship queries across vehicles, drivers, routes, maintenance &mdash; without cloud round-trip.</p>
+          </div>
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Industrial control</div>
+            <p class="text-cream-400 text-sm leading-relaxed">Asset relationships, dependency graphs, failure propagation on the gateway.</p>
+          </div>
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Retail</div>
+            <p class="text-cream-400 text-sm leading-relaxed">Customer journey, product affinity, inventory relationships at the edge.</p>
+          </div>
+          <div class="plate-flat rounded-lg p-5">
+            <div class="text-cream-100 font-display font-bold text-base mb-2">Defense &amp; aerospace</div>
+            <p class="text-cream-400 text-sm leading-relaxed">Post-quantum encrypted graph intelligence on-device, offline-capable.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── SINGLE BINARY ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 cw-green">Architecture</p>
+        <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">Single binary. Single file.<br class="hidden md:block"> No dependencies.</h2>
+        <p class="text-cream-300 text-lg md:text-xl leading-relaxed max-w-3xl mb-10">One encrypted file = entire queryable graph. Works on ARM, x86, embedded Linux, Docker, bare metal. Full openCypher. 30+ algorithms. Offline capable.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="text-cream-100 font-display font-bold text-sm md:text-base">ARM</div>
+          </div>
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="text-cream-100 font-display font-bold text-sm md:text-base">x86</div>
+          </div>
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="text-cream-100 font-display font-bold text-sm md:text-base">Embedded Linux</div>
+          </div>
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="text-cream-100 font-display font-bold text-sm md:text-base">Docker</div>
+          </div>
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="text-cream-100 font-display font-bold text-sm md:text-base">Bare metal</div>
+          </div>
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="text-cream-100 font-display font-bold text-sm md:text-base">Offline</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── POST-QUANTUM ENCRYPTION ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 cw-green">Security</p>
+        <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">Post-quantum encryption</h2>
+        <p class="text-cream-300 text-lg md:text-xl leading-relaxed max-w-3xl mb-8">At-rest post-quantum resistant cryptography. The encrypted file IS the queryable database. No separate key server. No decryption step. Query the ciphertext directly.</p>
+        <p class="text-cream-400 text-base leading-relaxed max-w-2xl">Already on procurement checklists for defense, healthcare, financial services.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── COMPRESSION ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 cw-green">Compression</p>
+        <h2 class="font-display font-bold text-2xl md:text-4xl text-cream-100 mb-4">Compress to ~38%, zero loss</h2>
+        <p class="text-cream-300 text-lg md:text-xl leading-relaxed max-w-3xl mb-8">Raw data to 38%, includes all query structures. No separate index. Formal proof of zero data resolution loss.</p>
+        <div class="plate-flat rounded-lg p-5 max-w-md">
+          <div class="flex items-center gap-4">
+            <div class="text-4xl md:text-5xl font-bold font-display cw-green">~38%</div>
+            <div>
+              <div class="text-cream-100 font-display font-bold text-base">Of original size</div>
+              <div class="text-cream-500 text-sm">Indexes included. Zero data loss.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════ #}
+{# ── CTA ── #}
+{# ══════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-4">Put graph intelligence where the data lives.</h2>
+          <p class="text-cream-400 text-base md:text-lg mb-8">24 MB. 66 MB RAM. Post-quantum encrypted. Offline capable. No dependencies.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+            <a href="{{ '/tetra/#tech' | url }}" class="btn-primary text-center w-full sm:w-auto">
+              <span class="block text-sm md:text-base font-medium">See the Technical Spec</span>
+              <span class="block text-xs text-cream-300/80 font-normal mt-0.5">Benchmarks and architecture</span>
+            </a>
+            <a href="{{ '/schedule-meeting/' | url }}" class="btn-secondary text-center w-full sm:w-auto">
+              <span class="block text-sm md:text-base font-medium">Schedule an Integration Call</span>
+              <span class="block text-xs text-cream-400/70 font-normal mt-0.5">Talk edge deployment</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

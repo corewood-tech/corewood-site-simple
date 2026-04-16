@@ -1,0 +1,529 @@
+---
+layout: layouts/page.njk
+title: "TETRA vs Neo4j — Benchmarks, Pricing, Migration | $299/mo vs $1,051/mo"
+description: "TETRA wins 37 of 56 container benchmarks vs Neo4j using 10.8× less memory. 14/14 LDBC queries. 11/11 write ops (Neo4j OOMs). $299/month flat vs $1,051+. Same Cypher. Same Bolt."
+keywords: "TETRA vs Neo4j, Neo4j alternative, Neo4j pricing, graph database benchmark, Neo4j comparison, graph database migration, openCypher, Neo4j replacement, graph database cost, AuraDB pricing"
+permalink: /tetra/vs-neo4j/
+date: 2026-04-16
+ogType: "article"
+ogImage: "/assets/img/og-tetra.png"
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "TETRA vs Neo4j — Benchmarks, Pricing, and Migration",
+        "description": "TETRA wins 37 of 56 container benchmarks vs Neo4j using 10.8x less memory. 14/14 LDBC queries. 11/11 write ops (Neo4j OOMs). $299/month flat vs $1,051+. Same Cypher. Same Bolt protocol.",
+        "url": "https://corewood.io/tetra/vs-neo4j/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "datePublished": "2026-04-16",
+        "dateModified": "2026-04-16",
+        "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "publisher": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io", "logo": { "@type": "ImageObject", "url": "https://corewood.io/meta.png" } },
+        "about": [
+          { "@type": "Thing", "name": "Graph Database Benchmarks" },
+          { "@type": "Thing", "name": "Neo4j Comparison" },
+          { "@type": "Thing", "name": "Database Pricing Comparison" }
+        ],
+        "proficiencyLevel": "Expert",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Product",
+        "name": "TETRA Graph Database",
+        "description": "Enterprise graph database — 37-19 benchmark wins vs Neo4j, 10.8x less memory, full openCypher, $299/month flat.",
+        "brand": { "@type": "Organization", "name": "Corewood" },
+        "url": "https://corewood.io/tetra/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "category": "Database Software",
+        "offers": {
+          "@type": "Offer",
+          "name": "TETRA Graph Database — Monthly",
+          "price": "299",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "299",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M",
+            "unitText": "month"
+          },
+          "availability": "https://schema.org/InStock",
+          "url": "https://corewood.io/tetra/#pricing"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does TETRA compare to Neo4j?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In container head-to-head benchmarks (105 Cypher queries, 30 iterations each, same hardware), TETRA wins 37 queries to Neo4j's 19. TETRA uses 66 MB RAM vs Neo4j's 710 MB (10.8x less). TETRA completes all 11 write operations; Neo4j OOMs. TETRA passes all 14 LDBC Interactive Complex queries. At 64 concurrent clients, Neo4j crashes while TETRA sustains 485 queries/second."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does Neo4j cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neo4j AuraDB Pro 8GB costs $526/month ($6,307/year). AuraDB Pro 16GB costs $1,051/month ($12,614/year). AuraDB Business Critical 8GB costs $1,168/month ($14,016/year). Add-ons like Bloom ($1,200-$2,500/user/year), Graph Data Science ($10K-$25K+/year), and Enterprise licenses ($20K-$200K+/year) are extra. TETRA is $299/month flat with visualization, algorithms, and full openCypher included."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "TETRA", "item": "https://corewood.io/tetra/" },
+          { "@type": "ListItem", "position": 3, "name": "vs Neo4j" }
+        ]
+      }
+    ]
+  }
+---
+
+<style>
+  .cw-green { color: #00e88f; }
+  .neo-blue { color: #4c8eda; }
+  .cw-green-bg { background: #00e88f; }
+  .neo-blue-bg { background: #4c8eda; }
+
+  .vs-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .vs-table th {
+    text-align: left;
+    color: #A69E86;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(245,240,230,0.1);
+  }
+  .vs-table th:not(:first-child) { text-align: right; }
+  .vs-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(245,240,230,0.04);
+    font-size: 14px;
+    color: #C7C0AE;
+    vertical-align: middle;
+  }
+  .vs-table td:not(:first-child) {
+    text-align: right;
+    font-family: ui-monospace, 'SF Mono', monospace;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .vs-table tr:last-child td { border-bottom: none; }
+  .vs-table .row-tetra td:first-child { color: #00e88f; font-weight: 600; }
+  .vs-table .row-highlight {
+    background: rgba(0,232,143,0.04);
+  }
+  .vs-table .row-total td {
+    border-top: 1px solid rgba(245,240,230,0.1);
+    font-weight: 700;
+    color: #EBE4D4;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pricing-table th {
+    text-align: left;
+    color: #A69E86;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(245,240,230,0.1);
+  }
+  .pricing-table th:not(:first-child) { text-align: right; }
+  .pricing-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(245,240,230,0.04);
+    font-size: 14px;
+    color: #C7C0AE;
+    vertical-align: middle;
+  }
+  .pricing-table td:not(:first-child) {
+    text-align: right;
+    font-family: ui-monospace, 'SF Mono', monospace;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .pricing-table tr:last-child td { border-bottom: none; }
+  .pricing-table .row-tetra td {
+    color: #00e88f;
+    font-weight: 600;
+  }
+  .pricing-table .row-tetra {
+    background: rgba(0,232,143,0.04);
+  }
+</style>
+
+{# ══════════════════════════════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════════════════════════════ #}
+<section class="pt-40 pb-12">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-500">TETRA vs Neo4j</p>
+          <h1 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-cream-100 mb-6 leading-tight">
+            You&rsquo;re paying too much for Neo4j.<br class="hidden sm:block"> And it still OOMs on writes.
+          </h1>
+          <p class="text-cream-300 text-base md:text-lg leading-relaxed mb-8">
+            Same queries. Same hardware. Same Bolt protocol. We gave Neo4j <strong class="text-cream-100">twice the RAM budget</strong>.
+            Neo4j used <strong class="neo-blue">10.8&times; more memory</strong>.
+            Crashed on concurrent writes. Failed half the LDBC Interactive Complex queries.
+            Costs <strong class="neo-blue">$1,051/month</strong> for 16&nbsp;GB of RAM.
+          </p>
+          <p class="text-cream-100 text-base md:text-lg leading-relaxed font-medium">
+            TETRA ran the full suite in <strong class="cw-green">66&nbsp;MB</strong>.
+            Passed all <strong class="cw-green">14 LDBC queries</strong>.
+            Stayed flat at <strong class="cw-green">64 concurrent clients</strong>.
+            <strong class="cw-green">$299/month</strong> flat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ══════════════════════════════════════════════════════════════════════
+   STAT CARDS
+   ══════════════════════════════════════════════════════════════════════ #}
+<section class="pb-12">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">66 MB</div>
+        <div class="text-cream-400 text-xs font-semibold mb-1">vs <span class="neo-blue">710 MB</span></div>
+        <div class="text-cream-600 text-[10px] uppercase tracking-wider">RAM used</div>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">14/14</div>
+        <div class="text-cream-400 text-xs font-semibold mb-1">vs <span class="neo-blue">partial</span></div>
+        <div class="text-cream-600 text-[10px] uppercase tracking-wider">LDBC IC queries</div>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">11/11</div>
+        <div class="text-cream-400 text-xs font-semibold mb-1">vs <span class="neo-blue">0/11</span></div>
+        <div class="text-cream-600 text-[10px] uppercase tracking-wider">Write operations</div>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <div class="font-display font-bold text-2xl md:text-3xl cw-green mb-1">$299</div>
+        <div class="text-cream-400 text-xs font-semibold mb-1">vs <span class="neo-blue">$1,051</span></div>
+        <div class="text-cream-600 text-[10px] uppercase tracking-wider">Monthly cost</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   BENCHMARK RESULTS
+   ══════════════════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-500">Benchmark Results</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-4">We ran the benchmark. Here&rsquo;s what happened.</h2>
+        <p class="text-cream-300 text-sm md:text-base leading-relaxed mb-8">
+          105 Cypher queries. 30 iterations each. Both containerized.
+          Neo4j got <strong class="text-cream-100">1&nbsp;GB RAM / 1 CPU</strong>;
+          TETRA got <strong class="text-cream-100">512&nbsp;MB / 1 CPU</strong>.
+          TETRA won <strong class="cw-green">37</strong>, Neo4j won <strong class="neo-blue">19</strong>.
+          TETRA completed all 11 writes; Neo4j OOM&rsquo;d.
+        </p>
+
+        {# Category breakdown table #}
+        <div class="overflow-x-auto -mx-4 px-4 mb-8">
+          <table class="vs-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>TETRA wins</th>
+                <th>Neo4j wins</th>
+                <th class="hidden sm:table-cell">TETRA speedup</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-cream-200 font-medium">Counts &amp; Lookups</td>
+                <td class="cw-green font-semibold">5</td>
+                <td class="neo-blue">0</td>
+                <td class="hidden sm:table-cell text-cream-500">1.1&times;&ndash;3.9&times;</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">Traversals</td>
+                <td class="cw-green font-semibold">5</td>
+                <td class="neo-blue">2</td>
+                <td class="hidden sm:table-cell text-cream-500">varied</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">Aggregation</td>
+                <td class="cw-green font-semibold">6</td>
+                <td class="neo-blue">0</td>
+                <td class="hidden sm:table-cell text-cream-500">2.9&times;&ndash;63&times;</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">WITH Pipeline</td>
+                <td class="cw-green font-semibold">6</td>
+                <td class="neo-blue">0</td>
+                <td class="hidden sm:table-cell text-cream-500">1.1&times;&ndash;22&times;</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">Real-World App</td>
+                <td class="cw-green font-semibold">7</td>
+                <td class="neo-blue">0</td>
+                <td class="hidden sm:table-cell text-cream-500">1.4&times;&ndash;290&times;</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">Stress Test</td>
+                <td class="cw-green font-semibold">4</td>
+                <td class="neo-blue">1</td>
+                <td class="hidden sm:table-cell text-cream-500">varied</td>
+              </tr>
+              <tr class="row-total">
+                <td>Total</td>
+                <td class="cw-green">37</td>
+                <td class="neo-blue">19</td>
+                <td class="hidden sm:table-cell"></td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">Write ops</td>
+                <td class="cw-green font-semibold">11/11</td>
+                <td class="neo-blue">0/11 OOM</td>
+                <td class="hidden sm:table-cell text-cream-500">&mdash;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {# Throughput note #}
+        <div class="plate-flat rounded-lg p-5">
+          <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-3 text-cream-500">Throughput under load</p>
+          <p class="text-cream-300 text-sm leading-relaxed">
+            Neo4j drops from <strong class="neo-blue">90 q/s</strong> to <strong class="neo-blue">29 q/s</strong> at 8 clients.
+            At 64, <strong class="neo-blue">crashes</strong>.
+            TETRA: flat at <strong class="cw-green">485 q/s</strong>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   NEO4J PRICING
+   ══════════════════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-500">Pricing Comparison</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-4">Neo4j&rsquo;s real cost.</h2>
+        <p class="text-cream-300 text-sm md:text-base leading-relaxed mb-8">
+          Published pricing for Neo4j AuraDB tiers. TETRA is flat-rate &mdash; visualization, algorithms, and full openCypher included.
+        </p>
+
+        {# Pricing table #}
+        <div class="overflow-x-auto -mx-4 px-4 mb-8">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Configuration</th>
+                <th>Monthly</th>
+                <th>Year 1</th>
+                <th class="hidden sm:table-cell">Year 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-cream-200 font-medium">AuraDB Pro 8 GB</td>
+                <td>$526</td>
+                <td>$6,307</td>
+                <td class="hidden sm:table-cell">$31,536</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">AuraDB Pro 16 GB</td>
+                <td>$1,051</td>
+                <td>$12,614</td>
+                <td class="hidden sm:table-cell">$63,072</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">AuraDB BC 8 GB</td>
+                <td>$1,168</td>
+                <td>$14,016</td>
+                <td class="hidden sm:table-cell">$70,080</td>
+              </tr>
+              <tr>
+                <td class="text-cream-200 font-medium">AuraDB BC 32 GB</td>
+                <td>$4,672</td>
+                <td>$56,064</td>
+                <td class="hidden sm:table-cell">$280,320</td>
+              </tr>
+              <tr class="row-tetra">
+                <td>TETRA</td>
+                <td>$299</td>
+                <td>$3,588</td>
+                <td class="hidden sm:table-cell">$17,940</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {# Add-on costs #}
+        <div class="plate-flat rounded-lg p-5">
+          <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-3 text-cream-500">Neo4j add-on costs (not included above)</p>
+          <ul class="text-cream-400 text-sm leading-relaxed space-y-2">
+            <li><strong class="text-cream-200">Bloom</strong> &mdash; $1,200&ndash;$2,500 / user / year</li>
+            <li><strong class="text-cream-200">Graph Data Science (GDS)</strong> &mdash; $10K&ndash;$25K+ / year</li>
+            <li><strong class="text-cream-200">Enterprise license</strong> &mdash; $20K&ndash;$200K+ / year</li>
+          </ul>
+          <p class="text-cream-500 text-xs mt-3 italic">TETRA includes visualization, 30+ algorithms, and full openCypher at $299/month. No add-ons.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   MIGRATION
+   ══════════════════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-500">Migration</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-4">Migration in an afternoon.</h2>
+        <p class="text-cream-300 text-sm md:text-base leading-relaxed mb-6">
+          100% Cypher TCK compliance &mdash; <strong class="text-cream-100">1,611 / 1,611</strong> scenarios passed.
+          Same Bolt protocol. Point your existing Neo4j driver at TETRA&rsquo;s Bolt endpoint.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="font-display font-bold text-2xl cw-green mb-1">1,611</div>
+            <div class="text-cream-500 text-xs uppercase tracking-wider">Cypher TCK scenarios</div>
+          </div>
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="font-display font-bold text-2xl cw-green mb-1">100%</div>
+            <div class="text-cream-500 text-xs uppercase tracking-wider">openCypher compliance</div>
+          </div>
+          <div class="plate-flat rounded-lg p-5 text-center">
+            <div class="font-display font-bold text-2xl cw-green mb-1">Bolt v4.4</div>
+            <div class="text-cream-500 text-xs uppercase tracking-wider">Wire-compatible protocol</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   WHERE NEO4J WINS
+   ══════════════════════════════════════════════════════════════════════ #}
+<section class="py-12 md:py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-cream-500">Transparency</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-4">Where Neo4j wins.</h2>
+        <p class="text-cream-300 text-sm md:text-base leading-relaxed">
+          19 of 105 queries. Primarily <strong class="text-cream-100">multi-variable RETURN projections</strong>
+          and <strong class="text-cream-100">OPTIONAL MATCH chains</strong>.
+          These are known optimization targets on our roadmap.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+{# ══════════════════════════════════════════════════════════════════════
+   CTA
+   ══════════════════════════════════════════════════════════════════════ #}
+<section class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="font-display font-bold text-2xl md:text-3xl text-cream-100 mb-4">Ready to stop overpaying?</h2>
+          <p class="text-cream-300 text-base md:text-lg leading-relaxed mb-8">
+            Same Cypher. Same Bolt. Less RAM. Lower cost. See the full technical breakdown or schedule a migration call.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+            <a href="{{ '/tetra/#tech' | url }}" class="btn-primary text-center w-full sm:w-auto">
+              <span class="block text-sm md:text-base font-medium">See the Full Benchmark &rarr;</span>
+              <span class="block text-xs text-cream-300/80 font-normal mt-0.5">Benchmarks and architecture</span>
+            </a>
+            <a href="{{ '/schedule-meeting/' | url }}" class="btn-secondary text-center w-full sm:w-auto">
+              <span class="block text-sm md:text-base font-medium">Schedule a Migration Call</span>
+              <span class="block text-xs text-cream-400/70 font-normal mt-0.5">Talk to us about switching</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

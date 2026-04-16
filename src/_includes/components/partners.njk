@@ -1,0 +1,51 @@
+{# ── Partners — inside a dark translucent tile ── #}
+<div class="plate-wrap">
+  <div class="plate chamfer-full-lg p-8 md:p-12">
+    <div class="rivet absolute top-7 left-7 z-10"></div>
+    <div class="rivet absolute top-7 right-7 z-10"></div>
+    <div class="rivet absolute bottom-7 left-7 z-10"></div>
+    <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+    <div class="text-center mb-10">
+      <p class="arcade-label mb-6 mx-auto text-cream-500" style="border-color: rgba(245, 240, 230, 0.2); display: table;">Partners</p>
+      <h2 class="font-arcade text-sm md:text-lg text-cream-100 leading-[2]">Building the future together.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      {# Landscope #}
+      <a href="https://landscope.earth" target="_blank" rel="noopener noreferrer" class="block group">
+        <div class="plate-flat p-6 md:p-8 flex flex-col items-center text-center h-full transition-all duration-300 group-hover:border-morpho-500">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="{{ '/landscope-logo.png' | url }}" alt="Landscope" class="h-12 md:h-14 object-contain opacity-80 group-hover:opacity-100 transition-opacity" style="filter: brightness(1.2);" />
+          </div>
+          <p class="font-arcade text-[8px] text-cream-100 mb-2 leading-[2] group-hover:text-morpho-400 transition-colors">Landscope</p>
+          <p class="text-cream-400 text-sm leading-relaxed">Geospatial intelligence and earth observation. Mapping the planet&rsquo;s ecosystems with precision.</p>
+        </div>
+      </a>
+
+      {# RogueDB #}
+      <a href="https://www.roguedb.com/" target="_blank" rel="noopener noreferrer" class="block group">
+        <div class="plate-flat p-6 md:p-8 flex flex-col items-center text-center h-full transition-all duration-300 group-hover:border-morpho-500">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="{{ '/roguedb-logo.png' | url }}" alt="RogueDB" class="h-12 md:h-14 object-contain opacity-80 group-hover:opacity-100 transition-opacity" style="filter: invert(1) brightness(0.9);" />
+          </div>
+          <p class="font-arcade text-[8px] text-cream-100 mb-2 leading-[2] group-hover:text-morpho-400 transition-colors">RogueDB</p>
+          <p class="text-cream-400 text-sm leading-relaxed">Database infrastructure for the next generation. Rethinking how data systems are built.</p>
+        </div>
+      </a>
+
+      {# GalenAI #}
+      <a href="https://galenai.io" target="_blank" rel="noopener noreferrer" class="block group">
+        <div class="plate-flat p-6 md:p-8 flex flex-col items-center text-center h-full transition-all duration-300 group-hover:border-morpho-500">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="{{ '/galenai-logo.webp' | url }}" alt="GalenAI" class="h-12 md:h-14 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+          </div>
+          <p class="font-arcade text-[8px] text-cream-100 mb-2 leading-[2] group-hover:text-morpho-400 transition-colors">GalenAI</p>
+          <p class="text-cream-400 text-sm leading-relaxed">AI-powered medical intelligence. Bringing clinical decision support to the point of care.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>

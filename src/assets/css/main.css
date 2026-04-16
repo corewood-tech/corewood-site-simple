@@ -2,6 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════════ */
+/* ─── GLOBAL ARCADE UTILITIES — 8-bit eco-warrior layer ──── */
+/* ═══════════════════════════════════════════════════════════ */
+
+.font-arcade { font-family: 'Press Start 2P', monospace !important; }
+
+.arcade-glow {
+  text-shadow: 0 0 4px currentColor, 0 0 12px currentColor, 0 0 24px rgba(0, 232, 143, 0.3);
+}
+.arcade-glow-amber {
+  text-shadow: 0 0 4px #f28e2b, 0 0 12px rgba(242, 142, 43, 0.5), 0 0 24px rgba(242, 142, 43, 0.2);
+}
+.arcade-glow-coral {
+  text-shadow: 0 0 4px #e15759, 0 0 12px rgba(225, 87, 89, 0.5), 0 0 24px rgba(225, 87, 89, 0.2);
+}
+
+.arcade-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid currentColor;
+  display: inline-block;
+}
+
+.arcade-divider {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0, 232, 143, 0.3) 0px, rgba(0, 232, 143, 0.3) 8px,
+    transparent 8px, transparent 12px,
+    rgba(89, 161, 79, 0.2) 12px, rgba(89, 161, 79, 0.2) 20px,
+    transparent 20px, transparent 24px
+  );
+}
+
+.arcade-stat-card {
+  background: rgba(11, 43, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(0, 232, 143, 0.25);
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+  color: #F5F0E6;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 232, 143, 0.08),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+    4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.arcade-stat-card:hover {
+  border-color: rgba(0, 232, 143, 0.5);
+  box-shadow:
+    inset 2px 2px 0 rgba(0, 232, 143, 0.15),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.3),
+    4px 4px 0 rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(0, 232, 143, 0.1);
+}
+.arcade-stat-card::before {
+  content: '';
+  position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px solid rgba(245, 240, 230, 0.04);
+  pointer-events: none;
+}
+
+.tetra-rainbow {
+  background: linear-gradient(90deg, #59a14f, #76b7b2, #4e79a7, #b07aa1, #e15759, #f28e2b, #edc948);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.crt-overlay {
+  pointer-events: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: multiply;
+}
+
+.eco-circuit {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(89, 161, 79, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(118, 183, 178, 0.06) 0%, transparent 40%);
+}
+
+
 /* Font faces */
 @font-face {
   font-family: 'Roca Two';
@@ -52,15 +140,16 @@
 
 @layer base {
   body {
-    @apply text-cream-100 font-body;
-    background-color: #161210;
-    background-image:
-      radial-gradient(ellipse at 0% 0%, #1A120C 0%, transparent 60%),
-      radial-gradient(ellipse at 100% 100%, #0B2B1A 0%, transparent 60%),
-      radial-gradient(ellipse at 100% 0%, rgba(20, 16, 12, 0.5) 0%, transparent 50%),
-      radial-gradient(ellipse at 0% 100%, rgba(10, 30, 20, 0.4) 0%, transparent 50%);
-    background-attachment: fixed;
+    @apply font-body;
+    color: #1A120C;
+    background-color: #FAF7F0;
     min-height: 100vh;
+    position: relative;
+  }
+  /* All page content sits above the graph canvas */
+  body > *:not(#graph-bg) {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -125,7 +214,7 @@
   }
 }
 
-/* ─── Plate component — the floating panel effect ─── */
+/* ─── Plate component — dark translucent cards on light bg ─── */
 /* clip-path clips shadows, so we use a wrapper approach:
    .plate-wrap provides the shadow/glow,
    .plate provides the chamfered surface inside it */
@@ -133,25 +222,32 @@
 .plate-wrap {
   position: relative;
   filter:
-    drop-shadow(0 0 0.5px rgba(245, 240, 230, 0.18))
-    drop-shadow(0 0 0.5px rgba(245, 240, 230, 0.18))
-    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5))
-    drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+    drop-shadow(0 0 1px rgba(44, 30, 20, 0.15))
+    drop-shadow(0 4px 16px rgba(44, 30, 20, 0.2))
+    drop-shadow(0 12px 40px rgba(44, 30, 20, 0.12));
 }
 
 .plate {
-  background: #0B2B1A;
+  background: rgba(11, 43, 26, 0.88);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
   position: relative;
+  color: #F5F0E6;
+  border: 1px solid rgba(44, 30, 20, 0.25);
 }
 
-/* Standalone plate (no wrapper) — for places where chamfer isn't used */
+/* Standalone plate (no wrapper needed) — identical look to .plate */
 .plate-flat {
-  background: #0B2B1A;
-  border: 1px solid rgba(245, 240, 230, 0.12);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.5),
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 48px rgba(27, 126, 176, 0.04);
+  background: rgba(11, 43, 26, 0.88);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid rgba(44, 30, 20, 0.25);
+  color: #F5F0E6;
+  position: relative;
+  filter:
+    drop-shadow(0 0 1px rgba(44, 30, 20, 0.15))
+    drop-shadow(0 4px 16px rgba(44, 30, 20, 0.2))
+    drop-shadow(0 12px 40px rgba(44, 30, 20, 0.12));
 }
 
 /* ─── Rivet accents ─── */
@@ -159,28 +255,28 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, rgba(245, 240, 230, 0.25), #0B2B1A 70%);
-  border: 1px solid rgba(245, 240, 230, 0.35);
+  background: radial-gradient(circle at 35% 35%, rgba(245, 240, 230, 0.3), rgba(11, 43, 26, 0.9) 70%);
+  border: 1px solid rgba(245, 240, 230, 0.3);
   box-shadow:
     inset 0 1px 1px rgba(245, 240, 230, 0.15),
-    0 0 3px rgba(245, 240, 230, 0.06);
+    0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-/* ─── Section backgrounds — alternating depth ─── */
+/* ─── Section backgrounds — translucent dark cards on cream ─── */
 
-/* Section wash — now just a positioning context, gradient is on body */
+/* section-wash — positioning context only, no visual */
 .section-wash {
   position: relative;
 }
 
-/* Divider between sections — standalone gradient line */
+/* Divider between sections — subtle bark line */
 .section-divider {
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(250, 247, 240, 0.06) 30%,
-    rgba(250, 247, 240, 0.06) 70%,
+    rgba(44, 30, 20, 0.15) 30%,
+    rgba(44, 30, 20, 0.15) 70%,
     transparent 100%
   );
   margin: 0 auto;

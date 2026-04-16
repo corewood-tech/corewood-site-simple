@@ -30,76 +30,86 @@ jsonLd: |
 {# ── Hero ── #}
 <section class="pt-40 pb-8">
   <div class="max-w-3xl mx-auto px-6">
-    <a href="{{ '/profile/' | url }}" class="text-morpho-400 hover:text-morpho-300 text-sm transition-colors">&larr; Case Studies</a>
+    <div class="plate-wrap"><div class="plate chamfer-full p-8 md:p-12">
+      <a href="{{ '/profile/' | url }}" class="text-morpho-400 hover:text-morpho-300 text-sm transition-colors">&larr; Case Studies</a>
 
-    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mt-6 mb-4">Masquer</h1>
-    <p class="font-display text-xl md:text-2xl text-cream-300 mb-4">Compliance-Centric Data Gateway</p>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mt-6 mb-4">Masquer</h1>
+      <p class="font-display text-xl md:text-2xl text-cream-300 mb-4">Compliance-Centric Data Gateway</p>
 
-    <div class="flex flex-wrap gap-4 text-sm text-cream-600 mb-8">
-      <span>Product: Corewood flagship</span>
-      <span class="text-forest-500">&bull;</span>
-      <span>Type: Data privacy infrastructure</span>
-    </div>
+      <div class="flex flex-wrap gap-4 text-sm text-cream-600">
+        <span>Product: Corewood flagship</span>
+        <span class="text-forest-500">&bull;</span>
+        <span>Type: Data privacy infrastructure</span>
+      </div>
+    </div></div>
   </div>
 </section>
 
 {# ── Diagram ── #}
 <section class="pb-12">
   <div class="max-w-4xl mx-auto px-6">
-    <figure class="mx-auto max-w-[80%] md:max-w-[50%]">
-      <img src="/assets/img/masquer/masquer-diagram.svg" alt="Masquer architecture diagram — Masquer sits between your database and application servers, masking private data at read-time before it reaches external systems" class="w-full h-auto">
-      <figcaption class="text-cream-500 text-sm text-center mt-3">Masquer intercepts data at read-time, masking PII before it leaves your infrastructure.</figcaption>
-    </figure>
+    <div class="plate-wrap"><div class="plate chamfer-full p-6 md:p-8">
+      <figure class="mx-auto max-w-[80%] md:max-w-[50%]">
+        <img src="/assets/img/masquer/masquer-diagram.svg" alt="Masquer architecture diagram — Masquer sits between your database and application servers, masking private data at read-time before it reaches external systems" class="w-full h-auto">
+        <figcaption class="text-cream-500 text-sm text-center mt-3">Masquer intercepts data at read-time, masking PII before it leaves your infrastructure.</figcaption>
+      </figure>
+    </div></div>
   </div>
 </section>
 
 {# ── Intro / Problem / Approach (plain language) ── #}
 <section class="pb-16">
-  <div class="max-w-3xl mx-auto px-6 text-cream-200 text-lg leading-relaxed space-y-8">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="plate-wrap"><div class="plate chamfer-full p-8 md:p-12">
+      <div class="text-cream-200 text-lg leading-relaxed space-y-8">
 
-    <div class="text-cream-200 text-lg leading-relaxed space-y-4">
-      <p>Masquer sits between your data and your application servers. Personal data is masked before external systems — remote contractor teams, analytics platforms, third-party integrations — ever have access. The private data problem is solved right at the source, so it can never have a downstream impact.</p>
-    </div>
+        <div class="text-cream-200 text-lg leading-relaxed space-y-4">
+          <p>Masquer sits between your data and your application servers. Personal data is masked before external systems — remote contractor teams, analytics platforms, third-party integrations — ever have access. The private data problem is solved right at the source, so it can never have a downstream impact.</p>
+        </div>
 
-    <div>
-      <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">The Problem</h2>
-      <p>Organizations handling sensitive data face an impossible workflow: copy production data, scrub PII, re-upload, repeat. Every copy doubles your storage costs. Every scrub takes engineering time. Every duplicate environment is another attack surface. Cloud providers charge by data volume — so compliance means paying more for less.</p>
-    </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">The Problem</h2>
+          <p>Organizations handling sensitive data face an impossible workflow: copy production data, scrub PII, re-upload, repeat. Every copy doubles your storage costs. Every scrub takes engineering time. Every duplicate environment is another attack surface. Cloud providers charge by data volume — so compliance means paying more for less.</p>
+        </div>
 
-    <div>
-      <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Zero-Copy Masking</h2>
-      <p>Masquer masks data in-place. No copies, no duplicate infrastructure, no ETL pipelines. Because we intercept and mask at read-time, your compliant infrastructure doesn't cost significantly more than your existing setup. You get privacy without paying the "compliance tax" on storage and compute.</p>
-    </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Zero-Copy Masking</h2>
+          <p>Masquer masks data in-place. No copies, no duplicate infrastructure, no ETL pipelines. Because we intercept and mask at read-time, your compliant infrastructure doesn't cost significantly more than your existing setup. You get privacy without paying the "compliance tax" on storage and compute.</p>
+        </div>
 
-    <div>
-      <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Built-In Access Logging</h2>
-      <p>Because every data request passes through Masquer, we log who accessed private data, when, and what they saw. Audit trails are automatic — not bolted on after the fact. Your compliance team gets the evidence they need without chasing down access records across systems.</p>
-    </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Built-In Access Logging</h2>
+          <p>Because every data request passes through Masquer, we log who accessed private data, when, and what they saw. Audit trails are automatic — not bolted on after the fact. Your compliance team gets the evidence they need without chasing down access records across systems.</p>
+        </div>
 
-    <div>
-      <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Use Cases</h2>
-      <ul class="space-y-2 text-cream-300">
-        <li><strong class="text-cream-100">Data Analytics:</strong> Run queries on production data without exposing PII to analysts or BI tools</li>
-        <li><strong class="text-cream-100">Third-Party Contractors:</strong> Give remote teams real data access with privacy guarantees — no sanitized copies</li>
-        <li><strong class="text-cream-100">In-System Permissions:</strong> Manage field-level visibility through Masquer instead of building access controls into every application</li>
-        <li><strong class="text-cream-100">Development &amp; QA:</strong> Build and test against production-shaped data without compliance risk</li>
-      </ul>
-    </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Use Cases</h2>
+          <ul class="space-y-2 text-cream-300">
+            <li><strong class="text-cream-100">Data Analytics:</strong> Run queries on production data without exposing PII to analysts or BI tools</li>
+            <li><strong class="text-cream-100">Third-Party Contractors:</strong> Give remote teams real data access with privacy guarantees — no sanitized copies</li>
+            <li><strong class="text-cream-100">In-System Permissions:</strong> Manage field-level visibility through Masquer instead of building access controls into every application</li>
+            <li><strong class="text-cream-100">Development &amp; QA:</strong> Build and test against production-shaped data without compliance risk</li>
+          </ul>
+        </div>
 
-    <div>
-      <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Compliance Value</h2>
-      <p>Masquer gives auditors a clear picture: private data is protected from third-party access at the infrastructure level. From the contract to the tech systems — demonstrable, auditable protection.</p>
-      <p class="mt-4 text-cream-400">Relevant frameworks: SOC 2 CC6.1/CC6.3, ISO 27001 A.9/A.18, NIST AC-1/AC-3/AC-6/SC-28, HIPAA, CCPA, GDPR.</p>
-    </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl text-cream-100 mb-4">Compliance Value</h2>
+          <p>Masquer gives auditors a clear picture: private data is protected from third-party access at the infrastructure level. From the contract to the tech systems — demonstrable, auditable protection.</p>
+          <p class="mt-4 text-cream-400">Relevant frameworks: SOC 2 CC6.1/CC6.3, ISO 27001 A.9/A.18, NIST AC-1/AC-3/AC-6/SC-28, HIPAA, CCPA, GDPR.</p>
+        </div>
+      </div>
+    </div></div>
   </div>
 </section>
 
 <div class="max-w-3xl mx-auto px-6"><div class="section-divider"></div></div>
 
 {# ── How It Works (6-step walkthrough in riveted frames) ── #}
-<section class="py-16">
+<section class="section-wash py-16">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="font-display font-bold text-3xl text-cream-100 mb-12">How It Works</h2>
+    <div class="plate-wrap"><div class="plate chamfer-full p-6 md:p-8 mb-12">
+      <h2 class="font-display font-bold text-3xl text-cream-100">How It Works</h2>
+    </div></div>
 
     <div class="space-y-16">
 
@@ -236,63 +246,69 @@ jsonLd: |
 <div class="max-w-3xl mx-auto px-6"><div class="section-divider"></div></div>
 
 {# ── Tech Specs (collapsible) ── #}
-<section class="py-16">
+<section class="section-wash py-16">
   <div class="max-w-3xl mx-auto px-6">
-    <details class="group" x-data="{ open: false }">
-      <summary
-        @click="open = !open"
-        class="cursor-pointer list-none flex items-center gap-3 font-display font-bold text-2xl text-cream-100 select-none"
-      >
-        <span class="text-morpho-400 text-lg transition-transform duration-200" :class="open ? 'rotate-45' : ''">+</span>
-        Tech Specs
-      </summary>
+    <div class="plate-wrap"><div class="plate chamfer-full p-8 md:p-12">
+      <details class="group" x-data="{ open: false }">
+        <summary
+          @click="open = !open"
+          class="cursor-pointer list-none flex items-center gap-3 font-display font-bold text-2xl text-cream-100 select-none"
+        >
+          <span class="text-morpho-400 text-lg transition-transform duration-200" :class="open ? 'rotate-45' : ''">+</span>
+          Tech Specs
+        </summary>
 
-      <div class="mt-8 text-cream-200 text-lg leading-relaxed space-y-8">
-        <div>
-          <h3 class="font-display font-bold text-xl text-cream-100 mb-3">Architecture</h3>
-          <ul class="space-y-2 text-cream-300">
-            <li>Transparent PostgreSQL wire protocol proxy</li>
-            <li>Real-time masking at read-time — no data duplication</li>
-            <li>ML-powered PII detection (ONNX runtime, DeBERTa)</li>
-            <li>Deterministic masking: same PII value → same masked output (referential integrity preserved)</li>
-            <li>Format-preserving transformations: masked data still works in applications</li>
-            <li>Runs entirely on-premise — zero data leaves your infrastructure</li>
-          </ul>
-        </div>
+        <div class="mt-8 text-cream-200 text-lg leading-relaxed space-y-8">
+          <div>
+            <h3 class="font-display font-bold text-xl text-cream-100 mb-3">Architecture</h3>
+            <ul class="space-y-2 text-cream-300">
+              <li>Transparent PostgreSQL wire protocol proxy</li>
+              <li>Real-time masking at read-time — no data duplication</li>
+              <li>ML-powered PII detection (ONNX runtime, DeBERTa)</li>
+              <li>Deterministic masking: same PII value → same masked output (referential integrity preserved)</li>
+              <li>Format-preserving transformations: masked data still works in applications</li>
+              <li>Runs entirely on-premise — zero data leaves your infrastructure</li>
+            </ul>
+          </div>
 
-        <div>
-          <h3 class="font-display font-bold text-xl text-cream-100 mb-3">Technical Differentiators</h3>
-          <ul class="space-y-2 text-cream-300">
-            <li>Go-native tensor operations: 90% memory reduction vs Python implementations</li>
-            <li>Binary tokenizer: 10–100x faster startup than JSON tokenizers (standard)</li>
-            <li>Session pooling with 512-token slicing for concurrent inference</li>
-            <li>Up to 700 tok/sec on CPU</li>
-          </ul>
-        </div>
+          <div>
+            <h3 class="font-display font-bold text-xl text-cream-100 mb-3">Technical Differentiators</h3>
+            <ul class="space-y-2 text-cream-300">
+              <li>Go-native tensor operations: 90% memory reduction vs Python implementations</li>
+              <li>Binary tokenizer: 10–100x faster startup than JSON tokenizers (standard)</li>
+              <li>Session pooling with 512-token slicing for concurrent inference</li>
+              <li>Up to 700 tok/sec on CPU</li>
+            </ul>
+          </div>
 
-        <div class="flex flex-wrap gap-2 pt-4">
-          <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">GoLang</span>
-          <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">ONNX</span>
-          <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">PostgreSQL</span>
-          <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">DeBERTa</span>
-          <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">OpenPolicyAgent</span>
-          <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">gRPC</span>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">GoLang</span>
+            <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">ONNX</span>
+            <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">PostgreSQL</span>
+            <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">DeBERTa</span>
+            <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">OpenPolicyAgent</span>
+            <span class="text-xs px-2 py-1 bg-forest-700 text-cream-500 rounded">gRPC</span>
+          </div>
         </div>
-      </div>
-    </details>
+      </details>
+    </div></div>
   </div>
 </section>
 
 <div class="max-w-3xl mx-auto px-6"><div class="section-divider"></div></div>
 
 {# ── CTA ── #}
-<section class="py-16 pb-24">
+<section class="section-wash py-16 pb-24">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-4">Ready to Mask Data, Not Innovation?</h2>
-    <p class="text-cream-300 text-lg mb-8 max-w-2xl mx-auto">See how Masquer can enable secure data access for your teams while maintaining complete privacy compliance.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary">Schedule a Meeting</a>
-      <a href="{{ '/contact/' | url }}" class="btn-secondary">Contact Us</a>
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-4">Ready to Mask Data, Not Innovation?</h2>
+        <p class="text-cream-300 text-lg mb-8 max-w-2xl mx-auto">See how Masquer can enable secure data access for your teams while maintaining complete privacy compliance.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary">Schedule a Meeting</a>
+          <a href="{{ '/contact/' | url }}" class="btn-secondary">Contact Us</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

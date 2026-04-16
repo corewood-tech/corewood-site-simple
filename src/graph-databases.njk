@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
-title: "Graph Databases Reduce LLM Hallucinations"
-description: "Research-backed evidence that knowledge graphs, temporal provenance, and structured prompting reduce LLM hallucination rates and token consumption."
-keywords: "graph databases, LLM hallucinations, knowledge graphs, GraphRAG, provenance, RAG, token consumption, temporal provenance, citation grounding"
+title: "Graph Databases Reduce LLM Hallucinations — TETRA by Corewood"
+description: "Research-backed evidence that knowledge graphs reduce LLM hallucination rates 3.4x. TETRA is the graph database built for this — 172M edges, single file, $299/month."
+keywords: "graph databases, LLM hallucinations, knowledge graphs, GraphRAG, TETRA, graph database for AI, RAG accuracy, reduce hallucinations, provenance, token consumption, Neo4j alternative, graph database benchmark"
 permalink: /graph-databases/
 date: 2026-03-12
 ogType: "article"
@@ -34,11 +34,13 @@ jsonLd: |
 {# ── Hero header ── #}
 <section class="section-wash pt-40 pb-12">
   <div class="max-w-4xl mx-auto px-6">
-    <p class="text-morpho-400 text-xs font-body font-medium tracking-[0.2em] uppercase mb-4">Research Summary &middot; 10 Sources &middot; March 2026</p>
-    <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-2 leading-tight">Graphs Reduce LLM Hallucinations.</h1>
-    <h2 class="font-display font-bold text-4xl md:text-5xl text-cream-600 mb-8 leading-tight">Here&rsquo;s the proof.</h2>
-    <p class="text-cream-300 text-lg leading-relaxed max-w-2xl">The results are in, and the evidence? Irrefutable. Graph databases, when used with specific prompting techniques, make LLMs give better answers.</p>
-    <p class="text-cream-300 text-lg leading-relaxed max-w-2xl mt-4">Here&rsquo;s the research.</p>
+    <div class="plate-wrap"><div class="plate chamfer-full p-8 md:p-12">
+      <p class="text-morpho-400 text-xs font-body font-medium tracking-[0.2em] uppercase mb-4">Research Summary &middot; 10 Sources &middot; March 2026</p>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-2 leading-tight">Graphs Reduce LLM Hallucinations.</h1>
+      <h2 class="font-display font-bold text-4xl md:text-5xl text-cream-600 mb-8 leading-tight">Here&rsquo;s the proof.</h2>
+      <p class="text-cream-300 text-lg leading-relaxed max-w-2xl">The results are in, and the evidence? Irrefutable. Graph databases, when used with specific prompting techniques, make LLMs give better answers.</p>
+      <p class="text-cream-300 text-lg leading-relaxed max-w-2xl mt-4">Here&rsquo;s the research.</p>
+    </div></div>
   </div>
 </section>
 
@@ -47,7 +49,9 @@ jsonLd: |
 {# ── Sources table ── #}
 <section class="section-wash py-16">
   <div class="max-w-4xl mx-auto px-6">
-    <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Sources &amp; Findings</p>
+    <div class="plate-wrap"><div class="plate chamfer-full p-4 md:p-6 mb-6">
+      <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase">Sources &amp; Findings</p>
+    </div></div>
 
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg p-0 overflow-hidden">
@@ -186,7 +190,9 @@ jsonLd: |
 {# ── Conclusions ── #}
 <section class="section-wash py-16">
   <div class="max-w-4xl mx-auto px-6">
-    <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Conclusions</p>
+    <div class="plate-wrap"><div class="plate chamfer-full p-4 md:p-6 mb-6">
+      <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase">Conclusions</p>
+    </div></div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -229,7 +235,9 @@ jsonLd: |
 {# ── Dgraph Viewer ── #}
 <section class="section-wash py-16">
   <div class="max-w-4xl mx-auto px-6">
-    <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase mb-6">Open Source Tooling</p>
+    <div class="plate-wrap"><div class="plate chamfer-full p-4 md:p-6 mb-6">
+      <p class="text-cream-600 text-xs font-body font-medium tracking-[0.15em] uppercase">Open Source Tooling</p>
+    </div></div>
 
     <div class="plate-wrap">
       <div class="plate chamfer-full-lg p-8 md:p-12">
@@ -269,18 +277,19 @@ jsonLd: |
 <div class="section-divider max-w-4xl mx-auto"></div>
 
 {# ── Provenance toggle ── #}
-<section class="py-16" x-data="{ open: false }">
+<section class="section-wash py-16" x-data="{ open: false }">
   <div class="max-w-4xl mx-auto px-6">
-    <button
-      @click="open = !open"
-      class="btn-secondary text-sm"
-    >
-      <span x-text="open ? '&#9662;' : '&#9656;'"></span>
-      <span class="ml-2">Show provenance of this artifact</span>
-    </button>
+    <div class="plate-wrap"><div class="plate chamfer-full p-6 md:p-8">
+      <button
+        @click="open = !open"
+        class="btn-secondary text-sm"
+      >
+        <span x-text="open ? '&#9662;' : '&#9656;'"></span>
+        <span class="ml-2">Show provenance of this artifact</span>
+      </button>
 
-    <div x-show="open" x-transition.opacity class="mt-6">
-      <div class="plate-flat rounded-lg p-6">
+      <div x-show="open" x-transition.opacity class="mt-6">
+        <div class="bg-forest-800/50 border border-forest-600/30 rounded-lg p-6">
         <p class="text-morpho-400 text-[10px] font-semibold tracking-[0.1em] uppercase mb-4">Provenance Chain</p>
         <div class="text-sm leading-loose space-y-1">
           <p><span class="text-cream-700">generated_by:</span> <span class="text-cream-400">Claude Opus 4.6</span></p>
@@ -293,17 +302,20 @@ jsonLd: |
         <p class="text-cream-600 text-sm italic">This provenance block was generated by the same LLM that made the content above.</p>
         <p class="text-cream-600 text-sm italic">The irony is not lost on us. That&rsquo;s the whole point.</p>
         <p class="text-morpho-400 text-sm font-medium mt-2">Trust graphs, not tokens.</p>
+        </div>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
 {# ── CTA ── #}
 <section class="section-wash py-16 pb-24">
   <div class="max-w-4xl mx-auto px-6 text-center">
-    <p class="text-cream-400 text-lg italic mb-6 font-display">Building graph-backed AI systems that earn trust?</p>
-    <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center inline-block">
-      <span class="block text-sm md:text-base font-medium">Talk to Corewood</span>
-    </a>
+    <div class="plate-wrap"><div class="plate chamfer-full p-8 md:p-12">
+      <p class="text-cream-400 text-lg italic mb-6 font-display">Building graph-backed AI systems that earn trust?</p>
+      <a href="{{ '/schedule-meeting/' | url }}" class="btn-primary text-center inline-block">
+        <span class="block text-sm md:text-base font-medium">Talk to Corewood</span>
+      </a>
+    </div></div>
   </div>
 </section>

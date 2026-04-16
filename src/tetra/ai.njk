@@ -1,0 +1,315 @@
+---
+layout: layouts/page.njk
+title: "TETRA for AI — Graph Database for RAG & Knowledge Graphs | 3.4× Accuracy"
+description: "GraphRAG improves LLM accuracy 3.4× over vector-only retrieval. TETRA is the graph database that fits inside your inference loop — 66 MB RAM, 0.5ms shortest path, $299/month."
+keywords: "GraphRAG, graph database for AI, knowledge graph LLM, RAG accuracy, reduce LLM hallucinations, graph database for RAG, TETRA AI, knowledge graph database, vector database alternative, graph embeddings, LLM knowledge graph"
+permalink: /tetra/ai/
+date: 2026-04-16
+ogType: "article"
+ogImage: "/assets/img/og-tetra.png"
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "TETRA for AI — Graph Database for RAG & Knowledge Graphs",
+        "description": "GraphRAG improves LLM accuracy 3.4x over vector-only retrieval. TETRA is the graph database that fits inside your inference loop — 66 MB RAM, 0.5ms shortest path, $299/month.",
+        "url": "https://corewood.io/tetra/ai/",
+        "image": "https://corewood.io/assets/img/og-tetra.png",
+        "datePublished": "2026-04-16",
+        "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "publisher": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io", "logo": { "@type": "ImageObject", "url": "https://corewood.io/meta.png" } },
+        "about": [
+          { "@type": "Thing", "name": "GraphRAG" },
+          { "@type": "Thing", "name": "Knowledge Graphs for LLMs" },
+          { "@type": "Thing", "name": "Retrieval-Augmented Generation" }
+        ],
+        "proficiencyLevel": "Expert",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "TETRA",
+        "alternateName": "TETRA by Corewood",
+        "applicationCategory": "Graph Database",
+        "applicationSubCategory": "Knowledge Graph Platform",
+        "operatingSystem": "Cross-platform (Linux, macOS, Windows)",
+        "description": "Lightweight graph database for AI inference loops. 66 MB RAM, 0.5ms shortest path, full openCypher compliance, 30+ graph algorithms including community detection, centrality, and embeddings.",
+        "url": "https://corewood.io/tetra/",
+        "author": { "@type": "Organization", "name": "Corewood", "url": "https://corewood.io" },
+        "offers": {
+          "@type": "Offer",
+          "name": "TETRA Graph Database",
+          "price": "299",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "299",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M",
+            "unitText": "month"
+          },
+          "availability": "https://schema.org/InStock",
+          "url": "https://corewood.io/tetra/#pricing"
+        },
+        "featureList": [
+          "66 MB RAM footprint",
+          "0.5ms shortest path queries",
+          "1,611/1,611 openCypher TCK compliance",
+          "30+ built-in graph algorithms",
+          "Community detection, centrality, embeddings",
+          "Single native binary, single mmap'd file",
+          "Localhost Bolt or in-process integration"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is GraphRAG?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GraphRAG is a retrieval-augmented generation approach that uses structured knowledge graphs instead of (or alongside) vector similarity search. By giving LLMs explicit entity relationships rather than text fragments, GraphRAG enables models to reason over connections, paths, and intermediaries — producing 3.4x better accuracy than vector-only retrieval on complex business questions (Diffbot KG-LM Benchmark)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does TETRA improve LLM accuracy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TETRA is a graph database that fits inside your AI inference loop — 66 MB RAM, 0.5ms shortest path, localhost Bolt or in-process integration. Unlike Neo4j, Neptune, or TigerGraph, TETRA runs on the same machine as your model with zero network round-trips. It provides 1,611/1,611 openCypher compliance and 30+ graph algorithms including community detection, centrality, and embeddings — giving your RAG pipeline structured knowledge to reason over instead of text fragments to guess from."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://corewood.io/" },
+          { "@type": "ListItem", "position": 2, "name": "TETRA", "item": "https://corewood.io/tetra/" },
+          { "@type": "ListItem", "position": 3, "name": "For AI" }
+        ]
+      }
+    ]
+  }
+---
+
+{# ── Hero ── #}
+<section class="section-wash pt-40 pb-12">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #00e88f;">TETRA for AI</p>
+        <h1 class="font-display font-bold text-4xl md:text-5xl text-cream-100 mb-6 leading-tight">Your RAG system is guessing.<br>Give it something to reason over.</h1>
+        <p class="text-cream-300 text-lg leading-relaxed max-w-3xl mb-6">Vector databases retrieve documents. They don&rsquo;t retrieve relationships. When your model needs to know how two entities are connected&mdash;through what path, via what intermediaries, under what conditions&mdash;vector similarity can&rsquo;t answer.</p>
+        <p class="text-cream-300 text-lg leading-relaxed max-w-3xl mb-6">GraphRAG fixes this. 3.4&times; better accuracy than vector-only retrieval.</p>
+        <p class="text-cream-400 text-lg leading-relaxed max-w-3xl">The only problem: every other graph database is too heavy to sit inside an inference loop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── Stat cards ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <p class="font-display font-bold text-2xl md:text-3xl mb-1" style="color: #00e88f;">3.4&times;</p>
+        <p class="text-cream-100 font-display font-bold text-sm mb-1">Accuracy lift</p>
+        <p class="text-cream-500 text-xs">Diffbot KG-LM Benchmark</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <p class="font-display font-bold text-2xl md:text-3xl mb-1" style="color: #00e88f;">0.5ms</p>
+        <p class="text-cream-100 font-display font-bold text-sm mb-1">Shortest path</p>
+        <p class="text-cream-500 text-xs">In-process query</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <p class="font-display font-bold text-2xl md:text-3xl mb-1" style="color: #00e88f;">66 MB</p>
+        <p class="text-cream-100 font-display font-bold text-sm mb-1">RAM</p>
+        <p class="text-cream-500 text-xs">Total footprint</p>
+      </div>
+
+      <div class="plate-flat rounded-lg p-5 text-center">
+        <p class="font-display font-bold text-2xl md:text-3xl mb-1" style="color: #00e88f;">$299</p>
+        <p class="text-cream-100 font-display font-bold text-sm mb-1">/month</p>
+        <p class="text-cream-500 text-xs">Flat rate, everything included</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── Why RAG hallucinates ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #00e88f;">The Problem</p>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-6">Why RAG hallucinates</h2>
+        <div class="text-cream-300 text-lg leading-relaxed space-y-4 max-w-3xl">
+          <p>Models retrieve documents, stitch together answers from text fragments. They don&rsquo;t actually know if entity A relates to entity B.</p>
+          <p>Vector similarity is good at <strong class="text-cream-100">&ldquo;find documents like this.&rdquo;</strong></p>
+          <p>It&rsquo;s bad at <strong class="text-cream-100">&ldquo;find the connection between these two things.&rdquo;</strong></p>
+          <p class="text-cream-400">That gap is where hallucinations live. The model fills in what it doesn&rsquo;t know with what sounds plausible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── What GraphRAG does differently ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #00e88f;">The Solution</p>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-6">What GraphRAG does differently</h2>
+        <div class="text-cream-300 text-lg leading-relaxed space-y-4 max-w-3xl">
+          <p>Structured knowledge graphs give models explicit relationships to reason over. Not documents <em>about</em> Alice and Bob&mdash;but the actual org chart. Who reports to whom, through which department, as of what date.</p>
+          <p class="text-cream-400">Diffbot benchmark: <strong class="text-cream-100">3.4&times; over vector-only</strong> across 43 complex business questions.</p>
+          <p>The model doesn&rsquo;t have to guess. It traverses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── Why existing graph DBs don't fit ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6 text-morpho-400">The Bottleneck</p>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-6">Why existing graph DBs don&rsquo;t fit</h2>
+        <div class="space-y-4">
+
+          <div class="plate-flat rounded-lg p-5">
+            <h3 class="font-display font-bold text-cream-100 text-base mb-2">Neo4j</h3>
+            <p class="text-cream-300 text-sm leading-relaxed">Needs a cluster. 710 MB RAM minimum. Separate JVM process. Every retrieval is a network round-trip through your inference loop.</p>
+          </div>
+
+          <div class="plate-flat rounded-lg p-5">
+            <h3 class="font-display font-bold text-cream-100 text-base mb-2">Amazon Neptune</h3>
+            <p class="text-cream-300 text-sm leading-relaxed">Needs a VPC. Locked to AWS. Network latency on every query. Can&rsquo;t sit on the same machine as your model.</p>
+          </div>
+
+          <div class="plate-flat rounded-lg p-5">
+            <h3 class="font-display font-bold text-cream-100 text-base mb-2">TigerGraph</h3>
+            <p class="text-cream-300 text-sm leading-relaxed">Needs a PowerEdge. Heavy infrastructure. Not something you embed alongside an inference process.</p>
+          </div>
+
+        </div>
+        <p class="text-cream-400 text-lg leading-relaxed mt-6">None of them can sit on the same machine as your model. Every retrieval = network round-trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── TETRA: 66 MB on your GPU server ── #}
+<section class="section-wash py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <p class="text-xs font-body font-medium tracking-[0.15em] uppercase mb-6" style="color: #00e88f;">The Answer</p>
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100 mb-6">TETRA: 66 MB on your GPU server</h2>
+        <div class="text-cream-300 text-lg leading-relaxed space-y-4 max-w-3xl mb-8">
+          <p>Single native binary. Single mmap&rsquo;d file. <strong class="text-cream-100">66 MB RAM.</strong></p>
+          <p>Localhost Bolt or in-process. No network hop. No JVM. No cluster.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <div class="plate-flat rounded-lg p-5">
+            <p class="font-display font-bold text-xl mb-1" style="color: #00e88f;">0.5ms</p>
+            <p class="text-cream-100 font-display font-bold text-sm mb-1">Shortest path</p>
+            <p class="text-cream-400 text-sm leading-relaxed">Fast enough for synchronous retrieval inside your inference loop.</p>
+          </div>
+
+          <div class="plate-flat rounded-lg p-5">
+            <p class="font-display font-bold text-xl mb-1" style="color: #00e88f;">1,611/1,611</p>
+            <p class="text-cream-100 font-display font-bold text-sm mb-1">Cypher TCK</p>
+            <p class="text-cream-400 text-sm leading-relaxed">Full openCypher compliance. Your existing Cypher queries work.</p>
+          </div>
+
+          <div class="plate-flat rounded-lg p-5">
+            <p class="font-display font-bold text-xl mb-1" style="color: #00e88f;">30+</p>
+            <p class="text-cream-100 font-display font-bold text-sm mb-1">Graph algorithms</p>
+            <p class="text-cream-400 text-sm leading-relaxed">Community detection, centrality, embeddings&mdash;built in, not bolted on.</p>
+          </div>
+
+          <div class="plate-flat rounded-lg p-5">
+            <p class="font-display font-bold text-xl mb-1" style="color: #00e88f;">$299/mo</p>
+            <p class="text-cream-100 font-display font-bold text-sm mb-1">Flat rate</p>
+            <p class="text-cream-400 text-sm leading-relaxed">Everything included. No per-GB scaling. No surprise invoices.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider max-w-4xl mx-auto"></div>
+
+{# ── CTA ── #}
+<section class="section-wash py-16">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="plate-wrap">
+      <div class="plate chamfer-full-lg p-8 md:p-12">
+        <div class="rivet absolute top-7 left-7 z-10"></div>
+        <div class="rivet absolute top-7 right-7 z-10"></div>
+        <div class="rivet absolute bottom-7 left-7 z-10"></div>
+        <div class="rivet absolute bottom-7 right-7 z-10"></div>
+
+        <div class="text-center space-y-6">
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-cream-100">Stop guessing. Start traversing.</h2>
+          <p class="text-cream-300 text-lg leading-relaxed max-w-xl mx-auto">See the benchmarks, or talk to us about putting TETRA inside your inference pipeline.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a href="{{ '/tetra/' | url }}#tech" class="btn-primary">See the benchmark</a>
+            <a href="{{ '/schedule-meeting/' | url }}" class="btn-secondary">Schedule a call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

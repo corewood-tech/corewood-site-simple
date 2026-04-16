@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroLeft = document.getElementById('hero-left');
     const heroRight = document.getElementById('hero-right');
     const heroDot = document.getElementById('hero-dot');
+    const heroDot2 = document.getElementById('hero-dot2');
+    const heroExtra = document.getElementById('hero-extra');
 
     if (hero && heroTitle && heroLeft && heroRight) {
       // Page load entrance — staggered fade/slide in
@@ -31,6 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
         heroRight.style.opacity = '1';
       }, 800);
 
+      setTimeout(function() {
+        if (heroDot2) heroDot2.style.opacity = '1';
+      }, 1100);
+
+      setTimeout(function() {
+        if (heroExtra) heroExtra.style.opacity = '1';
+      }, 1200);
+
       // Scroll-out — split apart when hero leaves viewport
       const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -40,12 +50,16 @@ document.addEventListener('DOMContentLoaded', function() {
             heroRight.style.transform = 'translateX(30vw)';
             heroRight.style.opacity = '0.3';
             if (heroDot) heroDot.style.opacity = '0';
+            if (heroDot2) heroDot2.style.opacity = '0';
+            if (heroExtra) heroExtra.style.opacity = '0.3';
           } else {
             heroLeft.style.transform = 'translateX(0)';
             heroLeft.style.opacity = '1';
             heroRight.style.transform = 'translateX(0)';
             heroRight.style.opacity = '1';
             if (heroDot) heroDot.style.opacity = '1';
+            if (heroDot2) heroDot2.style.opacity = '1';
+            if (heroExtra) heroExtra.style.opacity = '1';
           }
         });
       }, { threshold: 0.3 });
@@ -54,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   } else {
     // Reduced motion — just show everything immediately
-    var els = ['hero-title', 'hero-left', 'hero-right', 'hero-dot'];
+    var els = ['hero-title', 'hero-left', 'hero-right', 'hero-dot', 'hero-dot2', 'hero-extra'];
     els.forEach(function(id) {
       var el = document.getElementById(id);
       if (el) {
