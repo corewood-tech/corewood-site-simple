@@ -33,7 +33,7 @@
   <meta property="og:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{{ ogImageAlt or 'TETRA by Corewood — The world\'s fastest graph database' }}">
+  <meta property="og:image:alt" content="{{ ogImageAlt or 'TETRA by Corewood — a fast, effective Neo4j alternative for GraphRAG' }}">
   <meta property="og:site_name" content="TETRA by Corewood">
   <meta property="og:locale" content="en_US">
 
@@ -56,7 +56,7 @@
   <meta property="twitter:title" content="{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="twitter:description" content="{{ description or site.description }}">
   <meta property="twitter:image" content="{{ (ogImage or site.seo.defaultImage) | url | absoluteUrl('https://corewood.io') }}">
-  <meta property="twitter:image:alt" content="{{ ogImageAlt or 'TETRA by Corewood — The world\'s fastest graph database' }}">
+  <meta property="twitter:image:alt" content="{{ ogImageAlt or 'TETRA by Corewood — a fast, effective Neo4j alternative for GraphRAG' }}">
 
   {% if keywords %}
   <meta name="keywords" content="{{ keywords }}">

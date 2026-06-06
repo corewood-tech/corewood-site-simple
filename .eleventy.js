@@ -94,6 +94,14 @@ module.exports = function(eleventyConfig) {
     return url.replace(/\/$/, '');
   });
 
+  // Format integers with thousands separators ("1234567" -> "1,234,567").
+  eleventyConfig.addFilter("numberFormat", function(value) {
+    if (value === null || value === undefined || value === "") return "";
+    const n = Number(value);
+    if (!Number.isFinite(n)) return String(value);
+    return n.toLocaleString("en-US");
+  });
+
   // Head filter for blog sidebar
   eleventyConfig.addFilter("head", function(array, n) {
     if (!Array.isArray(array) || array.length === 0) return [];
